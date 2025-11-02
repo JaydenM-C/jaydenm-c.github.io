@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a linguist at the [University of Newcastle](https://www.newcastle.edu.au/profile/jayden-macklin-cordes), Australia, and I'm interested in how languages evolve through space and time. My expertise includes phonology (sound systems), morphology (word structure) and the Indigenous languages of Australia and New Guinea.
+I am a linguist and visiting scholar at the [Surrey Morphology Group](https://www.smg.surrey.ac.uk/), University of Surrey, and I'm interested in how languages evolve through space and time. From 2022-2025, I was a Lecturer in Linguistics at the University of Newcastle, Australia. My expertise includes phonology (sound systems), morphology (word structure) and the Indigenous languages of Australia and New Guinea.
 
 ## Research
 
