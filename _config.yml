@@ -26,8 +26,8 @@ author:
   name             : "Jayden Macklin-Cordes"
   pronouns         : # example: "she/her"  
   bio              : "Lecturer in Linguistics"
-  location         : "Callaghan, NSW, Australia"
-  employer         : "University of Newcastle"
+  location         : "University of Surrey, UK"
+  employer         : "Surrey Morphology Group"
   uri              : # URL
   email            : "jayden@macklin-cordes.com" 
 
@@ -149,9 +149,9 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  provider               :  "google-analytics-4" # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
-    tracking_id          :
+    tracking_id          :  "G-YS8QB3CVWN"
 
 
 # Reading Files
