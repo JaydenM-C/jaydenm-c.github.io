@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fired Clay — Palette Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --c1: #E6AD97;
+    --c2: #A97F6A;
+    --c3: #B17376;
+    --c4: #BB7F7F;
+    --c5: #CA8F8E;
+    --c6: #CB8E8B;
+    --c7: #C78A87;
+    --c8: #D9A092;
+    --c9: #CA8F8B;
+    --c10: #85402E;
+    --ink: #2a1a14;
+    --page: #faf6f3;
+    --rule: rgba(133,64,46,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    min-height: 100vh;
+    padding: 4rem 2rem;
+  }
+
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* ── header ── */
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .header-text h1 {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 300;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: var(--c10);
+    margin-bottom: 1.5rem;
+  }
+
+  .header-text h1 em {
+    font-style: italic;
+    color: var(--c3);
+  }
+
+  .description {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #4a2e24;
+    font-weight: 300;
+    max-width: 38ch;
+  }
+
+  .source-image {
+    position: relative;
+  }
+
+  .source-image img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+    border-radius: 2px;
+    filter: saturate(0.92) contrast(1.04);
+  }
+
+  .image-caption {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--c2);
+    margin-top: 0.6rem;
+    text-transform: uppercase;
+  }
+
+  /* ── swatch strip ── */
+  .swatch-strip {
+    display: flex;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    gap: 2px;
+  }
+
+  .swatch-strip span {
+    flex: 1;
+    display: block;
+  }
+
+  /* ── table ── */
+  .palette-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .palette-table thead tr {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .palette-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--c2);
+    font-weight: 400;
+    padding: 0 0 0.75rem;
+    text-align: left;
+  }
+
+  .palette-table th:first-child { width: 2.5rem; }
+  .palette-table th.col-swatch { width: 3rem; }
+  .palette-table th.col-hex { width: 7rem; }
+  .palette-table th.col-name { }
+  .palette-table th.col-role { width: 10rem; text-align: right; }
+
+  .palette-table tbody tr {
+    border-bottom: 1px solid var(--rule);
+    transition: background 0.15s;
+  }
+
+  .palette-table tbody tr:hover {
+    background: rgba(230,173,151,0.08);
+  }
+
+  .palette-table td {
+    padding: 0.9rem 0;
+    vertical-align: middle;
+  }
+
+  .td-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(133,64,46,0.4);
+  }
+
+  .td-swatch {
+    padding-right: 1rem;
+  }
+
+  .swatch {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  }
+
+  .td-hex {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: #5a3528;
+  }
+
+  .td-name {
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    padding-left: 1rem;
+  }
+
+  .td-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c3);
+    text-align: right;
+  }
+
+  .td-role.role-primary   { color: var(--c10); font-weight: 400; }
+  .td-role.role-accent    { color: var(--c10); }
+  .td-role.role-highlight { color: var(--c3); }
+
+  /* ── footer ── */
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(133,64,46,0.35);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 600px) {
+    header { grid-template-columns: 1fr; }
+    .source-image { order: -1; }
+    .source-image img { aspect-ratio: 4/3; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="header-text">
+      <h1>Fired<br><em>Clay</em></h1>
+      <p class="description">A portrait pulled from warm skin tones and terracotta shadow — the palette barely leaves the red-orange hinge of the spectrum, varying almost entirely in lightness and saturation rather than hue. The two anchor colours are drawn automatically from an image; the remainder were selected by hand, clustering tightly around a dusky rose midpoint. This is a monochromatic restraint that reads as cohesion rather than limitation.</p>
+    </div>
+    <div class="source-image">
+      <img src="/images/chromatography-fired-clay-source.jpeg" alt="Source photograph">
+      <p class="image-caption">Source · auto-extracted · 2026-04-21</p>
+    </div>
+  </header>
+
+  <div class="swatch-strip">
+    <span style="background:var(--c1);flex:3.9"></span>
+    <span style="background:var(--c2);flex:2.4"></span>
+    <span style="background:var(--c3);flex:1"></span>
+    <span style="background:var(--c4);flex:1"></span>
+    <span style="background:var(--c5);flex:1"></span>
+    <span style="background:var(--c6);flex:1"></span>
+    <span style="background:var(--c7);flex:1"></span>
+    <span style="background:var(--c8);flex:1"></span>
+    <span style="background:var(--c9);flex:1"></span>
+    <span style="background:var(--c10);flex:1"></span>
+  </div>
+
+  <table class="palette-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th class="col-swatch"></th>
+        <th class="col-hex">Hex</th>
+        <th class="col-name">Name</th>
+        <th class="col-role">Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-num">01</td>
+        <td class="td-swatch"><span class="swatch" style="background:#E6AD97"></span></td>
+        <td class="td-hex">#E6AD97</td>
+        <td class="td-name">Pale Bisque</td>
+        <td class="td-role role-primary">primary</td>
+      </tr>
+      <tr>
+        <td class="td-num">02</td>
+        <td class="td-swatch"><span class="swatch" style="background:#A97F6A"></span></td>
+        <td class="td-hex">#A97F6A</td>
+        <td class="td-name">Worn Saddle</td>
+        <td class="td-role role-primary">secondary</td>
+      </tr>
+      <tr>
+        <td class="td-num">03</td>
+        <td class="td-swatch"><span class="swatch" style="background:#B17376"></span></td>
+        <td class="td-hex">#B17376</td>
+        <td class="td-name">Dried Rosehip</td>
+        <td class="td-role">muted chrome</td>
+      </tr>
+      <tr>
+        <td class="td-num">04</td>
+        <td class="td-swatch"><span class="swatch" style="background:#BB7F7F"></span></td>
+        <td class="td-hex">#BB7F7F</td>
+        <td class="td-name">Unglazed Rose</td>
+        <td class="td-role">surface</td>
+      </tr>
+      <tr>
+        <td class="td-num">05</td>
+        <td class="td-swatch"><span class="swatch" style="background:#CA8F8E"></span></td>
+        <td class="td-hex">#CA8F8E</td>
+        <td class="td-name">Plaster Blush</td>
+        <td class="td-role">surface</td>
+      </tr>
+      <tr>
+        <td class="td-num">06</td>
+        <td class="td-swatch"><span class="swatch" style="background:#CB8E8B"></span></td>
+        <td class="td-hex">#CB8E8B</td>
+        <td class="td-name">Faded Carnation</td>
+        <td class="td-role">surface</td>
+      </tr>
+      <tr>
+        <td class="td-num">07</td>
+        <td class="td-swatch"><span class="swatch" style="background:#C78A87"></span></td>
+        <td class="td-hex">#C78A87</td>
+        <td class="td-name">Cooling Ember</td>
+        <td class="td-role">secondary</td>
+      </tr>
+      <tr>
+        <td class="td-num">08</td>
+        <td class="td-swatch"><span class="swatch" style="background:#D9A092"></span></td>
+        <td class="td-hex">#D9A092</td>
+        <td class="td-name">Peach Slip</td>
+        <td class="td-role role-highlight">highlight</td>
+      </tr>
+      <tr>
+        <td class="td-num">09</td>
+        <td class="td-swatch"><span class="swatch" style="background:#CA8F8B"></span></td>
+        <td class="td-hex">#CA8F8B</td>
+        <td class="td-name">Raw Sienna Wash</td>
+        <td class="td-role">muted chrome</td>
+      </tr>
+      <tr>
+        <td class="td-num">10</td>
+        <td class="td-swatch"><span class="swatch" style="background:#85402E"></span></td>
+        <td class="td-hex">#85402E</td>
+        <td class="td-name">Brick Shadow</td>
+        <td class="td-role role-accent">accent</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer>
+    <span>Fired Clay</span>
+    <span>10 colours · 2 auto · 8 manual</span>
+    <span>Generated 2026-04-21</span>
+  </footer>
+
+</div>
+</body>
+</html>

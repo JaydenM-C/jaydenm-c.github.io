@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maritime palette mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&family=Inter:wght@400;500;600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --slate:  #2E4A5A;
+    --ochre:  #8E5E3E;
+    --foam:   #8FA3B0;
+    --red:    #C03B38;
+    --ink:    #1F2127;
+    --muted:  #586773;
+    --page:   #F1F2EE;
+    --rule:   #D9DDE0;
+    --surface:#FBFCFA;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ============ top banner ============ */
+  .banner {
+    background: var(--slate);
+    color: var(--page);
+    padding: 72px 64px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .banner::after {
+    /* a subtle foam texture at bottom edge using gradients */
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -1px; height: 14px;
+    background: linear-gradient(to top, var(--slate) 0%, rgba(46,74,90,0.5) 60%, transparent 100%),
+                repeating-linear-gradient(110deg,
+                  rgba(241,242,238,0) 0 8px,
+                  rgba(241,242,238,0.12) 8px 12px,
+                  rgba(241,242,238,0) 12px 22px);
+  }
+  .banner-kicker {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--foam);
+    margin: 0 0 18px;
+  }
+  .banner-title {
+    font-family: 'Literata', Georgia, serif;
+    font-variation-settings: 'opsz' 144;
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    max-width: 22ch;
+    margin: 0 0 16px;
+  }
+  .banner-sub {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgba(241,242,238,0.78);
+    max-width: 52ch;
+    margin: 0;
+  }
+  .banner-meta {
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    color: var(--foam);
+    margin-top: 40px;
+    letter-spacing: 0.04em;
+  }
+  .banner-meta .sep { margin: 0 10px; opacity: 0.5; }
+
+  /* ============ article body ============ */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 72px 48px 96px;
+  }
+  .standfirst {
+    font-family: 'Literata', Georgia, serif;
+    font-variation-settings: 'opsz' 18;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 0 0 40px;
+    letter-spacing: -0.005em;
+    border-left: 2px solid var(--ochre);
+    padding-left: 20px;
+  }
+  .section-kicker {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ochre);
+    margin: 48px 0 8px;
+  }
+  h2 {
+    font-family: 'Literata', Georgia, serif;
+    font-variation-settings: 'opsz' 36;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    margin: 0 0 20px;
+    color: var(--slate);
+  }
+  p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.7;
+    letter-spacing: -0.005em;
+    margin: 0 0 18px;
+    color: var(--ink);
+  }
+  p em { font-style: italic; color: var(--slate); }
+  p strong { font-weight: 500; color: var(--ink); }
+  a {
+    color: var(--slate);
+    text-decoration: underline;
+    text-decoration-color: var(--ochre);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  a:hover { color: var(--red); text-decoration-color: var(--red); }
+  .highlight {
+    color: var(--red);
+    font-weight: 500;
+  }
+
+  /* ============ pull-quote / accent block ============ */
+  .pullquote {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--slate);
+    padding: 24px 28px;
+    margin: 32px 0;
+    font-family: 'Literata', Georgia, serif;
+    font-variation-settings: 'opsz' 18;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--slate);
+    letter-spacing: -0.005em;
+  }
+  .pullquote::before { content: '“'; font-size: 32px; line-height: 0; margin-right: 4px; color: var(--ochre); vertical-align: -8px; }
+
+  /* ============ data card (showing the palette working as chrome) ============ */
+  .datacard {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .datacard-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .datacard-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--ink);
+    margin: 0;
+  }
+  .datacard-meta {
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+    color: var(--foam);
+    letter-spacing: 0.04em;
+  }
+  .datacard table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .datacard th {
+    text-align: left;
+    font-weight: 500;
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 6px 10px 8px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .datacard td {
+    padding: 8px 10px 8px 0;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+  }
+  .datacard td.num {
+    font-family: 'Fira Code', monospace;
+    font-size: 12.5px;
+    text-align: right;
+    color: var(--slate);
+  }
+  .datacard td.num.flag {
+    color: var(--red);
+    font-weight: 500;
+  }
+  .datacard tr:last-child td { border-bottom: none; }
+
+  /* ============ code block ============ */
+  pre.code {
+    font-family: 'Fira Code', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    background: var(--slate);
+    color: var(--page);
+    padding: 20px 24px;
+    border-radius: 3px;
+    margin: 24px 0;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  pre.code .c { color: var(--foam); } /* comments */
+  pre.code .k { color: var(--ochre); } /* keyword / function */
+
+  /* ============ palette footer ============ */
+  .palette-strip {
+    background: var(--surface);
+    border-top: 1px solid var(--rule);
+    padding: 32px 48px 40px;
+  }
+  .palette-strip h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 16px;
+  }
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .swatch {
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+  .swatch-chip { height: 56px; }
+  .swatch-lbl {
+    padding: 8px 10px 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  .swatch-lbl b { display: block; margin-bottom: 2px; font-weight: 500; }
+  .swatch-lbl code { font-family: 'Fira Code', monospace; font-size: 10.5px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <p class="banner-kicker">Field note · April 2026</p>
+  <h1 class="banner-title">The shelf, the wave, and the jacket</h1>
+  <p class="banner-sub">A short essay on finding colour palettes where you didn't expect them — and why one red figure, correctly placed, carries more weight than a whole spectrum used indifferently.</p>
+  <div class="banner-meta">Issue 04 <span class="sep">·</span> 1,240 words <span class="sep">·</span> 6 min read</div>
+</div>
+
+<article class="article">
+  <p class="standfirst">The colour you build a system around is rarely the colour that does the most work. More often it is the colour you hold back — the one that appears once, small, and decides the whole composition.</p>
+
+  <p class="section-kicker">Opening</p>
+  <h2>The sea is not navy</h2>
+  <p>There is a moment, standing on a sandstone ledge above the Tasman, where the obvious word for the water is wrong. You reach for <em>navy</em>, or perhaps <em>cobalt</em>, and neither lands. The actual colour is greyer than either and more teal than either, with a cool slate where the shadow of a wave meets the body of the wave behind it. Photographically, it sits near <a href="#">#2E4A5A</a> — a colour whose name, if it has one, is something like <em>winter slate</em>, and whose job in this image is to do almost everything.</p>
+
+  <p>Almost. The other job — the small job, the <span class="highlight">decisive</span> job — belongs to a single red jacket on a figure barely 2% of the frame. You find it instantly, without being told where to look. This is a principle, not a coincidence.</p>
+
+  <div class="pullquote">The accent is the colour you hold in reserve; the primary is the colour you let do the unshowy work of holding everything together.</div>
+
+  <p class="section-kicker">Method</p>
+  <h2>Sampling, reconciled</h2>
+  <p>A palette is never a straight lift from the pixels of a photograph. The photograph gives hues; reconciliation gives usability. Sample the sea and you get half a dozen blue-greys between <em>#2F4A57</em> and <em>#597789</em>; pick the one that will actually carry type at twelve points on a page. The warm rocks give a dozen ochres; pick the one that looks like it sits <em>with</em> the slate rather than competing with it.</p>
+
+  <div class="datacard">
+    <div class="datacard-head">
+      <p class="datacard-title">Sampled values, reconciled targets</p>
+      <span class="datacard-meta">n=6 regions · k-means k=5</span>
+    </div>
+    <table>
+      <tr><th>Region</th><th>Dominant sample</th><th>Reconciled for chrome</th><th>Δ luminance</th></tr>
+      <tr><td>Sea, upper band</td><td class="num">#2F4A57</td><td class="num">#2E4A5A</td><td class="num">+0.2%</td></tr>
+      <tr><td>Rocks, lit faces</td><td class="num">#96643F</td><td class="num">#8E5E3E</td><td class="num">−1.6%</td></tr>
+      <tr><td>Foam, mid-values</td><td class="num">#7B99AE</td><td class="num">#8FA3B0</td><td class="num">+4.0%</td></tr>
+      <tr><td>Red jacket</td><td class="num">#C03B38</td><td class="num">#C03B38</td><td class="num flag">0.0%</td></tr>
+      <tr><td>Darkest rock shadow</td><td class="num">#262123</td><td class="num">#1F2127</td><td class="num">−1.5%</td></tr>
+    </table>
+  </div>
+
+  <p>The red jacket is the only value that doesn't need reconciling. It arrived already tuned — saturated enough to register at scale, dark enough to sit on a cream page without vibrating. This is the thing photographs occasionally do: they hand you a colour that is already the right colour.</p>
+
+  <p class="section-kicker">Implementation</p>
+  <h2>In practice</h2>
+  <p>The palette has four working roles. <strong>Deep slate</strong> for primary chrome and surface backgrounds. <strong>Stone ochre</strong> for section-heading accents, hairline rules, and the modest supporting flourishes that keep a page from feeling monochromatic. <strong>Foam grey</strong> for muted chrome — meta text, column dividers, anything that wants to be present but quiet. <strong>Jacket red</strong> for emphasis, link-hover, the occasional single-word highlight. The rule is the rule the image already taught: the red is rare, and it is rare on purpose.</p>
+
+<pre class="code"><span class="c"># The reconciled palette, as CSS custom properties</span>
+:root {
+  --slate:  <span class="k">#2E4A5A</span>;  <span class="c">// primary; surfaces, headings</span>
+  --ochre:  <span class="k">#8E5E3E</span>;  <span class="c">// secondary; kickers, rules</span>
+  --foam:   <span class="k">#8FA3B0</span>;  <span class="c">// muted chrome</span>
+  --red:    <span class="k">#C03B38</span>;  <span class="c">// rare accent</span>
+  --ink:    <span class="k">#1F2127</span>;
+  --page:   <span class="k">#F1F2EE</span>;
+}</pre>
+
+  <p class="section-kicker">Coda</p>
+  <h2>What the image is really for</h2>
+  <p>Palettes taken from photographs don't work because the photograph is pretty. They work because a photograph that holds your attention has, almost by definition, already solved the composition problem. It has decided which colour carries the weight, which colour stabilises, which colour is <span class="highlight">allowed</span> to shout. A palette lifted thoughtfully from such an image inherits that problem's solution — not as visual quotation, but as structural memory.</p>
+
+  <p>The red jacket is not the point. The principle the red jacket demonstrates is the point.</p>
+</article>
+
+<div class="palette-strip">
+  <h3>The system, at a glance</h3>
+  <div class="palette-grid">
+    <div class="swatch"><div class="swatch-chip" style="background:#2E4A5A;"></div><div class="swatch-lbl"><b>Deep slate</b><code>#2E4A5A</code></div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#8E5E3E;"></div><div class="swatch-lbl"><b>Stone ochre</b><code>#8E5E3E</code></div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#8FA3B0;"></div><div class="swatch-lbl"><b>Foam grey</b><code>#8FA3B0</code></div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#C03B38;"></div><div class="swatch-lbl"><b>Jacket red</b><code>#C03B38</code></div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#1F2127;"></div><div class="swatch-lbl"><b>Ink</b><code>#1F2127</code></div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#586773;"></div><div class="swatch-lbl"><b>Ink muted</b><code>#586773</code></div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#F1F2EE; border: 1px solid #D9DDE0;"></div><div class="swatch-lbl"><b>Page</b><code>#F1F2EE</code></div></div>
+    <div class="swatch"><div class="swatch-chip" style="background:#D9DDE0;"></div><div class="swatch-lbl"><b>Rule</b><code>#D9DDE0</code></div></div>
+  </div>
+</div>
+
+</body>
+</html>
