@@ -47,9 +47,15 @@
         {% endif %}
 
     {% if post.excerpt and site.read_more != 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
+    {% assign excerpt_text = post.excerpt | markdownify | strip_html | strip %}
+    {% assign first_sentence = excerpt_text | split: '. ' | first %}
+    {% if first_sentence != excerpt_text %}{% assign first_sentence = first_sentence | append: '.' %}{% endif %}
+    <p class="archive__item-excerpt" itemprop="description">{{ first_sentence }}</p>
     {% elsif post.excerpt and site.read_more == 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
+    {% assign excerpt_text = post.excerpt | markdownify | strip_html | strip %}
+    {% assign first_sentence = excerpt_text | split: '. ' | first %}
+    {% if first_sentence != excerpt_text %}{% assign first_sentence = first_sentence | append: '.' %}{% endif %}
+    <p class="archive__item-excerpt" itemprop="description">{{ first_sentence }} <strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p>
     {% endif %}
     
     {% if post.citation and post.paperurl and post.slidesurl and post.bibtexurl %}
