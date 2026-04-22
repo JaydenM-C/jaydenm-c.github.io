@@ -61,7 +61,11 @@
   white-space: nowrap;
 
   &--lg {
+    /* Site name — Literata display, per Visual Identity Guide */
     padding-right: 2em;
-    font-weight: 700;
+    font-family: $display;
+    font-weight: 600;
+    font-variation-settings: 'opsz' 24;
+    letter-spacing: -0.005em;
   }
 }
