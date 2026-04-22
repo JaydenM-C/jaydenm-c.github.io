@@ -5,32 +5,60 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+<style>
+  .pub-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5em 0;
+  }
+  .pub-list li {
+    padding-left: 2em;
+    text-indent: -2em;
+    margin-bottom: 0.75em;
+    line-height: 1.5;
+  }
+</style>
 
-{% include base_path %}
+<p>See also: <a href="https://scholar.google.com.au/citations?user=n-NtUVIAAAAJ&hl=en">Google Scholar profile</a></p>
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+<h2>Published</h2>
 
+<ul class="pub-list">
+  <li>
+    <strong>Macklin-Cordes, Jayden L.</strong> &amp; Erich R. Round. 2022. Challenges of sampling and how phylogenetic comparative methods help: With a case study of the Pama-Nyungan laminal contrast. <em>Linguistic Typology</em> 26(3). pp. 533&ndash;572. <a href="https://doi.org/10.1515/lingty-2021-0025">https://doi.org/10.1515/lingty-2021-0025</a>.
+  </li>
+  <li>
+    <strong>Macklin-Cordes, Jayden L.</strong>, Claire Bowern &amp; Erich R. Round. 2021. Phylogenetic signal in phonotactics. <em>Diachronica</em> 38(2). pp. 210&ndash;258. <a href="https://doi.org/10.1075/dia.20004.mac">https://doi.org/10.1075/dia.20004.mac</a>.
+  </li>
+  <li>
+    <strong>Macklin-Cordes, Jayden L.</strong> &amp; Erich R. Round. 2020. Re-evaluating Phoneme Frequencies. <em>Frontiers in Psychology</em> 11. <a href="https://doi.org/10.3389/fpsyg.2020.570895">https://doi.org/10.3389/fpsyg.2020.570895</a>.
+  </li>
+  <li>
+    Round, Erich R., T. Mark Ellison, <strong>Jayden L. Macklin-Cordes</strong> &amp; Sacha Beniamine. 2020. Automated Parsing of Interlinear Glossed Text from Page Images of Grammatical Descriptions. In <em>Proceedings of The 12th Language Resources and Evaluation Conference</em>, 2878&ndash;2883. Marseille, France: European Language Resources Association. <a href="https://www.aclweb.org/anthology/2020.lrec-1.351">https://www.aclweb.org/anthology/2020.lrec-1.351</a>.
+  </li>
+  <li>
+    <strong>Macklin-Cordes, Jayden L.</strong> &amp; Erich R. Round. 2015. High-definition phonotactics reflect linguistic pasts. In <em>Proceedings of the 6th Quantitative Investigations in Theoretical Linguistics Conference</em>. T&uuml;bingen, Germany: University of T&uuml;bingen. <a href="https://doi.org/10.15496/publikation-8609">https://doi.org/10.15496/publikation-8609</a>.
+  </li>
+</ul>
 
+<h2>In review</h2>
 
+<ul class="pub-list">
+  <li>
+    <strong>Macklin-Cordes, Jayden L.</strong> Trees beyond words: phonotactics in linguistic phylogenetics. <em>Diachronica</em>.
+  </li>
+  <li>
+    <strong>Macklin-Cordes, Jayden L.</strong>, Maria Copot, Mitch Browne &amp; Tom Ennever. Signal separation: Quantifying inheritance and contact in language evolution. <em>Journal of Language Evolution</em>.
+  </li>
+</ul>
+
+<h2>In prep</h2>
+
+<ul class="pub-list">
+  <li>
+    <strong>Macklin-Cordes, Jayden L.</strong>, Marc Allassonni&egrave;re-Tang &amp; One-Soon Her. Ancestral state reconstruction of numeral base and classifier word orders in proto-Tibeto-Burman.
+  </li>
+  <li>
+    Copot, Maria &amp; <strong>Jayden L. Macklin-Cordes</strong>. Neither rules nor exemplars: morphological representation as adaptive clustering.
+  </li>
+</ul>
