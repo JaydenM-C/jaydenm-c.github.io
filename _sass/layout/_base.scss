@@ -8,15 +8,20 @@ html {
 }
 
 body {
-  /* Set via _themes.scss */
+  /* Set via _themes.scss — per Visual Identity Guide (web body) */
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
 
   margin: 0;
   padding: $masthead-height 0 0;
   padding-bottom: 9em;
-  font-family: $global-font-family;
-  line-height: 1.5;
+  font-family: $global-font-family;           // Inter
+  font-size: 17px;                             // web body
+  font-weight: 400;
+  line-height: 1.7;                            // generous for screen reading
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
@@ -24,44 +29,83 @@ body {
   }
 }
 
+/* ----------------------------------------------------------------------
+   Headings — Literata (display serif). Optical-size axis set per role:
+   display sizes want high opsz, body-adjacent sizes want low opsz.
+   ---------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
   margin: 2em 0 0.5em;
-  line-height: 1.2;
-  font-family: $header-font-family;
-  font-weight: bold;
+  font-family: $header-font-family;           // Literata
+  color: var(--ink);
+  letter-spacing: -0.01em;
 }
 
 h1 {
   margin-top: 0;
-  font-size: $type-size-3;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.15;
+  font-variation-settings: 'opsz' 72;
 }
 
 h2 {
-  font-size: $type-size-4;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+  font-variation-settings: 'opsz' 36;
+  letter-spacing: -0.005em;
 }
 
 h3 {
-  font-size: $type-size-5;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+  font-variation-settings: 'opsz' 24;
+  letter-spacing: -0.005em;
 }
 
 h4 {
-  font-size: $type-size-6;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.35;
+  font-variation-settings: 'opsz' 18;
+  letter-spacing: 0;
 }
 
 h5 {
-  font-size: $type-size-6;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  font-variation-settings: 'opsz' 14;
+  letter-spacing: 0;
 }
 
 h6 {
-  font-size: $type-size-6;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  font-variation-settings: 'opsz' 12;
+  letter-spacing: 0;
 }
 
 small, .small {
-  font-size: $type-size-6;
+  font-size: 14px;
+  color: var(--ink-muted);
 }
 
 p {
   margin-bottom: 1.3em;
+}
+
+/* ----------------------------------------------------------------------
+   Emphasis — Inter 500 (medium), never 700. Per guide.
+   ---------------------------------------------------------------------- */
+strong, b {
+  font-weight: 500;
+}
+
+em, i {
+  font-style: italic;
 }
 
 u,
@@ -93,17 +137,28 @@ abbr[data-original-title] {
   border-bottom: 1px dotted var(--global-text-color);
 }
 
-/* blockquotes */
-
+/* ----------------------------------------------------------------------
+   Blockquotes — Literata italic (per-request override of body face).
+   Literata's italic has enough warmth to earn its keep here; left rule
+   in --rule, body in ink-muted for the quieter cadence.
+   ---------------------------------------------------------------------- */
 blockquote {
   margin: 2em 1em 2em 0;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 0.25em 1em 0.25em 1em;
+  font-family: $display;                     // Literata
   font-style: italic;
-  border-left: 0.25em solid var(--global-border-color);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink-muted);
+  border-left: 0.25em solid var(--rule);
+  font-variation-settings: 'opsz' 18;
 
   cite {
     font-style: italic;
+    font-family: $global-font-family;        // cite goes back to Inter
+    font-size: 14px;
+    color: var(--ink-muted);
 
     &:before {
       content: "\2014";
@@ -112,23 +167,36 @@ blockquote {
   }
 }
 
-/* links */
-
+/* ----------------------------------------------------------------------
+   Links — deep maroon on cream, burnt red on hover. Underline always.
+   ---------------------------------------------------------------------- */
 a {
-  &:focus {
-    @extend %tab-focus;
+  color: var(--global-link-color);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+
+  &:visited {
+    color: var(--global-link-color-visited);
   }
 
   &:hover,
   &:active {
+    color: var(--global-link-color-hover);
     outline: 0;
+  }
+
+  &:focus {
+    @extend %tab-focus;
   }
 }
 
-/* code */
-
+/* ----------------------------------------------------------------------
+   Code — Fira Code, ligatures on. Inline 14px, block 15px (per guide).
+   ---------------------------------------------------------------------- */
 tt, code, kbd, samp, pre {
   font-family: $monospace;
+  font-feature-settings: "calt" 1, "liga" 1;  // Fira Code programming ligatures
 }
 
 pre {
@@ -141,13 +209,13 @@ li > code,
 p > code,
 td > code {
   color: var(--global-code-text-color);
-  padding-top: 0.1rem;
-  padding-bottom: 0.1rem;
-  font-size: $type-size-6;
+  padding: 0.1rem 0.35rem;
+  font-size: 14px;                            // inline code, per guide
+  font-weight: 400;
   background: var(--global-code-background-color);
-  border: 1px solid var(--global-thead-color);
+  border: 1px solid var(--rule);
   border-radius: $border-radius;
-  box-shadow: $box-shadow;
+  box-shadow: none;
 
   &:before, &:after {
     letter-spacing: -0.2em;
@@ -248,20 +316,22 @@ figure {
 
 figcaption {
   margin-bottom: 0.5em;
-  color: var(--global-fig-caption-color);
-  font-family: $caption-font-family;
-  font-size: $type-size-6;
+  color: var(--ink-muted);
+  font-family: $caption-font-family;          // Inter
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
 
   a {
     color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid var(--global-border-color );
+    text-decoration: underline;
+    text-underline-offset: 2px;
     -webkit-transition: $global-transition;
     transition: $global-transition;
 
     &:hover {
-      color: #000;
-      border-bottom-color: #000;
+      color: var(--ink);
     }
   }
 }

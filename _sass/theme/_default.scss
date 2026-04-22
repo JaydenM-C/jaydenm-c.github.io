@@ -1,15 +1,38 @@
 /* ==========================================================================
    DEFAULT THEME
+   Colour tokens per Visual Identity Guide (2026).
+   Palette is photographically anchored: burnt red + bottle green primaries,
+   warm neutrals throughout. Never pure #FFFFFF, never pure #000000.
    ========================================================================== */
 
-/* Color codes used for the theme */
+/* --- Brand tokens ------------------------------------------------------- */
+/* Primaries */
+$brand-burnt-red            : #9E2A1E;  // signature — front-of-house accent / link hover
+$brand-bottle-green         : #1E3A34;  // workhorse — back-of-house surfaces
+/* Supporting */
+$brand-deep-maroon          : #681F34;  // link colour on cream / darker red chrome
+$brand-parchment            : #DCCEB1;  // alternative warm background (held)
+/* Neutrals */
+$ink                        : #2B2A26;  // body text — warm near-black
+$ink-muted                  : #6C6A64;  // secondary text, captions
+$ink-faint                  : #9A978E;  // tertiary, placeholders
+$page-cream                 : #FAF7F2;  // default background
+$surface                    : #FFFFFF;  // elevated cards only
+$rule                       : #E5E0D5;  // hairlines, dividers
+$code-bg                    : #F3EFE7;  // tinted cream for code regions
+/* On-surface creams */
+$cream-on-red               : #FBEDE8;  // type on burnt-red surfaces
+$cream-on-green             : #F3ECDD;  // type on bottle-green surfaces
+
+/* --- Legacy gray aliases (retained; not for new use) -------------------- */
 $gray                       : #7a8288;
 $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : #9ba1a6;
 $lighter-gray               : mix(#fff, $gray, 90%);
 
-/* Color codes used for the site */
+/* Status colours — left on template defaults for now; re-spec if/when
+   a data-viz or notice palette pass is undertaken. */
 $danger-color               : #ee5f5b;
 $info-color                 : #2f7f93;
 $notice-color               : #7a8288;
@@ -28,20 +51,34 @@ $sidebar-screen-min-width   : 1024px;
 
 /* Default light theme for the site */
 :root {
-    --global-base-color                 : #{$gray};
-    --global-bg-color                   : #fff;
-    --global-footer-bg-color            : #f2f3f3;
-    --global-border-color               : #{$lighter-gray};
-    --global-dark-border-color          : #bdc1c4;
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
-    --global-link-color                 : #52adc8;
-    --global-link-color-hover           : mix(#000, #2f7f93, 25%);
-    --global-link-color-visited         : mix(#fff, #2f7f93, 25%);  
-    --global-masthead-link-color        : #{$dark-gray};
-    --global-masthead-link-color-hover  : mix(#000, #{$gray}, 25%);    
-    --global-text-color                 : #{$dark-gray};
-    --global-text-color-light           : #{$light-gray};
-    --global-thead-color                : #{$lighter-gray};
+    --global-base-color                 : #{$ink-muted};
+    --global-bg-color                   : #{$page-cream};
+    --global-footer-bg-color            : #{$page-cream};
+    --global-border-color               : #{$rule};
+    --global-dark-border-color          : #{$ink-faint};
+    --global-code-background-color      : #{$code-bg};
+    --global-code-text-color            : #{$ink};
+    --global-fig-caption-color          : #{$ink-muted};
+    --global-link-color                 : #{$brand-deep-maroon};
+    --global-link-color-hover           : #{$brand-burnt-red};
+    --global-link-color-visited         : #{$brand-deep-maroon};
+    --global-masthead-link-color        : #{$ink};
+    --global-masthead-link-color-hover  : #{$brand-deep-maroon};
+    --global-text-color                 : #{$ink};
+    --global-text-color-light           : #{$ink-faint};
+    --global-thead-color                : #{$rule};
+
+    /* Additional brand tokens for downstream use */
+    --ink                               : #{$ink};
+    --ink-muted                         : #{$ink-muted};
+    --ink-faint                         : #{$ink-faint};
+    --rule                              : #{$rule};
+    --page-cream                        : #{$page-cream};
+    --surface                           : #{$surface};
+    --code-bg                           : #{$code-bg};
+    --brand-burnt-red                   : #{$brand-burnt-red};
+    --brand-bottle-green                : #{$brand-bottle-green};
+    --brand-deep-maroon                 : #{$brand-deep-maroon};
+    --cream-on-red                      : #{$cream-on-red};
+    --cream-on-green                    : #{$cream-on-green};
 }

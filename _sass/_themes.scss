@@ -7,41 +7,46 @@
    ========================================================================== */
 
 /* Used to set the size for <em> */
-$doc-font-size              : 16;
+$doc-font-size              : 17;
 
 /* Paragraph indention */
 $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
-/* System typefaces */
-$serif                      : Georgia, Times, serif;
-$sans-serif                 : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-$monospace                  : Monaco, Consolas, "Lucida Console", monospace;
+/* System typefaces — per Visual Identity Guide (2026) */
+/* Literata: display. Inter: body. Fira Code: mono. Fallback stacks per guide. */
+$serif                      : 'Literata', 'Source Serif 4', Charter, Georgia, 'Times New Roman', serif;
+$sans-serif                 : 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$monospace                  : 'Fira Code', 'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
 
-/* Sans serif typefaces */
+/* Literata is the display face — alias for clarity at call sites */
+$display                    : $serif;
+
+/* Sans serif typefaces (retained for any template references) */
 $sans-serif-narrow          : $sans-serif;
 $helvetica                  : Helvetica, "Helvetica Neue", Arial, sans-serif;
 
-/* Serif typefaces */
+/* Legacy serif aliases — retained for template compatibility, not for new use */
 $georgia                    : Georgia, serif;
 $times                      : Times, serif;
 $bodoni                     : "Bodoni MT", serif;
 $calisto                    : "Calisto MT", serif;
 $garamond                   : Garamond, serif;
 
-/* Type scale */
-$type-size-1                : 2.441em;  // ~39.056px
-$type-size-2                : 1.953em;  // ~31.248px
-$type-size-3                : 1.563em;  // ~25.008px
-$type-size-4                : 1.25em;   // ~20px
-$type-size-5                : 1em;      // ~16px
-$type-size-6                : 0.75em;   // ~12px
-$type-size-7                : 0.6875em; // ~11px
-$type-size-8                : 0.625em;  // ~10px
+/* Type scale — recalibrated around a 17px body (web spec) */
+/* em values computed relative to the 17px root */
+$type-size-1                : 2.118em;  // ~36px — h1 (web post title)
+$type-size-2                : 1.412em;  // ~24px — h2 (subhead)
+$type-size-3                : 1.176em;  // ~20px — h3
+$type-size-4                : 1em;      // ~17px — h4 / body
+$type-size-5                : 0.882em;  // ~15px — h5 / block code
+$type-size-6                : 0.824em;  // ~14px — h6 / inline code / figcaption / small
+$type-size-7                : 0.765em;  // ~13px — very small UI
+$type-size-8                : 0.706em;  // ~12px — chrome / kickers
 
-$global-font-family         : $sans-serif;
-$header-font-family         : $sans-serif;
-$caption-font-family        : $serif;
+$global-font-family         : $sans-serif;  // Inter
+$header-font-family         : $serif;       // Literata
+$caption-font-family        : $sans-serif;  // Inter (was serif under old system)
 
 /* ==========================================================================
    Breakpoints

@@ -24,14 +24,15 @@ body { margin: 0; }
 
 /* Selected elements */
 
+/* Selection uses warm tokens — guide forbids pure #000/#fff */
 ::-moz-selection {
-  color: #fff;
-  background: #000;
+  color: var(--page-cream);
+  background: var(--brand-deep-maroon);
 }
 
 ::selection {
-  color: #fff;
-  background: #000;
+  color: var(--page-cream);
+  background: var(--brand-deep-maroon);
 }
 
 /* Display HTML5 elements in IE6-9 and FF3 */
