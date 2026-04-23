@@ -186,6 +186,18 @@ exclude:
   - README
   - tmp
   - vendor
+  # CV build pipeline: only the compiled PDF (cv/cv.pdf) should be published;
+  # the YAML source, LaTeX template, build script, and font files are
+  # internal. Everything else in cv/ is excluded explicitly below.
+  - cv/cv.yaml
+  - cv/cv.tex
+  - cv/cv.log
+  - cv/cv.aux
+  - cv/cv.out
+  - cv/build_cv.py
+  - cv/README.md
+  - cv/templates
+  - cv/fonts
 keep_files:
   - .git
   - .svn
