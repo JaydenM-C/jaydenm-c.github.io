@@ -1,0 +1,605 @@
+% !TEX TS-program = lualatex
+% !TEX encoding = UTF-8
+% =============================================================================
+% Curriculum Vitae — Dr. Jayden L. Macklin-Cordes
+%
+% GENERATED FILE. Do not edit directly; edit cv/cv.yaml and rerun
+%   python cv/build_cv.py
+%
+% Typography and colour follow the project Visual Identity Guide:
+%   Literata (display, 21pt name), Inter (body 10.5pt, line-height 1.55,
+%   emphasis at weight 500 — never 700), Fira Code (mono).
+%   Burnt red #9E2A1E name band (front of house), cream page #FAF7F2 body
+%   (back of house), ink #2B2A26 type, deep maroon #681F34 links,
+%   Inter 500 small-caps burnt-red section heads tracked +0.14em.
+%
+% Compile with LuaLaTeX. Fonts must be installed on the system (or uploaded
+% to the Overleaf project). See cv/README.md.
+% =============================================================================
+
+\documentclass[fontsize=10.5pt,a4paper,parskip=half-]{scrartcl}
+
+% ---------- Encoding / language ----------
+\usepackage[british]{babel}
+
+% ---------- Typography ----------
+\usepackage{fontspec}
+\usepackage{microtype}
+
+% ---------- Colour ----------
+\usepackage[dvipsnames,svgnames]{xcolor}
+
+% ---------- Geometry / page chrome ----------
+\usepackage[a4paper,
+            top=3.8cm,     % leaves room for the red name band on page 1
+            bottom=2.2cm,
+            left=2cm,
+            right=2cm,
+            headheight=14pt,
+            headsep=0.6cm,
+            footskip=1.2cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{lastpage}
+\usetikzlibrary{calc}
+
+% ---------- Typesetting helpers ----------
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage{xurl}
+\usepackage{array}
+
+% ---------- Hyperlinks (load late) ----------
+\usepackage[hidelinks]{hyperref}
+
+% =============================================================================
+% COLOURS (Visual Identity Guide)
+% =============================================================================
+\definecolor{burntred}{HTML}{9E2A1E}
+\definecolor{bottlegreen}{HTML}{1E3A34}
+\definecolor{deepmaroon}{HTML}{681F34}
+\definecolor{parchment}{HTML}{DCCEB1}
+\definecolor{pagecream}{HTML}{FAF7F2}
+\definecolor{surfacewhite}{HTML}{FFFFFF}
+\definecolor{ink}{HTML}{2B2A26}
+\definecolor{inkmuted}{HTML}{6C6A64}
+\definecolor{inkfaint}{HTML}{9A978E}
+\definecolor{rulegrey}{HTML}{E5E0D5}
+\definecolor{codebg}{HTML}{F3EFE7}
+\definecolor{creamonred}{HTML}{FBEDE8}
+\definecolor{creamongreen}{HTML}{F3ECDD}
+
+\pagecolor{pagecream}
+\color{ink}
+
+% =============================================================================
+% FONTS
+% Literata: display / headings / name.  Inter: body.  Fira Code: mono.
+% Emphasis uses Inter Medium (500); \textbf remapped accordingly — never 700.
+% =============================================================================
+\setmainfont{Inter}[
+  UprightFont = * Regular,
+  BoldFont    = * Medium,        % emphasis at 500, per identity guide
+  ItalicFont  = * Italic,
+  BoldItalicFont = * Medium Italic,
+  Ligatures   = TeX,
+]
+\newfontfamily\literata{Literata}[
+  UprightFont = * Regular,
+  BoldFont    = * SemiBold,
+  ItalicFont  = * Italic,
+  BoldItalicFont = * SemiBold Italic,
+  Ligatures   = TeX,
+  Numbers     = OldStyle,
+]
+\newfontfamily\literatadisplay{Literata}[
+  UprightFont = * SemiBold,
+  Ligatures   = TeX,
+  Numbers     = OldStyle,
+  LetterSpace = -1,              % optical tightening at display size
+]
+\newfontfamily\sectionhead{Inter}[
+  UprightFont = * Medium,
+  Letters     = UppercaseSmallCaps,
+  LetterSpace = 14,              % +0.14 em per identity guide
+  Numbers     = Lining,
+]
+\newfontfamily\firacode{Fira Code}[
+  UprightFont = * Regular,
+  BoldFont    = * Medium,
+  Ligatures   = TeX,
+]
+
+\linespread{1.35}                  % body line-height ≈ 1.55 after scrartcl base
+
+% =============================================================================
+% HYPERLINKS
+% =============================================================================
+\hypersetup{
+  colorlinks = true,
+  urlcolor   = deepmaroon,
+  linkcolor  = deepmaroon,
+  citecolor  = deepmaroon,
+  pdfauthor  = {((( basics.name|tex )))},
+  pdftitle   = {((( basics.name|tex ))) — ((( meta.document_title|tex )))},
+  pdfsubject = {Curriculum Vitae},
+  pdfkeywords = {linguistics, phylogenetics, typology, CV},
+}
+
+% =============================================================================
+% SECTION HEADINGS
+% =============================================================================
+\titleformat{\section}[hang]
+  {\sectionhead\color{burntred}\fontsize{11}{13}\selectfont}
+  {}{0pt}
+  {}
+  [\vspace{-0.2em}{\color{rulegrey}\rule{\linewidth}{0.4pt}}]
+\titlespacing*{\section}{0pt}{1.6em}{0.6em}
+
+\titleformat{\subsection}
+  {\literata\bfseries\color{ink}\fontsize{12}{14}\selectfont}
+  {}{0pt}{}
+\titlespacing*{\subsection}{0pt}{1.0em}{0.3em}
+
+\titleformat{\subsubsection}
+  {\literata\itshape\color{ink}\fontsize{10.5}{13}\selectfont}
+  {}{0pt}{}
+\titlespacing*{\subsubsection}{0pt}{0.6em}{0.15em}
+
+% =============================================================================
+% LIST STYLING
+% =============================================================================
+\setlist[itemize]{
+  leftmargin = 1.2em,
+  itemsep    = 0.15em,
+  parsep     = 0pt,
+  topsep     = 0.2em,
+  label      = {\color{burntred}\textbullet},
+}
+\setlist[description]{
+  leftmargin = 0pt,
+  labelindent = 0pt,
+  itemsep    = 0.35em,
+  parsep     = 0pt,
+  topsep     = 0.2em,
+  style      = nextline,
+}
+
+% =============================================================================
+% RUNNING HEADER / FOOTER
+% Page 1 uses the name band (no header). Pages 2+ carry a muted running head.
+% =============================================================================
+\fancypagestyle{firstpage}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[C]{\color{inkmuted}\footnotesize\thepage\ of \pageref{LastPage}}%
+}
+\fancypagestyle{cvbody}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhead[L]{\color{inkmuted}\footnotesize ((( basics.short_name|tex )))\,— CV}%
+  \fancyhead[R]{\color{inkmuted}\footnotesize Last updated ((( meta.last_updated|tex )))}%
+  \fancyfoot[C]{\color{inkmuted}\footnotesize\thepage\ of \pageref{LastPage}}%
+}
+\pagestyle{cvbody}
+
+% =============================================================================
+% BESPOKE COMMANDS
+% =============================================================================
+% Date column + content column. Spans full width; date is small-muted-numeric.
+% Implemented with side-by-side minipages so the content cell can use \\ as
+% a line break without terminating an enclosing tabular row.
+\newcommand{\cventry}[2]{%
+  \noindent
+  \begin{minipage}[t]{0.18\textwidth}%
+    \raggedright\color{inkmuted}\footnotesize #1%
+  \end{minipage}%
+  \hspace{0.01\textwidth}%
+  \begin{minipage}[t]{0.80\textwidth}%
+    \raggedright #2%
+  \end{minipage}%
+  \par\vspace{0.55em}%
+}
+
+% Publication / presentation line: full-width paragraph with hanging indent.
+\newenvironment{cvbib}{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{1.4em}%
+    \setlength{\itemindent}{-1.4em}%
+    \setlength{\itemsep}{0.45em}%
+    \setlength{\parsep}{0pt}%
+    \setlength{\topsep}{0.3em}%
+  }%
+}{\end{list}}
+
+% Venue / italicised publication venue.
+\newcommand{\venue}[1]{\textit{#1}}
+
+% Year prefix for publication line.
+\newcommand{\pubyear}[1]{{\sectionhead\color{burntred}\footnotesize #1}}
+
+% =============================================================================
+% DOCUMENT
+% =============================================================================
+\begin{document}
+\thispagestyle{firstpage}
+
+% ---- Page-1 red name band (full-bleed tikz overlay) -------------------------
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[burntred]
+    (current page.north west) rectangle
+    ([yshift=-3.0cm]current page.north east);
+  \node[anchor=north west, inner sep=0pt,
+        xshift=2cm, yshift=-1.25cm,
+        text=creamonred]
+    at (current page.north west)
+    {\literatadisplay\fontsize{21}{24}\selectfont ((( basics.name|tex )))};
+  \node[anchor=north west, inner sep=0pt,
+        xshift=2cm, yshift=-2.15cm,
+        text=creamonred]
+    at (current page.north west)
+    {\sectionhead\fontsize{10}{12}\selectfont ((( basics.label|tex )))};
+\end{tikzpicture}
+
+% ---- Contact block (cream, left-aligned) ------------------------------------
+\vspace*{-0.3em}
+\noindent\begin{minipage}[t]{0.62\textwidth}
+\raggedright
+((* for line in basics.affiliation_lines *))
+((( line|tex )))\\
+((* endfor *))
+\end{minipage}%
+\hfill
+\noindent\begin{minipage}[t]{0.36\textwidth}
+\raggedleft\footnotesize
+\color{inkmuted}Phone\ \color{ink}((( basics.phone|tex )))\\
+\color{inkmuted}Email\ \color{ink}\href{mailto:((( basics.email )))}{((( basics.email|tex )))}\\
+\color{inkmuted}ORCID\ \color{ink}\href{((( basics.orcid_url )))}{((( basics.orcid|tex )))}\\
+\color{inkmuted}Web\ \color{ink}\href{((( basics.website )))}{((( basics.website|strip_scheme|tex )))}
+\end{minipage}
+
+\vspace{0.6em}
+
+% =============================================================================
+% RESEARCH PROFILE
+% =============================================================================
+\section*{Research profile}
+((( research_profile|markdown_to_tex )))
+
+% =============================================================================
+% SKILLS
+% =============================================================================
+\section*{Skills}
+((* for s in skills *))
+\noindent\textbf{((( s.label|tex ))).}\ ((( s.text|markdown_to_tex )))\par\vspace{0.3em}
+((* endfor *))
+
+% =============================================================================
+% R PACKAGES
+% =============================================================================
+\section*{R packages}
+\begin{cvbib}
+((* for p in r_packages *))
+\item \href{((( p.url )))}{\texttt{((( p.name|tex )))}}.\ ((( p.description|markdown_to_tex )))
+((* endfor *))
+\end{cvbib}
+
+% =============================================================================
+% PUBLIC REPOSITORIES
+% =============================================================================
+\section*{Public repositories}
+\begin{cvbib}
+((* for r in public_repos *))
+\item \href{((( r.url )))}{\texttt{((( r.url|strip_github|tex )))}}.\ ((( r.description|markdown_to_tex )))
+((* endfor *))
+\end{cvbib}
+
+% =============================================================================
+% PROFESSIONAL EXPERIENCE
+% =============================================================================
+\section*{Professional experience}
+((* for j in professional_experience *))
+\cventry{((( j.dates|tex )))}{%
+  \textbf{((( j.role|tex )))}((* if j.role_note *))\ \textcolor{inkmuted}{((( j.role_note|tex )))}((* endif *))\\
+  ((( j.department|tex )))\\
+  \textit{((( j.institution|tex )))}%
+  ((* if j.project *))\\
+  \textcolor{inkmuted}{Project:} ((( j.project|markdown_to_tex ))) ((* endif *))%
+}
+((* endfor *))
+
+% =============================================================================
+% EDUCATION
+% =============================================================================
+\section*{Education}
+((* for e in education *))
+\cventry{((( e.date|tex )))}{%
+  \textbf{((( e.degree|tex )))}\\
+  \textit{((( e.institution|tex )))}%
+  ((* if e.thesis *))\\
+  \textcolor{inkmuted}{Thesis:} ((( e.thesis|markdown_to_tex )))%
+  ((* if e.thesis_url *))\ \href{((( e.thesis_url )))}{\textsc{[link]}}((* endif *))%
+  ((* endif *))%
+  ((* if e.supervisors *))\\
+  \textcolor{inkmuted}{Supervisors:} ((( e.supervisors|tex )))%
+  ((* endif *))%
+  ((* if e.details *))((* for d in e.details *))\\
+  ((( d|tex )))%
+  ((* endfor *))((* endif *))%
+  ((* if e.award *))\\
+  \textcolor{burntred}{\textbf{Award:}} ((( e.award|tex )))%
+  ((* endif *))%
+}
+((* endfor *))
+
+% =============================================================================
+% RESEARCH ASSISTANT EXPERIENCE
+% =============================================================================
+\section*{Research assistant experience}
+((* for r in research_assistant_experience *))
+\cventry{((( r.dates|tex )))}{%
+  \textbf{((( r.role|tex )))}\\
+  \textit{((( r.institution|tex )))}%
+  ((* if r.projects *))
+  \begin{itemize}
+  ((* for p in r.projects *))
+    \item ((( p|markdown_to_tex )))
+  ((* endfor *))
+  \end{itemize}
+  ((* endif *))%
+}
+((* endfor *))
+
+% =============================================================================
+% VISITING POSITIONS
+% =============================================================================
+\section*{Visiting positions}
+((* for v in visiting_positions *))
+\cventry{((( v.dates|tex )))}{%
+  \textbf{((( v.role|tex )))}, ((( v.department|tex ))), \textit{((( v.institution|tex )))}%
+}
+((* endfor *))
+
+% =============================================================================
+% PUBLICATIONS
+% =============================================================================
+\section*{Publications}
+\begin{cvbib}
+((* for p in publications *))
+\item \pubyear{((( p.year|tex )))}\quad ((( p.authors|emph_author|markdown_to_tex )))\ ((( p.year_text|tex )))\ ((( p.title|markdown_to_tex ))) \venue{((( p.venue|tex )))}%
+  ((* if p.doi *))\ \href{((( p.doi )))}{\textsc{[doi]}}((* endif *))
+((* endfor *))
+\end{cvbib}
+
+% =============================================================================
+% IN PREPARATION
+% =============================================================================
+\section*{In preparation}
+\begin{cvbib}
+((* for p in in_preparation *))
+\item ((( p.authors|emph_author|markdown_to_tex ))) ((( p.title|markdown_to_tex )))\ \textit{Targeted:} \venue{((( p.target|tex )))}.
+((* endfor *))
+\end{cvbib}
+
+% =============================================================================
+% CONFERENCE PRESENTATIONS
+% =============================================================================
+\section*{Conference presentations}
+\begin{cvbib}
+((* for p in conference_presentations *))
+\item \pubyear{((( p.year_text|strip_trailing_dot|tex )))}\quad ((( p.authors|emph_author|markdown_to_tex )))\ ((( p.title|markdown_to_tex ))) \venue{((( p.venue|tex )))}%
+  ((* if p.doi *))\ \href{((( p.doi )))}{\textsc{[doi]}}((* endif *))%
+  ((* if p.url *))\ \href{((( p.url )))}{\textsc{[link]}}((* endif *))
+((* endfor *))
+\end{cvbib}
+
+% =============================================================================
+% INVITED TALKS
+% =============================================================================
+\section*{Invited talks}
+\begin{cvbib}
+((* for p in invited_talks *))
+\item \pubyear{((( p.year_text|strip_trailing_dot|tex )))}\quad ((( p.authors|emph_author|markdown_to_tex )))\ ((( p.title|markdown_to_tex ))) \venue{((( p.venue|tex )))}%
+  ((* if p.url *))\ \href{((( p.url )))}{\textsc{[link]}}((* endif *))
+((* endfor *))
+\end{cvbib}
+
+% =============================================================================
+% FUNDING
+% =============================================================================
+\section*{Funding}
+
+\subsection*{Research}
+((* for f in funding.research *))
+\cventry{((( f.year|tex )))}{%
+  \textbf{((( f.award|tex )))}, ((( f.funder|tex )))\ \textcolor{burntred}{((( f.amount|tex )))}%
+  ((* if f.role *))\\\textcolor{inkmuted}{Role:} ((( f.role|tex )))((* endif *))%
+  ((* if f.project *))\\\textcolor{inkmuted}{Project:} ((( f.project|markdown_to_tex )))((* endif *))%
+}
+((* endfor *))
+
+\subsection*{Travel}
+((* for f in funding.travel *))
+\cventry{((( f.year|tex )))}{%
+  \textbf{((( f.award|tex )))}, ((( f.funder|tex )))\ \textcolor{burntred}{((( f.amount|tex )))}%
+}
+((* endfor *))
+
+% =============================================================================
+% TEACHING
+% =============================================================================
+\section*{Teaching}
+
+\subsection*{Courses taught}
+((* for block in teaching.courses_taught *))
+\noindent\textit{((( block.institution|tex )))}\par\vspace{0.2em}
+((* for e in block.entries *))
+\cventry{((( e.term|tex )))}{%
+  ((* for c in e.courses *))%
+    \textbf{((( c.code|tex ))) ((( c.title|tex )))}\ \textcolor{inkmuted}{({}((( c.level|tex ))), ((( c.students|tex ))) students)}((* if not loop.last *))\\((* endif *))%
+  ((* endfor *))%
+  ((* if e.evaluation *))\\\textcolor{inkmuted}{Student evaluation:} \textcolor{burntred}{((( e.evaluation|tex )))}((* endif *))%
+}
+((* endfor *))
+((* endfor *))
+
+\subsection*{Other teaching contributions}
+((* for block in teaching.other_contributions *))
+\noindent\textit{((( block.institution|tex )))}\par\vspace{0.2em}
+((* for e in block.entries *))
+\cventry{((( e.term|tex )))}{%
+  ((* for c in e.courses *))%
+    \textbf{((( c.code|tex ))) ((( c.title|tex )))}\ \textcolor{inkmuted}{({}((( c.role|tex ))); ((( c.level|tex ))), ((( c.students|tex ))) students)}((* if not loop.last *))\\((* endif *))%
+  ((* endfor *))%
+}
+((* endfor *))
+((* endfor *))
+
+\subsection*{PhD supervision}
+((* for s in teaching.phd_supervision *))
+\cventry{((( s.date|tex )))}{%
+  \textbf{((( s.student|tex )))} — \textit{((( s.institution|tex )))}\\
+  ((( s.thesis|markdown_to_tex )))%
+  ((* if s.co_supervisor *))\\\textcolor{inkmuted}{Co-supervisor:} ((( s.co_supervisor|tex )))((* endif *))%
+}
+((* endfor *))
+
+\subsection*{Honours supervision}
+((* for s in teaching.honours_supervision *))
+\cventry{((( s.dates|tex )))}{%
+  \textbf{((( s.student|tex )))} — \textit{((( s.institution|tex )))}\\
+  ((( s.thesis|markdown_to_tex )))%
+}
+((* endfor *))
+
+\subsection*{Courses tutored}
+((* for block in teaching.courses_tutored *))
+\noindent\textit{((( block.institution|tex )))}\par\vspace{0.2em}
+((* for e in block.entries *))
+\cventry{((( e.term|tex )))}{%
+  \textbf{((( e.code|tex ))) ((( e.title|tex )))}((* if e.role *))\ \textcolor{inkmuted}{((( e.role|tex )))}((* endif *))%
+}
+((* endfor *))
+((* endfor *))
+
+\subsection*{Project supervision}
+((* for s in teaching.project_supervision *))
+\cventry{((( s.dates|tex )))}{%
+  \textbf{((( s.programme|tex )))}\\
+  \textit{((( s.title|tex )))}\\
+  ((( s.description|markdown_to_tex )))\\
+  \textcolor{inkmuted}{Duties:} ((( s.duties|markdown_to_tex )))%
+}
+((* endfor *))
+
+% =============================================================================
+% AFFILIATIONS
+% =============================================================================
+\section*{Affiliations}
+((* for a in affiliations *))
+\cventry{((( a.dates|tex )))}{%
+  \textbf{((( a.name|tex )))}((* if a.institution *)), \textit{((( a.institution|tex )))}((* endif *))%
+  ((* if a.lead *))\\\textcolor{inkmuted}{Lead:} ((( a.lead|tex )))((* endif *))\\
+  \textcolor{inkmuted}{Role:} ((( a.role|tex )))%
+}
+((* endfor *))
+
+% =============================================================================
+% PROFESSIONAL MEMBERSHIPS
+% =============================================================================
+\section*{Professional memberships}
+\begin{itemize}
+((* for m in professional_memberships *))
+\item ((( m|tex )))
+((* endfor *))
+\end{itemize}
+
+% =============================================================================
+% PROFESSIONAL DEVELOPMENT
+% =============================================================================
+\section*{Professional development}
+
+\subsection*{Lab visits}
+\begin{itemize}
+((* for v in professional_development.lab_visits *))
+\item ((( v|markdown_to_tex )))
+((* endfor *))
+\end{itemize}
+
+\subsection*{Workshops}
+\begin{itemize}
+((* for w in professional_development.workshops *))
+\item ((( w|markdown_to_tex )))
+((* endfor *))
+\end{itemize}
+
+\subsection*{Summer schools}
+\begin{itemize}
+((* for s in professional_development.summer_schools *))
+\item ((( s|markdown_to_tex )))
+((* endfor *))
+\end{itemize}
+
+% =============================================================================
+% SERVICE
+% =============================================================================
+\section*{Service}
+
+\subsection*{Leadership roles}
+\begin{itemize}
+((* for r in service.leadership_roles *))
+\item ((( r|markdown_to_tex )))
+((* endfor *))
+\end{itemize}
+
+\subsection*{Thesis examination}
+\begin{itemize}
+((* for t in service.thesis_examination *))
+\item ((( t|markdown_to_tex )))
+((* endfor *))
+\end{itemize}
+
+\subsection*{Community outreach}
+\begin{itemize}
+((* for o in service.community_outreach *))
+\item ((( o|markdown_to_tex )))
+((* endfor *))
+\end{itemize}
+
+\subsection*{Workshop organisation}
+\begin{itemize}
+((* for w in service.workshop_organisation *))
+\item ((( w|markdown_to_tex )))
+((* endfor *))
+\end{itemize}
+
+\subsection*{Peer review}
+((( service.peer_review|join_commas|markdown_to_tex ))).
+
+% =============================================================================
+% LANGUAGES
+% =============================================================================
+\section*{Language proficiencies}
+((( language_proficiencies|join_semi|tex ))).
+
+% =============================================================================
+% REFEREES
+% =============================================================================
+\section*{Referees}
+\noindent\begin{minipage}[t]{\textwidth}
+\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}}
+((* for r in referees *))
+\begin{minipage}[t]{0.32\textwidth}\raggedright
+\textbf{((( r.name|tex )))}\\
+\textit{((( r.title|tex )))}\\[0.15em]
+((* for line in r.lines *))
+((( line|tex )))\\
+((* endfor *))
+\href{mailto:((( r.email )))}{((( r.email|tex )))}
+\end{minipage}((* if not loop.last *))&((* endif *))
+((* endfor *))
+\end{tabular}
+\end{minipage}
+
+\end{document}

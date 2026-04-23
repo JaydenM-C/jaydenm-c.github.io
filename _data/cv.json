@@ -1,152 +1,559 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
-    "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "name": "Dr. Jayden L. Macklin-Cordes",
+    "label": "Quantitative historical linguist",
+    "email": "jayden@macklin-cordes.com",
+    "phone": "+44 7883 431 961",
+    "website": "https://www.macklin-cordes.com/",
+    "summary": "I am a quantitative historical linguist investigating how language structures change over\ndeep time, and what their evolution reveals about cultural evolution and human cognition.\nI employ a primarily Bayesian toolkit: phylogenetic tree inference, phylogenetic\ncomparative methods, ancestral state reconstruction, and phylogeographic regression.\nMy PhD and subsequent published works develop phylogenetic methods for phonology,\nparticularly phonotactics, with a regional focus on languages of Australia. In parallel,\nI work on the evolution of conceptual categories (nominal classification, case semantics,\nnumber), with work extending to broader Sahul (Australia and New Guinea), Tibeto-Burman,\nand worldwide language samples. Most recently, I have turned attention to the design of\nagentic LLM pipelines for large-scale extraction of linguistic data from published grammars.",
     "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
+      "city": "Guildford",
+      "region": "Surrey",
+      "countryCode": "UK"
     },
     "profiles": [
       {
-        "network": "Google Scholar",
-        "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-      },
-      {
-        "network": "ORCID",
-        "username": "",
-        "url": "http://orcid.org/yourorcidurl"
-      },
-      {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "url": "https://github.com/JaydenM-C",
+        "username": "JaydenM-C"
+      },
+      {
+        "network": "Orcid",
+        "url": "https://orcid.org/0000-0003-1910-3969",
+        "username": "0000-0003-1910-3969"
       }
     ]
   },
-  "work": [],
-  "education": [
+  "work": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
-      "gpa": null,
-      "courses": []
+      "company": "University of Newcastle, Australia",
+      "position": "Lecturer in Linguistics ((tenured))",
+      "startDate": "2022-12",
+      "endDate": "2025-08",
+      "summary": "School of Creative Industries, Humanities and Social Sciences",
+      "highlights": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
-      "gpa": null,
-      "courses": []
+      "company": "CNRS, Université Lumière Lyon 2, Lyon, France",
+      "position": "Postdoctoral Researcher",
+      "startDate": "2021-11",
+      "endDate": "2022-11",
+      "summary": "UMR 5596: Laboratoire Dynamique du Langage (DDL)",
+      "highlights": [
+        "EVOGRAM: The role of linguistic and non-linguistic factors in the evolution of nominal classification system"
+      ]
     }
   ],
-  "skills": [],
-  "languages": [],
-  "interests": [],
-  "references": [],
+  "education": [
+    {
+      "institution": "The University of Queensland, Australia",
+      "area": "Ph.D. (Linguistics)",
+      "studyType": "Ph.D. (Linguistics)",
+      "endDate": "Jun 2021",
+      "gpa": "",
+      "courses": []
+    },
+    {
+      "institution": "The University of Queensland, Australia",
+      "area": "Bachelor of Arts (Honours, Class I)",
+      "studyType": "Bachelor of Arts (Honours, Class I)",
+      "endDate": "Jun 2015",
+      "gpa": "",
+      "courses": [
+        "Major: Linguistics (extended)",
+        "Minor: Aboriginal and Torres Strait Islander studies"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Statistical methods",
+      "level": "",
+      "keywords": [
+        "Bayesian inference and multilevel modelling (brms), Bayesian phylogenetic tree inference (BEAST), phylogenetic comparative methods, ancestral state reconstruction, phylogeographic regression (BayesTraits, R)."
+      ]
+    },
+    {
+      "name": "Programming",
+      "level": "",
+      "keywords": [
+        "R (highly proficient, including the tidyverse, Bioconductor suite, phylogenetic packages [ape, phytools], geospatial packages [sf]), Python, Javascript, LaTeX."
+      ]
+    },
+    {
+      "name": "Research automation",
+      "level": "",
+      "keywords": [
+        "Design of agentic LLM pipelines for large-scale extraction of linguistic data (e.g. interlinear glossed text) from published grammars. The agent consults structured knowledge bases (IGT conventions, IPA, observations accumulated from prior grammars), then iteratively drafts, self-critiques, and refines its output while recording grammar-specific idiosyncrasies for later use. A prototype pipeline benchmarked against manual annotation on an Australian grammar sample achieved 99% precision, 99% recall."
+      ]
+    },
+    {
+      "name": "Data visualisation",
+      "level": "",
+      "keywords": [
+        "ggplot2, ggmap, ggtree. Interactive apps and mapping (Shiny, leaflet)."
+      ]
+    },
+    {
+      "name": "Open science",
+      "level": "",
+      "keywords": [
+        "Git (https://github.com/JaydenM-C), Zenodo/OSF (e.g. https://zenodo.org/records/7257104). Reproducibility tools (renv, Docker)."
+      ]
+    }
+  ],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "http://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "Trees beyond words: phonotactics in linguistic phylogenetics",
+      "publisher": "Diachronica",
+      "releaseDate": "",
+      "summary": "Macklin-Cordes, Jayden L.",
+      "website": ""
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "http://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "name": "Signal separation: Quantifying inheritance and contact in language evolution",
+      "publisher": "Journal of Language Evolution",
+      "releaseDate": "",
+      "summary": "Macklin-Cordes, Jayden L., Maria Copot, Mitch Browne & Tom Ennever.",
+      "website": ""
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
+      "name": "Challenges of sampling and how phylogenetic comparative methods help: With a case study of the Pama-Nyungan laminal contrast",
+      "publisher": "Linguistic Typology 26(3). pp. 533–572.",
+      "releaseDate": "2022",
+      "summary": "Macklin-Cordes, Jayden L. & Erich R. Round.",
+      "website": "https://doi.org/10.1515/lingty-2021-0025"
     },
     {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "name": "Phylogenetic signal in phonotactics",
+      "publisher": "Diachronica 38(2). pp. 210–258.",
+      "releaseDate": "2021",
+      "summary": "Macklin-Cordes, Jayden L., Claire Bowern & Erich R. Round.",
+      "website": "https://doi.org/10.1075/dia.20004.mac"
+    },
+    {
+      "name": "Re-evaluating Phoneme Frequencies",
+      "publisher": "Frontiers in Psychology 11.",
+      "releaseDate": "2020",
+      "summary": "Macklin-Cordes, Jayden L. & Erich R. Round.",
+      "website": "https://doi.org/10.3389/fpsyg.2020.570895"
+    },
+    {
+      "name": "Automated Parsing of Interlinear Glossed Text from Page Images of Grammatical Descriptions",
+      "publisher": "In Proceedings of The 12th Language Resources and Evaluation Conference, 2878–2883. Marseille, France: European Language Resources Association.",
+      "releaseDate": "2020",
+      "summary": "Round, Erich R., T. Mark Ellison, Jayden L. Macklin-Cordes & Sacha Beniamine.",
+      "website": "https://www.aclweb.org/anthology/2020.lrec-1.351"
+    },
+    {
+      "name": "High-definition phonotactics reflect linguistic pasts",
+      "publisher": "In Proceedings of the 6th Quantitative Investigations in Theoretical Linguistics Conference. Tübingen, Germany: University of Tübingen.",
+      "releaseDate": "2015",
+      "summary": "Macklin-Cordes, Jayden L. & Erich R. Round.",
+      "website": "https://doi.org/10.15496/publikation-8609"
     }
   ],
   "presentations": [
     {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
+      "name": "Noun classes persist for predictive processing: Evidence from constituent order in 2,500 languages [poster]",
+      "event": "Conference of the Association of Linguistic Typology (ALT XVI). Lumière University, Lyon.",
+      "date": "",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L. & Maria Copot."
     },
     {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
+      "name": "Optimal Representation Granularity in Morphological Learning",
+      "event": "International Morphology Meeting (IMM22). Budapest, Hungary.",
+      "date": "",
+      "location": "",
+      "description": "Copot, Maria & Jayden L. Macklin-Cordes."
     },
     {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
+      "name": "Noun classes persist for predictive processing: Evidence from constituent order in 2,500 languages",
+      "event": "Quantitative Cross-Linguistic Explorations of Space, Time, and Evolution (QC-LESTE). National Museum of Natural History, Paris.",
+      "date": "",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L. & Maria Copot."
     },
     {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
+      "name": "Locative polyfunctionality in Pama-Nyungan: Disentangling space, phylogeny and ahistorical factors [poster]",
+      "event": "International Conference on the Evolution of Language (EVOLANG XVI). Plovdiv, Bulgaria.",
+      "date": "2026",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L., Maria Copot, Tom Ennever & Mitch Browne."
+    },
+    {
+      "name": "Locative functions beyond space and time: Pama-Nyungan case semantics reflect ahistorical processes [poster]",
+      "event": "Conference of the Association of Linguistic Typology (ALT XV). National University of Singapore, Singapore.",
+      "date": "2024",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L., Mitch Browne, Tom Ennever & Maria Copot."
+    },
+    {
+      "name": "Locative polyfunctionality in Australia: Function distribution is not predicted by phylogeny or contact",
+      "event": "Australian Linguistics Society Annual Conference (ALS 2024). Australian National University, Canberra, Australia.",
+      "date": "2024",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L., Mitch Browne, Tom Ennever & Maria Copot."
+    },
+    {
+      "name": "Towards a phylogenetic typology of Australian nominal classification",
+      "event": "Langues & Langage à la croisée des Disciplines (LLCD 2024). Sorbonne University, Paris, France.",
+      "date": "2024",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L."
+    },
+    {
+      "name": "Phylogenetic comparative methods in everyday typology",
+      "event": "Annual Meeting of the Societas Linguistica Europaea (SLE 2022). University of Bucharest, Bucharest, Romania.",
+      "date": "2022",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L."
+    },
+    {
+      "name": "The evolutionary dynamics of noun classes in Torricelli languages",
+      "event": "Conference of the Association of Linguistic Typology (ALT XIV). University of Texas, Austin, USA.",
+      "date": "2022",
+      "location": "",
+      "description": "Jódar-Sánchez, Jose Antonio, Jayden L. Macklin-Cordes & Marc Allassonnière-Tang."
+    },
+    {
+      "name": "Correlated evolution of numeral base and classifier word orders in Tibeto-Burman languages [poster]",
+      "event": "Conference of the Association of Linguistic Typology (ALT XIV). University of Texas, Austin, USA.",
+      "date": "2022",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L., Her, One-Soon & Marc Allassonnière-Tang."
+    },
+    {
+      "name": "Incorporating typological features in tree inference: Lessons from phonotactics",
+      "event": "International Conference on Historical Linguistics (ICHL25). Oxford University, Oxford, UK.",
+      "date": "2022",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L."
+    },
+    {
+      "name": "A statistical analysis of word-initial apical neutralisation in Warlmanpa",
+      "event": "Australian Linguistics Society Annual Conference (ALS 2022). University of Melbourne, Melbourne, Australia.",
+      "date": "2022",
+      "location": "",
+      "description": "Browne, Mitch & Jayden L. Macklin-Cordes."
+    },
+    {
+      "name": "Constituent order in subordinate clauses: A comparison of Mudburra, Warlmanpa and Warriyangga/Thiinma",
+      "event": "Australian Languages Workshop (ALW). University of Queensland Moreton Bay Research Station, North Stradbroke Island, Australia.",
+      "date": "2022",
+      "location": "",
+      "description": "Browne, Mitch, Jacqueline Cook, Amanda Hamilton-Holloway & Jayden L. Macklin-Cordes."
+    },
+    {
+      "name": "Trials and tribulations of tree inference: The challenge of phonotactics in phylogenetics and why it matters",
+      "event": "Australian Linguistic Society Annual Conference (ALS 2021). La Trobe University, Melbourne, Australia.",
+      "date": "2021",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L."
+    },
+    {
+      "name": "Unstable trees: The challenge of frequency and phonology in phylogenetics",
+      "event": "Edinburgh Symposium on Historical Phonology. University of Edinburgh, Scotland.",
+      "date": "2021",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L."
+    },
+    {
+      "name": "Zipf's Law? Re-evaluating phoneme frequencies",
+      "event": "Australian Linguistics Society Annual Conference (ALS 2020). Online conference, Australia.",
+      "date": "2020",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L. & Erich R. Round."
+    },
+    {
+      "name": "Clouded vision: Why insights improve when uncertainty about data is made explicit",
+      "event": "International Conference on Historical Linguistics (ICHL24). Australian National University, Canberra, Australia.",
+      "date": "2019",
+      "location": "",
+      "description": "Round, Erich R. & Jayden L. Macklin-Cordes."
+    },
+    {
+      "name": "Historical signal beyond the cognate: Phonotactics in linguistic phylogenetics",
+      "event": "International Conference on Historical Linguistics (ICHL24). Australian National University, Canberra, Australia.",
+      "date": "2019",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L. & Erich R. Round."
+    },
+    {
+      "name": "Phylogeny in phonotactics: A multivariate approach for stronger historical signal",
+      "event": "Australian Linguistics Society Annual Conference (ALS 2018). University of South Australia, Adelaide.",
+      "date": "2018",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L. & Erich R. Round."
+    },
+    {
+      "name": "High-definition phonotactic typology in Sahul: Choosing the data-rich approach",
+      "event": "Conference of the Association of Linguistic Typology (ALT XII). Australian National University, Canberra, Australia.",
+      "date": "2017",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L."
+    },
+    {
+      "name": "Robots who read grammars [poster]",
+      "event": "CoEDL Fest. Alexandra Park Conference Centre, Alexandra Headlands, QLD, Australia.",
+      "date": "2017",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L., Nathaniel L. Blackbourne, Thomas J. Bott, Jacqueline Cook, T. Mark Ellison, Jordan Hollis, Edith E. Kirlew, Genevieve C. Richards, Sanle Zhao & Erich R. Round."
+    },
+    {
+      "name": "The Cape York lexical records of Bruce Sommer",
+      "event": "Australian Linguistics Society Annual Conference (ALS 2016). Monash University, Caulfield, Australia.",
+      "date": "2016",
+      "location": "",
+      "description": "Hollis, Jordan, Genevieve C. Richards, Jayden L. Macklin-Cordes & Erich R. Round."
+    },
+    {
+      "name": "Evaluating information loss from phonological dimensionality reduction",
+      "event": "SST2016 Satellite Symposium: The role of predictability in shaping human language sound patterns. Western Sydney University, Australia.",
+      "date": "2016",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L., Steven P. Moran & Erich R. Round."
+    },
+    {
+      "name": "High-definition phonotactic data contain phylogenetic signal [poster]",
+      "event": "Annual Meeting of the Linguistic Society of America. Washington, DC.",
+      "date": "2016",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L. & Erich R. Round."
+    },
+    {
+      "name": "Reflections of linguistic history in quantitative phonotactics",
+      "event": "Australian Linguistic Society Annual Conference (ALS2016). Monash University, Caulfield, Australia.",
+      "date": "2016",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L. & Erich R. Round."
+    },
+    {
+      "name": "The grammar harvester",
+      "event": "Australian Linguistic Society Annual Conference (ALS 2016). Monash University, Caulfield, Australia.",
+      "date": "2016",
+      "location": "",
+      "description": "Round, Erich R., Jacqueline Cook, T. Mark Ellison, Jordan Hollis, Jayden L. Macklin-Cordes & Genevieve C. Richards."
+    },
+    {
+      "name": "On the design, in practice, of typological microvariables",
+      "event": "New Developments in the Quantitative Study of Languages. Helsinki, Finland.",
+      "date": "2015",
+      "location": "",
+      "description": "Round, Erich R. & Jayden L. Macklin-Cordes."
+    },
+    {
+      "name": "Next-generation typological variables: From theory to practice, and back again",
+      "event": "Australian Linguistic Society Annual Conference (ALS 2014). University of Newcastle, Australia.",
+      "date": "2014",
+      "location": "",
+      "description": "Round, Erich R. & Jayden L. Macklin-Cordes."
+    },
+    {
+      "name": "Locative polyfunctionality in Australia: Function distribution is not predicted by phylogeny or contact",
+      "event": "University of Newcastle Social Science and Linguistics Seminar Series. University of Newcastle, Australia.",
+      "date": "2025",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L."
+    },
+    {
+      "name": "Towards a phylogenetic typology of Australian nominal classification",
+      "event": "University of Newcastle Social Science and Linguistics Seminar Series. University of Newcastle, Australia.",
+      "date": "2024",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L."
+    },
+    {
+      "name": "Thinking like a quantitative modeller",
+      "event": "Invited masterclass for the Laboratory for Applied Language Science (LALS). University of Newcastle, Australia.",
+      "date": "2024",
+      "location": "",
+      "description": "Copot, Maria & Jayden L. Macklin-Cordes."
+    },
+    {
+      "name": "Phylogenetic comparative methods in everyday typology: With a case study of Pama-Nyungan laminals",
+      "event": "Changelings forum for historical sociolinguistics (invited talk). The Ohio State University, Columbus, USA.",
+      "date": "2024",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L."
+    },
+    {
+      "name": "Reconstructing numeral base and classifier word orders in Tibeto-Burman",
+      "event": "University of Newcastle Linguistics Seminar Series. University of Newcastle, Australia.",
+      "date": "2023",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L."
+    },
+    {
+      "name": "Typological traits in linguistic phylogenetics: (Mis)adventures with phonotactics",
+      "event": "UMR7206 Eco-Anthropologie (EA) Seminar Series. Musée de l'Homme, CNRS, Muséum National d'Histoire Naturelle, Université de Paris, France.",
+      "date": "2022",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L."
+    },
+    {
+      "name": "Trees, mountains, numerals and classifiers: Preliminary ancestral state reconstruction in Tibeto-Burman",
+      "event": "Surrey Linguistics Circle Lunchtime Seminar. Surrey Morphology Group, University of Surrey, Guildford, UK.",
+      "date": "2022",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L."
+    },
+    {
+      "name": "Phylogenetic comparative methods for common typological challenges: With a case study of Pama-Nyungan laminals",
+      "event": "DiLiS Seminar Series. Laboratoire Dynamique Du Langage, CNRS, Université Lyon 2, Lyon, France.",
+      "date": "2022",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L."
+    },
+    {
+      "name": "Constituent order in subordinate clauses: A comparison of Mudburra, Warlmanpa and Warriyangga/Thiinma",
+      "event": "UWA Linguistics Seminar Series. University of Western Australia, Perth, Australia.",
+      "date": "2022",
+      "location": "",
+      "description": "Browne, Mitch, Jacqueline Cook, Amanda Hamilton-Holloway & Jayden L. Macklin-Cordes."
+    },
+    {
+      "name": "Phylogenetic comparative methods: What all the fuss is about, and how to use them in everyday research",
+      "event": "Language and Data Analysis Laboratory (LADAL) webinar. The University of Queensland, St Lucia, Australia.",
+      "date": "2021",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L. & Erich R. Round."
     }
   ],
   "teaching": [
     {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
+      "course": "LING3350 Structure of English",
+      "institution": "University of Newcastle, Australia",
+      "date": "2025",
+      "role": "Lecturer",
+      "description": "3rd year undergraduate, 112 students"
     },
     {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
+      "course": "LING3350 Structure of English",
+      "institution": "University of Newcastle, Australia",
+      "date": "2024",
+      "role": "Lecturer",
+      "description": "3rd year undergraduate, 50 students"
+    },
+    {
+      "course": "LING3350 Structure of English",
+      "institution": "University of Newcastle, Australia",
+      "date": "2024",
+      "role": "Lecturer",
+      "description": "3rd year undergraduate, 86 students"
+    },
+    {
+      "course": "LING6910 Foundation of Linguistics",
+      "institution": "University of Newcastle, Australia",
+      "date": "2024",
+      "role": "Lecturer",
+      "description": "1st year masters, 5 students"
+    },
+    {
+      "course": "LING3350 Structure of English",
+      "institution": "University of Newcastle, Australia",
+      "date": "2023",
+      "role": "Lecturer",
+      "description": "3rd year undergraduate, 74 students"
+    },
+    {
+      "course": "LING3350 Structure of English",
+      "institution": "University of Newcastle, Australia",
+      "date": "2023",
+      "role": "Lecturer",
+      "description": "3rd year undergraduate, 78 students"
+    },
+    {
+      "course": "LING3002 Syntax",
+      "institution": "University of Newcastle, Australia",
+      "date": "2023",
+      "role": "Lecturer",
+      "description": "3rd year undergraduate, 8 students"
+    },
+    {
+      "course": "LING1005 Introduction to linguistics: the sound pattern of language",
+      "institution": "University of Queensland, Australia",
+      "date": "2015",
+      "role": "Lecturer",
+      "description": "1st year undergraduate, ~220 students"
+    },
+    {
+      "course": "LING6105 Introduction to linguistics: phonetics and phonology",
+      "institution": "University of Queensland, Australia",
+      "date": "2015",
+      "role": "Lecturer",
+      "description": "1st year masters, ~30 students"
     }
   ],
   "portfolio": [
     {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
+      "name": "phonfreq",
+      "category": "r-package",
       "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+      "description": "A package for visualising phoneme frequency distributions in Australian languages.",
+      "url": "https://github.com/JaydenM-C/phonfreq"
+    },
+    {
+      "name": "CLtemplate, DeGruytertemplate, LDCtemplate, UQpresentation",
+      "category": "r-package",
+      "date": "",
+      "description": "A series of packages providing Rmarkdown templates for authoring Computational Linguistics articles, De Gruyter articles and books, Language Dynamics and Change articles and University of Queensland-branded slideshow presentations. All at https://github.com/JaydenM-C/[name].",
+      "url": "https://github.com/JaydenM-C/"
+    },
+    {
+      "name": "JaydenM-C/PN_treebuilding",
+      "category": "repository",
+      "date": "",
+      "description": "A repository of code (R, C, TeX) for inferring phylogenetic trees from phonotactic and lexical data.",
+      "url": "https://github.com/JaydenM-C/PN_treebuilding"
+    },
+    {
+      "name": "JaydenM-C/sc-alchemist",
+      "category": "repository",
+      "date": "",
+      "description": "Repository of code (Python) implementing MCMC optimisation for AFL fantasy team selection, with user-defined constraint functions.",
+      "url": "https://github.com/JaydenM-C/sc-alchemist"
+    },
+    {
+      "name": "JaydenM-C/AusErdle",
+      "category": "repository",
+      "date": "",
+      "description": "Codebase for the AusErdle app, a Wordle spinoff using Australian English phonemic transcriptions.",
+      "url": "https://github.com/JaydenM-C/AusErdle"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "native"
+    },
+    {
+      "language": "Italian",
+      "fluency": "conversational"
+    },
+    {
+      "language": "French, Romanian",
+      "fluency": "basic"
+    },
+    {
+      "language": "Spanish, German",
+      "fluency": "beginner"
+    }
+  ],
+  "interests": [],
+  "references": [
+    {
+      "name": "Prof. Greville Corbett",
+      "reference": "Distinguished Professor of Linguistics. Surrey Morphology Group, School of Literature and Languages. University of Surrey, Guildford, GU2 7XH. g.corbette@surrey.ac.uk"
+    },
+    {
+      "name": "Dr. Marc Allassonnière-Tang",
+      "reference": "CNRS Researcher. Ecological Anthropology lab (UMR 7206). National Museum of Natural History, Paris, France. marc.allassonniere-tang@mnhn.fr"
+    },
+    {
+      "name": "Prof. Kate Nash",
+      "reference": "Dean and Head of School. School of Humanities, Creative Industries and Social Sciences. University of Newcastle, Australia. kate.nash@newcastle.edu.au"
     }
   ]
 }

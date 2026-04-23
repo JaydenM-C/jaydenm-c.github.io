@@ -1,0 +1,778 @@
+% !TEX TS-program = lualatex
+% !TEX encoding = UTF-8
+% =============================================================================
+% Curriculum Vitae — Dr. Jayden L. Macklin-Cordes
+%
+% GENERATED FILE. Do not edit directly; edit cv/cv.yaml and rerun
+%   python cv/build_cv.py
+%
+% Typography and colour follow the project Visual Identity Guide:
+%   Literata (display, 21pt name), Inter (body 10.5pt, line-height 1.55,
+%   emphasis at weight 500 — never 700), Fira Code (mono).
+%   Burnt red #9E2A1E name band (front of house), cream page #FAF7F2 body
+%   (back of house), ink #2B2A26 type, deep maroon #681F34 links,
+%   Inter 500 small-caps burnt-red section heads tracked +0.14em.
+%
+% Compile with LuaLaTeX. Fonts must be installed on the system (or uploaded
+% to the Overleaf project). See cv/README.md.
+% =============================================================================
+
+\documentclass[fontsize=10.5pt,a4paper,parskip=half-]{scrartcl}
+
+% ---------- Encoding / language ----------
+\usepackage[british]{babel}
+
+% ---------- Typography ----------
+\usepackage{fontspec}
+\usepackage{microtype}
+
+% ---------- Colour ----------
+\usepackage[dvipsnames,svgnames]{xcolor}
+
+% ---------- Geometry / page chrome ----------
+\usepackage[a4paper,
+            top=3.8cm,     % leaves room for the red name band on page 1
+            bottom=2.2cm,
+            left=2cm,
+            right=2cm,
+            headheight=14pt,
+            headsep=0.6cm,
+            footskip=1.2cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{lastpage}
+\usetikzlibrary{calc}
+
+% ---------- Typesetting helpers ----------
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage{xurl}
+\usepackage{array}
+
+% ---------- Hyperlinks (load late) ----------
+\usepackage[hidelinks]{hyperref}
+
+% =============================================================================
+% COLOURS (Visual Identity Guide)
+% =============================================================================
+\definecolor{burntred}{HTML}{9E2A1E}
+\definecolor{bottlegreen}{HTML}{1E3A34}
+\definecolor{deepmaroon}{HTML}{681F34}
+\definecolor{parchment}{HTML}{DCCEB1}
+\definecolor{pagecream}{HTML}{FAF7F2}
+\definecolor{surfacewhite}{HTML}{FFFFFF}
+\definecolor{ink}{HTML}{2B2A26}
+\definecolor{inkmuted}{HTML}{6C6A64}
+\definecolor{inkfaint}{HTML}{9A978E}
+\definecolor{rulegrey}{HTML}{E5E0D5}
+\definecolor{codebg}{HTML}{F3EFE7}
+\definecolor{creamonred}{HTML}{FBEDE8}
+\definecolor{creamongreen}{HTML}{F3ECDD}
+
+\pagecolor{pagecream}
+\color{ink}
+
+% =============================================================================
+% FONTS
+% Literata: display / headings / name.  Inter: body.  Fira Code: mono.
+% Emphasis uses Inter Medium (500); \textbf remapped accordingly — never 700.
+% =============================================================================
+\setmainfont{Inter}[
+  UprightFont = * Regular,
+  BoldFont    = * Medium,        % emphasis at 500, per identity guide
+  ItalicFont  = * Italic,
+  BoldItalicFont = * Medium Italic,
+  Ligatures   = TeX,
+]
+\newfontfamily\literata{Literata}[
+  UprightFont = * Regular,
+  BoldFont    = * SemiBold,
+  ItalicFont  = * Italic,
+  BoldItalicFont = * SemiBold Italic,
+  Ligatures   = TeX,
+  Numbers     = OldStyle,
+]
+\newfontfamily\literatadisplay{Literata}[
+  UprightFont = * SemiBold,
+  Ligatures   = TeX,
+  Numbers     = OldStyle,
+  LetterSpace = -1,              % optical tightening at display size
+]
+\newfontfamily\sectionhead{Inter}[
+  UprightFont = * Medium,
+  Letters     = UppercaseSmallCaps,
+  LetterSpace = 14,              % +0.14 em per identity guide
+  Numbers     = Lining,
+]
+\newfontfamily\firacode{Fira Code}[
+  UprightFont = * Regular,
+  BoldFont    = * Medium,
+  Ligatures   = TeX,
+]
+
+\linespread{1.35}                  % body line-height ≈ 1.55 after scrartcl base
+
+% =============================================================================
+% HYPERLINKS
+% =============================================================================
+\hypersetup{
+  colorlinks = true,
+  urlcolor   = deepmaroon,
+  linkcolor  = deepmaroon,
+  citecolor  = deepmaroon,
+  pdfauthor  = {Dr. Jayden L. Macklin-Cordes},
+  pdftitle   = {Dr. Jayden L. Macklin-Cordes — Curriculum Vitae},
+  pdfsubject = {Curriculum Vitae},
+  pdfkeywords = {linguistics, phylogenetics, typology, CV},
+}
+
+% =============================================================================
+% SECTION HEADINGS
+% =============================================================================
+\titleformat{\section}[hang]
+  {\sectionhead\color{burntred}\fontsize{11}{13}\selectfont}
+  {}{0pt}
+  {}
+  [\vspace{-0.2em}{\color{rulegrey}\rule{\linewidth}{0.4pt}}]
+\titlespacing*{\section}{0pt}{1.6em}{0.6em}
+
+\titleformat{\subsection}
+  {\literata\bfseries\color{ink}\fontsize{12}{14}\selectfont}
+  {}{0pt}{}
+\titlespacing*{\subsection}{0pt}{1.0em}{0.3em}
+
+\titleformat{\subsubsection}
+  {\literata\itshape\color{ink}\fontsize{10.5}{13}\selectfont}
+  {}{0pt}{}
+\titlespacing*{\subsubsection}{0pt}{0.6em}{0.15em}
+
+% =============================================================================
+% LIST STYLING
+% =============================================================================
+\setlist[itemize]{
+  leftmargin = 1.2em,
+  itemsep    = 0.15em,
+  parsep     = 0pt,
+  topsep     = 0.2em,
+  label      = {\color{burntred}\textbullet},
+}
+\setlist[description]{
+  leftmargin = 0pt,
+  labelindent = 0pt,
+  itemsep    = 0.35em,
+  parsep     = 0pt,
+  topsep     = 0.2em,
+  style      = nextline,
+}
+
+% =============================================================================
+% RUNNING HEADER / FOOTER
+% Page 1 uses the name band (no header). Pages 2+ carry a muted running head.
+% =============================================================================
+\fancypagestyle{firstpage}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[C]{\color{inkmuted}\footnotesize\thepage\ of \pageref{LastPage}}%
+}
+\fancypagestyle{cvbody}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhead[L]{\color{inkmuted}\footnotesize Macklin-Cordes\,— CV}%
+  \fancyhead[R]{\color{inkmuted}\footnotesize Last updated 2026-04-21}%
+  \fancyfoot[C]{\color{inkmuted}\footnotesize\thepage\ of \pageref{LastPage}}%
+}
+\pagestyle{cvbody}
+
+% =============================================================================
+% BESPOKE COMMANDS
+% =============================================================================
+% Date column + content column. Spans full width; date is small-muted-numeric.
+% Implemented with side-by-side minipages so the content cell can use \\ as
+% a line break without terminating an enclosing tabular row.
+\newcommand{\cventry}[2]{%
+  \noindent
+  \begin{minipage}[t]{0.18\textwidth}%
+    \raggedright\color{inkmuted}\footnotesize #1%
+  \end{minipage}%
+  \hspace{0.01\textwidth}%
+  \begin{minipage}[t]{0.80\textwidth}%
+    \raggedright #2%
+  \end{minipage}%
+  \par\vspace{0.55em}%
+}
+
+% Publication / presentation line: full-width paragraph with hanging indent.
+\newenvironment{cvbib}{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{1.4em}%
+    \setlength{\itemindent}{-1.4em}%
+    \setlength{\itemsep}{0.45em}%
+    \setlength{\parsep}{0pt}%
+    \setlength{\topsep}{0.3em}%
+  }%
+}{\end{list}}
+
+% Venue / italicised publication venue.
+\newcommand{\venue}[1]{\textit{#1}}
+
+% Year prefix for publication line.
+\newcommand{\pubyear}[1]{{\sectionhead\color{burntred}\footnotesize #1}}
+
+% =============================================================================
+% DOCUMENT
+% =============================================================================
+\begin{document}
+\thispagestyle{firstpage}
+
+% ---- Page-1 red name band (full-bleed tikz overlay) -------------------------
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[burntred]
+    (current page.north west) rectangle
+    ([yshift=-3.0cm]current page.north east);
+  \node[anchor=north west, inner sep=0pt,
+        xshift=2cm, yshift=-1.25cm,
+        text=creamonred]
+    at (current page.north west)
+    {\literatadisplay\fontsize{21}{24}\selectfont Dr. Jayden L. Macklin-Cordes};
+  \node[anchor=north west, inner sep=0pt,
+        xshift=2cm, yshift=-2.15cm,
+        text=creamonred]
+    at (current page.north west)
+    {\sectionhead\fontsize{10}{12}\selectfont Quantitative historical linguist};
+\end{tikzpicture}
+
+% ---- Contact block (cream, left-aligned) ------------------------------------
+\vspace*{-0.3em}
+\noindent\begin{minipage}[t]{0.62\textwidth}
+\raggedright
+Surrey Morphology Group, School of Literature and Languages\\
+University of Surrey\\
+Guildford GU2 7XH\\
+United Kingdom\\
+\end{minipage}%
+\hfill
+\noindent\begin{minipage}[t]{0.36\textwidth}
+\raggedleft\footnotesize
+\color{inkmuted}Phone\ \color{ink}+44 7883 431 961\\
+\color{inkmuted}Email\ \color{ink}\href{mailto:jayden@macklin-cordes.com}{jayden@macklin-cordes.com}\\
+\color{inkmuted}ORCID\ \color{ink}\href{https://orcid.org/0000-0003-1910-3969}{0000-0003-1910-3969}\\
+\color{inkmuted}Web\ \color{ink}\href{https://www.macklin-cordes.com/}{www.macklin-cordes.com}
+\end{minipage}
+
+\vspace{0.6em}
+
+% =============================================================================
+% RESEARCH PROFILE
+% =============================================================================
+\section*{Research profile}
+I am a quantitative historical linguist investigating how language structures change over
+deep time, and what their evolution reveals about cultural evolution and human cognition.
+I employ a primarily Bayesian toolkit: phylogenetic tree inference, phylogenetic
+comparative methods, ancestral state reconstruction, and phylogeographic regression.
+My PhD and subsequent published works develop phylogenetic methods for phonology,
+particularly phonotactics, with a regional focus on languages of Australia. In parallel,
+I work on the evolution of conceptual categories (nominal classification, case semantics,
+number), with work extending to broader Sahul (Australia and New Guinea), Tibeto-Burman,
+and worldwide language samples. Most recently, I have turned attention to the design of
+agentic LLM pipelines for large-scale extraction of linguistic data from published grammars.
+
+
+% =============================================================================
+% SKILLS
+% =============================================================================
+\section*{Skills}
+\noindent\textbf{Statistical methods.}\ Bayesian inference and multilevel modelling (brms), Bayesian phylogenetic tree inference (BEAST), phylogenetic comparative methods, ancestral state reconstruction, phylogeographic regression (BayesTraits, R).
+\par\vspace{0.3em}
+\noindent\textbf{Programming.}\ R (highly proficient, including the tidyverse, Bioconductor suite, phylogenetic packages [ape, phytools], geospatial packages [sf]), Python, Javascript, LaTeX.
+\par\vspace{0.3em}
+\noindent\textbf{Research automation.}\ Design of agentic LLM pipelines for large-scale extraction of linguistic data (e.g. interlinear glossed text) from published grammars. The agent consults structured knowledge bases (IGT conventions, IPA, observations accumulated from prior grammars), then iteratively drafts, self-critiques, and refines its output while recording grammar-specific idiosyncrasies for later use. A prototype pipeline benchmarked against manual annotation on an Australian grammar sample achieved 99\% precision, 99\% recall.
+\par\vspace{0.3em}
+\noindent\textbf{Data visualisation.}\ ggplot2, ggmap, ggtree. Interactive apps and mapping (Shiny, leaflet).\par\vspace{0.3em}
+\noindent\textbf{Open science.}\ Git (https://github.com/JaydenM-C), Zenodo/OSF (e.g. https://zenodo.org/records/7257104). Reproducibility tools (renv, Docker).
+\par\vspace{0.3em}
+
+% =============================================================================
+% R PACKAGES
+% =============================================================================
+\section*{R packages}
+\begin{cvbib}
+\item \href{https://github.com/JaydenM-C/phonfreq}{\texttt{phonfreq}}.\ A package for visualising phoneme frequency distributions in Australian languages.
+\item \href{https://github.com/JaydenM-C/}{\texttt{CLtemplate, DeGruytertemplate, LDCtemplate, UQpresentation}}.\ A series of packages providing Rmarkdown templates for authoring \textit{Computational Linguistics} articles, De Gruyter articles and books, \textit{Language Dynamics and Change} articles and University of Queensland-branded slideshow presentations. All at https://github.com/JaydenM-C/[name].
+
+\end{cvbib}
+
+% =============================================================================
+% PUBLIC REPOSITORIES
+% =============================================================================
+\section*{Public repositories}
+\begin{cvbib}
+\item \href{https://github.com/JaydenM-C/PN_treebuilding}{\texttt{JaydenM-C/PN\_treebuilding}}.\ A repository of code (R, C, TeX) for inferring phylogenetic trees from phonotactic and lexical data.
+\item \href{https://github.com/JaydenM-C/sc-alchemist}{\texttt{JaydenM-C/sc-alchemist}}.\ Repository of code (Python) implementing MCMC optimisation for AFL fantasy team selection, with user-defined constraint functions.
+\item \href{https://github.com/JaydenM-C/AusErdle}{\texttt{JaydenM-C/AusErdle}}.\ Codebase for the AusErdle app, a Wordle spinoff using Australian English phonemic transcriptions.
+\end{cvbib}
+
+% =============================================================================
+% PROFESSIONAL EXPERIENCE
+% =============================================================================
+\section*{Professional experience}
+\cventry{Dec 2022–Aug 2025}{%
+  \textbf{Lecturer in Linguistics}\ \textcolor{inkmuted}{(tenured)}\\
+  School of Creative Industries, Humanities and Social Sciences\\
+  \textit{University of Newcastle, Australia}%
+%
+}
+\cventry{Nov 2021–Nov 2022}{%
+  \textbf{Postdoctoral Researcher}\\
+  UMR 5596: Laboratoire Dynamique du Langage (DDL)\\
+  \textit{CNRS, Université Lumière Lyon 2, Lyon, France}%
+\\
+  \textcolor{inkmuted}{Project:} EVOGRAM: The role of linguistic and non-linguistic factors in the evolution of nominal classification system %
+}
+
+% =============================================================================
+% EDUCATION
+% =============================================================================
+\section*{Education}
+\cventry{Jun 2021}{%
+  \textbf{Ph.D. (Linguistics)}\\
+  \textit{The University of Queensland, Australia}%
+\\
+  \textcolor{inkmuted}{Thesis:} Phonotactics in historical linguistics: Quantitative interrogation of a new data source.%
+\ \href{https://doi.org/10.14264/9d9e8be}{\textsc{[link]}}%
+%
+\\
+  \textcolor{inkmuted}{Supervisors:} Prof Erich Round, Dr Simon Greenhill%
+%
+%
+\\
+  \textcolor{burntred}{\textbf{Award:}} Dean's Award for Outstanding HDR Theses%
+%
+}
+\cventry{Jun 2015}{%
+  \textbf{Bachelor of Arts (Honours, Class I)}\\
+  \textit{The University of Queensland, Australia}%
+%
+%
+\\
+  Major: Linguistics (extended)%
+\\
+  Minor: Aboriginal and Torres Strait Islander studies%
+%
+\\
+  \textcolor{burntred}{\textbf{Award:}} University Medal%
+%
+}
+
+% =============================================================================
+% RESEARCH ASSISTANT EXPERIENCE
+% =============================================================================
+\section*{Research assistant experience}
+\cventry{2013–2015}{%
+  \textbf{Research Assistant}\\
+  \textit{University of Queensland, Australia}%
+  \begin{itemize}
+    \item AusPhon database of Australian language sound systems.
+    \item Yukulta (Ganggalida) field recording transcription.
+    \item Source digitisation for microvariate typology project.
+  \end{itemize}
+%
+}
+
+% =============================================================================
+% VISITING POSITIONS
+% =============================================================================
+\section*{Visiting positions}
+\cventry{Aug 2025–Aug 2026}{%
+  \textbf{Visiting Scholar}, Surrey Morphology Group, \textit{University of Surrey}%
+}
+\cventry{Jan–Feb 2025}{%
+  \textbf{Sponsored Guest}, Dept. of Linguistics, \textit{The Ohio State University}%
+}
+\cventry{Jun–Jul 2024}{%
+  \textbf{Sponsored Guest}, Dept. of Linguistics, \textit{The Ohio State University}%
+}
+\cventry{Jan–Feb 2024}{%
+  \textbf{Sponsored Guest}, Dept. of Linguistics, \textit{The Ohio State University}%
+}
+
+% =============================================================================
+% PUBLICATIONS
+% =============================================================================
+\section*{Publications}
+\begin{cvbib}
+\item \pubyear{Accepted}\quad \textbf{Macklin-Cordes, Jayden L.}\ Accepted pending revisions.\ Trees beyond words: phonotactics in linguistic phylogenetics. \venue{Diachronica}%
+\item \pubyear{Accepted}\quad \textbf{Macklin-Cordes, Jayden L.}, Maria Copot, Mitch Browne \& Tom Ennever.\ Accepted pending revisions.\ Signal separation: Quantifying inheritance and contact in language evolution. \venue{Journal of Language Evolution}%
+\item \pubyear{2022}\quad \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2022.\ Challenges of sampling and how phylogenetic comparative methods help: With a case study of the Pama-Nyungan laminal contrast. \venue{Linguistic Typology 26(3). pp. 533–572.}%
+\ \href{https://doi.org/10.1515/lingty-2021-0025}{\textsc{[doi]}}\item \pubyear{2021}\quad \textbf{Macklin-Cordes, Jayden L.}, Claire Bowern \& Erich R. Round.\ 2021.\ Phylogenetic signal in phonotactics. \venue{Diachronica 38(2). pp. 210–258.}%
+\ \href{https://doi.org/10.1075/dia.20004.mac}{\textsc{[doi]}}\item \pubyear{2020}\quad \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2020.\ Re-evaluating Phoneme Frequencies. \venue{Frontiers in Psychology 11.}%
+\ \href{https://doi.org/10.3389/fpsyg.2020.570895}{\textsc{[doi]}}\item \pubyear{2020}\quad Round, Erich R., T. Mark Ellison, \textbf{Jayden L. Macklin-Cordes} \& Sacha Beniamine.\ 2020.\ Automated Parsing of Interlinear Glossed Text from Page Images of Grammatical Descriptions. \venue{In Proceedings of The 12th Language Resources and Evaluation Conference, 2878–2883. Marseille, France: European Language Resources Association.}%
+\ \href{https://www.aclweb.org/anthology/2020.lrec-1.351}{\textsc{[doi]}}\item \pubyear{2015}\quad \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2015.\ High-definition phonotactics reflect linguistic pasts. \venue{In Proceedings of the 6th Quantitative Investigations in Theoretical Linguistics Conference. Tübingen, Germany: University of Tübingen.}%
+\ \href{https://doi.org/10.15496/publikation-8609}{\textsc{[doi]}}\end{cvbib}
+
+% =============================================================================
+% IN PREPARATION
+% =============================================================================
+\section*{In preparation}
+\begin{cvbib}
+\item \textbf{Macklin-Cordes, Jayden L.}, Marc Allassonnière-Tang \& One-Soon Her. Ancestral state reconstruction of numeral base and classifier word orders in proto-Tibeto-Burman.\ \textit{Targeted:} \venue{PNAS}.
+\item Copot, Maria \& \textbf{Jayden L. Macklin-Cordes}. Neither rules nor exemplars: morphological representation as adaptive clustering.\ \textit{Targeted:} \venue{Language/Glossa}.
+\end{cvbib}
+
+% =============================================================================
+% CONFERENCE PRESENTATIONS
+% =============================================================================
+\section*{Conference presentations}
+\begin{cvbib}
+\item \pubyear{Accepted}\quad \textbf{Macklin-Cordes, Jayden L.} \& Maria Copot.\ Noun classes persist for predictive processing: Evidence from constituent order in 2,500 languages [poster]. \venue{Conference of the Association of Linguistic Typology (ALT XVI). Lumière University, Lyon.}%
+%
+\item \pubyear{Accepted}\quad Copot, Maria \& \textbf{Jayden L. Macklin-Cordes}.\ Optimal Representation Granularity in Morphological Learning. \venue{International Morphology Meeting (IMM22). Budapest, Hungary.}%
+%
+\item \pubyear{Accepted}\quad \textbf{Macklin-Cordes, Jayden L.} \& Maria Copot.\ Noun classes persist for predictive processing: Evidence from constituent order in 2,500 languages. \venue{Quantitative Cross-Linguistic Explorations of Space, Time, and Evolution (QC-LESTE). National Museum of Natural History, Paris.}%
+%
+\item \pubyear{2026}\quad \textbf{Macklin-Cordes, Jayden L.}, Maria Copot, Tom Ennever \& Mitch Browne.\ Locative polyfunctionality in Pama-Nyungan: Disentangling space, phylogeny and ahistorical factors [poster]. \venue{International Conference on the Evolution of Language (EVOLANG XVI). Plovdiv, Bulgaria.}%
+%
+\item \pubyear{2024}\quad \textbf{Macklin-Cordes, Jayden L.}, Mitch Browne, Tom Ennever \& Maria Copot.\ Locative functions beyond space and time: Pama-Nyungan case semantics reflect ahistorical processes [poster]. \venue{Conference of the Association of Linguistic Typology (ALT XV). National University of Singapore, Singapore.}%
+%
+\item \pubyear{2024}\quad \textbf{Macklin-Cordes, Jayden L.}, Mitch Browne, Tom Ennever \& Maria Copot.\ Locative polyfunctionality in Australia: Function distribution is not predicted by phylogeny or contact. \venue{Australian Linguistics Society Annual Conference (ALS 2024). Australian National University, Canberra, Australia.}%
+%
+\item \pubyear{2024}\quad \textbf{Macklin-Cordes, Jayden L.}\ Towards a phylogenetic typology of Australian nominal classification. \venue{Langues \& Langage à la croisée des Disciplines (LLCD 2024). Sorbonne University, Paris, France.}%
+%
+\item \pubyear{2022}\quad \textbf{Macklin-Cordes, Jayden L.}\ Phylogenetic comparative methods in everyday typology. \venue{Annual Meeting of the Societas Linguistica Europaea (SLE 2022). University of Bucharest, Bucharest, Romania.}%
+%
+\item \pubyear{2022}\quad Jódar-Sánchez, Jose Antonio, \textbf{Jayden L. Macklin-Cordes} \& Marc Allassonnière-Tang.\ The evolutionary dynamics of noun classes in Torricelli languages. \venue{Conference of the Association of Linguistic Typology (ALT XIV). University of Texas, Austin, USA.}%
+%
+\item \pubyear{2022}\quad \textbf{Macklin-Cordes, Jayden L.}, Her, One-Soon \& Marc Allassonnière-Tang.\ Correlated evolution of numeral base and classifier word orders in Tibeto-Burman languages [poster]. \venue{Conference of the Association of Linguistic Typology (ALT XIV). University of Texas, Austin, USA.}%
+%
+\item \pubyear{2022}\quad \textbf{Macklin-Cordes, Jayden L.}\ Incorporating typological features in tree inference: Lessons from phonotactics. \venue{International Conference on Historical Linguistics (ICHL25). Oxford University, Oxford, UK.}%
+%
+\item \pubyear{2022}\quad Browne, Mitch \& \textbf{Jayden L. Macklin-Cordes}.\ A statistical analysis of word-initial apical neutralisation in Warlmanpa. \venue{Australian Linguistics Society Annual Conference (ALS 2022). University of Melbourne, Melbourne, Australia.}%
+%
+\item \pubyear{2022}\quad Browne, Mitch, Jacqueline Cook, Amanda Hamilton-Holloway \& \textbf{Jayden L. Macklin-Cordes}.\ Constituent order in subordinate clauses: A comparison of Mudburra, Warlmanpa and Warriyangga/Thiinma. \venue{Australian Languages Workshop (ALW). University of Queensland Moreton Bay Research Station, North Stradbroke Island, Australia.}%
+%
+\item \pubyear{2021}\quad \textbf{Macklin-Cordes, Jayden L.}\ Trials and tribulations of tree inference: The challenge of phonotactics in phylogenetics and why it matters. \venue{Australian Linguistic Society Annual Conference (ALS 2021). La Trobe University, Melbourne, Australia.}%
+%
+\item \pubyear{2021}\quad \textbf{Macklin-Cordes, Jayden L.}\ Unstable trees: The challenge of frequency and phonology in phylogenetics. \venue{Edinburgh Symposium on Historical Phonology. University of Edinburgh, Scotland.}%
+%
+\item \pubyear{2020}\quad \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ Zipf's Law? Re-evaluating phoneme frequencies. \venue{Australian Linguistics Society Annual Conference (ALS 2020). Online conference, Australia.}%
+%
+\item \pubyear{2019}\quad Round, Erich R. \& \textbf{Jayden L. Macklin-Cordes}.\ Clouded vision: Why insights improve when uncertainty about data is made explicit. \venue{International Conference on Historical Linguistics (ICHL24). Australian National University, Canberra, Australia.}%
+%
+\ \href{https://cloudstor.aarnet.edu.au/plus/s/WOmUM73NVJQFqf6}{\textsc{[link]}}\item \pubyear{2019}\quad \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ Historical signal beyond the cognate: Phonotactics in linguistic phylogenetics. \venue{International Conference on Historical Linguistics (ICHL24). Australian National University, Canberra, Australia.}%
+%
+\ \href{https://cloudstor.aarnet.edu.au/plus/s/zN5AbJ4fXoVR0ax}{\textsc{[link]}}\item \pubyear{2018}\quad \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ Phylogeny in phonotactics: A multivariate approach for stronger historical signal. \venue{Australian Linguistics Society Annual Conference (ALS 2018). University of South Australia, Adelaide.}%
+%
+\item \pubyear{2017}\quad \textbf{Macklin-Cordes, Jayden L.}\ High-definition phonotactic typology in Sahul: Choosing the data-rich approach. \venue{Conference of the Association of Linguistic Typology (ALT XII). Australian National University, Canberra, Australia.}%
+\ \href{https://doi.org/10.6084/m9.figshare.5861067}{\textsc{[doi]}}%
+\item \pubyear{2017}\quad \textbf{Macklin-Cordes, Jayden L.}, Nathaniel L. Blackbourne, Thomas J. Bott, Jacqueline Cook, T. Mark Ellison, Jordan Hollis, Edith E. Kirlew, Genevieve C. Richards, Sanle Zhao \& Erich R. Round.\ Robots who read grammars [poster]. \venue{CoEDL Fest. Alexandra Park Conference Centre, Alexandra Headlands, QLD, Australia.}%
+\ \href{https://doi.org/10.6084/m9.figshare.4625248}{\textsc{[doi]}}%
+\item \pubyear{2016}\quad Hollis, Jordan, Genevieve C. Richards, \textbf{Jayden L. Macklin-Cordes} \& Erich R. Round.\ The Cape York lexical records of Bruce Sommer. \venue{Australian Linguistics Society Annual Conference (ALS 2016). Monash University, Caulfield, Australia.}%
+\ \href{https://dx.doi.org/10.6084/m9.figshare.4299377}{\textsc{[doi]}}%
+\item \pubyear{2016}\quad \textbf{Macklin-Cordes, Jayden L.}, Steven P. Moran \& Erich R. Round.\ Evaluating information loss from phonological dimensionality reduction. \venue{SST2016 Satellite Symposium: The role of predictability in shaping human language sound patterns. Western Sydney University, Australia.}%
+\ \href{https://dx.doi.org/10.6084/m9.figshare.4465976}{\textsc{[doi]}}%
+\item \pubyear{2016a}\quad \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ High-definition phonotactic data contain phylogenetic signal [poster]. \venue{Annual Meeting of the Linguistic Society of America. Washington, DC.}%
+\ \href{https://dx.doi.org/10.6084/m9.figshare.4534238}{\textsc{[doi]}}%
+\item \pubyear{2016b}\quad \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ Reflections of linguistic history in quantitative phonotactics. \venue{Australian Linguistic Society Annual Conference (ALS2016). Monash University, Caulfield, Australia.}%
+\ \href{https://dx.doi.org/10.6084/m9.figshare.4299365}{\textsc{[doi]}}%
+\item \pubyear{2016}\quad Round, Erich R., Jacqueline Cook, T. Mark Ellison, Jordan Hollis, \textbf{Jayden L. Macklin-Cordes} \& Genevieve C. Richards.\ The grammar harvester. \venue{Australian Linguistic Society Annual Conference (ALS 2016). Monash University, Caulfield, Australia.}%
+%
+\item \pubyear{2015}\quad Round, Erich R. \& \textbf{Jayden L. Macklin-Cordes}.\ On the design, in practice, of typological microvariables. \venue{New Developments in the Quantitative Study of Languages. Helsinki, Finland.}%
+%
+\item \pubyear{2014}\quad Round, Erich R. \& \textbf{Jayden L. Macklin-Cordes}.\ Next-generation typological variables: From theory to practice, and back again. \venue{Australian Linguistic Society Annual Conference (ALS 2014). University of Newcastle, Australia.}%
+%
+\end{cvbib}
+
+% =============================================================================
+% INVITED TALKS
+% =============================================================================
+\section*{Invited talks}
+\begin{cvbib}
+\item \pubyear{2025}\quad \textbf{Macklin-Cordes, Jayden L.}\ Locative polyfunctionality in Australia: Function distribution is not predicted by phylogeny or contact. \venue{University of Newcastle Social Science and Linguistics Seminar Series. University of Newcastle, Australia.}%
+\item \pubyear{2024}\quad \textbf{Macklin-Cordes, Jayden L.}\ Towards a phylogenetic typology of Australian nominal classification. \venue{University of Newcastle Social Science and Linguistics Seminar Series. University of Newcastle, Australia.}%
+\item \pubyear{2024}\quad Copot, Maria \& \textbf{Jayden L. Macklin-Cordes}.\ Thinking like a quantitative modeller. \venue{Invited masterclass for the Laboratory for Applied Language Science (LALS). University of Newcastle, Australia.}%
+\item \pubyear{2024}\quad \textbf{Macklin-Cordes, Jayden L.}\ Phylogenetic comparative methods in everyday typology: With a case study of Pama-Nyungan laminals. \venue{Changelings forum for historical sociolinguistics (invited talk). The Ohio State University, Columbus, USA.}%
+\item \pubyear{2023}\quad \textbf{Macklin-Cordes, Jayden L.}\ Reconstructing numeral base and classifier word orders in Tibeto-Burman. \venue{University of Newcastle Linguistics Seminar Series. University of Newcastle, Australia.}%
+\item \pubyear{2022}\quad \textbf{Macklin-Cordes, Jayden L.}\ Typological traits in linguistic phylogenetics: (Mis)adventures with phonotactics. \venue{UMR7206 Eco-Anthropologie (EA) Seminar Series. Musée de l'Homme, CNRS, Muséum National d'Histoire Naturelle, Université de Paris, France.}%
+\item \pubyear{2022}\quad \textbf{Macklin-Cordes, Jayden L.}\ Trees, mountains, numerals and classifiers: Preliminary ancestral state reconstruction in Tibeto-Burman. \venue{Surrey Linguistics Circle Lunchtime Seminar. Surrey Morphology Group, University of Surrey, Guildford, UK.}%
+\item \pubyear{2022}\quad \textbf{Macklin-Cordes, Jayden L.}\ Phylogenetic comparative methods for common typological challenges: With a case study of Pama-Nyungan laminals. \venue{DiLiS Seminar Series. Laboratoire Dynamique Du Langage, CNRS, Université Lyon 2, Lyon, France.}%
+\item \pubyear{2022}\quad Browne, Mitch, Jacqueline Cook, Amanda Hamilton-Holloway \& \textbf{Jayden L. Macklin-Cordes}.\ Constituent order in subordinate clauses: A comparison of Mudburra, Warlmanpa and Warriyangga/Thiinma. \venue{UWA Linguistics Seminar Series. University of Western Australia, Perth, Australia.}%
+\item \pubyear{2021}\quad \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ Phylogenetic comparative methods: What all the fuss is about, and how to use them in everyday research. \venue{Language and Data Analysis Laboratory (LADAL) webinar. The University of Queensland, St Lucia, Australia.}%
+\ \href{https://youtu.be/yJeQ6AGDLK0}{\textsc{[link]}}\end{cvbib}
+
+% =============================================================================
+% FUNDING
+% =============================================================================
+\section*{Funding}
+
+\subsection*{Research}
+\cventry{2023}{%
+  \textbf{New Start Grant}, College of Human and Social Futures, University of Newcastle, Australia\ \textcolor{burntred}{\$5,000 AUD}%
+%
+\\\textcolor{inkmuted}{Project:} Language and Landscape: Building foundations between macro- and micro-scale linguistic evolution, culture, and environment%
+}
+\cventry{2016–2018}{%
+  \textbf{Transdisciplinary and Innovation Grant}, ARC Centre of Excellence for the Dynamics of Language\ \textcolor{burntred}{\$19,909 AUD}%
+\\\textcolor{inkmuted}{Role:} Lead investigator%
+\\\textcolor{inkmuted}{Project:} TIG0116JMC: A 'data well' prototype for Sahul phonologies%
+}
+\cventry{2016–2020}{%
+  \textbf{RTP Scholarship}, Australian Federal Government Research Training Program\ \textcolor{burntred}{\$28,092 AUD/annum (3.5 years)}%
+%
+\\\textcolor{inkmuted}{Project:} Cost-of-living stipend for PhD program%
+}
+
+\subsection*{Travel}
+\cventry{2024}{%
+  \textbf{Conference Travel Grant}, College of Human and Social Futures, University of Newcastle, Australia\ \textcolor{burntred}{\$3,500 AUD}%
+}
+\cventry{2022}{%
+  \textbf{Conference Travel Grant}, College of Human and Social Futures, University of Newcastle, Australia\ \textcolor{burntred}{\$2,434 AUD}%
+}
+\cventry{2017}{%
+  \textbf{LSA Summer Institute Fellowship}, Linguistic Society of America\ \textcolor{burntred}{\$1,990 USD}%
+}
+
+% =============================================================================
+% TEACHING
+% =============================================================================
+\section*{Teaching}
+
+\subsection*{Courses taught}
+\noindent\textit{University of Newcastle, Australia}\par\vspace{0.2em}
+\cventry{2025, Sem 1}{%
+%
+    \textbf{LING3350 Structure of English}\ \textcolor{inkmuted}{({}3rd year undergraduate, 112 students)}%
+%
+\\\textcolor{inkmuted}{Student evaluation:} \textcolor{burntred}{4.2/5}%
+}
+\cventry{2024, Sem 2}{%
+%
+    \textbf{LING3350 Structure of English}\ \textcolor{inkmuted}{({}3rd year undergraduate, 50 students)}%
+%
+\\\textcolor{inkmuted}{Student evaluation:} \textcolor{burntred}{4.6/5}%
+}
+\cventry{2024, Sem 1}{%
+%
+    \textbf{LING3350 Structure of English}\ \textcolor{inkmuted}{({}3rd year undergraduate, 86 students)}\\%
+%
+    \textbf{LING6910 Foundation of Linguistics}\ \textcolor{inkmuted}{({}1st year masters, 5 students)}%
+%
+\\\textcolor{inkmuted}{Student evaluation:} \textcolor{burntred}{4.8/5}%
+}
+\cventry{2023, Sem 2}{%
+%
+    \textbf{LING3350 Structure of English}\ \textcolor{inkmuted}{({}3rd year undergraduate, 74 students)}%
+%
+\\\textcolor{inkmuted}{Student evaluation:} \textcolor{burntred}{4.6/5}%
+}
+\cventry{2023, Sem 1}{%
+%
+    \textbf{LING3350 Structure of English}\ \textcolor{inkmuted}{({}3rd year undergraduate, 78 students)}\\%
+%
+    \textbf{LING3002 Syntax}\ \textcolor{inkmuted}{({}3rd year undergraduate, 8 students)}%
+%
+\\\textcolor{inkmuted}{Student evaluation:} \textcolor{burntred}{4.4/5}%
+}
+\noindent\textit{University of Queensland, Australia}\par\vspace{0.2em}
+\cventry{2015, Sem 2}{%
+%
+    \textbf{LING1005 Introduction to linguistics: the sound pattern of language}\ \textcolor{inkmuted}{({}1st year undergraduate, \textasciitilde{}220 students)}\\%
+%
+    \textbf{LING6105 Introduction to linguistics: phonetics and phonology}\ \textcolor{inkmuted}{({}1st year masters, \textasciitilde{}30 students)}%
+%
+%
+}
+
+\subsection*{Other teaching contributions}
+\noindent\textit{University of Newcastle, Australia}\par\vspace{0.2em}
+\cventry{2024, Sem 2}{%
+%
+    \textbf{LING2501 Cross-cultural communication}\ \textcolor{inkmuted}{({}coordination; 2nd year undergraduate, 7 students)}\\%
+%
+    \textbf{LING6070 Cross-cultural communication}\ \textcolor{inkmuted}{({}coordination; 1st year masters, 4 students)}\\%
+%
+    \textbf{LING1112 Languages in the World}\ \textcolor{inkmuted}{({}2× guest lectures; 1st year undergraduate, 18 students)}\\%
+%
+    \textbf{LING3008 Introduction to phonology and morphology}\ \textcolor{inkmuted}{({}marking; 3rd year undergraduate, 100 students)}%
+%
+}
+
+\subsection*{PhD supervision}
+\cventry{Dec 2025}{%
+  \textbf{Dr. Condra Antoni} — \textit{University of Newcastle, Australia}\\
+  Managing interaction with students in online EMI lectures at Indonesian Polytechnic Institutes.%
+\\\textcolor{inkmuted}{Co-supervisor:} Dr Jaime Hunt%
+}
+
+\subsection*{Honours supervision}
+\cventry{Jan 2024–Jun 2025}{%
+  \textbf{Mr Joshua Osborn} — \textit{University of Newcastle, Australia}\\
+  Evolution of noun class semantics in Australia.%
+}
+
+\subsection*{Courses tutored}
+\noindent\textit{University of Queensland, Australia}\par\vspace{0.2em}
+\cventry{2021, Sem 1}{%
+  \textbf{LING2010 Phonology}\ \textcolor{inkmuted}{guest tutor}%
+}
+\cventry{2017, Sem 2}{%
+  \textbf{LING6105 Introduction to linguistics: phonetics and phonology}%
+}
+\cventry{2016, Sem 1}{%
+  \textbf{LING1000 Introduction to linguistics: structure and meaning of words and sentences}%
+}
+
+\subsection*{Project supervision}
+\cventry{Jan–Feb 2019}{%
+  \textbf{University of Queensland, Summer Research Program}\\
+  \textit{The sound patterns of Sahul—the continent of Australia–New Guinea}\\
+  Digitisation of scanned PDF language resources into machine-readable text, creating ontologies of linguistic concepts and automating extraction of interlinear glossed text.\\
+  \textcolor{inkmuted}{Duties:} Train team of undergraduate research scholars on research principles, data management, specialist software. Daily management, progress reports and research output.%
+}
+
+% =============================================================================
+% AFFILIATIONS
+% =============================================================================
+\section*{Affiliations}
+\cventry{2025}{%
+  \textbf{Institute for Regional Futures}, \textit{University of Newcastle, Australia}%
+\\
+  \textcolor{inkmuted}{Role:} Affiliate%
+}
+\cventry{2023–2025}{%
+  \textbf{Laboratory for Applied Language Sciences (LALS)}%
+\\\textcolor{inkmuted}{Lead:} Asst Prof Kiwako Ito, University of Newcastle\\
+  \textcolor{inkmuted}{Role:} Senior lab member%
+}
+\cventry{2023–2025}{%
+  \textbf{OzSpace: Landscape, language and culture in Indigenous Australia}%
+\\\textcolor{inkmuted}{Lead:} ARC Discovery Project to Prof Bill Palmer, University of Newcastle\\
+  \textcolor{inkmuted}{Role:} Senior research associate%
+}
+\cventry{2015–2022}{%
+  \textbf{ARC Centre of Excellence for the Dynamics of Language}%
+\\
+  \textcolor{inkmuted}{Role:} Affiliate%
+}
+
+% =============================================================================
+% PROFESSIONAL MEMBERSHIPS
+% =============================================================================
+\section*{Professional memberships}
+\begin{itemize}
+\item Association for Linguistic Typology
+\item Australian Linguistics Society
+\item Linguistic Society of America
+\end{itemize}
+
+% =============================================================================
+% PROFESSIONAL DEVELOPMENT
+% =============================================================================
+\section*{Professional development}
+
+\subsection*{Lab visits}
+\begin{itemize}
+\item Surrey Morphology Group, University of Surrey, Guildford (June 2024)
+\item CNRS Laboratoire Dynamique du Langage (DDL), Lyon (May 2024)
+\item CNRS Eco-Anthropologie lab, Paris (May 2024)
+\item AI-lab, Vrije Universiteit Brussel (May 2024)
+\item Surrey Morphology Group, University of Surrey, Guildford (Sept 2022)
+\item Max Planck Institute for the Science of Human History, Jena (June 2016)
+\item University of Zürich, Department of Comparative Language Science (June 2016)
+\item Yale University, Department of Linguistics (Jan 2016)
+\end{itemize}
+
+\subsection*{Workshops}
+\begin{itemize}
+\item \textit{Quality teaching in higher education}, University of Newcastle (2024)
+\item \textit{Cultural Capability program}, University of Newcastle (2023)
+\item \textit{Foundations for inspiring people}, University of Newcastle (2023)
+\item \textit{Learning design and teaching innovation}, New Faculty Orientation, University of Newcastle (2023)
+\item \textit{Academic planning and performance advisor training}, University of Newcastle (2022)
+\item \textit{Practical publishing (Pt. I–II)}, Graduate School Career Development session, The University of Queensland (2017)
+\item \textit{Heatmaps in R for intermediate users}, Centre for Digital Scholarship, The University of Queensland (2017)
+\item \textit{R visualisations using ggplot2, intermediate}, Centre for Digital Scholarship, The University of Queensland (2017)
+\item \textit{Intro to R visualisations using ggplot2}, Centre for Digital Scholarship, The University of Queensland (2017)
+\item \textit{Advances in visual methods for linguistics}, The University of Queensland (2016)
+\item \textit{How to write a good early career researcher grant proposal: the fundamentals of grant writing}, Humanities and Social Sciences Researcher Development Session, The University of Queensland (2016)
+\item \textit{Morphology masterclass with Prof. Stephen Anderson}, The University of Queensland (2015)
+\item \textit{UQ HASS faculty tutor training} (×3 sessions), The University of Queensland (2015)
+\end{itemize}
+
+\subsection*{Summer schools}
+\begin{itemize}
+\item \textit{2018 CoEDL Summer School}, Australian National University, Canberra.
+\item \textit{2017 LSA Linguistic Institute}, University of Kentucky, Lexington, USA.
+\item \textit{2016 CoEDL Summer School}, University of Melbourne.
+\item \textit{2016 Quantitative Methods Spring School}, Max Planck Institute for the Science of Human History, Jena, Germany.
+\end{itemize}
+
+% =============================================================================
+% SERVICE
+% =============================================================================
+\section*{Service}
+
+\subsection*{Leadership roles}
+\begin{itemize}
+\item \textbf{Linguistics Discipline Liaison}, School of Humanities, Creative Industries and Social Sciences, University of Newcastle (2024)
+\item \textbf{Progress and Appeals Committee}, Representative of the School of Humanities, Creative Industries and Social Sciences, College of Human and Social Futures, University of Newcastle (2024–2025)
+\end{itemize}
+
+\subsection*{Thesis examination}
+\begin{itemize}
+\item PhD confirmation panel member, University of Newcastle (2023)
+\item Honours thesis examiner, University of Newcastle (2× theses, 2024–2025)
+\item Honours thesis examiner (Linguistics), University of Queensland (2× theses, 2016–2018)
+\end{itemize}
+
+\subsection*{Community outreach}
+\begin{itemize}
+\item Personal blog on my linguistic research (https://www.macklin-cordes.com)
+\item Organised 2× \textit{Languages Night} outreach events to promote languages and linguistics to high school and undergraduate students, University of Newcastle, Australia.
+\item Developed \textit{AusErdle}, an Australian English phonemic version of the popular \textit{Wordle} word game (https://jaydenm-c.github.io/AusErdle/)
+\item Wrote associated \textit{AusErdle} blog post (https://jaydenm-c.github.io/posts/2022/02/auserdle/)
+\item Quoted in CBS News Moneywatch on utility of online games like AusErdle for linguistic pedagogy, as well as value of similar games for maintenance and learning of endangered languages (13 March 2024)
+\end{itemize}
+
+\subsection*{Workshop organisation}
+\begin{itemize}
+\item Quantitative analysis in typology: The logic of choice among methods. \textit{Conference for the Association of Linguistic Typology (ALT)}, Australian National University, Canberra. 2017.
+\end{itemize}
+
+\subsection*{Peer review}
+\textit{CogSci} (2026), \textit{Linguistic Typology at the Crossroads} (2025), \textit{Continua} (2025), \textit{Journal of Historical Linguistics} (2024), \textit{Language Dynamics and Change} (2022, 2024), \textit{Diachronica} (2023), \textit{Nature: Scientific Data} (2018).
+
+% =============================================================================
+% LANGUAGES
+% =============================================================================
+\section*{Language proficiencies}
+English (native); Italian (conversational); French, Romanian (basic); Spanish, German (beginner).
+
+% =============================================================================
+% REFEREES
+% =============================================================================
+\section*{Referees}
+\noindent\begin{minipage}[t]{\textwidth}
+\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}}
+\begin{minipage}[t]{0.32\textwidth}\raggedright
+\textbf{Prof. Greville Corbett}\\
+\textit{Distinguished Professor of Linguistics}\\[0.15em]
+Surrey Morphology Group, School of Literature and Languages\\
+University of Surrey, Guildford, GU2 7XH\\
+\href{mailto:g.corbette@surrey.ac.uk}{g.corbette@surrey.ac.uk}
+\end{minipage}&\begin{minipage}[t]{0.32\textwidth}\raggedright
+\textbf{Dr. Marc Allassonnière-Tang}\\
+\textit{CNRS Researcher}\\[0.15em]
+Ecological Anthropology lab (UMR 7206)\\
+National Museum of Natural History, Paris, France\\
+\href{mailto:marc.allassonniere-tang@mnhn.fr}{marc.allassonniere-tang@mnhn.fr}
+\end{minipage}&\begin{minipage}[t]{0.32\textwidth}\raggedright
+\textbf{Prof. Kate Nash}\\
+\textit{Dean and Head of School}\\[0.15em]
+School of Humanities, Creative Industries and Social Sciences\\
+University of Newcastle, Australia\\
+\href{mailto:kate.nash@newcastle.edu.au}{kate.nash@newcastle.edu.au}
+\end{minipage}\end{tabular}
+\end{minipage}
+
+\end{document}
