@@ -78,37 +78,50 @@
 % Literata: display / headings / name.  Inter: body.  Fira Code: mono.
 % Emphasis uses Inter Medium (500); \textbf remapped accordingly — never 700.
 % =============================================================================
-\setmainfont{Inter}[
-  UprightFont = * Regular,
-  BoldFont    = * Medium,        % emphasis at 500, per identity guide
-  ItalicFont  = * Italic,
-  BoldItalicFont = * Medium Italic,
-  Ligatures   = TeX,
+% Fonts are loaded from cv/fonts/ by filename (not by family name), so the
+% user doesn't need them installed system-wide. See cv/README.md for which
+% TTFs to drop into that directory. The Path key is resolved relative to the
+% directory containing the main .tex file (cv/), both locally and on Overleaf.
+\setmainfont{Inter_18pt-}[
+  Path       = fonts/,
+  Extension  = .ttf,
+  UprightFont    = *Regular,
+  BoldFont       = *Medium,          % emphasis at 500, per identity guide
+  ItalicFont     = *Italic,
+  BoldItalicFont = *MediumItalic,
+  Ligatures      = TeX,
 ]
-\newfontfamily\literata{Literata}[
-  UprightFont = * Regular,
-  BoldFont    = * SemiBold,
-  ItalicFont  = * Italic,
-  BoldItalicFont = * SemiBold Italic,
-  Ligatures   = TeX,
-  Numbers     = OldStyle,
+\newfontfamily\literata{Literata-}[
+  Path       = fonts/,
+  Extension  = .ttf,
+  UprightFont    = *Regular,
+  BoldFont       = *SemiBold,
+  ItalicFont     = *Italic,
+  BoldItalicFont = *SemiBoldItalic,
+  Ligatures      = TeX,
+  Numbers        = OldStyle,
 ]
-\newfontfamily\literatadisplay{Literata}[
-  UprightFont = * SemiBold,
-  Ligatures   = TeX,
-  Numbers     = OldStyle,
-  LetterSpace = -1,              % optical tightening at display size
+\newfontfamily\literatadisplay{Literata-}[
+  Path       = fonts/,
+  Extension  = .ttf,
+  UprightFont    = *SemiBold,
+  Ligatures      = TeX,
+  Numbers        = OldStyle,
+  LetterSpace    = -1,                % optical tightening at display size
 ]
-\newfontfamily\sectionhead{Inter}[
-  UprightFont = * Medium,
-  Letters     = UppercaseSmallCaps,
-  LetterSpace = 14,              % +0.14 em per identity guide
-  Numbers     = Lining,
+\newfontfamily\sectionhead{Inter_18pt-}[
+  Path       = fonts/,
+  Extension  = .ttf,
+  UprightFont    = *Medium,
+  Letters        = UppercaseSmallCaps,
+  LetterSpace    = 14,                % +0.14 em per identity guide
+  Numbers        = Lining,
 ]
-\newfontfamily\firacode{Fira Code}[
-  UprightFont = * Regular,
-  BoldFont    = * Medium,
-  Ligatures   = TeX,
+\newfontfamily\firacode{FiraCode-}[
+  Path       = fonts/,
+  Extension  = .ttf,
+  UprightFont    = *Regular,
+  Ligatures      = TeX,
 ]
 
 \linespread{1.35}                  % body line-height ≈ 1.55 after scrartcl base

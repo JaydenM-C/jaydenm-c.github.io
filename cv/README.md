@@ -33,26 +33,42 @@ Flags: `--tex-only`, `--json-only`, `--compile`.
 ## Typography setup
 
 The LaTeX template uses three typefaces, per the project Visual Identity
-Guide. All three are free/open licences; install them system-wide before
-the first compile.
+Guide, loaded **by file** from `cv/fonts/`. No system-wide install
+required — the fonts are committed into the repo and travel with it, so
+Overleaf and any clone of the repo compile identically without fiddling.
 
 | Face       | Role                                   | Where to get it                                  |
 |------------|----------------------------------------|--------------------------------------------------|
 | Literata   | display, name, publication heads       | <https://fonts.google.com/specimen/Literata>     |
-| Inter      | body, section heads, captions          | <https://rsms.me/inter/>                         |
-| Fira Code  | monospace (code, package names, URLs)  | <https://github.com/tonsky/FiraCode/releases>    |
+| Inter      | body, section heads, captions          | <https://fonts.google.com/specimen/Inter>        |
+| Fira Code  | monospace (code, package names, URLs)  | <https://fonts.google.com/specimen/Fira+Code>    |
 
-Install the TrueType files to your user fonts folder (macOS:
-`~/Library/Fonts/`; Linux: `~/.fonts/`; Windows: right-click → Install). Run
-`fc-cache -f` on Linux after copying. Confirm with
-`fc-list | grep -iE 'literata|inter|fira code'`.
+Download each zip from Google Fonts, take the static (not variable) cuts,
+and drop exactly these files into `cv/fonts/`:
 
-The template addresses Inter as `Inter` and expects weight variants
-`Regular`, `Medium`, `Italic`, `Medium Italic`. Emphasis (`\textbf`) is
-bound to **Medium (500)**, never Bold (700), in accordance with the identity
-guide. If you install InterVariable instead of the static cuts, adjust the
-`\setmainfont` block to use `InterVariable` and drop the per-weight font
-declarations.
+```
+cv/fonts/
+├── Inter_18pt-Regular.ttf
+├── Inter_18pt-Medium.ttf           ← bound to \textbf (emphasis = 500, not 700)
+├── Inter_18pt-Italic.ttf
+├── Inter_18pt-MediumItalic.ttf
+├── Literata-Regular.ttf
+├── Literata-SemiBold.ttf
+├── Literata-Italic.ttf
+├── Literata-SemiBoldItalic.ttf
+└── FiraCode-Regular.ttf
+```
+
+Why the `_18pt` suffix on Inter but not on Literata: Google Fonts ships
+Inter's static set pre-split by optical size (18/24/28 pt ranges). All CV
+text (body 10.5 pt, section heads 11 pt, captions) sits inside the 18 pt
+range, so only that set is needed. Literata's static bundle is split by
+weight only, with no opsz variants — the file names reflect that.
+
+If any filename in a fresh Google Fonts download differs from the list
+above (e.g. `Fira_Code-Regular.ttf` with an underscore), either rename
+the file or change the corresponding naming stem in the fontspec blocks
+of `templates/cv.tex.j2` and rebuild.
 
 ## Engine
 
@@ -72,12 +88,13 @@ on Overleaf that links to this GitHub repo.
 
 1. Create a new Overleaf project, then import from GitHub. Point it at
    this repository.
-2. In the Overleaf project, set the main document to `cv/cv.tex`.
-3. Upload the three font families (Literata, Inter, Fira Code) to the
-   project — Overleaf does not have them pre-installed.
-   - You can drop TTFs directly into the project root; `fontspec` under
-     LuaLaTeX will pick them up.
-4. Set the compile engine to LuaLaTeX in *Menu → Settings → Compiler*.
+2. In the Overleaf project, set *Main document* to `cv/cv.tex`
+   (*Menu → Settings → Main document*). This also sets the compile
+   working directory to `cv/`, which is what the `Path = fonts/` font
+   declarations expect.
+3. Set the compile engine to LuaLaTeX in *Menu → Settings → Compiler*.
+4. The font files in `cv/fonts/` (see Typography setup above) are pulled
+   with the repo, so nothing else to upload.
 5. When you want to update: edit `cv.yaml` locally, run
    `python cv/build_cv.py`, commit, push. Overleaf's GitHub sync picks up
    the regenerated `cv.tex` on the next pull.
