@@ -274,10 +274,10 @@
   </div>
   {% endif %}
   
-  {% if cv.references.size > 0 %}
-  <!-- References -->
+  <!-- Referees -->
   <div class="cv-section">
-    <h2>References</h2>
+    <h2>Referees</h2>
+    {% if cv.references.size > 0 %}
     <ul class="cv-list">
       {% for reference in cv.references %}
       <li class="cv-item">
@@ -290,6 +290,8 @@
       </li>
       {% endfor %}
     </ul>
+    {% else %}
+    <p class="cv-item-detail"><em>Referees available on request.</em></p>
+    {% endif %}
   </div>
-  {% endif %}
 </div>

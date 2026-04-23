@@ -83,6 +83,13 @@ def tex_escape(value) -> str:
 _MD_BOLD_RE   = re.compile(r"\*\*(.+?)\*\*")
 _MD_ITALIC_RE = re.compile(r"(?<!\*)\*(?!\s)(.+?)(?<!\s)\*(?!\*)")
 _MD_LINK_RE   = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+# Bare URL: http(s)://… up to the next whitespace, bracket, or terminal
+# punctuation. Trailing `.,;:` is left outside \url{...} so LaTeX can break
+# the line on it. No negative lookbehind needed: markdown links were already
+# replaced by placeholders above this in the pipeline, so every match here
+# is a genuine bare URL in prose (including ones wrapped in parens like
+# "foo (https://…)").
+_BARE_URL_RE  = re.compile(r"(https?://[^\s<>()\[\]]+[^\s<>()\[\].,;:])")
 
 
 def markdown_to_tex(value) -> str:
@@ -114,6 +121,20 @@ def markdown_to_tex(value) -> str:
 
     s = _MD_LINK_RE.sub(_link_sub, s)
 
+    # Bare URLs — caught *after* markdown-link extraction so the URLs inside
+    # `[text](url)` (already replaced by placeholders above) can't double-match.
+    # Wrapping in \url{} lets LaTeX (with xurl loaded) break long URLs at
+    # slashes / dots, fixing the overfull-hbox warnings for raw links.
+    bare_urls: list[str] = []
+
+    def _bare_url_sub(m):
+        url = m.group(1)
+        idx = len(bare_urls)
+        bare_urls.append(url)
+        return f"@@@MDBU{idx}@@@"
+
+    s = _BARE_URL_RE.sub(_bare_url_sub, s)
+
     # Bold / italic markers — swap to sentinels to survive tex-escape.
     s = _MD_BOLD_RE.sub(lambda m: SENT_B_OPEN + m.group(1) + SENT_B_CLOSE, s)
     s = _MD_ITALIC_RE.sub(lambda m: SENT_I_OPEN + m.group(1) + SENT_I_CLOSE, s)
@@ -131,6 +152,12 @@ def markdown_to_tex(value) -> str:
         text, url = placeholders[idx]
         return r"\href{" + url + "}{" + tex_escape(text) + "}"
     s = re.sub(r"@@@MDLK(\d+)@@@", _restore_link, s)
+
+    # Restore bare URLs as \url{} — unescaped, xurl handles the line-breaking.
+    def _restore_bare_url(m):
+        idx = int(m.group(1))
+        return r"\url{" + bare_urls[idx] + "}"
+    s = re.sub(r"@@@MDBU(\d+)@@@", _restore_bare_url, s)
 
     return s
 

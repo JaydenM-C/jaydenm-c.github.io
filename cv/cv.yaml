@@ -74,6 +74,8 @@ r_packages:
 public_repos:
   - url: "https://github.com/JaydenM-C/PN_treebuilding"
     description: "A repository of code (R, C, TeX) for inferring phylogenetic trees from phonotactic and lexical data."
+  - url: "https://github.com/JaydenM-C/chromatography"
+    description: "Codebase for Chromatography (https://chromatography.pages.dev/). A web-based desktop app for crafting colour palettes from photographs."
   - url: "https://github.com/JaydenM-C/sc-alchemist"
     description: "Repository of code (Python) implementing MCMC optimisation for AFL fantasy team selection, with user-defined constraint functions."
   - url: "https://github.com/JaydenM-C/AusErdle"
@@ -142,15 +144,15 @@ visiting_positions:
 
 publications:
   # Each entry is rendered as a full bibliographic line. `emph_me: true` bolds your name.
-  - year: "Accepted"
+  - year: ""
     date: ""
     authors: "Macklin-Cordes, Jayden L."
-    year_text: "Accepted pending revisions."
+    year_text: "Revisions pending."
     title: "Trees beyond words: phonotactics in linguistic phylogenetics."
     venue: "Diachronica"
-  - year: "Accepted"
+  - year: ""
     authors: "Macklin-Cordes, Jayden L., Maria Copot, Mitch Browne & Tom Ennever."
-    year_text: "Accepted pending revisions."
+    year_text: "Revisions pending."
     title: "Signal separation: Quantifying inheritance and contact in language evolution."
     venue: "Journal of Language Evolution"
   - year: "2022"
@@ -187,10 +189,10 @@ publications:
 in_preparation:
   - authors: "Macklin-Cordes, Jayden L., Marc Allassonnière-Tang & One-Soon Her."
     title: "Ancestral state reconstruction of numeral base and classifier word orders in proto-Tibeto-Burman."
-    target: "PNAS"
+    target: ""
   - authors: "Copot, Maria & Jayden L. Macklin-Cordes."
     title: "Neither rules nor exemplars: morphological representation as adaptive clustering."
-    target: "Language/Glossa"
+    target: ""
 
 conference_presentations:
   - authors: "Macklin-Cordes, Jayden L. & Maria Copot."
@@ -537,22 +539,3 @@ language_proficiencies:
   - "French, Romanian (basic)"
   - "Spanish, German (beginner)"
 
-referees:
-  - name: "Prof. Greville Corbett"
-    title: "Distinguished Professor of Linguistics"
-    lines:
-      - "Surrey Morphology Group, School of Literature and Languages"
-      - "University of Surrey, Guildford, GU2 7XH"
-    email: "g.corbette@surrey.ac.uk"   # NOTE: email in source PDF has extra 'e'; verify before use.
-  - name: "Dr. Marc Allassonnière-Tang"
-    title: "CNRS Researcher"
-    lines:
-      - "Ecological Anthropology lab (UMR 7206)"
-      - "National Museum of Natural History, Paris, France"
-    email: "marc.allassonniere-tang@mnhn.fr"
-  - name: "Prof. Kate Nash"
-    title: "Dean and Head of School"
-    lines:
-      - "School of Humanities, Creative Industries and Social Sciences"
-      - "University of Newcastle, Australia"
-    email: "kate.nash@newcastle.edu.au"

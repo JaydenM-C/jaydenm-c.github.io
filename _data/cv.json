@@ -509,6 +509,13 @@
       "url": "https://github.com/JaydenM-C/PN_treebuilding"
     },
     {
+      "name": "JaydenM-C/chromatography",
+      "category": "repository",
+      "date": "",
+      "description": "Codebase for Chromatography (https://chromatography.pages.dev/). A web-based desktop app for crafting colour palettes from photographs.",
+      "url": "https://github.com/JaydenM-C/chromatography"
+    },
+    {
       "name": "JaydenM-C/sc-alchemist",
       "category": "repository",
       "date": "",
@@ -542,18 +549,5 @@
     }
   ],
   "interests": [],
-  "references": [
-    {
-      "name": "Prof. Greville Corbett",
-      "reference": "Distinguished Professor of Linguistics. Surrey Morphology Group, School of Literature and Languages. University of Surrey, Guildford, GU2 7XH. g.corbette@surrey.ac.uk"
-    },
-    {
-      "name": "Dr. Marc Allassonnière-Tang",
-      "reference": "CNRS Researcher. Ecological Anthropology lab (UMR 7206). National Museum of Natural History, Paris, France. marc.allassonniere-tang@mnhn.fr"
-    },
-    {
-      "name": "Prof. Kate Nash",
-      "reference": "Dean and Head of School. School of Humanities, Creative Industries and Social Sciences. University of Newcastle, Australia. kate.nash@newcastle.edu.au"
-    }
-  ]
+  "references": []
 }

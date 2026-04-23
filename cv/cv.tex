@@ -1,4 +1,4 @@
-% !TEX TS-program = xelatex
+% !TEX TS-program = lualatex
 % !TEX encoding = UTF-8
 % =============================================================================
 % Curriculum Vitae — Dr. Jayden L. Macklin-Cordes
@@ -24,6 +24,12 @@
 
 % ---------- Typography ----------
 \usepackage{fontspec}
+% lmodern before microtype: microtype loads CM Roman protrusion tables at
+% every used size, and stock CM only ships 10/11/12pt. lmodern provides a
+% scalable Latin Modern substitute, silencing the "size substituted" warnings
+% at our 10.5pt body size. Latin Modern is only used as a fallback; our main
+% fonts remain Inter / Literata / Fira Code.
+\usepackage{lmodern}
 \usepackage{microtype}
 
 % ---------- Colour ----------
@@ -89,6 +95,7 @@
   BoldFont       = *Medium,          % emphasis at 500, per identity guide
   ItalicFont     = *Italic,
   BoldItalicFont = *MediumItalic,
+  SmallCapsFeatures = {Letters=UppercaseSmallCaps},
   Ligatures      = TeX,
 ]
 \newfontfamily\literata{Literata-}[
@@ -302,7 +309,7 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 \noindent\textbf{Research automation.}\ Design of agentic LLM pipelines for large-scale extraction of linguistic data (e.g. interlinear glossed text) from published grammars. The agent consults structured knowledge bases (IGT conventions, IPA, observations accumulated from prior grammars), then iteratively drafts, self-critiques, and refines its output while recording grammar-specific idiosyncrasies for later use. A prototype pipeline benchmarked against manual annotation on an Australian grammar sample achieved 99\% precision, 99\% recall.
 \par\vspace{0.3em}
 \noindent\textbf{Data visualisation.}\ ggplot2, ggmap, ggtree. Interactive apps and mapping (Shiny, leaflet).\par\vspace{0.3em}
-\noindent\textbf{Open science.}\ Git (https://github.com/JaydenM-C), Zenodo/OSF (e.g. https://zenodo.org/records/7257104). Reproducibility tools (renv, Docker).
+\noindent\textbf{Open science.}\ Git (\url{https://github.com/JaydenM-C}), Zenodo/OSF (e.g. \url{https://zenodo.org/records/7257104}). Reproducibility tools (renv, Docker).
 \par\vspace{0.3em}
 
 % =============================================================================
@@ -311,7 +318,7 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 \section*{R packages}
 \begin{cvbib}
 \item \href{https://github.com/JaydenM-C/phonfreq}{\texttt{phonfreq}}.\ A package for visualising phoneme frequency distributions in Australian languages.
-\item \href{https://github.com/JaydenM-C/}{\texttt{CLtemplate, DeGruytertemplate, LDCtemplate, UQpresentation}}.\ A series of packages providing Rmarkdown templates for authoring \textit{Computational Linguistics} articles, De Gruyter articles and books, \textit{Language Dynamics and Change} articles and University of Queensland-branded slideshow presentations. All at https://github.com/JaydenM-C/[name].
+\item \href{https://github.com/JaydenM-C/}{\texttt{CLtemplate, DeGruytertemplate, LDCtemplate, UQpresentation}}.\ A series of packages providing Rmarkdown templates for authoring \textit{Computational Linguistics} articles, De Gruyter articles and books, \textit{Language Dynamics and Change} articles and University of Queensland-branded slideshow presentations. All at \url{https://github.com/JaydenM-C/}[name].
 
 \end{cvbib}
 
@@ -321,6 +328,7 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 \section*{Public repositories}
 \begin{cvbib}
 \item \href{https://github.com/JaydenM-C/PN_treebuilding}{\texttt{JaydenM-C/PN\_treebuilding}}.\ A repository of code (R, C, TeX) for inferring phylogenetic trees from phonotactic and lexical data.
+\item \href{https://github.com/JaydenM-C/chromatography}{\texttt{JaydenM-C/chromatography}}.\ Codebase for Chromatography (\url{https://chromatography.pages.dev/}). A web-based desktop app for crafting colour palettes from photographs.
 \item \href{https://github.com/JaydenM-C/sc-alchemist}{\texttt{JaydenM-C/sc-alchemist}}.\ Repository of code (Python) implementing MCMC optimisation for AFL fantasy team selection, with user-defined constraint functions.
 \item \href{https://github.com/JaydenM-C/AusErdle}{\texttt{JaydenM-C/AusErdle}}.\ Codebase for the AusErdle app, a Wordle spinoff using Australian English phonemic transcriptions.
 \end{cvbib}
@@ -414,8 +422,8 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 % =============================================================================
 \section*{Publications}
 \begin{cvbib}
-\item \pubyear{Accepted}\quad \textbf{Macklin-Cordes, Jayden L.}\ Accepted pending revisions.\ Trees beyond words: phonotactics in linguistic phylogenetics. \venue{Diachronica}%
-\item \pubyear{Accepted}\quad \textbf{Macklin-Cordes, Jayden L.}, Maria Copot, Mitch Browne \& Tom Ennever.\ Accepted pending revisions.\ Signal separation: Quantifying inheritance and contact in language evolution. \venue{Journal of Language Evolution}%
+\item \pubyear{}\quad \textbf{Macklin-Cordes, Jayden L.}\ Revisions pending.\ Trees beyond words: phonotactics in linguistic phylogenetics. \venue{Diachronica}%
+\item \pubyear{}\quad \textbf{Macklin-Cordes, Jayden L.}, Maria Copot, Mitch Browne \& Tom Ennever.\ Revisions pending.\ Signal separation: Quantifying inheritance and contact in language evolution. \venue{Journal of Language Evolution}%
 \item \pubyear{2022}\quad \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2022.\ Challenges of sampling and how phylogenetic comparative methods help: With a case study of the Pama-Nyungan laminal contrast. \venue{Linguistic Typology 26(3). pp. 533–572.}%
 \ \href{https://doi.org/10.1515/lingty-2021-0025}{\textsc{[doi]}}\item \pubyear{2021}\quad \textbf{Macklin-Cordes, Jayden L.}, Claire Bowern \& Erich R. Round.\ 2021.\ Phylogenetic signal in phonotactics. \venue{Diachronica 38(2). pp. 210–258.}%
 \ \href{https://doi.org/10.1075/dia.20004.mac}{\textsc{[doi]}}\item \pubyear{2020}\quad \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2020.\ Re-evaluating Phoneme Frequencies. \venue{Frontiers in Psychology 11.}%
@@ -428,9 +436,7 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 % =============================================================================
 \section*{In preparation}
 \begin{cvbib}
-\item \textbf{Macklin-Cordes, Jayden L.}, Marc Allassonnière-Tang \& One-Soon Her. Ancestral state reconstruction of numeral base and classifier word orders in proto-Tibeto-Burman.\ \textit{Targeted:} \venue{PNAS}.
-\item Copot, Maria \& \textbf{Jayden L. Macklin-Cordes}. Neither rules nor exemplars: morphological representation as adaptive clustering.\ \textit{Targeted:} \venue{Language/Glossa}.
-\end{cvbib}
+\item \textbf{Macklin-Cordes, Jayden L.}, Marc Allassonnière-Tang \& One-Soon Her. Ancestral state reconstruction of numeral base and classifier word orders in proto-Tibeto-Burman.\item Copot, Maria \& \textbf{Jayden L. Macklin-Cordes}. Neither rules nor exemplars: morphological representation as adaptive clustering.\end{cvbib}
 
 % =============================================================================
 % CONFERENCE PRESENTATIONS
@@ -740,10 +746,10 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 
 \subsection*{Community outreach}
 \begin{itemize}
-\item Personal blog on my linguistic research (https://www.macklin-cordes.com)
+\item Personal blog on my linguistic research (\url{https://www.macklin-cordes.com})
 \item Organised 2× \textit{Languages Night} outreach events to promote languages and linguistics to high school and undergraduate students, University of Newcastle, Australia.
-\item Developed \textit{AusErdle}, an Australian English phonemic version of the popular \textit{Wordle} word game (https://jaydenm-c.github.io/AusErdle/)
-\item Wrote associated \textit{AusErdle} blog post (https://jaydenm-c.github.io/posts/2022/02/auserdle/)
+\item Developed \textit{AusErdle}, an Australian English phonemic version of the popular \textit{Wordle} word game (\url{https://jaydenm-c.github.io/AusErdle/})
+\item Wrote associated \textit{AusErdle} blog post (\url{https://jaydenm-c.github.io/posts/2022/02/auserdle/})
 \item Quoted in CBS News Moneywatch on utility of online games like AusErdle for linguistic pedagogy, as well as value of similar games for maintenance and learning of endangered languages (13 March 2024)
 \end{itemize}
 
@@ -765,27 +771,6 @@ English (native); Italian (conversational); French, Romanian (basic); Spanish, G
 % REFEREES
 % =============================================================================
 \section*{Referees}
-\noindent\begin{minipage}[t]{\textwidth}
-\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}}
-\begin{minipage}[t]{0.32\textwidth}\raggedright
-\textbf{Prof. Greville Corbett}\\
-\textit{Distinguished Professor of Linguistics}\\[0.15em]
-Surrey Morphology Group, School of Literature and Languages\\
-University of Surrey, Guildford, GU2 7XH\\
-\href{mailto:g.corbette@surrey.ac.uk}{g.corbette@surrey.ac.uk}
-\end{minipage}&\begin{minipage}[t]{0.32\textwidth}\raggedright
-\textbf{Dr. Marc Allassonnière-Tang}\\
-\textit{CNRS Researcher}\\[0.15em]
-Ecological Anthropology lab (UMR 7206)\\
-National Museum of Natural History, Paris, France\\
-\href{mailto:marc.allassonniere-tang@mnhn.fr}{marc.allassonniere-tang@mnhn.fr}
-\end{minipage}&\begin{minipage}[t]{0.32\textwidth}\raggedright
-\textbf{Prof. Kate Nash}\\
-\textit{Dean and Head of School}\\[0.15em]
-School of Humanities, Creative Industries and Social Sciences\\
-University of Newcastle, Australia\\
-\href{mailto:kate.nash@newcastle.edu.au}{kate.nash@newcastle.edu.au}
-\end{minipage}\end{tabular}
-\end{minipage}
+\noindent\textit{Referees available on request.}
 
 \end{document}

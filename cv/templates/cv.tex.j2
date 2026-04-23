@@ -24,6 +24,12 @@
 
 % ---------- Typography ----------
 \usepackage{fontspec}
+% lmodern before microtype: microtype loads CM Roman protrusion tables at
+% every used size, and stock CM only ships 10/11/12pt. lmodern provides a
+% scalable Latin Modern substitute, silencing the "size substituted" warnings
+% at our 10.5pt body size. Latin Modern is only used as a fallback; our main
+% fonts remain Inter / Literata / Fira Code.
+\usepackage{lmodern}
 \usepackage{microtype}
 
 % ---------- Colour ----------
@@ -89,6 +95,7 @@
   BoldFont       = *Medium,          % emphasis at 500, per identity guide
   ItalicFont     = *Italic,
   BoldItalicFont = *MediumItalic,
+  SmallCapsFeatures = {Letters=UppercaseSmallCaps},
   Ligatures      = TeX,
 ]
 \newfontfamily\literata{Literata-}[
@@ -391,7 +398,7 @@
 \section*{In preparation}
 \begin{cvbib}
 ((* for p in in_preparation *))
-\item ((( p.authors|emph_author|markdown_to_tex ))) ((( p.title|markdown_to_tex )))\ \textit{Targeted:} \venue{((( p.target|tex )))}.
+\item ((( p.authors|emph_author|markdown_to_tex ))) ((( p.title|markdown_to_tex )))((* if p.target *))\ \textit{Targeted:} \venue{((( p.target|tex )))}.((* endif *))
 ((* endfor *))
 \end{cvbib}
 
@@ -600,6 +607,7 @@
 % REFEREES
 % =============================================================================
 \section*{Referees}
+((* if referees *))
 \noindent\begin{minipage}[t]{\textwidth}
 \begin{tabular}{@{}p{0.33\textwidth}@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}}
 ((* for r in referees *))
@@ -614,5 +622,8 @@
 ((* endfor *))
 \end{tabular}
 \end{minipage}
+((* else *))
+\noindent\textit{Referees available on request.}
+((* endif *))
 
 \end{document}
