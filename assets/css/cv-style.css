@@ -1,22 +1,31 @@
-/* CV Template Styles */
+/* CV Template Styles
+ *
+ * Colour palette mirrors the LaTeX CV Visual Identity Guide:
+ *   burntred    #9E2A1E — name / display accent
+ *   deepmaroon  #681F34 — links
+ *   ink         #2B2A26 — body text, section heads
+ *   inkmuted    #6C6A64 — meta, captions
+ *   rulegrey    #E5E0D5 — hairlines
+ *   codebg      #F3EFE7 — subdued tag / pill background
+ */
 .cv-container {
   max-width: 1000px;
   margin: 0 auto;
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
+  color: #2B2A26;
   line-height: 1.6;
 }
 
 /* Header Styles */
 .cv-header {
   margin-bottom: 2rem;
-  border-bottom: 2px solid #f2f2f2;
+  border-bottom: 2px solid #E5E0D5;
   padding-bottom: 1rem;
 }
 
 .cv-header h1 {
   margin-bottom: 0.5rem;
-  color: #2a7ae2;
+  color: #9E2A1E;
 }
 
 .cv-contact-info {
@@ -44,9 +53,15 @@
   gap: 0.5rem;
 }
 
-.cv-profile-item a {
-  color: #2a7ae2;
+.cv-profile-item a,
+.cv-profile-link {
+  color: #681F34;
   text-decoration: none;
+}
+
+.cv-profile-item a:hover,
+.cv-profile-link:hover {
+  text-decoration: underline;
 }
 
 .cv-profile-item a:hover {
@@ -59,13 +74,13 @@
 }
 
 .cv-section h2 {
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid #E5E0D5;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #2a7ae2;
+  color: #2B2A26;
 }
 
 .cv-section h2 i {
@@ -153,8 +168,8 @@
 }
 
 .cv-project-keyword {
-  background-color: #e6f3ff;
-  color: #2a7ae2;
+  background-color: #F3EFE7;
+  color: #2B2A26;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   font-size: 0.9rem;

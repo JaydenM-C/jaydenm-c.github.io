@@ -15,13 +15,7 @@
       </div>
       {% endif %}
       
-      {% if cv.basics.phone %}
-      <div class="cv-contact-item">
-        <i class="fas fa-phone"></i> {{ cv.basics.phone }}
-      </div>
-      {% endif %}
-      
-      {% if cv.basics.website %}
+{% if cv.basics.website %}
       <div class="cv-contact-item">
         <i class="fas fa-globe"></i> <a href="{{ cv.basics.website }}" target="_blank">{{ cv.basics.website }}</a>
       </div>

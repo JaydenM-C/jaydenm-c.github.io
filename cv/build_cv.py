@@ -272,7 +272,6 @@ def build_json(data: dict) -> dict:
             "name":    basics["name"],
             "label":   basics["label"],
             "email":   basics["email"],
-            "phone":   basics["phone"],
             "website": basics["website"],
             "summary": _strip_markdown(data.get("research_profile", "")),
             "location": {

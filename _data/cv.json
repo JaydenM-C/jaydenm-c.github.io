@@ -3,7 +3,6 @@
     "name": "Dr. Jayden L. Macklin-Cordes",
     "label": "Quantitative historical linguist",
     "email": "jayden@macklin-cordes.com",
-    "phone": "+44 7883 431 961",
     "website": "https://www.macklin-cordes.com/",
     "summary": "I am a quantitative historical linguist investigating how language structures change over\ndeep time, and what their evolution reveals about cultural evolution and human cognition.\nI employ a primarily Bayesian toolkit: phylogenetic tree inference, phylogenetic\ncomparative methods, ancestral state reconstruction, and phylogeographic regression.\nMy PhD and subsequent published works develop phylogenetic methods for phonology,\nparticularly phonotactics, with a regional focus on languages of Australia. In parallel,\nI work on the evolution of conceptual categories (nominal classification, case semantics,\nnumber), with work extending to broader Sahul (Australia and New Guinea), Tibeto-Burman,\nand worldwide language samples. Most recently, I have turned attention to the design of\nagentic LLM pipelines for large-scale extraction of linguistic data from published grammars.",
     "location": {
@@ -27,7 +26,7 @@
   "work": [
     {
       "company": "University of Newcastle, Australia",
-      "position": "Lecturer in Linguistics ((tenured))",
+      "position": "Lecturer in Linguistics (tenured)",
       "startDate": "2022-12",
       "endDate": "2025-08",
       "summary": "School of Creative Industries, Humanities and Social Sciences",
