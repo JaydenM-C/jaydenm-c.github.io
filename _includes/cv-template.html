@@ -4,9 +4,10 @@
   <!-- Basic Information -->
   <div class="cv-section cv-header">
     <h1>{{ cv.basics.name }}</h1>
-    {% if cv.basics.label %}
+<!--    {% if cv.basics.label %}
     <h2>{{ cv.basics.label }}</h2>
     {% endif %}
+
     
     <div class="cv-contact">
       {% if cv.basics.email %}
@@ -38,40 +39,52 @@
     </div>
     {% endif %}
   </div>
-  
+-->
+ 
   {% if cv.basics.summary %}
+
   <!-- Summary -->
-  <div class="cv-section">
+   <div class="cv-section">
     <h2>Summary</h2>
     <p>{{ cv.basics.summary }}</p>
   </div>
   {% endif %}
-  
-  {% if cv.education.size > 0 %}
-  <!-- Education -->
+
+    {% if cv.skills.size > 0 %}
+  <!-- Skills -->
   <div class="cv-section">
-    <h2>Education</h2>
-    <ul class="cv-list">
-      {% for education in cv.education %}
-      <li class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-item-title">{{ education.area }}</div>
-          <div class="cv-item-date">{{ education.endDate }}</div>
-        </div>
-        <div class="cv-item-content">
-          <div class="cv-item-subtitle">{{ education.institution }}</div>
-          {% if education.gpa %}
-          <div class="cv-item-detail">GPA: {{ education.gpa }}</div>
-          {% endif %}
-          {% if education.courses.size > 0 %}
-          <div class="cv-item-detail">
-            <strong>Courses:</strong> {{ education.courses | join: ", " }}
-          </div>
-          {% endif %}
-        </div>
-      </li>
+    <h2>Skills</h2>
+    <div class="cv-skills">
+      {% for skill in cv.skills %}
+      <div class="cv-skill-category">
+        <h3>{{ skill.name }}</h3>
+        {% for keyword in skill.keywords %}
+        <p>{{ keyword }}</p>
+        {% endfor %}
+      </div>
       {% endfor %}
-    </ul>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if cv.portfolio.size > 0 %}
+  <!-- Portfolio -->
+  <div class="cv-section">
+    <h2>Portfolio</h2>
+    <div class="cv-skills">
+      {% for item in cv.portfolio %}
+      <div class="cv-skill-category">
+        <h3>{{ item.name }}</h3>
+        <div class="cv-item-subtitle">{{ item.category | capitalize }}</div>
+        {% if item.description %}
+        <p>{{ item.description }}</p>
+        {% endif %}
+        {% if item.url %}
+        <p><a href="{{ item.url }}" target="_blank">View Project</a></p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
   </div>
   {% endif %}
   
@@ -104,23 +117,32 @@
     </ul>
   </div>
   {% endif %}
-  
-  {% if cv.skills.size > 0 %}
-  <!-- Skills -->
+
+  {% if cv.education.size > 0 %}
+  <!-- Education -->
   <div class="cv-section">
-    <h2>Skills</h2>
-    <div class="cv-skills">
-      {% for skill in cv.skills %}
-      <div class="cv-skill-category">
-        <h3>{{ skill.name }}</h3>
-        <ul class="cv-skill-list">
-          {% for keyword in skill.keywords %}
-          <li>{{ keyword }}</li>
-          {% endfor %}
-        </ul>
-      </div>
+    <h2>Education</h2>
+    <ul class="cv-list">
+      {% for education in cv.education %}
+      <li class="cv-item">
+        <div class="cv-item-header">
+          <div class="cv-item-title">{{ education.area }}</div>
+          <div class="cv-item-date">{{ education.endDate }}</div>
+        </div>
+        <div class="cv-item-content">
+          <div class="cv-item-subtitle">{{ education.institution }}</div>
+<!--      {% if education.gpa %}
+          <div class="cv-item-detail">GPA: {{ education.gpa }}</div>
+          {% endif %} -->
+          {% if education.courses.size > 0 %}
+          <div class="cv-item-detail">
+            <strong>Courses:</strong> {{ education.courses | join: ", " }}
+          </div>
+          {% endif %}
+        </div>
+      </li>
       {% endfor %}
-    </div>
+    </ul>
   </div>
   {% endif %}
   
@@ -196,34 +218,6 @@
           {% endif %}
           {% if teaching.description %}
           <div class="cv-item-detail">{{ teaching.description }}</div>
-          {% endif %}
-        </div>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-  {% endif %}
-  
-  {% if cv.portfolio.size > 0 %}
-  <!-- Portfolio -->
-  <div class="cv-section">
-    <h2>Portfolio</h2>
-    <ul class="cv-list">
-      {% for item in cv.portfolio %}
-      <li class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-item-title">{{ item.name }}</div>
-          <div class="cv-item-date">{{ item.date | slice: 0, 4 }}</div>
-        </div>
-        <div class="cv-item-content">
-          <div class="cv-item-subtitle">{{ item.category | capitalize }}</div>
-          {% if item.description %}
-          <div class="cv-item-detail">{{ item.description }}</div>
-          {% endif %}
-          {% if item.url %}
-          <div class="cv-item-detail">
-            <a href="{{ item.url }}" target="_blank">View Project</a>
-          </div>
           {% endif %}
         </div>
       </li>

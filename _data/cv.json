@@ -26,7 +26,7 @@
   "work": [
     {
       "company": "University of Newcastle, Australia",
-      "position": "Lecturer in Linguistics (tenured)",
+      "position": "Lecturer in Linguistics (tenure equivalent)",
       "startDate": "2022-12",
       "endDate": "2025-08",
       "summary": "School of Creative Industries, Humanities and Social Sciences",
@@ -83,7 +83,7 @@
       "name": "Research automation",
       "level": "",
       "keywords": [
-        "Design of agentic LLM pipelines for large-scale extraction of linguistic data (e.g. interlinear glossed text) from published grammars. The agent consults structured knowledge bases (IGT conventions, IPA, observations accumulated from prior grammars), then iteratively drafts, self-critiques, and refines its output while recording grammar-specific idiosyncrasies for later use. A prototype pipeline benchmarked against manual annotation on an Australian grammar sample achieved 99% precision, 99% recall."
+        "Design of agentic LLM pipelines for large-scale extraction of linguistic data from published grammars. Agents consult structured knowledge bases, iteratively draft, self-critique and  refine their output, and record grammar-specific idiosyncrasies for later use."
       ]
     },
     {
@@ -539,11 +539,19 @@
       "fluency": "conversational"
     },
     {
-      "language": "French, Romanian",
+      "language": "French",
       "fluency": "basic"
     },
     {
-      "language": "Spanish, German",
+      "language": "Romanian",
+      "fluency": "basic"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "beginner"
+    },
+    {
+      "language": "German",
       "fluency": "beginner"
     }
   ],

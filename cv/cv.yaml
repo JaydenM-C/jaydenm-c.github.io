@@ -1,6 +1,6 @@
 # ---------------------------------------------------------------------------
 # CV source of truth. Edit here; regenerate cv.tex and _data/cv.json via:
-#   python cv/build_cv.py
+#   python3 cv/build_cv.py
 # ---------------------------------------------------------------------------
 
 meta:
@@ -45,12 +45,9 @@ skills:
       [ape, phytools], geospatial packages [sf]), Python, Javascript, LaTeX.
   - label: "Research automation"
     text: >
-      Design of agentic LLM pipelines for large-scale extraction of linguistic data (e.g.
-      interlinear glossed text) from published grammars. The agent consults structured
-      knowledge bases (IGT conventions, IPA, observations accumulated from prior grammars),
-      then iteratively drafts, self-critiques, and refines its output while recording
-      grammar-specific idiosyncrasies for later use. A prototype pipeline benchmarked against
-      manual annotation on an Australian grammar sample achieved 99% precision, 99% recall.
+      Design of agentic LLM pipelines for large-scale extraction of linguistic data from published
+      grammars. Agents consult structured knowledge bases, iteratively draft, self-critique and 
+      refine their output, and record grammar-specific idiosyncrasies for later use.
   - label: "Data visualisation"
     text: "ggplot2, ggmap, ggtree. Interactive apps and mapping (Shiny, leaflet)."
   - label: "Open science"
@@ -85,7 +82,7 @@ professional_experience:
     start_date: "2022-12"
     end_date: "2025-08"
     role: "Lecturer in Linguistics"
-    role_note: "tenured"
+    role_note: "tenure equivalent"
     department: "School of Creative Industries, Humanities and Social Sciences"
     institution: "University of Newcastle, Australia"
   - dates: "Nov 2021–Nov 2022"
@@ -535,6 +532,7 @@ service:
 language_proficiencies:
   - "English (native)"
   - "Italian (conversational)"
-  - "French, Romanian (basic)"
-  - "Spanish, German (beginner)"
-
+  - "French (basic)"
+  - "Romanian (basic)"
+  - "Spanish (beginner)"
+  - "German (beginner)"

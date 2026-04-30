@@ -87,6 +87,12 @@
   color: #666;
 }
 
+/* List Styles */
+.cv-list {
+  list-style: none;
+  padding-left: 0;
+}
+
 /* Item Styles */
 .cv-item {
   margin-bottom: 1.5rem;
