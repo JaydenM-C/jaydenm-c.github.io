@@ -1,0 +1,64 @@
+name: Build and deploy site to GitHub Pages
+
+# Replaces the legacy "Pages builds from a branch" mode. The key difference:
+# this builds with the Jekyll version pinned in Gemfile.lock (4.4.1), which is
+# the same version you get locally via `bundle exec jekyll serve`. The legacy
+# builder ignored the Gemfile and used Jekyll 3.9.
+
+on:
+  # Build on every push to master.
+  push:
+    branches: [master]
+  # ...and allow a manual run from the Actions tab (useful for re-deploying
+  # without an empty commit).
+  workflow_dispatch:
+
+# Permissions the deploy step needs. Read-only elsewhere.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# If you push twice in quick succession, let the first build finish rather than
+# cancelling it — a half-finished deploy is worse than a slightly stale one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          # Matches Gemfile.lock. bundler-cache installs gems and caches them,
+          # so subsequent builds skip the install step.
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
