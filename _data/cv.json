@@ -25,6 +25,16 @@
   },
   "work": [
     {
+      "company": "University of Surrey, UK",
+      "position": "Postdoctoral Research Fellow",
+      "startDate": "2026-06",
+      "endDate": "present",
+      "summary": "Surrey Morphology Group",
+      "highlights": [
+        "Revoluphon: Rational Evolutionary Phonology (Prof E. Round)"
+      ]
+    },
+    {
       "company": "University of Newcastle, Australia",
       "position": "Lecturer in Linguistics (tenure equivalent)",
       "startDate": "2022-12",
@@ -178,8 +188,8 @@
       "name": "Noun classes persist for predictive processing: Evidence from constituent order in 2,500 languages [poster]",
       "venueItalic": "Conference of the Association of Linguistic Typology (ALT XVI)",
       "venueRest": "Lumière University, Lyon.",
-      "date": "",
-      "yearText": "Accepted.",
+      "date": "2026",
+      "yearText": "2026.",
       "location": "",
       "description": "Macklin-Cordes, Jayden L. & Maria Copot.",
       "doi": "",
@@ -189,8 +199,8 @@
       "name": "Optimal Representation Granularity in Morphological Learning",
       "venueItalic": "International Morphology Meeting (IMM22)",
       "venueRest": "Budapest, Hungary.",
-      "date": "",
-      "yearText": "Accepted.",
+      "date": "2026",
+      "yearText": "2026.",
       "location": "",
       "description": "Copot, Maria & Jayden L. Macklin-Cordes.",
       "doi": "",
@@ -200,8 +210,8 @@
       "name": "Noun classes persist for predictive processing: Evidence from constituent order in 2,500 languages",
       "venueItalic": "Quantitative Cross-Linguistic Explorations of Space, Time, and Evolution (QC-LESTE)",
       "venueRest": "National Museum of Natural History, Paris.",
-      "date": "",
-      "yearText": "Accepted.",
+      "date": "2026",
+      "yearText": "2026.",
       "location": "",
       "description": "Macklin-Cordes, Jayden L. & Maria Copot.",
       "doi": "",
@@ -686,6 +696,13 @@
       "date": "",
       "description": "Codebase for Chromatography (https://chromatography.pages.dev/). A web-based desktop app for crafting colour palettes from photographs.",
       "url": "https://github.com/JaydenM-C/chromatography"
+    },
+    {
+      "name": "JaydenM-C/rawshuck",
+      "category": "repository",
+      "date": "",
+      "description": "Codebase for Rawshuck (https://rawshuck.pages.dev/). A web and Python app for culling RAW+JPEG photo shoots, discarding unwanted RAW files independently of their JPEG counterparts.",
+      "url": "https://github.com/JaydenM-C/rawshuck"
     },
     {
       "name": "JaydenM-C/sc-alchemist",

@@ -4,7 +4,7 @@
 # ---------------------------------------------------------------------------
 
 meta:
-  last_updated: "2026-04-21"   # shown in the running header; bump on each revision
+  last_updated: "2026-08-02"   # shown in the running header; bump on each revision
   document_title: "Curriculum Vitae"
 
 basics:
@@ -71,12 +71,21 @@ public_repos:
     description: "A repository of code (R, C, TeX) for inferring phylogenetic trees from phonotactic and lexical data."
   - url: "https://github.com/JaydenM-C/chromatography"
     description: "Codebase for Chromatography (https://chromatography.pages.dev/). A web-based desktop app for crafting colour palettes from photographs."
+  - url: "https://github.com/JaydenM-C/rawshuck"
+    description: "Codebase for Rawshuck (https://rawshuck.pages.dev/). A web and Python app for culling RAW+JPEG photo shoots, discarding unwanted RAW files independently of their JPEG counterparts."
   - url: "https://github.com/JaydenM-C/sc-alchemist"
     description: "Repository of code (Python) implementing MCMC optimisation for AFL fantasy team selection, with user-defined constraint functions."
   - url: "https://github.com/JaydenM-C/AusErdle"
     description: "Codebase for the AusErdle app, a Wordle spinoff using Australian English phonemic transcriptions."
 
 professional_experience:
+  - dates: "Jun 2026–present"
+    start_date: "2026-06"
+    end_date: "present"
+    role: "Postdoctoral Research Fellow"
+    department: "Surrey Morphology Group"
+    institution: "University of Surrey, UK"
+    project: "Revoluphon: Rational Evolutionary Phonology (Prof E. Round)"
   - dates: "Dec 2022–Aug 2025"
     start_date: "2022-12"
     end_date: "2025-08"
@@ -120,7 +129,7 @@ research_assistant_experience:
       - "Source digitisation for microvariate typology project."
 
 visiting_positions:
-  - dates: "Aug 2025–Aug 2026"
+  - dates: "Aug 2025–May 2026"
     institution: "University of Surrey"
     department: "Surrey Morphology Group"
     role: "Visiting Scholar"
@@ -198,17 +207,17 @@ in_preparation:
 
 conference_presentations:
   - authors: "Macklin-Cordes, Jayden L. & Maria Copot."
-    year_text: "Accepted."
+    year_text: "2026."
     title: "Noun classes persist for predictive processing: Evidence from constituent order in 2,500 languages [poster]."
     venue_italic: Conference of the Association of Linguistic Typology (ALT XVI)
     venue_rest: Lumière University, Lyon.
   - authors: "Copot, Maria & Jayden L. Macklin-Cordes."
-    year_text: "Accepted."
+    year_text: "2026."
     title: "Optimal Representation Granularity in Morphological Learning."
     venue_italic: International Morphology Meeting (IMM22)
     venue_rest: Budapest, Hungary.
   - authors: "Macklin-Cordes, Jayden L. & Maria Copot."
-    year_text: "Accepted."
+    year_text: "2026."
     title: "Noun classes persist for predictive processing: Evidence from constituent order in 2,500 languages."
     venue_italic: Quantitative Cross-Linguistic Explorations of Space, Time, and Evolution (QC-LESTE)
     venue_rest: National Museum of Natural History, Paris.
