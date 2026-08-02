@@ -386,7 +386,7 @@
 \section*{Publications}
 \begin{cvbib}
 ((* for p in publications *))
-\item \pubyear{((( p.year|tex )))}\quad ((( p.authors|emph_author|markdown_to_tex )))\ ((( p.year_text|tex )))\ ((( p.title|markdown_to_tex ))) \venue{((( p.venue|tex )))}%
+\item ((( p.authors|emph_author|markdown_to_tex )))\ ((( p.year_text|tex )))\ ((( p.title|markdown_to_tex )))((* if p.in_proc *)) In((* endif *)) \venue{((( p.venue_italic|tex )))}((( p.venue_rest|tex )))%
   ((* if p.doi *))\ \href{((( p.doi )))}{\textsc{[doi]}}((* endif *))
 ((* endfor *))
 \end{cvbib}
@@ -407,7 +407,7 @@
 \section*{Conference presentations}
 \begin{cvbib}
 ((* for p in conference_presentations *))
-\item \pubyear{((( p.year_text|strip_trailing_dot|tex )))}\quad ((( p.authors|emph_author|markdown_to_tex )))\ ((( p.title|markdown_to_tex ))) \venue{((( p.venue|tex )))}%
+\item ((( p.authors|emph_author|markdown_to_tex )))\ ((( p.year_text|tex )))\ ((( p.title|markdown_to_tex ))) \venue{((( p.venue_italic|tex )))}((( p.venue_rest|tex )))%
   ((* if p.doi *))\ \href{((( p.doi )))}{\textsc{[doi]}}((* endif *))%
   ((* if p.url *))\ \href{((( p.url )))}{\textsc{[link]}}((* endif *))
 ((* endfor *))
@@ -419,7 +419,7 @@
 \section*{Invited talks}
 \begin{cvbib}
 ((* for p in invited_talks *))
-\item \pubyear{((( p.year_text|strip_trailing_dot|tex )))}\quad ((( p.authors|emph_author|markdown_to_tex )))\ ((( p.title|markdown_to_tex ))) \venue{((( p.venue|tex )))}%
+\item ((( p.authors|emph_author|markdown_to_tex )))\ ((( p.year_text|tex )))\ ((( p.title|markdown_to_tex ))) \venue{((( p.venue_italic|tex )))}((( p.venue_rest|tex )))%
   ((* if p.url *))\ \href{((( p.url )))}{\textsc{[link]}}((* endif *))
 ((* endfor *))
 \end{cvbib}
@@ -600,7 +600,11 @@
 % LANGUAGES
 % =============================================================================
 \section*{Language proficiencies}
-((( language_proficiencies|join_semi|tex ))).
+\begin{itemize}
+((* for l in languages *))
+\item \textbf{((( l.name|tex )))}\ \textcolor{inkmuted}{({}((( l.proficiency|tex ))))}
+((* endfor *))
+\end{itemize}
 
 % =============================================================================
 % REFEREES

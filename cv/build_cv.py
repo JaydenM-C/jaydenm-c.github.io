@@ -321,8 +321,11 @@ def build_json(data: dict) -> dict:
         "publications": [
             {
                 "name":        _strip_markdown(p["title"]).rstrip(". "),
-                "publisher":   _strip_markdown(p.get("venue", "")),
+                "venueItalic": str(p.get("venue_italic", "") or ""),
+                "venueRest":   str(p.get("venue_rest", "") or ""),
+                "inProc":      bool(p.get("in_proc", False)),
                 "releaseDate": (p["year"] if re.match(r"^\d{4}$", str(p.get("year", ""))) else ""),
+                "yearText":    _strip_markdown(p.get("year_text", "")),
                 "summary":     _strip_markdown(p.get("authors", "")),
                 "website":     p.get("doi", ""),
             }
@@ -331,13 +334,17 @@ def build_json(data: dict) -> dict:
         "presentations": [
             {
                 "name":        _strip_markdown(p["title"]).rstrip(". "),
-                "event":       _strip_markdown(p.get("venue", "")),
+                "venueItalic": str(p.get("venue_italic", "") or ""),
+                "venueRest":   str(p.get("venue_rest", "") or ""),
                 "date":        (p.get("year_text") or "")[:4]
                                   if re.match(r"^\d{4}",
                                               str(p.get("year_text", "")))
                                   else "",
+                "yearText":    _strip_markdown(p.get("year_text", "")),
                 "location":    "",
                 "description": _strip_markdown(p.get("authors", "")),
+                "doi":         p.get("doi", ""),
+                "url":         p.get("url", ""),
             }
             for p in (data.get("conference_presentations", []) +
                       data.get("invited_talks", []))
@@ -378,11 +385,11 @@ def build_json(data: dict) -> dict:
         ],
         "languages": [
             {
-                "language": item.split(" (")[0] if " (" in item else item,
-                "fluency":  (item.split(" (")[1].rstrip(")")
-                             if " (" in item else ""),
+                "language": lang["name"],
+                "fluency":  lang.get("proficiency", ""),
+                "emoji":    lang.get("emoji", ""),
             }
-            for item in data.get("language_proficiencies", [])
+            for lang in data.get("languages", [])
         ],
         "interests": [],
         "references": [

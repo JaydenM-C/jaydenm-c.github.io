@@ -104,50 +104,71 @@
   "publications": [
     {
       "name": "Trees beyond words: phonotactics in linguistic phylogenetics",
-      "publisher": "Diachronica",
+      "venueItalic": "Diachronica",
+      "venueRest": "",
+      "inProc": false,
       "releaseDate": "",
+      "yearText": "Revisions pending.",
       "summary": "Macklin-Cordes, Jayden L.",
       "website": ""
     },
     {
       "name": "Signal separation: Quantifying inheritance and contact in language evolution",
-      "publisher": "Journal of Language Evolution",
+      "venueItalic": "Journal of Language Evolution",
+      "venueRest": "",
+      "inProc": false,
       "releaseDate": "",
+      "yearText": "Revisions pending.",
       "summary": "Macklin-Cordes, Jayden L., Maria Copot, Mitch Browne & Tom Ennever.",
       "website": ""
     },
     {
       "name": "Challenges of sampling and how phylogenetic comparative methods help: With a case study of the Pama-Nyungan laminal contrast",
-      "publisher": "Linguistic Typology 26(3). pp. 533–572.",
+      "venueItalic": "Linguistic Typology",
+      "venueRest": " 26(3). pp. 533–572.",
+      "inProc": false,
       "releaseDate": "2022",
+      "yearText": "2022.",
       "summary": "Macklin-Cordes, Jayden L. & Erich R. Round.",
       "website": "https://doi.org/10.1515/lingty-2021-0025"
     },
     {
       "name": "Phylogenetic signal in phonotactics",
-      "publisher": "Diachronica 38(2). pp. 210–258.",
+      "venueItalic": "Diachronica",
+      "venueRest": " 38(2). pp. 210–258.",
+      "inProc": false,
       "releaseDate": "2021",
+      "yearText": "2021.",
       "summary": "Macklin-Cordes, Jayden L., Claire Bowern & Erich R. Round.",
       "website": "https://doi.org/10.1075/dia.20004.mac"
     },
     {
       "name": "Re-evaluating Phoneme Frequencies",
-      "publisher": "Frontiers in Psychology 11.",
+      "venueItalic": "Frontiers in Psychology",
+      "venueRest": " 11.",
+      "inProc": false,
       "releaseDate": "2020",
+      "yearText": "2020.",
       "summary": "Macklin-Cordes, Jayden L. & Erich R. Round.",
       "website": "https://doi.org/10.3389/fpsyg.2020.570895"
     },
     {
       "name": "Automated Parsing of Interlinear Glossed Text from Page Images of Grammatical Descriptions",
-      "publisher": "In Proceedings of The 12th Language Resources and Evaluation Conference, 2878–2883. Marseille, France: European Language Resources Association.",
+      "venueItalic": "Proceedings of The 12th Language Resources and Evaluation Conference",
+      "venueRest": ", 2878–2883. Marseille, France: European Language Resources Association.",
+      "inProc": true,
       "releaseDate": "2020",
+      "yearText": "2020.",
       "summary": "Round, Erich R., T. Mark Ellison, Jayden L. Macklin-Cordes & Sacha Beniamine.",
       "website": "https://www.aclweb.org/anthology/2020.lrec-1.351"
     },
     {
       "name": "High-definition phonotactics reflect linguistic pasts",
-      "publisher": "In Proceedings of the 6th Quantitative Investigations in Theoretical Linguistics Conference. Tübingen, Germany: University of Tübingen.",
+      "venueItalic": "Proceedings of the 6th Quantitative Investigations in Theoretical Linguistics Conference",
+      "venueRest": ". Tübingen, Germany: University of Tübingen.",
+      "inProc": true,
       "releaseDate": "2015",
+      "yearText": "2015.",
       "summary": "Macklin-Cordes, Jayden L. & Erich R. Round.",
       "website": "https://doi.org/10.15496/publikation-8609"
     }
@@ -155,269 +176,421 @@
   "presentations": [
     {
       "name": "Noun classes persist for predictive processing: Evidence from constituent order in 2,500 languages [poster]",
-      "event": "Conference of the Association of Linguistic Typology (ALT XVI). Lumière University, Lyon.",
+      "venueItalic": "Conference of the Association of Linguistic Typology (ALT XVI)",
+      "venueRest": "Lumière University, Lyon.",
       "date": "",
+      "yearText": "Accepted.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L. & Maria Copot."
+      "description": "Macklin-Cordes, Jayden L. & Maria Copot.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Optimal Representation Granularity in Morphological Learning",
-      "event": "International Morphology Meeting (IMM22). Budapest, Hungary.",
+      "venueItalic": "International Morphology Meeting (IMM22)",
+      "venueRest": "Budapest, Hungary.",
       "date": "",
+      "yearText": "Accepted.",
       "location": "",
-      "description": "Copot, Maria & Jayden L. Macklin-Cordes."
+      "description": "Copot, Maria & Jayden L. Macklin-Cordes.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Noun classes persist for predictive processing: Evidence from constituent order in 2,500 languages",
-      "event": "Quantitative Cross-Linguistic Explorations of Space, Time, and Evolution (QC-LESTE). National Museum of Natural History, Paris.",
+      "venueItalic": "Quantitative Cross-Linguistic Explorations of Space, Time, and Evolution (QC-LESTE)",
+      "venueRest": "National Museum of Natural History, Paris.",
       "date": "",
+      "yearText": "Accepted.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L. & Maria Copot."
+      "description": "Macklin-Cordes, Jayden L. & Maria Copot.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Locative polyfunctionality in Pama-Nyungan: Disentangling space, phylogeny and ahistorical factors [poster]",
-      "event": "International Conference on the Evolution of Language (EVOLANG XVI). Plovdiv, Bulgaria.",
+      "venueItalic": "International Conference on the Evolution of Language (EVOLANG XVI)",
+      "venueRest": "Plovdiv, Bulgaria.",
       "date": "2026",
+      "yearText": "2026.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L., Maria Copot, Tom Ennever & Mitch Browne."
+      "description": "Macklin-Cordes, Jayden L., Maria Copot, Tom Ennever & Mitch Browne.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Locative functions beyond space and time: Pama-Nyungan case semantics reflect ahistorical processes [poster]",
-      "event": "Conference of the Association of Linguistic Typology (ALT XV). National University of Singapore, Singapore.",
+      "venueItalic": "Conference of the Association of Linguistic Typology (ALT XV)",
+      "venueRest": "National University of Singapore, Singapore.",
       "date": "2024",
+      "yearText": "2024.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L., Mitch Browne, Tom Ennever & Maria Copot."
+      "description": "Macklin-Cordes, Jayden L., Mitch Browne, Tom Ennever & Maria Copot.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Locative polyfunctionality in Australia: Function distribution is not predicted by phylogeny or contact",
-      "event": "Australian Linguistics Society Annual Conference (ALS 2024). Australian National University, Canberra, Australia.",
+      "venueItalic": "Australian Linguistics Society Annual Conference (ALS 2024)",
+      "venueRest": "Australian National University, Canberra, Australia.",
       "date": "2024",
+      "yearText": "2024.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L., Mitch Browne, Tom Ennever & Maria Copot."
+      "description": "Macklin-Cordes, Jayden L., Mitch Browne, Tom Ennever & Maria Copot.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Towards a phylogenetic typology of Australian nominal classification",
-      "event": "Langues & Langage à la croisée des Disciplines (LLCD 2024). Sorbonne University, Paris, France.",
+      "venueItalic": "Langues & Langage à la croisée des Disciplines (LLCD 2024)",
+      "venueRest": "Sorbonne University, Paris, France.",
       "date": "2024",
+      "yearText": "2024.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L."
+      "description": "Macklin-Cordes, Jayden L.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Phylogenetic comparative methods in everyday typology",
-      "event": "Annual Meeting of the Societas Linguistica Europaea (SLE 2022). University of Bucharest, Bucharest, Romania.",
+      "venueItalic": "Annual Meeting of the Societas Linguistica Europaea (SLE 2022)",
+      "venueRest": "University of Bucharest, Bucharest, Romania.",
       "date": "2022",
+      "yearText": "2022.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L."
+      "description": "Macklin-Cordes, Jayden L.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "The evolutionary dynamics of noun classes in Torricelli languages",
-      "event": "Conference of the Association of Linguistic Typology (ALT XIV). University of Texas, Austin, USA.",
+      "venueItalic": "Conference of the Association of Linguistic Typology (ALT XIV)",
+      "venueRest": "University of Texas, Austin, USA.",
       "date": "2022",
+      "yearText": "2022.",
       "location": "",
-      "description": "Jódar-Sánchez, Jose Antonio, Jayden L. Macklin-Cordes & Marc Allassonnière-Tang."
+      "description": "Jódar-Sánchez, Jose Antonio, Jayden L. Macklin-Cordes & Marc Allassonnière-Tang.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Correlated evolution of numeral base and classifier word orders in Tibeto-Burman languages [poster]",
-      "event": "Conference of the Association of Linguistic Typology (ALT XIV). University of Texas, Austin, USA.",
+      "venueItalic": "Conference of the Association of Linguistic Typology (ALT XIV)",
+      "venueRest": "University of Texas, Austin, USA.",
       "date": "2022",
+      "yearText": "2022.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L., Her, One-Soon & Marc Allassonnière-Tang."
+      "description": "Macklin-Cordes, Jayden L., Her, One-Soon & Marc Allassonnière-Tang.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Incorporating typological features in tree inference: Lessons from phonotactics",
-      "event": "International Conference on Historical Linguistics (ICHL25). Oxford University, Oxford, UK.",
+      "venueItalic": "International Conference on Historical Linguistics (ICHL25)",
+      "venueRest": "Oxford University, Oxford, UK.",
       "date": "2022",
+      "yearText": "2022.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L."
+      "description": "Macklin-Cordes, Jayden L.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "A statistical analysis of word-initial apical neutralisation in Warlmanpa",
-      "event": "Australian Linguistics Society Annual Conference (ALS 2022). University of Melbourne, Melbourne, Australia.",
+      "venueItalic": "Australian Linguistics Society Annual Conference (ALS 2022)",
+      "venueRest": "University of Melbourne, Melbourne, Australia.",
       "date": "2022",
+      "yearText": "2022.",
       "location": "",
-      "description": "Browne, Mitch & Jayden L. Macklin-Cordes."
+      "description": "Browne, Mitch & Jayden L. Macklin-Cordes.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Constituent order in subordinate clauses: A comparison of Mudburra, Warlmanpa and Warriyangga/Thiinma",
-      "event": "Australian Languages Workshop (ALW). University of Queensland Moreton Bay Research Station, North Stradbroke Island, Australia.",
+      "venueItalic": "Australian Languages Workshop (ALW)",
+      "venueRest": "University of Queensland Moreton Bay Research Station, North Stradbroke Island, Australia.",
       "date": "2022",
+      "yearText": "2022.",
       "location": "",
-      "description": "Browne, Mitch, Jacqueline Cook, Amanda Hamilton-Holloway & Jayden L. Macklin-Cordes."
+      "description": "Browne, Mitch, Jacqueline Cook, Amanda Hamilton-Holloway & Jayden L. Macklin-Cordes.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Trials and tribulations of tree inference: The challenge of phonotactics in phylogenetics and why it matters",
-      "event": "Australian Linguistic Society Annual Conference (ALS 2021). La Trobe University, Melbourne, Australia.",
+      "venueItalic": "Australian Linguistic Society Annual Conference (ALS 2021)",
+      "venueRest": "La Trobe University, Melbourne, Australia.",
       "date": "2021",
+      "yearText": "2021.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L."
+      "description": "Macklin-Cordes, Jayden L.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Unstable trees: The challenge of frequency and phonology in phylogenetics",
-      "event": "Edinburgh Symposium on Historical Phonology. University of Edinburgh, Scotland.",
+      "venueItalic": "Edinburgh Symposium on Historical Phonology",
+      "venueRest": "University of Edinburgh, Scotland.",
       "date": "2021",
+      "yearText": "2021.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L."
+      "description": "Macklin-Cordes, Jayden L.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Zipf's Law? Re-evaluating phoneme frequencies",
-      "event": "Australian Linguistics Society Annual Conference (ALS 2020). Online conference, Australia.",
+      "venueItalic": "Australian Linguistics Society Annual Conference (ALS 2020)",
+      "venueRest": "Online conference, Australia.",
       "date": "2020",
+      "yearText": "2020.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L. & Erich R. Round."
+      "description": "Macklin-Cordes, Jayden L. & Erich R. Round.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Clouded vision: Why insights improve when uncertainty about data is made explicit",
-      "event": "International Conference on Historical Linguistics (ICHL24). Australian National University, Canberra, Australia.",
+      "venueItalic": "International Conference on Historical Linguistics (ICHL24)",
+      "venueRest": "Australian National University, Canberra, Australia.",
       "date": "2019",
+      "yearText": "2019.",
       "location": "",
-      "description": "Round, Erich R. & Jayden L. Macklin-Cordes."
+      "description": "Round, Erich R. & Jayden L. Macklin-Cordes.",
+      "doi": "",
+      "url": "https://cloudstor.aarnet.edu.au/plus/s/WOmUM73NVJQFqf6"
     },
     {
       "name": "Historical signal beyond the cognate: Phonotactics in linguistic phylogenetics",
-      "event": "International Conference on Historical Linguistics (ICHL24). Australian National University, Canberra, Australia.",
+      "venueItalic": "International Conference on Historical Linguistics (ICHL24)",
+      "venueRest": "Australian National University, Canberra, Australia.",
       "date": "2019",
+      "yearText": "2019.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L. & Erich R. Round."
+      "description": "Macklin-Cordes, Jayden L. & Erich R. Round.",
+      "doi": "",
+      "url": "https://cloudstor.aarnet.edu.au/plus/s/zN5AbJ4fXoVR0ax"
     },
     {
       "name": "Phylogeny in phonotactics: A multivariate approach for stronger historical signal",
-      "event": "Australian Linguistics Society Annual Conference (ALS 2018). University of South Australia, Adelaide.",
+      "venueItalic": "Australian Linguistics Society Annual Conference (ALS 2018)",
+      "venueRest": "University of South Australia, Adelaide.",
       "date": "2018",
+      "yearText": "2018.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L. & Erich R. Round."
+      "description": "Macklin-Cordes, Jayden L. & Erich R. Round.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "High-definition phonotactic typology in Sahul: Choosing the data-rich approach",
-      "event": "Conference of the Association of Linguistic Typology (ALT XII). Australian National University, Canberra, Australia.",
+      "venueItalic": "Conference of the Association of Linguistic Typology (ALT XII)",
+      "venueRest": "Australian National University, Canberra, Australia.",
       "date": "2017",
+      "yearText": "2017.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L."
+      "description": "Macklin-Cordes, Jayden L.",
+      "doi": "https://doi.org/10.6084/m9.figshare.5861067",
+      "url": ""
     },
     {
       "name": "Robots who read grammars [poster]",
-      "event": "CoEDL Fest. Alexandra Park Conference Centre, Alexandra Headlands, QLD, Australia.",
+      "venueItalic": "CoEDL Fest",
+      "venueRest": "Alexandra Park Conference Centre, Alexandra Headlands, QLD, Australia.",
       "date": "2017",
+      "yearText": "2017.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L., Nathaniel L. Blackbourne, Thomas J. Bott, Jacqueline Cook, T. Mark Ellison, Jordan Hollis, Edith E. Kirlew, Genevieve C. Richards, Sanle Zhao & Erich R. Round."
+      "description": "Macklin-Cordes, Jayden L., Nathaniel L. Blackbourne, Thomas J. Bott, Jacqueline Cook, T. Mark Ellison, Jordan Hollis, Edith E. Kirlew, Genevieve C. Richards, Sanle Zhao & Erich R. Round.",
+      "doi": "https://doi.org/10.6084/m9.figshare.4625248",
+      "url": ""
     },
     {
       "name": "The Cape York lexical records of Bruce Sommer",
-      "event": "Australian Linguistics Society Annual Conference (ALS 2016). Monash University, Caulfield, Australia.",
+      "venueItalic": "Australian Linguistics Society Annual Conference (ALS 2016)",
+      "venueRest": "Monash University, Caulfield, Australia.",
       "date": "2016",
+      "yearText": "2016.",
       "location": "",
-      "description": "Hollis, Jordan, Genevieve C. Richards, Jayden L. Macklin-Cordes & Erich R. Round."
+      "description": "Hollis, Jordan, Genevieve C. Richards, Jayden L. Macklin-Cordes & Erich R. Round.",
+      "doi": "https://dx.doi.org/10.6084/m9.figshare.4299377",
+      "url": ""
     },
     {
       "name": "Evaluating information loss from phonological dimensionality reduction",
-      "event": "SST2016 Satellite Symposium: The role of predictability in shaping human language sound patterns. Western Sydney University, Australia.",
+      "venueItalic": "SST2016 Satellite Symposium: The role of predictability in shaping human language sound patterns",
+      "venueRest": "Western Sydney University, Australia.",
       "date": "2016",
+      "yearText": "2016.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L., Steven P. Moran & Erich R. Round."
+      "description": "Macklin-Cordes, Jayden L., Steven P. Moran & Erich R. Round.",
+      "doi": "https://dx.doi.org/10.6084/m9.figshare.4465976",
+      "url": ""
     },
     {
       "name": "High-definition phonotactic data contain phylogenetic signal [poster]",
-      "event": "Annual Meeting of the Linguistic Society of America. Washington, DC.",
+      "venueItalic": "Annual Meeting of the Linguistic Society of America (LSA 2016)",
+      "venueRest": "Washington, DC.",
       "date": "2016",
+      "yearText": "2016a.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L. & Erich R. Round."
+      "description": "Macklin-Cordes, Jayden L. & Erich R. Round.",
+      "doi": "https://dx.doi.org/10.6084/m9.figshare.4534238",
+      "url": ""
     },
     {
       "name": "Reflections of linguistic history in quantitative phonotactics",
-      "event": "Australian Linguistic Society Annual Conference (ALS2016). Monash University, Caulfield, Australia.",
+      "venueItalic": "Australian Linguistic Society Annual Conference (ALS2016)",
+      "venueRest": "Monash University, Caulfield, Australia.",
       "date": "2016",
+      "yearText": "2016b.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L. & Erich R. Round."
+      "description": "Macklin-Cordes, Jayden L. & Erich R. Round.",
+      "doi": "https://dx.doi.org/10.6084/m9.figshare.4299365",
+      "url": ""
     },
     {
       "name": "The grammar harvester",
-      "event": "Australian Linguistic Society Annual Conference (ALS 2016). Monash University, Caulfield, Australia.",
+      "venueItalic": "Australian Linguistic Society Annual Conference (ALS 2016)",
+      "venueRest": "Monash University, Caulfield, Australia.",
       "date": "2016",
+      "yearText": "2016.",
       "location": "",
-      "description": "Round, Erich R., Jacqueline Cook, T. Mark Ellison, Jordan Hollis, Jayden L. Macklin-Cordes & Genevieve C. Richards."
+      "description": "Round, Erich R., Jacqueline Cook, T. Mark Ellison, Jordan Hollis, Jayden L. Macklin-Cordes & Genevieve C. Richards.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "On the design, in practice, of typological microvariables",
-      "event": "New Developments in the Quantitative Study of Languages. Helsinki, Finland.",
+      "venueItalic": "New Developments in the Quantitative Study of Languages",
+      "venueRest": "Helsinki, Finland.",
       "date": "2015",
+      "yearText": "2015.",
       "location": "",
-      "description": "Round, Erich R. & Jayden L. Macklin-Cordes."
+      "description": "Round, Erich R. & Jayden L. Macklin-Cordes.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Next-generation typological variables: From theory to practice, and back again",
-      "event": "Australian Linguistic Society Annual Conference (ALS 2014). University of Newcastle, Australia.",
+      "venueItalic": "Australian Linguistic Society Annual Conference (ALS 2014)",
+      "venueRest": "University of Newcastle, Australia.",
       "date": "2014",
+      "yearText": "2014.",
       "location": "",
-      "description": "Round, Erich R. & Jayden L. Macklin-Cordes."
+      "description": "Round, Erich R. & Jayden L. Macklin-Cordes.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Locative polyfunctionality in Australia: Function distribution is not predicted by phylogeny or contact",
-      "event": "University of Newcastle Social Science and Linguistics Seminar Series. University of Newcastle, Australia.",
+      "venueItalic": "University of Newcastle Social Science and Linguistics Seminar Series",
+      "venueRest": "University of Newcastle, Australia.",
       "date": "2025",
+      "yearText": "2025.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L."
+      "description": "Macklin-Cordes, Jayden L.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Towards a phylogenetic typology of Australian nominal classification",
-      "event": "University of Newcastle Social Science and Linguistics Seminar Series. University of Newcastle, Australia.",
+      "venueItalic": "University of Newcastle Social Science and Linguistics Seminar Series",
+      "venueRest": "University of Newcastle, Australia.",
       "date": "2024",
+      "yearText": "2024.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L."
+      "description": "Macklin-Cordes, Jayden L.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Thinking like a quantitative modeller",
-      "event": "Invited masterclass for the Laboratory for Applied Language Science (LALS). University of Newcastle, Australia.",
+      "venueItalic": "Invited masterclass for the Laboratory for Applied Language Science (LALS)",
+      "venueRest": "University of Newcastle, Australia.",
       "date": "2024",
+      "yearText": "2024.",
       "location": "",
-      "description": "Copot, Maria & Jayden L. Macklin-Cordes."
+      "description": "Copot, Maria & Jayden L. Macklin-Cordes.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Phylogenetic comparative methods in everyday typology: With a case study of Pama-Nyungan laminals",
-      "event": "Changelings forum for historical sociolinguistics (invited talk). The Ohio State University, Columbus, USA.",
+      "venueItalic": "Changelings forum for historical sociolinguistics (invited talk)",
+      "venueRest": "The Ohio State University, Columbus, USA.",
       "date": "2024",
+      "yearText": "2024.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L."
+      "description": "Macklin-Cordes, Jayden L.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Reconstructing numeral base and classifier word orders in Tibeto-Burman",
-      "event": "University of Newcastle Linguistics Seminar Series. University of Newcastle, Australia.",
+      "venueItalic": "University of Newcastle Linguistics Seminar Series",
+      "venueRest": "University of Newcastle, Australia.",
       "date": "2023",
+      "yearText": "2023.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L."
+      "description": "Macklin-Cordes, Jayden L.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Typological traits in linguistic phylogenetics: (Mis)adventures with phonotactics",
-      "event": "UMR7206 Eco-Anthropologie (EA) Seminar Series. Musée de l'Homme, CNRS, Muséum National d'Histoire Naturelle, Université de Paris, France.",
+      "venueItalic": "UMR7206 Eco-Anthropologie (EA) Seminar Series",
+      "venueRest": "Musée de l'Homme, CNRS, Muséum National d'Histoire Naturelle, Université de Paris, France.",
       "date": "2022",
+      "yearText": "2022.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L."
+      "description": "Macklin-Cordes, Jayden L.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Trees, mountains, numerals and classifiers: Preliminary ancestral state reconstruction in Tibeto-Burman",
-      "event": "Surrey Linguistics Circle Lunchtime Seminar. Surrey Morphology Group, University of Surrey, Guildford, UK.",
+      "venueItalic": "Surrey Linguistics Circle Lunchtime Seminar",
+      "venueRest": "Surrey Morphology Group, University of Surrey, Guildford, UK.",
       "date": "2022",
+      "yearText": "2022.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L."
+      "description": "Macklin-Cordes, Jayden L.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Phylogenetic comparative methods for common typological challenges: With a case study of Pama-Nyungan laminals",
-      "event": "DiLiS Seminar Series. Laboratoire Dynamique Du Langage, CNRS, Université Lyon 2, Lyon, France.",
+      "venueItalic": "DiLiS Seminar Series",
+      "venueRest": "Laboratoire Dynamique Du Langage, CNRS, Université Lyon 2, Lyon, France.",
       "date": "2022",
+      "yearText": "2022.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L."
+      "description": "Macklin-Cordes, Jayden L.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Constituent order in subordinate clauses: A comparison of Mudburra, Warlmanpa and Warriyangga/Thiinma",
-      "event": "UWA Linguistics Seminar Series. University of Western Australia, Perth, Australia.",
+      "venueItalic": "UWA Linguistics Seminar Series",
+      "venueRest": "University of Western Australia, Perth, Australia.",
       "date": "2022",
+      "yearText": "2022.",
       "location": "",
-      "description": "Browne, Mitch, Jacqueline Cook, Amanda Hamilton-Holloway & Jayden L. Macklin-Cordes."
+      "description": "Browne, Mitch, Jacqueline Cook, Amanda Hamilton-Holloway & Jayden L. Macklin-Cordes.",
+      "doi": "",
+      "url": ""
     },
     {
       "name": "Phylogenetic comparative methods: What all the fuss is about, and how to use them in everyday research",
-      "event": "Language and Data Analysis Laboratory (LADAL) webinar. The University of Queensland, St Lucia, Australia.",
+      "venueItalic": "Language and Data Analysis Laboratory (LADAL) webinar",
+      "venueRest": "The University of Queensland, St Lucia, Australia.",
       "date": "2021",
+      "yearText": "2021.",
       "location": "",
-      "description": "Macklin-Cordes, Jayden L. & Erich R. Round."
+      "description": "Macklin-Cordes, Jayden L. & Erich R. Round.",
+      "doi": "",
+      "url": "https://youtu.be/yJeQ6AGDLK0"
     }
   ],
   "teaching": [
@@ -532,27 +705,33 @@
   "languages": [
     {
       "language": "English",
-      "fluency": "native"
+      "fluency": "native",
+      "emoji": "🇦🇺"
     },
     {
       "language": "Italian",
-      "fluency": "conversational"
+      "fluency": "conversational",
+      "emoji": "🇮🇹"
     },
     {
       "language": "French",
-      "fluency": "basic"
+      "fluency": "basic",
+      "emoji": "🇫🇷"
     },
     {
       "language": "Romanian",
-      "fluency": "basic"
+      "fluency": "basic",
+      "emoji": "🇷🇴"
     },
     {
       "language": "Spanish",
-      "fluency": "beginner"
+      "fluency": "beginner",
+      "emoji": "🇪🇸"
     },
     {
       "language": "German",
-      "fluency": "beginner"
+      "fluency": "beginner",
+      "emoji": "🇩🇪"
     }
   ],
   "interests": [],

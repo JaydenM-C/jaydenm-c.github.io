@@ -153,27 +153,21 @@
     <ul class="cv-list">
       {% for publication in cv.publications %}
       <li class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-item-title">{{ publication.name }}</div>
-          <div class="cv-item-date">{{ publication.releaseDate | slice: 0, 4 }}</div>
-        </div>
         <div class="cv-item-content">
-          <div class="cv-item-subtitle">{{ publication.publisher }}</div>
-          {% if publication.summary %}
-          <div class="cv-item-detail">{{ publication.summary }}</div>
-          {% endif %}
-          {% if publication.website %}
-          <div class="cv-item-detail">
-            <a href="{{ publication.website }}" target="_blank">View Publication</a>
+          <div class="cv-item-title">{{ publication.name }}</div>
+          <div class="cv-item-detail cv-bib-line">
+            {{ publication.summary | replace: "Macklin-Cordes, Jayden L.", "<strong>Macklin-Cordes, Jayden L.</strong>" | replace: "Jayden L. Macklin-Cordes", "<strong>Jayden L. Macklin-Cordes</strong>" }}
+            {% if publication.yearText %} {{ publication.yearText }}{% endif %}
+            {% if publication.venueItalic %}{% if publication.inProc %} In{% endif %} <em>{{ publication.venueItalic }}</em>{{ publication.venueRest }}{% endif %}
+            {% if publication.website %} <a href="{{ publication.website }}" target="_blank">{{ publication.website }}</a>.{% endif %}
           </div>
-          {% endif %}
         </div>
       </li>
       {% endfor %}
     </ul>
   </div>
   {% endif %}
-  
+
   {% if cv.presentations.size > 0 %}
   <!-- Presentations/Talks -->
   <div class="cv-section">
@@ -181,18 +175,15 @@
     <ul class="cv-list">
       {% for talk in cv.presentations %}
       <li class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-item-title">{{ talk.name }}</div>
-          <div class="cv-item-date">{{ talk.date | slice: 0, 4 }}</div>
-        </div>
         <div class="cv-item-content">
-          <div class="cv-item-subtitle">{{ talk.event }}</div>
-          {% if talk.location %}
-          <div class="cv-item-detail">{{ talk.location }}</div>
-          {% endif %}
-          {% if talk.description %}
-          <div class="cv-item-detail">{{ talk.description }}</div>
-          {% endif %}
+          <div class="cv-item-title">{{ talk.name }}</div>
+          <div class="cv-item-detail cv-bib-line">
+            {{ talk.description | replace: "Macklin-Cordes, Jayden L.", "<strong>Macklin-Cordes, Jayden L.</strong>" | replace: "Jayden L. Macklin-Cordes", "<strong>Jayden L. Macklin-Cordes</strong>" }}
+            {% if talk.yearText %} {{ talk.yearText }}{% endif %}
+            {% if talk.venueItalic %} <em>{{ talk.venueItalic }}</em>{{ talk.venueRest }}{% endif %}
+            {% if talk.doi %} <a href="{{ talk.doi }}" target="_blank">{{ talk.doi }}</a>.{% endif %}
+            {% if talk.url %} <a href="{{ talk.url }}" target="_blank">{{ talk.url }}</a>.{% endif %}
+          </div>
         </div>
       </li>
       {% endfor %}
@@ -230,16 +221,16 @@
   <!-- Languages -->
   <div class="cv-section">
     <h2>Languages</h2>
-    <ul class="cv-list">
+    <div class="cv-skills">
       {% for language in cv.languages %}
-      <li class="cv-item">
-        <div class="cv-item-content">
-          <div class="cv-item-title">{{ language.language }}</div>
-          <div class="cv-item-detail">{{ language.fluency }}</div>
-        </div>
-      </li>
+      <div class="cv-skill-category">
+        <h3>{% if language.emoji %}{{ language.emoji }} {% endif %}{{ language.language }}</h3>
+        {% if language.fluency %}
+        <p>{{ language.fluency }}</p>
+        {% endif %}
+      </div>
       {% endfor %}
-    </ul>
+    </div>
   </div>
   {% endif %}
   
