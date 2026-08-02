@@ -15,7 +15,8 @@
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
 </script>
 
-<!-- For all browsers -->
-<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
+<!-- For all browsers. ?v= is a cache buster: site.time changes on every build,
+     so browsers fetch new CSS immediately instead of serving a stale copy. -->
+<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css?v={{ site.time | date: '%s' }}">
 
 <meta http-equiv="cleartype" content="on">
