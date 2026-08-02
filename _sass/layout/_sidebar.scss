@@ -95,7 +95,10 @@
 
   img {
     max-width: 175px;
-    border-radius: 50%;
+    // Rectangular portrait, not a circle. Deliberately a one-off rather than
+    // $border-radius (4px): 12px suits the avatar but is too soft for the
+    // code blocks and figures that share the global variable.
+    border-radius: 12px;
 
     @include breakpoint($large) {
       padding: 5px;
