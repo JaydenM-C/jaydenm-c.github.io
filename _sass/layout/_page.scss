@@ -41,6 +41,24 @@
   & + .page__meta {
     margin-top: -0.5em;
   }
+
+  & + .page__subtitle {
+    margin-top: 0.5em;
+  }
+}
+
+/* Optional `subtitle:` in a post's front matter, rendered below the title. */
+.page__subtitle {
+  margin-bottom: 0.5em;
+  color: var(--ink-muted);
+  font-family: $caption-font-family;
+  font-size: $type-size-4;
+  font-weight: 400;
+  line-height: 1.4;
+
+  & + .page__meta {
+    margin-top: 0;
+  }
 }
 
 .page__lead {
