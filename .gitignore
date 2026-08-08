@@ -7,6 +7,10 @@ _site/
 # Ignore the directory for local files during development
 local/
 
+# Search Console exports — local analysis only. Jekyll would otherwise copy any
+# committed top-level directory straight into the published site.
+search-console-indexing-report/
+
 # Ignore the Gemfile that is generated
 Gemfile.lock
 

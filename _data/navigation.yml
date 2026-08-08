@@ -15,9 +15,6 @@ main:
     url: /talks/    
 
 
-#  - title: "Portfolio"
-#    url: /portfolio/
-        
   - title: "Blog"
     url: /year-archive/
     
