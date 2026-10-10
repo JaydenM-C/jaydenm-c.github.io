@@ -1,0 +1,88 @@
+/* ==========================================================================
+   SIDENOTES
+   Ordinary Markdown footnotes ([^1]) are moved beside their reference by
+   assets/js/sidenotes.js. With three columns they float into the notes
+   column; narrower, tapping the number opens the note inline beneath the
+   line. Without JavaScript the footnotes stay at the foot of the post.
+   ========================================================================== */
+
+/* Reference number in the text */
+.page__content sup {
+  line-height: 0;                 // keep the line spacing even
+}
+
+.page__content a.footnote {
+  padding: 0 0.1em;
+  font-feature-settings: "lnum" 1;
+  text-decoration: none;
+
+  &:hover { text-decoration: underline; }
+}
+
+/* The note itself */
+.sidenote {
+  display: none;                  // closed by default below three columns
+  font-family: $global-font-family;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--ink-muted);
+  text-align: left;
+  text-indent: 0;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+  transition: color 0.6s ease;
+
+  a { color: inherit; }
+
+  &.is-open {
+    display: block;
+    margin: 0.6em 0 0.9em;
+    padding: 0.05em 0 0.05em 0.9em;
+    border-left: 2px solid var(--accent);
+  }
+
+  &.is-flash { color: var(--ink); transition: none; }
+}
+
+.sidenote__num,
+.sidenote a.sidenote__num {
+  margin-right: 0.4em;
+  color: var(--accent);
+  font-feature-settings: "lnum" 1;
+  text-decoration: none;
+
+  &:hover { text-decoration: underline; }
+}
+
+/* Reference highlighted after jumping back from its note */
+.page__content sup.is-target a.footnote {
+  animation: sn-target 1.6s ease-out;
+  border-radius: 2px;
+}
+
+@keyframes sn-target {
+  0%, 35% { background-color: rgba($newy-sandstone, 0.22); }
+  100%    { background-color: transparent; }
+}
+
+/* Once converted, the end-of-post footnote list is redundant */
+.has-sidenotes .footnotes {
+  display: none;
+}
+
+/* Three columns: notes live in the margin */
+@media (min-width: $bp-three) {
+  .sidenote,
+  .sidenote.is-open {
+    display: block;
+    position: relative;
+    float: right;
+    clear: right;
+    width: $side-col;
+    margin: 0.2em (-($side-col + $col-gap)) 1em 0;
+    padding: 0;
+    border: 0;
+  }
+}

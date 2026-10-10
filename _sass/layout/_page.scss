@@ -34,23 +34,26 @@
   }
 }
 
-/* Reading measure — the whole post column (title, meta, text, figures,
-   tables) is capped so lines run ~75 characters of Newsreader. Archive
-   layouts (publications, talks, CV) keep the full width. */
-.page .page__inner-wrap {
-  max-width: 34em;
-}
-
-/* Justified body text, hyphenated so the spacing stays even. Left-aligned
-   on phones, where ~45-character lines are too short to justify cleanly. */
+/* Justified body text. Browsers justify line by line (no TeX-style
+   paragraph optimisation), so hyphenation is kept for long words only and
+   word spacing does more of the work:
+   - only words of 10+ letters break, keeping 4+ letters on each side
+   - no more than two hyphenated lines in a row (Safari)
+   - text-wrap: pretty lets the browser weigh the whole paragraph where it can
+   Left-aligned on phones, where ~45-character lines are too short to justify. */
 .page__content > p,
 .page__content > ul > li,
 .page__content > ol > li {
   @include breakpoint($small) {
     text-align: justify;
+    text-wrap: pretty;
     hyphens: auto;
     -webkit-hyphens: auto;
-    hyphenate-limit-chars: 7 3 3;
+    hyphenate-limit-chars: 10 4 4;
+    -webkit-hyphenate-limit-before: 4;
+    -webkit-hyphenate-limit-after: 4;
+    -webkit-hyphenate-limit-lines: 2;
+    hyphenate-limit-lines: 2;
   }
 }
 

@@ -1,0 +1,134 @@
+/* ==========================================================================
+   PAGE GRID — Newy Sunsets
+   Replaces the template's fluid 12-column split (sidebar / content / unused
+   right column) with a grid built outward from the reading measure.
+   Dimensions live in _themes.scss.
+
+     ≥ $bp-three   sidebar | gap | text | gap | notes     (centred block)
+     ≥ $bp-two     sidebar | gap | text                   (centred block)
+     below         one centred column, author bar on top
+
+   The masthead and footer use the same block width, so the site title sits
+   over the sidebar edge and the first nav link over the text edge.
+   ========================================================================== */
+
+/* --- One column (phones, small tablets) -------------------------------- */
+
+#main {
+  max-width: calc(#{$measure} + 2 * #{$page-pad});
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $page-pad;
+  padding-right: $page-pad;
+}
+
+.page .page__inner-wrap {
+  max-width: $measure;
+}
+
+.masthead__inner-wrap,
+.page__footer footer {
+  max-width: calc(#{$measure} + 2 * #{$page-pad});
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $page-pad;
+  padding-right: $page-pad;
+}
+
+/* --- Two columns: sidebar | text ---------------------------------------- */
+
+@media (min-width: $bp-two) {
+  #main {
+    display: grid;
+    grid-template-columns:
+      [side-start] $side-col [side-end] $col-gap
+      [text-start] minmax(0, $measure) [text-end];
+    justify-content: center;
+    max-width: none;
+
+    /* the template's clearfix pseudo-element would become a grid cell */
+    &::after { display: none; }
+  }
+
+  /* undo the template's float/percentage widths on grid children */
+  #main > .sidebar,
+  #main > .page,
+  #main > .archive,
+  #main > .page__related {
+    float: none;
+    width: auto;
+    max-width: none;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #main > .sidebar {
+    grid-column: side;
+    grid-row: 1 / span 2;
+    align-self: start;
+    /* stays in view while reading, but scrolls itself on short screens */
+    position: sticky;
+    top: calc(#{$masthead-height} + 1.5em);
+    height: auto;
+    max-height: calc(100vh - #{$masthead-height} - 2.5em);
+    overflow-y: auto;
+    margin-top: 0;
+    padding-top: 0 !important;   // main.js sets an inline offset for the old fixed sidebar
+  }
+
+  #main > .page,
+  #main > .archive {
+    grid-column: text;
+    grid-row: 1;
+  }
+
+  #main > .page__related {
+    grid-column: text;
+    grid-row: 2;
+  }
+
+  .masthead__inner-wrap,
+  .page__footer footer {
+    max-width: calc(#{$grid-two} + 2 * #{$page-pad});
+  }
+
+  /* site title spans sidebar + gutter, so the first nav link starts on the
+     text column's left edge */
+  .greedy-nav .visible-links .masthead__menu-item--lg {
+    width: $side-col + $col-gap;
+    min-width: $side-col + $col-gap;
+    padding-right: 0;
+  }
+
+  .greedy-nav .visible-links li:nth-child(2) a {
+    margin-left: 0;
+  }
+}
+
+/* --- Three columns: sidebar | text | notes ------------------------------ */
+
+@media (min-width: $bp-three) {
+  #main {
+    grid-template-columns:
+      [side-start] $side-col [side-end] $col-gap
+      [text-start] $measure [text-end] $col-gap
+      [notes-start] $side-col [notes-end];
+  }
+
+  /* posts span text + notes; their text stays at the measure and footnotes
+     float out into the notes column. Archive pages (publications, talks,
+     CV) have no notes, so they use the full width of both. */
+  #main > .page,
+  #main > .archive,
+  #main > .page__related {
+    grid-column: text-start / notes-end;
+  }
+
+  .masthead__inner-wrap,
+  .page__footer footer {
+    max-width: calc(#{$grid-three} + 2 * #{$page-pad});
+  }
+}

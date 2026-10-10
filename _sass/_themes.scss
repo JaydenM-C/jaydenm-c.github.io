@@ -58,6 +58,28 @@ $caption-font-family        : $newsreader;  // captions, subtitles (italic)
 $meta-font-family           : $plex-mono;   // dates, read-times, technical metadata
 
 /* ==========================================================================
+   Page grid — derived from the body text
+   One unit = one line of body text (18px × 1.7 = 30.6px). The reading measure
+   is 20 lines' worth (612px = 34em ≈ 75 characters of Newsreader); the
+   sidebar and the sidenote column are 8 units each, gutters 1.5. The result
+   is a symmetrical block centred on the page: sidebar | text | notes.
+   ========================================================================== */
+
+$body-size                  : 18px;
+$body-leading               : 1.7;
+$grid-unit                  : $body-size * $body-leading;          // 30.6px
+$measure                    : 20 * $grid-unit;                     // 612px
+$side-col                   : 8 * $grid-unit;                      // 244.8px
+$col-gap                    : 1.5 * $grid-unit;                    // 45.9px
+$page-pad                   : 1em;                                 // each side
+$grid-two                   : $side-col + $col-gap + $measure;     // 902.7px
+$grid-three                 : $grid-two + $col-gap + $side-col;    // 1193.4px
+
+/* Layout states: one column (stacked) → two (sidebar | text) → three (+ notes) */
+$bp-two                     : 925px;    // text flexes slightly below the measure until ~940px
+$bp-three                   : 1230px;   // $grid-three + page padding
+
+/* ==========================================================================
    Breakpoints
    ========================================================================== */
 
