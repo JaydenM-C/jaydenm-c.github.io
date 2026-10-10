@@ -7,20 +7,28 @@
    ========================================================================== */
 
 /* Used to set the size for <em> */
-$doc-font-size              : 17;
+$doc-font-size              : 18;
 
 /* Paragraph indention */
 $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
-/* System typefaces — per Visual Identity Guide (2026) */
-/* Literata: display. Inter: body. Fira Code: mono. Fallback stacks per guide. */
-$serif                      : 'Literata', 'Source Serif 4', Charter, Georgia, 'Times New Roman', serif;
-$sans-serif                 : 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-$monospace                  : 'Fira Code', 'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
+/* Typefaces — Newy Sunsets. Four faces, one role each:
+   Jost (display + chrome), Newsreader (body), IBM Plex Mono (code + technical
+   metadata), Gentium (IPA, transcriptions, whole interlinear glosses).
+   Fallback stacks per the identity guide. */
+$jost                       : 'Jost', 'Futura', 'Century Gothic', 'Avenir Next', Avenir, 'Twentieth Century', sans-serif;
+$newsreader                 : 'Newsreader', 'Source Serif 4', 'Noto Serif', Georgia, 'Times New Roman', serif;
+$plex-mono                  : 'IBM Plex Mono', 'JetBrains Mono', 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
+$gentium                    : 'Gentium', 'Gentium Plus', 'Charis SIL', 'Doulos SIL', 'Noto Serif', serif;
 
-/* Literata is the display face — alias for clarity at call sites */
-$display                    : $serif;
+/* Role aliases. Template partials reference $sans-serif / $serif / $monospace;
+   under Newy Sunsets the sans is display/chrome and the serif is body. */
+$serif                      : $newsreader;
+$sans-serif                 : $jost;
+$monospace                  : $plex-mono;
+$ipa                        : $gentium;
+$display                    : $jost;
 
 /* Sans serif typefaces (retained for any template references) */
 $sans-serif-narrow          : $sans-serif;
@@ -33,20 +41,21 @@ $bodoni                     : "Bodoni MT", serif;
 $calisto                    : "Calisto MT", serif;
 $garamond                   : Garamond, serif;
 
-/* Type scale — recalibrated around a 17px body (web spec) */
-/* em values computed relative to the 17px root */
-$type-size-1                : 2.118em;  // ~36px — h1 (web post title)
-$type-size-2                : 1.412em;  // ~24px — h2 (subhead)
-$type-size-3                : 1.176em;  // ~20px — h3
-$type-size-4                : 1em;      // ~17px — h4 / body
-$type-size-5                : 0.882em;  // ~15px — h5 / block code
-$type-size-6                : 0.824em;  // ~14px — h6 / inline code / figcaption / small
-$type-size-7                : 0.765em;  // ~13px — very small UI
-$type-size-8                : 0.706em;  // ~12px — chrome / kickers
+/* Type scale — around an 18px Newsreader body (web spec: 17–18px).
+   em values are relative to the 18px body. */
+$type-size-1                : 2em;      // 36px — h1 (web post title)
+$type-size-2                : 1.333em;  // 24px — h2 (subhead)
+$type-size-3                : 1.111em;  // 20px — h3
+$type-size-4                : 1em;      // 18px — h4 / body
+$type-size-5                : 0.889em;  // 16px — h5 / chrome
+$type-size-6                : 0.833em;  // 15px — h6 / figcaption / small
+$type-size-7                : 0.778em;  // 14px — very small UI
+$type-size-8                : 0.722em;  // 13px — kickers, metadata
 
-$global-font-family         : $sans-serif;  // Inter
-$header-font-family         : $serif;       // Literata
-$caption-font-family        : $sans-serif;  // Inter (was serif under old system)
+$global-font-family         : $newsreader;  // body
+$header-font-family         : $jost;        // headings
+$caption-font-family        : $newsreader;  // captions, subtitles (italic)
+$meta-font-family           : $plex-mono;   // dates, read-times, technical metadata
 
 /* ==========================================================================
    Breakpoints

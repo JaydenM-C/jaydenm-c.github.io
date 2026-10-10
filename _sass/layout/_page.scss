@@ -34,9 +34,29 @@
   }
 }
 
+/* Reading measure — the whole post column (title, meta, text, figures,
+   tables) is capped so lines run ~75 characters of Newsreader. Archive
+   layouts (publications, talks, CV) keep the full width. */
+.page .page__inner-wrap {
+  max-width: 34em;
+}
+
+/* Justified body text, hyphenated so the spacing stays even. Left-aligned
+   on phones, where ~45-character lines are too short to justify cleanly. */
+.page__content > p,
+.page__content > ul > li,
+.page__content > ol > li {
+  @include breakpoint($small) {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphenate-limit-chars: 7 3 3;
+  }
+}
+
 .page__title {
   margin-top: 0;
-  line-height: 1;
+  line-height: 1.15;
 
   & + .page__meta {
     margin-top: -0.5em;
@@ -52,7 +72,8 @@
   margin-bottom: 0.5em;
   color: var(--ink-muted);
   font-family: $caption-font-family;
-  font-size: $type-size-4;
+  font-style: italic;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.4;
 
@@ -105,12 +126,11 @@
   dt {
     margin-top: 1em;
     font-family: $sans-serif;
-    font-weight: bold;
+    font-weight: 500;
   }
 
   dd {
     margin-left: 1em;
-    font-family: $sans-serif;
     font-size: $type-size-6;
   }
 
@@ -233,9 +253,8 @@
 }
 
 .page__share-title {
+  @extend %kicker;
   margin-bottom: 10px;
-  font-size: $type-size-6;
-  text-transform: uppercase;
 }
 
 
@@ -243,11 +262,19 @@
    Page meta
    ========================================================================== */
 
+/* Dates, read-times: technical metadata, so IBM Plex Mono (identity guide). */
+.page__meta,
+.page__date {
+  color: var(--global-text-color-light);
+  font-family: $meta-font-family;
+  font-size: 13px;
+  line-height: 1.6;
+
+  strong { font-weight: 400; }
+}
+
 .page__meta {
   margin-top: 2em;
-  color: var(--global-text-color-light);
-  font-family: $sans-serif;
-  font-size: $type-size-6;
 
   p {
     margin: 0;
@@ -413,7 +440,6 @@
 }
 
 .page__related-title {
+  @extend %kicker;
   margin-bottom: 10px;
-  font-size: $type-size-6;
-  text-transform: uppercase;
 }

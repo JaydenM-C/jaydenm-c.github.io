@@ -131,8 +131,18 @@
   }
 }
 .sidebar .author__name {
-  font-family: $display;          // Literata — name is an identity feature
-  font-size: $type-size-5;
+  font-family: $display;          // Jost
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Role line — Newsreader italic, per guide (bylines and role lines are body). */
+.sidebar .author__bio {
+  font-family: $global-font-family;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--ink-muted);
 }
 
 .sidebar .author__desktop {

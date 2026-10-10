@@ -1,84 +1,115 @@
 /* ==========================================================================
-   DEFAULT THEME
-   Colour tokens per Visual Identity Guide (2026).
-   Palette is photographically anchored: burnt red + bottle green primaries,
-   warm neutrals throughout. Never pure #FFFFFF, never pure #000000.
+   DEFAULT (LIGHT) THEME — Newy Sunsets
+   Colour tokens per the Newy Sunsets visual identity guide.
+   Cool blue field (ocean), warm ochre secondary (sunlit sandstone), one red
+   spark (the fisherman's jacket), used rarely. Never pure #FFFFFF / #000000.
    ========================================================================== */
 
-/* --- Brand tokens ------------------------------------------------------- */
-/* Primaries */
-$brand-burnt-red            : #9E2A1E;  // signature — front-of-house accent / link hover
-$brand-bottle-green         : #1E3A34;  // workhorse — back-of-house surfaces
-/* Supporting */
-$brand-deep-maroon          : #681F34;  // link colour on cream / darker red chrome
-$brand-parchment            : #DCCEB1;  // alternative warm background (held)
+/* --- Palette ------------------------------------------------------------ */
+/* Blues */
+$deep-pacific               : #284958;  // primary — chrome, hero fields
+$bar-beach-swell            : #3A6173;  // mid blue — secondary blue surfaces
+$shallows                   : #6D92A5;  // light blue — fills, chart series
+$churning-whitewater        : #91ADBE;  // pale blue — muted text on dark blue
+/* Sandstone (warm secondary) */
+$newy-sandstone             : #AE4E1B;  // kickers, rule accents, small-caps heads
+$wet-sandstone              : #AA3F13;  // deeper emphasis; link hover
+$sunlit-rock-shelf          : #C3824B;  // calm warm fills
+/* Reds */
+$flare                      : #D5101A;  // the spark — sparingly, never small text
+$federation-red             : #841C1B;  // links, emphasis type
 /* Neutrals */
-$ink                        : #2B2A26;  // body text — warm near-black
-$ink-muted                  : #6C6A64;  // secondary text, captions
-$ink-faint                  : #9A978E;  // tertiary, placeholders
-$page-cream                 : #FAF7F2;  // default background
-$surface                    : #FFFFFF;  // elevated cards only
-$rule                       : #E5E0D5;  // hairlines, dividers
-$code-bg                    : #F3EFE7;  // tinted cream for code regions
-/* On-surface creams */
-$cream-on-red               : #FBEDE8;  // type on burnt-red surfaces
-$cream-on-green             : #F3ECDD;  // type on bottle-green surfaces
+$paper                      : #FFFEF9;  // page surface
+$paper-dark                 : #F4F2E9;  // code / inset surface on Paper
+$salt-spray                 : #F8F6F9;  // cool alternate surface (held)
+$linen                      : #FFF7DD;  // large warm callout fields only
+$newcastle-coal             : #181414;  // ink
+$newcastle-siltstone        : #706468;  // secondary text, captions
+$newcastle-shale            : #372A28;  // darker secondary (held)
+$nobbys-tuff                : #D9D8D6;  // hairlines
+$nobbys-tuff-dark           : #C2C4C3;  // stronger borders
+$nobbys-tuff-light          : #E6E5E3;  // faintest dividers, table heads
+/* Supplementary accents (one-offs) */
+$strap-weed                 : #3B402A;
+$rust                       : #672D17;
+$dusk                       : #624D6C;
+$ocean-shadow               : #39517D;
+$night-tide                 : #2A344D;
 
-/* --- Legacy gray aliases (retained; not for new use) -------------------- */
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : #9ba1a6;
-$lighter-gray               : mix(#fff, $gray, 90%);
+/* --- Legacy aliases (template internals still reference these) --------- */
+$gray                       : $newcastle-siltstone;
+$dark-gray                  : mix($newcastle-coal, $gray, 40%);
+$darker-gray                : mix($newcastle-coal, $gray, 60%);
+$light-gray                 : $nobbys-tuff-dark;
+$lighter-gray               : $nobbys-tuff-light;
 
-/* Status colours — left on template defaults for now; re-spec if/when
-   a data-viz or notice palette pass is undertaken. */
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
-$notice-color               : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
+/* Status colours (notices, buttons) mapped onto the palette */
+$danger-color               : $federation-red;
+$info-color                 : $deep-pacific;
+$notice-color               : $newcastle-siltstone;
+$success-color              : $strap-weed;
+$warning-color              : $newy-sandstone;
 
 /* Other basic settings for the template */
 $border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
+$box-shadow                 : 0 1px 1px rgba($newcastle-coal, 0.125);
 $global-transition          : all 0.2s ease-in-out;
 $masthead-height            : 70px;
 $navicon-width              : 28px;
-$navicon-height             : 4px;
+$navicon-height             : 3px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
 /* Default light theme for the site */
 :root {
-    --global-base-color                 : #{$ink-muted};
-    --global-bg-color                   : #{$page-cream};
-    --global-footer-bg-color            : #{$page-cream};
-    --global-border-color               : #{$rule};
-    --global-dark-border-color          : #{$ink-faint};
-    --global-code-background-color      : #{$code-bg};
-    --global-code-text-color            : #{$ink};
-    --global-fig-caption-color          : #{$ink-muted};
-    --global-link-color                 : #{$brand-deep-maroon};
-    --global-link-color-hover           : #{$brand-burnt-red};
-    --global-link-color-visited         : #{$brand-deep-maroon};
-    --global-masthead-link-color        : #{$ink};
-    --global-masthead-link-color-hover  : #{$brand-deep-maroon};
-    --global-text-color                 : #{$ink};
-    --global-text-color-light           : #{$ink-faint};
-    --global-thead-color                : #{$rule};
+    --global-base-color                 : #{$newcastle-siltstone};
+    --global-bg-color                   : #{$paper};
+    --global-footer-bg-color            : #{$deep-pacific};
+    --global-border-color               : #{$nobbys-tuff};
+    --global-dark-border-color          : #{$nobbys-tuff-dark};
+    --global-code-background-color      : #{$paper-dark};
+    --global-code-text-color            : #{$newcastle-coal};
+    --global-fig-caption-color          : #{$newcastle-siltstone};
+    --global-link-color                 : #{$federation-red};
+    --global-link-color-hover           : #{$wet-sandstone};
+    --global-link-color-visited         : #{$federation-red};
+    --global-masthead-link-color        : #{$paper};
+    --global-masthead-link-color-hover  : #{$paper};
+    --global-text-color                 : #{$newcastle-coal};
+    --global-text-color-light           : #{$newcastle-siltstone};  // no separate faint step: old one failed contrast
+    --global-thead-color                : #{$nobbys-tuff-light};
 
-    /* Additional brand tokens for downstream use */
-    --ink                               : #{$ink};
-    --ink-muted                         : #{$ink-muted};
-    --ink-faint                         : #{$ink-faint};
-    --rule                              : #{$rule};
-    --page-cream                        : #{$page-cream};
-    --surface                           : #{$surface};
-    --code-bg                           : #{$code-bg};
-    --brand-burnt-red                   : #{$brand-burnt-red};
-    --brand-bottle-green                : #{$brand-bottle-green};
-    --brand-deep-maroon                 : #{$brand-deep-maroon};
-    --cream-on-red                      : #{$cream-on-red};
-    --cream-on-green                    : #{$cream-on-green};
+    /* Semantic tokens for component styles */
+    --ink                               : #{$newcastle-coal};
+    --ink-muted                         : #{$newcastle-siltstone};
+    --ink-faint                         : #{$newcastle-siltstone};
+    --rule                              : #{$nobbys-tuff};
+    --rule-strong                       : #{$nobbys-tuff-dark};
+    --rule-faint                        : #{$nobbys-tuff-light};
+    --page                              : #{$paper};
+    --page-cream                        : #{$paper};   // legacy name
+    --surface                           : #{$paper};
+    --code-bg                           : #{$paper-dark};
+    --chrome                            : #{$deep-pacific};
+    --accent                            : #{$newy-sandstone};
+    --link                              : #{$federation-red};
+    --spark                             : #{$flare};
+    --selection-bg                      : #{$deep-pacific};
+
+    /* On Deep Pacific chrome (masthead, footer) */
+    --on-chrome                         : #{$paper};            // 9.5:1
+    --on-chrome-muted                   : #{$nobbys-tuff};      // 6.8:1 — small text safe
+    --on-chrome-faint                   : #{$churning-whitewater}; // 4.1:1 — icons / large text only
+    --chrome-hover                      : #{$bar-beach-swell};
+    --chrome-accent                     : #{$sunlit-rock-shelf}; // rules and bars only, never text (3.0:1)
+    --chrome-rule                       : #{rgba($paper, 0.14)};
+    --selection-text                    : #{$paper};
+
+    /* Syntax (light tuning) */
+    --syn-text                          : #{$newcastle-coal};
+    --syn-comment                       : #{$newcastle-siltstone};
+    --syn-string                        : #{$wet-sandstone};
+    --syn-keyword                       : #{$deep-pacific};
+    --syn-number                        : #{$federation-red};
+    --syn-punct                         : #{$newcastle-siltstone};
 }

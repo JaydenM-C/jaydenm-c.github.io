@@ -1,31 +1,27 @@
-/* CV Template Styles
+/* CV Template Styles — Newy Sunsets
  *
- * Colour palette mirrors the LaTeX CV Visual Identity Guide:
- *   burntred    #9E2A1E — name / display accent
- *   deepmaroon  #681F34 — links
- *   ink         #2B2A26 — body text, section heads
- *   inkmuted    #6C6A64 — meta, captions
- *   rulegrey    #E5E0D5 — hairlines
- *   codebg      #F3EFE7 — subdued tag / pill background
+ * Uses the site's CSS custom properties (see _sass/theme/_default.scss) so the
+ * CV follows the theme: Coal ink, Deep Pacific name, Siltstone meta, Nobbys
+ * Tuff rules, Paper Dark pills. Fonts inherit from the page: Newsreader body,
+ * Jost headings; dates in IBM Plex Mono as technical metadata.
  */
 .cv-container {
   max-width: 1000px;
   margin: 0 auto;
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #2B2A26;
+  color: var(--ink);
   line-height: 1.6;
 }
 
 /* Header Styles */
 .cv-header {
   margin-bottom: 2rem;
-  border-bottom: 2px solid #E5E0D5;
+  border-bottom: 2px solid var(--rule);
   padding-bottom: 1rem;
 }
 
 .cv-header h1 {
   margin-bottom: 0.5rem;
-  color: #9E2A1E;
+  color: var(--chrome);
 }
 
 .cv-contact-info {
@@ -55,7 +51,7 @@
 
 .cv-profile-item a,
 .cv-profile-link {
-  color: #681F34;
+  color: var(--link);
   text-decoration: none;
 }
 
@@ -74,17 +70,17 @@
 }
 
 .cv-section h2 {
-  border-bottom: 1px solid #E5E0D5;
+  border-bottom: 1px solid var(--rule);
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #2B2A26;
+  color: var(--ink);
 }
 
 .cv-section h2 i {
-  color: #666;
+  color: var(--ink-muted);
 }
 
 /* List Styles */
@@ -105,16 +101,22 @@
 }
 
 .cv-item-title {
-  font-weight: bold;
-  font-size: 1.1rem;
+  font-family: 'Jost', 'Futura', 'Century Gothic', 'Avenir Next', Avenir, sans-serif;
+  font-weight: 500;
+  font-size: 1.05rem;
 }
 
 .cv-item-date {
-  color: #666;
+  color: var(--ink-muted);
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  padding-left: 1rem;
 }
 
 .cv-item-subtitle {
-  color: #666;
+  color: var(--ink-muted);
+  font-style: italic;
   margin-bottom: 0.5rem;
 }
 
@@ -149,7 +151,7 @@
 
 .cv-skill-category h3 {
   margin-bottom: 0.5rem;
-  color: #333;
+  color: var(--ink);
 }
 
 .cv-skill-keywords {
@@ -159,7 +161,7 @@
 }
 
 .cv-skill-keyword {
-  background-color: #f2f2f2;
+  background-color: var(--code-bg);
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   font-size: 0.9rem;
@@ -174,8 +176,8 @@
 }
 
 .cv-project-keyword {
-  background-color: #F3EFE7;
-  color: #2B2A26;
+  background-color: var(--code-bg);
+  color: var(--ink);
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   font-size: 0.9rem;
@@ -194,11 +196,11 @@
 }
 
 .cv-language-name {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .cv-language-fluency {
-  color: #666;
+  color: var(--ink-muted);
   font-size: 0.9rem;
 }
 
@@ -211,7 +213,7 @@
 
 .cv-interest h3 {
   margin-bottom: 0.5rem;
-  color: #333;
+  color: var(--ink);
 }
 
 .cv-interest-keywords {
@@ -221,7 +223,7 @@
 }
 
 .cv-interest-keyword {
-  background-color: #f9f9f9;
+  background-color: var(--code-bg);
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   font-size: 0.9rem;
@@ -230,7 +232,7 @@
 /* References Styles */
 .cv-references {
   font-style: italic;
-  color: #666;
+  color: var(--ink-muted);
 }
 
 /* Print Styles */
@@ -240,17 +242,17 @@
   }
   
   .cv-header {
-    border-bottom-color: #ccc;
+    border-bottom-color: #C2C4C3;
   }
   
   .cv-section h2 {
-    border-bottom-color: #ccc;
+    border-bottom-color: #C2C4C3;
   }
   
   .cv-skill-keyword,
   .cv-project-keyword,
   .cv-interest-keyword {
-    border: 1px solid #ccc;
+    border: 1px solid #C2C4C3;
     background-color: transparent;
   }
 }

@@ -327,7 +327,7 @@ body:hover .visually-hidden button {
   position: relative;
   width: $navicon-width;
   height: $navicon-height;
-  background: #fff;
+  background: var(--on-chrome);
   margin: auto;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -339,7 +339,7 @@ body:hover .visually-hidden button {
     left: 0;
     width: $navicon-width;
     height: $navicon-height;
-    background: #fff;
+    background: var(--on-chrome);
     -webkit-transition: 0.3s;
     transition: 0.3s;
   }
@@ -501,4 +501,16 @@ a.reversefootnote {
 .required {
   color: $danger-color;
   font-weight: bold;
+}
+
+
+/* Kicker / section label — Jost 500, tracked caps, Newy Sandstone.
+   (Jost has no true small caps, so caps at a reduced size stand in.) */
+%kicker {
+  font-family: $display;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
