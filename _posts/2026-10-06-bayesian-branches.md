@@ -10,7 +10,7 @@ tags:
   - computational methods
 ---
 
-Have you ever wondered where baby trees come from? Computationally-inferred phylogenetic trees have been popping up in linguistic papers for a couple of decades now. But there's still an air of mystery around how they get made, and a few lingering misconceptions.
+Have you ever wondered where baby trees come from? Computationally-inferred phylogenies have been popping up in linguistic papers for a couple of decades now. But there's still an air of mystery around how they get made, and a few lingering misconceptions.
 
 As a parting gift on my final day at the Surrey Morphology Group, I delivered an 'Expertise Session' on phylogenetic tree inference. This is a kind of skills/knowledge-sharing workshop talk, with half an hour for presentation and half an hour for discussion and questions. Evolutionary thinking is increasingly familiar in the SMG lab. We recently had a reading group on _The Philosophy of Evolutionary Theory_ by Elliott Sober (which covers evolutionary concepts like selection and drift, but not tree inference itself) and people have been generally exposed to phylogenetic comparative methods in quantitative typology (which relies on a pre-existing reference phylogeny). But this led to the very reasonable question: where do the trees come from in the first place? What is the actual tree inference process? What are the data? What are the models?
 
