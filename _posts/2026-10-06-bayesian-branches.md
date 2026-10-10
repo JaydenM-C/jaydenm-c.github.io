@@ -28,6 +28,10 @@ So, without further ado, the slides.
 
 <p><a href="/files/pdf/Intro_to_tree_inference-handout-sml.pdf">Download the slides (PDF)</a></p>
 
+Citation:
+
+Macklin-Cordes, Jayden L. 2026. Bayesian branches: Where do language trees come from? _Surrey Morphology Group Experise Session_. Invited talk, 30/09/2026. University of Surrey, Guildford, UK. <https://www.doi.org/10.5281/zenodo.23284532>.
+
 ### The model menu
 
 Slide 15 lists the kinds of priors that go into a Bayesian phylogenetic model. But we didn't go into detail about what options a linguist might actually select for those priors. There are three main ingredients you'll need to choose.
