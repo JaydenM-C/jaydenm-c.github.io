@@ -408,6 +408,21 @@ def build_json(data: dict) -> dict:
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
+def normalise_talk_venues(data: dict) -> dict:
+    """Talks join venue and location with ". ", but the YAML entries write
+    venue_rest without it (publications include their own punctuation, e.g.
+    " 26(3). pp. 1-20."). Add the separator wherever it's missing, so both
+    the LaTeX and the website render "Venue. Place." rather than
+    "VenuePlace.". Entries that already start with punctuation are left alone.
+    """
+    for section in ("conference_presentations", "invited_talks"):
+        for p in data.get(section, []) or []:
+            rest = str(p.get("venue_rest", "") or "")
+            if p.get("venue_italic") and rest and rest[0] not in ".,;: ":
+                p["venue_rest"] = ". " + rest
+    return data
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--tex-only",  action="store_true")
@@ -422,6 +437,7 @@ def main() -> int:
 
     with YAML_PATH.open("r", encoding="utf-8") as fh:
         data = yaml.safe_load(fh)
+    data = normalise_talk_venues(data)
 
     if not args.json_only:
         tex = render_tex(data)

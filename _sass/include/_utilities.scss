@@ -54,10 +54,10 @@ body:hover .visually-hidden button {
   font-size: 1em;
   font-weight: bold;
   padding: 15px 23px 14px;
-  background: #fff;
+  background: $paper;
   z-index: 100000;
   text-decoration: none;
-  box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
+  box-shadow: 0 0 2px 2px rgba($newcastle-coal,.6);
 }
 
 
@@ -197,7 +197,7 @@ body:hover .visually-hidden button {
 
 .social-icons {
   .fa {
-    color: #000;
+    color: $newcastle-coal;
   }
 
   .fa-bluesky,
@@ -404,10 +404,10 @@ body:hover .visually-hidden button {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
+  background-color: $paper-dark;
+  border: 1px solid $nobbys-tuff;
   border-radius: $border-radius;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba($newcastle-coal, 0.05);
 }
 
 
@@ -427,7 +427,7 @@ body:hover .visually-hidden button {
     width: 100%;
     height: 100%;
     z-index: 999;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba($paper, 0.85);
   }
 
   .modal {
@@ -445,7 +445,7 @@ body:hover .visually-hidden button {
   margin-top: -150px;
   min-height: 0;
   z-index: 9999;
-  background: #fff;
+  background: $paper;
   border: 1px solid var(--global-border-color);
   border-radius: $border-radius;
   box-shadow: $box-shadow;

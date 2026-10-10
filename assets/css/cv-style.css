@@ -145,12 +145,13 @@
 /* Skills Styles */
 .cv-skills {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.75rem 2rem;
 }
 
 .cv-skill-category h3 {
-  margin-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0.4rem;
   color: var(--ink);
 }
 
@@ -207,12 +208,13 @@
 /* Interests Styles */
 .cv-interests {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
 }
 
 .cv-interest h3 {
-  margin-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0.4rem;
   color: var(--ink);
 }
 

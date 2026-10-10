@@ -121,7 +121,7 @@
       text-decoration: underline;
 
       img {
-        box-shadow: 0 0 10px rgba(#000, 0.25);
+        box-shadow: 0 0 10px rgba($newcastle-coal, 0.25);
       }
     }
   }
@@ -167,7 +167,7 @@
     animation-delay: 0.25s;
 
     a {
-      color: #fff;
+      color: $paper;
     }
 
     .wrapper {
@@ -183,8 +183,8 @@
     .page__meta,
     .page__lead,
     .btn {
-      color: #fff;
-      text-shadow: 1px 1px 4px rgba(#000, 0.5);
+      color: $paper;
+      text-shadow: 1px 1px 4px rgba($newcastle-coal, 0.5);
     }
 
     .page__lead {
@@ -213,10 +213,10 @@
   right: 0;
   margin: 0 auto;
   padding: 2px 5px;
-  color: #fff;
+  color: $paper;
   font-family: $caption-font-family;
   font-size: $type-size-7;
-  background: #000;
+  background: $newcastle-coal;
   text-align: right;
   z-index: 5;
   opacity: 0.5;
@@ -227,7 +227,7 @@
   }
 
   a {
-    color: #fff;
+    color: $paper;
     text-decoration: none;
   }
 }

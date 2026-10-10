@@ -79,7 +79,7 @@
         {% if item.description %}
         <p>{{ item.description }}</p>
         {% endif %}
-        {% if item.url %}
+        {% if item.url and item.url != "" %}
         <p><a href="{{ item.url }}" target="_blank">View Project</a></p>
         {% endif %}
       </div>
@@ -159,7 +159,7 @@
             {{ publication.summary | replace: "Macklin-Cordes, Jayden L.", "<strong>Macklin-Cordes, Jayden L.</strong>" | replace: "Jayden L. Macklin-Cordes", "<strong>Jayden L. Macklin-Cordes</strong>" }}
             {% if publication.yearText %} {{ publication.yearText }}{% endif %}
             {% if publication.venueItalic %}{% if publication.inProc %} In{% endif %} <em>{{ publication.venueItalic }}</em>{{ publication.venueRest }}{% endif %}
-            {% if publication.website %} <a href="{{ publication.website }}" target="_blank">{{ publication.website }}</a>.{% endif %}
+            {% if publication.website and publication.website != "" %} <a href="{{ publication.website }}" target="_blank">{{ publication.website }}</a>.{% endif %}
           </div>
         </div>
       </li>
@@ -181,8 +181,9 @@
             {{ talk.description | replace: "Macklin-Cordes, Jayden L.", "<strong>Macklin-Cordes, Jayden L.</strong>" | replace: "Jayden L. Macklin-Cordes", "<strong>Jayden L. Macklin-Cordes</strong>" }}
             {% if talk.yearText %} {{ talk.yearText }}{% endif %}
             {% if talk.venueItalic %} <em>{{ talk.venueItalic }}</em>{{ talk.venueRest }}{% endif %}
-            {% if talk.doi %} <a href="{{ talk.doi }}" target="_blank">{{ talk.doi }}</a>.{% endif %}
-            {% if talk.url %} <a href="{{ talk.url }}" target="_blank">{{ talk.url }}</a>.{% endif %}
+            {% comment %}An empty string is truthy in Liquid, so test for content, not existence.{% endcomment %}
+            {% if talk.doi and talk.doi != "" %} <a href="{{ talk.doi }}" target="_blank">{{ talk.doi }}</a>.{% endif %}
+            {% if talk.url and talk.url != "" %} <a href="{{ talk.url }}" target="_blank">{{ talk.url }}</a>.{% endif %}
           </div>
         </div>
       </li>

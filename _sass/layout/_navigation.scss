@@ -92,7 +92,7 @@
       }
 
       &.current {
-        color: #fff;
+        color: $paper;
         background: var(--global-base-color);
       }
 
@@ -347,13 +347,13 @@
     margin-left: -0.5em;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    color: #fff;
+    color: $paper;
     font-weight: bold;
     background: var(--global-base-color);
     border-radius: $border-radius;
 
     &:hover {
-      color: #fff;
+      color: $paper;
     }
   }
 }
@@ -387,13 +387,13 @@
   color: var(--global-text-color-light);
   text-transform: uppercase;
   letter-spacing: 1px;
-  background-color: #fff;
+  background-color: $paper;
   border: 1px solid var(--global-border-color);
   border-radius: $border-radius;
   box-shadow: $box-shadow;
 
   .nav__title {
-    color: #fff;
+    color: $paper;
     font-size: $type-size-6;
     background: var(--global-base-color);
     border-top-left-radius: $border-radius;
@@ -419,7 +419,7 @@
     text-decoration-line: none !important;
 
     &:hover {
-      color: #000;
+      color: $newcastle-coal;
       background: var(--global-link-color-hover);
     }
   }

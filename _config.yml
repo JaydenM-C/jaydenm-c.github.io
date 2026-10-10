@@ -12,7 +12,7 @@ site_theme               : "default"
 title                    : "Dr Jayden Macklin-Cordes"
 title_separator          : "-"
 name                     : &name "Jayden Macklin-Cordes"
-description              : &description "Computational linguist · Language evolution · Bayesian methods"
+description              : &description "Evolutionary Language Scientist"
 url                      : https://macklin-cordes.com # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "JaydenM-C/jaydenm-c.github.io"
@@ -25,9 +25,9 @@ author:
   avatar           : "headshot_2_web.jpeg"
   name             : "Jayden Macklin-Cordes"
   pronouns         : # example: "she/her"  
-  bio              : "Computational linguist · Language evolution · Bayesian methods"
-  location         : "University of Surrey, UK"
-  employer         : "Surrey Morphology Group"
+  bio              : "Evolutionary Language Scientist"
+  location         : "University of Zurich"
+  employer         : "ISLE Institute"
   uri              : # URL
   email            : "jayden@macklin-cordes.com" 
 
@@ -249,7 +249,7 @@ defaults:
       author_profile: true
       read_time: true
       comments: true
-      share: true
+      share: false
       related: true
   # _pages
   - scope:
@@ -265,7 +265,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+      share: false
       comments: true
   # _publications
   - scope:
@@ -274,7 +274,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+      share: false
       comments: true
   # _talks
   - scope:
@@ -283,7 +283,7 @@ defaults:
     values:
       layout: talk
       author_profile: true
-      share: true
+      share: false
 
 
 # Sass/SCSS

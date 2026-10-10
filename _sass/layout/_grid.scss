@@ -119,11 +119,11 @@
   }
 
   /* posts span text + notes; their text stays at the measure and footnotes
-     float out into the notes column. Archive pages (publications, talks,
-     CV) have no notes, so they use the full width of both. */
-  #main > .page,
-  #main > .archive,
-  #main > .page__related {
+     float out into the notes column. Archive pages (blog, publications,
+     talks, CV) keep to the text column: their entries are citation-length
+     paragraphs that read badly at full width. Related posts also stay in
+     the text column (see _components.scss). */
+  #main > .page {
     grid-column: text-start / notes-end;
   }
 
