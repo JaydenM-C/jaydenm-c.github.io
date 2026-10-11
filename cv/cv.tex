@@ -6,15 +6,15 @@
 % GENERATED FILE. Do not edit directly; edit cv/cv.yaml and rerun
 %   python cv/build_cv.py
 %
-% Typography and colour follow the project Visual Identity Guide:
-%   Literata (display, 21pt name), Inter (body 10.5pt, line-height 1.55,
-%   emphasis at weight 500 — never 700), Fira Code (mono).
-%   Burnt red #9E2A1E name band (front of house), cream page #FAF7F2 body
-%   (back of house), ink #2B2A26 type, deep maroon #681F34 links,
-%   Inter 500 small-caps burnt-red section heads tracked +0.14em.
+% Typography and colour follow the Newy Sunsets visual identity:
+%   Jost (display: 21pt name, section heads), Newsreader (body 10.5pt,
+%   static cut at opsz 10.5, line-height 1.5), IBM Plex Mono (dates, running
+%   chrome, package names). Deep Pacific #284958 name band, Paper #FFFEF9
+%   page, Newcastle Coal #181414 ink, Siltstone #706468 secondary text,
+%   Federation Red #841C1B links and emphasis, Newy Sandstone #AE4E1B
+%   tracked-caps section heads (+0.14em).
 %
-% Compile with LuaLaTeX. Fonts must be installed on the system (or uploaded
-% to the Overleaf project). See cv/README.md.
+% Compile with LuaLaTeX. Fonts load by file from cv/fonts/ (see README).
 % =============================================================================
 
 \documentclass[fontsize=10.5pt,a4paper,parskip=half-]{scrartcl}
@@ -28,7 +28,7 @@
 % every used size, and stock CM only ships 10/11/12pt. lmodern provides a
 % scalable Latin Modern substitute, silencing the "size substituted" warnings
 % at our 10.5pt body size. Latin Modern is only used as a fallback; our main
-% fonts remain Inter / Literata / Fira Code.
+% fonts remain Newsreader / Jost / IBM Plex Mono.
 \usepackage{lmodern}
 \usepackage{microtype}
 
@@ -37,7 +37,7 @@
 
 % ---------- Geometry / page chrome ----------
 \usepackage[a4paper,
-            top=3.8cm,     % leaves room for the red name band on page 1
+            top=3.8cm,     % leaves room for the name band on page 1
             bottom=2.2cm,
             left=2cm,
             right=2cm,
@@ -60,87 +60,81 @@
 \usepackage[hidelinks]{hyperref}
 
 % =============================================================================
-% COLOURS (Visual Identity Guide)
+% COLOURS (Newy Sunsets)
 % =============================================================================
-\definecolor{burntred}{HTML}{9E2A1E}
-\definecolor{bottlegreen}{HTML}{1E3A34}
-\definecolor{deepmaroon}{HTML}{681F34}
-\definecolor{parchment}{HTML}{DCCEB1}
-\definecolor{pagecream}{HTML}{FAF7F2}
-\definecolor{surfacewhite}{HTML}{FFFFFF}
-\definecolor{ink}{HTML}{2B2A26}
-\definecolor{inkmuted}{HTML}{6C6A64}
-\definecolor{inkfaint}{HTML}{9A978E}
-\definecolor{rulegrey}{HTML}{E5E0D5}
-\definecolor{codebg}{HTML}{F3EFE7}
-\definecolor{creamonred}{HTML}{FBEDE8}
-\definecolor{creamongreen}{HTML}{F3ECDD}
+\definecolor{deeppacific}{HTML}{284958}    % name band
+\definecolor{whitewater}{HTML}{91ADBE}     % muted text on Deep Pacific
+\definecolor{sandstone}{HTML}{AE4E1B}      % section heads, bullets
+\definecolor{federationred}{HTML}{841C1B}  % links, emphasis type
+\definecolor{paper}{HTML}{FFFEF9}          % page
+\definecolor{coal}{HTML}{181414}           % ink
+\definecolor{siltstone}{HTML}{706468}      % secondary text, dates, chrome
+\definecolor{tuff}{HTML}{D9D8D6}           % hairline rules
 
-\pagecolor{pagecream}
-\color{ink}
+\pagecolor{paper}
+\color{coal}
 
 % =============================================================================
 % FONTS
-% Literata: display / headings / name.  Inter: body.  Fira Code: mono.
-% Emphasis uses Inter Medium (500); \textbf remapped accordingly — never 700.
+% Newsreader: body (static cut at opsz 10.5, made from the variable font so
+% the optical size matches the print size). Jost: display and section heads.
+% IBM Plex Mono: dates, running chrome, package names and URLs.
+% All loaded from cv/fonts/ by filename, so nothing needs installing
+% system-wide. The Path key is resolved relative to cv/ (locally and on
+% Overleaf). See cv/README.md.
 % =============================================================================
-% Fonts are loaded from cv/fonts/ by filename (not by family name), so the
-% user doesn't need them installed system-wide. See cv/README.md for which
-% TTFs to drop into that directory. The Path key is resolved relative to the
-% directory containing the main .tex file (cv/), both locally and on Overleaf.
-\setmainfont{Inter_18pt-}[
-  Path       = fonts/,
-  Extension  = .ttf,
-  UprightFont    = *Regular,
-  BoldFont       = *Medium,          % emphasis at 500, per identity guide
-  ItalicFont     = *Italic,
-  BoldItalicFont = *MediumItalic,
-  SmallCapsFeatures = {Letters=UppercaseSmallCaps},
-  Ligatures      = TeX,
-]
-\newfontfamily\literata{Literata-}[
-  Path       = fonts/,
-  Extension  = .ttf,
+\setmainfont{Newsreader-Text-}[
+  Path           = fonts/,
+  Extension      = .ttf,
   UprightFont    = *Regular,
   BoldFont       = *SemiBold,
   ItalicFont     = *Italic,
   BoldItalicFont = *SemiBoldItalic,
   Ligatures      = TeX,
-  Numbers        = OldStyle,
+  Numbers        = {Proportional, Lining},
 ]
-\newfontfamily\literatadisplay{Literata-}[
-  Path       = fonts/,
-  Extension  = .ttf,
-  UprightFont    = *SemiBold,
-  Ligatures      = TeX,
-  Numbers        = OldStyle,
-  LetterSpace    = -1,                % optical tightening at display size
-]
-\newfontfamily\sectionhead{Inter_18pt-}[
-  Path       = fonts/,
-  Extension  = .ttf,
+\newfontfamily\jost{Jost-}[
+  Path           = fonts/,
+  Extension      = .ttf,
   UprightFont    = *Medium,
-  Letters        = UppercaseSmallCaps,
+  BoldFont       = *SemiBold,
+  Ligatures      = TeX,
+]
+% Name on the Deep Pacific band: 500, one step lighter than on a light field
+\newfontfamily\jostdisplay{Jost-}[
+  Path           = fonts/,
+  Extension      = .ttf,
+  UprightFont    = *Medium,
+  Ligatures      = TeX,
+]
+% Section heads: Jost has no true small caps, so tracked capitals at a
+% reduced size stand in (\MakeUppercase is applied in \titleformat).
+\newfontfamily\sectionhead{Jost-}[
+  Path           = fonts/,
+  Extension      = .ttf,
+  UprightFont    = *Medium,
   LetterSpace    = 14,                % +0.14 em per identity guide
   Numbers        = Lining,
 ]
-\newfontfamily\firacode{FiraCode-}[
-  Path       = fonts/,
-  Extension  = .ttf,
+\setmonofont{IBMPlexMono-}[
+  Path           = fonts/,
+  Extension      = .ttf,
   UprightFont    = *Regular,
-  Ligatures      = TeX,
+  Scale          = 0.9,
 ]
+\newcommand{\meta}{\ttfamily\color{siltstone}}   % technical metadata style
+\newcommand{\linktag}[1]{{\ttfamily\footnotesize[#1]}}
 
-\linespread{1.35}                  % body line-height ≈ 1.55 after scrartcl base
+\linespread{1.25}                  % 10.5pt body at ~1.5 line-height
 
 % =============================================================================
 % HYPERLINKS
 % =============================================================================
 \hypersetup{
   colorlinks = true,
-  urlcolor   = deepmaroon,
-  linkcolor  = deepmaroon,
-  citecolor  = deepmaroon,
+  urlcolor   = federationred,
+  linkcolor  = federationred,
+  citecolor  = federationred,
   pdfauthor  = {Dr. Jayden L. Macklin-Cordes},
   pdftitle   = {Dr. Jayden L. Macklin-Cordes — Curriculum Vitae},
   pdfsubject = {Curriculum Vitae},
@@ -151,19 +145,19 @@
 % SECTION HEADINGS
 % =============================================================================
 \titleformat{\section}[hang]
-  {\sectionhead\color{burntred}\fontsize{11}{13}\selectfont}
+  {\sectionhead\color{sandstone}\fontsize{9.5}{12}\selectfont}
   {}{0pt}
-  {}
-  [\vspace{-0.2em}{\color{rulegrey}\rule{\linewidth}{0.4pt}}]
-\titlespacing*{\section}{0pt}{1.6em}{0.6em}
+  {\MakeUppercase}
+  [\vspace{-0.75em}{\color{tuff}\rule{\linewidth}{0.4pt}}]
+\titlespacing*{\section}{0pt}{1.7em}{0.45em}
 
 \titleformat{\subsection}
-  {\literata\bfseries\color{ink}\fontsize{12}{14}\selectfont}
+  {\jost\color{coal}\fontsize{11.5}{14}\selectfont}
   {}{0pt}{}
 \titlespacing*{\subsection}{0pt}{1.0em}{0.3em}
 
 \titleformat{\subsubsection}
-  {\literata\itshape\color{ink}\fontsize{10.5}{13}\selectfont}
+  {\itshape\color{coal}\fontsize{10.5}{13}\selectfont}
   {}{0pt}{}
 \titlespacing*{\subsubsection}{0pt}{0.6em}{0.15em}
 
@@ -175,7 +169,7 @@
   itemsep    = 0.15em,
   parsep     = 0pt,
   topsep     = 0.2em,
-  label      = {\color{burntred}\textbullet},
+  label      = {\color{sandstone}\textbullet},
 }
 \setlist[description]{
   leftmargin = 0pt,
@@ -193,27 +187,28 @@
 \fancypagestyle{firstpage}{%
   \fancyhf{}%
   \renewcommand{\headrulewidth}{0pt}%
-  \fancyfoot[C]{\color{inkmuted}\footnotesize\thepage\ of \pageref{LastPage}}%
+  \fancyfoot[C]{\meta\scriptsize\thepage\ of \pageref*{LastPage}}%
 }
 \fancypagestyle{cvbody}{%
   \fancyhf{}%
   \renewcommand{\headrulewidth}{0pt}%
-  \fancyhead[L]{\color{inkmuted}\footnotesize Macklin-Cordes\,— CV}%
-  \fancyhead[R]{\color{inkmuted}\footnotesize Last updated 2026-08-02}%
-  \fancyfoot[C]{\color{inkmuted}\footnotesize\thepage\ of \pageref{LastPage}}%
+  \fancyhead[L]{\meta\scriptsize Macklin-Cordes — CV}%
+  \fancyhead[R]{\meta\scriptsize Last updated 2026-10-11}%
+  \fancyfoot[C]{\meta\scriptsize\thepage\ of \pageref*{LastPage}}%
 }
 \pagestyle{cvbody}
 
 % =============================================================================
 % BESPOKE COMMANDS
 % =============================================================================
-% Date column + content column. Spans full width; date is small-muted-numeric.
+% Date column + content column. Spans full width; dates set as technical
+% metadata (IBM Plex Mono, Siltstone).
 % Implemented with side-by-side minipages so the content cell can use \\ as
 % a line break without terminating an enclosing tabular row.
 \newcommand{\cventry}[2]{%
   \noindent
   \begin{minipage}[t]{0.18\textwidth}%
-    \raggedright\color{inkmuted}\footnotesize #1%
+    \raggedright\meta\footnotesize #1%
   \end{minipage}%
   \hspace{0.01\textwidth}%
   \begin{minipage}[t]{0.80\textwidth}%
@@ -237,7 +232,7 @@
 \newcommand{\venue}[1]{\textit{#1}}
 
 % Year prefix for publication line.
-\newcommand{\pubyear}[1]{{\sectionhead\color{burntred}\footnotesize #1}}
+\newcommand{\pubyear}[1]{{\sectionhead\color{sandstone}\footnotesize #1}}
 
 % =============================================================================
 % DOCUMENT
@@ -245,38 +240,37 @@
 \begin{document}
 \thispagestyle{firstpage}
 
-% ---- Page-1 red name band (full-bleed tikz overlay) -------------------------
+% ---- Page-1 Deep Pacific name band (full-bleed tikz overlay) ----------------
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[burntred]
+  \fill[deeppacific]
     (current page.north west) rectangle
     ([yshift=-3.0cm]current page.north east);
   \node[anchor=north west, inner sep=0pt,
         xshift=2cm, yshift=-1.25cm,
-        text=creamonred]
+        text=paper]
     at (current page.north west)
-    {\literatadisplay\fontsize{21}{24}\selectfont Dr. Jayden L. Macklin-Cordes};
+    {\jostdisplay\fontsize{21}{24}\selectfont Dr. Jayden L. Macklin-Cordes};
   \node[anchor=north west, inner sep=0pt,
         xshift=2cm, yshift=-2.15cm,
-        text=creamonred]
+        text=whitewater]
     at (current page.north west)
-    {\sectionhead\fontsize{10}{12}\selectfont Quantitative historical linguist};
+    {\sectionhead\fontsize{9}{12}\selectfont \MakeUppercase{Evolutionary Language Scientist}};
 \end{tikzpicture}
 
-% ---- Contact block (cream, left-aligned) ------------------------------------
+% ---- Contact block (on Paper, left-aligned) ---------------------------------
 \vspace*{-0.3em}
 \noindent\begin{minipage}[t]{0.62\textwidth}
 \raggedright
-Surrey Morphology Group, School of Literature and Languages\\
-University of Surrey\\
-Guildford GU2 7XH\\
-United Kingdom\\
+Institute for the Interdisciplinary Study of Language Evolution (ISLE Institute)\\
+University of Zurich\\
+Switzerland\\
 \end{minipage}%
 \hfill
 \noindent\begin{minipage}[t]{0.36\textwidth}
 \raggedleft\footnotesize
-\color{inkmuted}Email\ \color{ink}\href{mailto:jayden@macklin-cordes.com}{jayden@macklin-cordes.com}\\
-\color{inkmuted}ORCID\ \color{ink}\href{https://orcid.org/0000-0003-1910-3969}{0000-0003-1910-3969}\\
-\color{inkmuted}Web\ \color{ink}\href{https://www.macklin-cordes.com/}{www.macklin-cordes.com}
+\color{siltstone}Email\ \color{coal}\href{mailto:jayden@macklin-cordes.com}{jayden@macklin-cordes.com}\\
+\color{siltstone}ORCID\ \color{coal}\href{https://orcid.org/0000-0003-1910-3969}{0000-0003-1910-3969}\\
+\color{siltstone}Web\ \color{coal}\href{https://www.macklin-cordes.com/}{www.macklin-cordes.com}
 \end{minipage}
 
 \vspace{0.6em}
@@ -285,7 +279,7 @@ United Kingdom\\
 % RESEARCH PROFILE
 % =============================================================================
 \section*{Research profile}
-I am a quantitative historical linguist investigating how language structures change over
+I am an evolutionary language scientist investigating how language structures change over
 deep time, and what their evolution reveals about cultural evolution and human cognition.
 I employ a primarily Bayesian toolkit: phylogenetic tree inference, phylogenetic
 comparative methods, ancestral state reconstruction, and phylogeographic regression.
@@ -337,15 +331,22 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 % PROFESSIONAL EXPERIENCE
 % =============================================================================
 \section*{Professional experience}
-\cventry{Jun 2026–present}{%
+\cventry{Oct 2026–present}{%
+  \textbf{Postdoctoral Researcher}\\
+  Institute for the Interdisciplinary Study of Language Evolution (ISLE Institute)\\
+  \textit{University of Zurich}%
+\\
+  \textcolor{siltstone}{Project:} Conceptual Diversity and the Evolution of Abstract Thought (CONCEVO) (Prof J. Mansfield %
+}
+\cventry{Jun–Sept 2026}{%
   \textbf{Postdoctoral Research Fellow}\\
   Surrey Morphology Group\\
   \textit{University of Surrey, UK}%
 \\
-  \textcolor{inkmuted}{Project:} Revoluphon: Rational Evolutionary Phonology (Prof E. Round) %
+  \textcolor{siltstone}{Project:} Revoluphon: Rational Evolutionary Phonology (Prof E. Round) %
 }
 \cventry{Dec 2022–Aug 2025}{%
-  \textbf{Lecturer in Linguistics}\ \textcolor{inkmuted}{tenure equivalent}\\
+  \textbf{Lecturer in Linguistics}\ \textcolor{siltstone}{tenure equivalent}\\
   School of Creative Industries, Humanities and Social Sciences\\
   \textit{University of Newcastle, Australia}%
 %
@@ -355,7 +356,7 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
   UMR 5596: Laboratoire Dynamique du Langage (DDL)\\
   \textit{CNRS, Université Lumière Lyon 2, Lyon, France}%
 \\
-  \textcolor{inkmuted}{Project:} EVOGRAM: The role of linguistic and non-linguistic factors in the evolution of nominal classification system %
+  \textcolor{siltstone}{Project:} EVOGRAM: The role of linguistic and non-linguistic factors in the evolution of nominal classification system (Dr M. Allassonnière-Tang) %
 }
 
 % =============================================================================
@@ -366,15 +367,15 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
   \textbf{Ph.D. (Linguistics)}\\
   \textit{The University of Queensland, Australia}%
 \\
-  \textcolor{inkmuted}{Thesis:} Phonotactics in historical linguistics: Quantitative interrogation of a new data source.%
-\ \href{https://doi.org/10.14264/9d9e8be}{\textsc{[link]}}%
+  \textcolor{siltstone}{Thesis:} Phonotactics in historical linguistics: Quantitative interrogation of a new data source.%
+\ \href{https://doi.org/10.14264/9d9e8be}{\linktag{link}}%
 %
 \\
-  \textcolor{inkmuted}{Supervisors:} Prof Erich Round, Dr Simon Greenhill%
+  \textcolor{siltstone}{Supervisors:} Prof Erich Round, Dr Simon Greenhill%
 %
 %
 \\
-  \textcolor{burntred}{\textbf{Award:}} Dean's Award for Outstanding HDR Theses%
+  \textcolor{federationred}{\textbf{Award:}} Dean's Award for Outstanding HDR Theses%
 %
 }
 \cventry{Jun 2015}{%
@@ -388,7 +389,7 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
   Minor: Aboriginal and Torres Strait Islander studies%
 %
 \\
-  \textcolor{burntred}{\textbf{Award:}} University Medal%
+  \textcolor{federationred}{\textbf{Award:}} University Medal%
 %
 }
 
@@ -432,11 +433,11 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 \item \textbf{Macklin-Cordes, Jayden L.}\ Revisions pending.\ Trees beyond words: phonotactics in linguistic phylogenetics. \venue{Diachronica}%
 \item \textbf{Macklin-Cordes, Jayden L.}, Maria Copot, Mitch Browne \& Tom Ennever.\ Revisions pending.\ Signal separation: Quantifying inheritance and contact in language evolution. \venue{Journal of Language Evolution}%
 \item \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2022.\ Challenges of sampling and how phylogenetic comparative methods help: With a case study of the Pama-Nyungan laminal contrast. \venue{Linguistic Typology} 26(3). pp. 533–572.%
-\ \href{https://doi.org/10.1515/lingty-2021-0025}{\textsc{[doi]}}\item \textbf{Macklin-Cordes, Jayden L.}, Claire Bowern \& Erich R. Round.\ 2021.\ Phylogenetic signal in phonotactics. \venue{Diachronica} 38(2). pp. 210–258.%
-\ \href{https://doi.org/10.1075/dia.20004.mac}{\textsc{[doi]}}\item \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2020.\ Re-evaluating Phoneme Frequencies. \venue{Frontiers in Psychology} 11.%
-\ \href{https://doi.org/10.3389/fpsyg.2020.570895}{\textsc{[doi]}}\item Round, Erich R., T. Mark Ellison, \textbf{Jayden L. Macklin-Cordes} \& Sacha Beniamine.\ 2020.\ Automated Parsing of Interlinear Glossed Text from Page Images of Grammatical Descriptions. In \venue{Proceedings of The 12th Language Resources and Evaluation Conference}, 2878–2883. Marseille, France: European Language Resources Association.%
-\ \href{https://www.aclweb.org/anthology/2020.lrec-1.351}{\textsc{[doi]}}\item \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2015.\ High-definition phonotactics reflect linguistic pasts. In \venue{Proceedings of the 6th Quantitative Investigations in Theoretical Linguistics Conference}. Tübingen, Germany: University of Tübingen.%
-\ \href{https://doi.org/10.15496/publikation-8609}{\textsc{[doi]}}\end{cvbib}
+\ \href{https://doi.org/10.1515/lingty-2021-0025}{\linktag{doi}}\item \textbf{Macklin-Cordes, Jayden L.}, Claire Bowern \& Erich R. Round.\ 2021.\ Phylogenetic signal in phonotactics. \venue{Diachronica} 38(2). pp. 210–258.%
+\ \href{https://doi.org/10.1075/dia.20004.mac}{\linktag{doi}}\item \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2020.\ Re-evaluating Phoneme Frequencies. \venue{Frontiers in Psychology} 11.%
+\ \href{https://doi.org/10.3389/fpsyg.2020.570895}{\linktag{doi}}\item Round, Erich R., T. Mark Ellison, \textbf{Jayden L. Macklin-Cordes} \& Sacha Beniamine.\ 2020.\ Automated Parsing of Interlinear Glossed Text from Page Images of Grammatical Descriptions. In \venue{Proceedings of The 12th Language Resources and Evaluation Conference}, 2878–2883. Marseille, France: European Language Resources Association.%
+\ \href{https://www.aclweb.org/anthology/2020.lrec-1.351}{\linktag{doi}}\item \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2015.\ High-definition phonotactics reflect linguistic pasts. In \venue{Proceedings of the 6th Quantitative Investigations in Theoretical Linguistics Conference}. Tübingen, Germany: University of Tübingen.%
+\ \href{https://doi.org/10.15496/publikation-8609}{\linktag{doi}}\end{cvbib}
 
 % =============================================================================
 % IN PREPARATION
@@ -484,22 +485,22 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 %
 \item Round, Erich R. \& \textbf{Jayden L. Macklin-Cordes}.\ 2019.\ Clouded vision: Why insights improve when uncertainty about data is made explicit. \venue{International Conference on Historical Linguistics (ICHL24)}. Australian National University, Canberra, Australia.%
 %
-\ \href{https://cloudstor.aarnet.edu.au/plus/s/WOmUM73NVJQFqf6}{\textsc{[link]}}\item \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2019.\ Historical signal beyond the cognate: Phonotactics in linguistic phylogenetics. \venue{International Conference on Historical Linguistics (ICHL24)}. Australian National University, Canberra, Australia.%
+\ \href{https://cloudstor.aarnet.edu.au/plus/s/WOmUM73NVJQFqf6}{\linktag{link}}\item \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2019.\ Historical signal beyond the cognate: Phonotactics in linguistic phylogenetics. \venue{International Conference on Historical Linguistics (ICHL24)}. Australian National University, Canberra, Australia.%
 %
-\ \href{https://cloudstor.aarnet.edu.au/plus/s/zN5AbJ4fXoVR0ax}{\textsc{[link]}}\item \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2018.\ Phylogeny in phonotactics: A multivariate approach for stronger historical signal. \venue{Australian Linguistics Society Annual Conference (ALS 2018)}. University of South Australia, Adelaide.%
+\ \href{https://cloudstor.aarnet.edu.au/plus/s/zN5AbJ4fXoVR0ax}{\linktag{link}}\item \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2018.\ Phylogeny in phonotactics: A multivariate approach for stronger historical signal. \venue{Australian Linguistics Society Annual Conference (ALS 2018)}. University of South Australia, Adelaide.%
 %
 \item \textbf{Macklin-Cordes, Jayden L.}\ 2017.\ High-definition phonotactic typology in Sahul: Choosing the data-rich approach. \venue{Conference of the Association of Linguistic Typology (ALT XII)}. Australian National University, Canberra, Australia.%
-\ \href{https://doi.org/10.6084/m9.figshare.5861067}{\textsc{[doi]}}%
+\ \href{https://doi.org/10.6084/m9.figshare.5861067}{\linktag{doi}}%
 \item \textbf{Macklin-Cordes, Jayden L.}, Nathaniel L. Blackbourne, Thomas J. Bott, Jacqueline Cook, T. Mark Ellison, Jordan Hollis, Edith E. Kirlew, Genevieve C. Richards, Sanle Zhao \& Erich R. Round.\ 2017.\ Robots who read grammars [poster]. \venue{CoEDL Fest}. Alexandra Park Conference Centre, Alexandra Headlands, QLD, Australia.%
-\ \href{https://doi.org/10.6084/m9.figshare.4625248}{\textsc{[doi]}}%
+\ \href{https://doi.org/10.6084/m9.figshare.4625248}{\linktag{doi}}%
 \item Hollis, Jordan, Genevieve C. Richards, \textbf{Jayden L. Macklin-Cordes} \& Erich R. Round.\ 2016.\ The Cape York lexical records of Bruce Sommer. \venue{Australian Linguistics Society Annual Conference (ALS 2016)}. Monash University, Caulfield, Australia.%
-\ \href{https://dx.doi.org/10.6084/m9.figshare.4299377}{\textsc{[doi]}}%
+\ \href{https://dx.doi.org/10.6084/m9.figshare.4299377}{\linktag{doi}}%
 \item \textbf{Macklin-Cordes, Jayden L.}, Steven P. Moran \& Erich R. Round.\ 2016.\ Evaluating information loss from phonological dimensionality reduction. \venue{SST2016 Satellite Symposium: The role of predictability in shaping human language sound patterns}. Western Sydney University, Australia.%
-\ \href{https://dx.doi.org/10.6084/m9.figshare.4465976}{\textsc{[doi]}}%
+\ \href{https://dx.doi.org/10.6084/m9.figshare.4465976}{\linktag{doi}}%
 \item \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2016a.\ High-definition phonotactic data contain phylogenetic signal [poster]. \venue{Annual Meeting of the Linguistic Society of America (LSA 2016)}. Washington, DC.%
-\ \href{https://dx.doi.org/10.6084/m9.figshare.4534238}{\textsc{[doi]}}%
+\ \href{https://dx.doi.org/10.6084/m9.figshare.4534238}{\linktag{doi}}%
 \item \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2016b.\ Reflections of linguistic history in quantitative phonotactics. \venue{Australian Linguistic Society Annual Conference (ALS2016)}. Monash University, Caulfield, Australia.%
-\ \href{https://dx.doi.org/10.6084/m9.figshare.4299365}{\textsc{[doi]}}%
+\ \href{https://dx.doi.org/10.6084/m9.figshare.4299365}{\linktag{doi}}%
 \item Round, Erich R., Jacqueline Cook, T. Mark Ellison, Jordan Hollis, \textbf{Jayden L. Macklin-Cordes} \& Genevieve C. Richards.\ 2016.\ The grammar harvester. \venue{Australian Linguistic Society Annual Conference (ALS 2016)}. Monash University, Caulfield, Australia.%
 %
 \item Round, Erich R. \& \textbf{Jayden L. Macklin-Cordes}.\ 2015.\ On the design, in practice, of typological microvariables. \venue{New Developments in the Quantitative Study of Languages}. Helsinki, Finland.%
@@ -513,7 +514,8 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 % =============================================================================
 \section*{Invited talks}
 \begin{cvbib}
-\item \textbf{Macklin-Cordes, Jayden L.}\ 2025.\ Locative polyfunctionality in Australia: Function distribution is not predicted by phylogeny or contact. \venue{University of Newcastle Social Science and Linguistics Seminar Series}. University of Newcastle, Australia.%
+\item \textbf{Macklin-Cordes, Jayden L.}\ 2026.\ Bayesian branches: Where do language trees come from? Surrey Morphology Group Experise Session. \venue{Surrey Morphology Group Experise Session}. University of Surrey, Guildford, UK.%
+\ \href{https://www.doi.org/10.5281/zenodo.23284532}{\linktag{link}}\item \textbf{Macklin-Cordes, Jayden L.}\ 2025.\ Locative polyfunctionality in Australia: Function distribution is not predicted by phylogeny or contact. \venue{University of Newcastle Social Science and Linguistics Seminar Series}. University of Newcastle, Australia.%
 \item \textbf{Macklin-Cordes, Jayden L.}\ 2024.\ Towards a phylogenetic typology of Australian nominal classification. \venue{University of Newcastle Social Science and Linguistics Seminar Series}. University of Newcastle, Australia.%
 \item Copot, Maria \& \textbf{Jayden L. Macklin-Cordes}.\ 2024.\ Thinking like a quantitative modeller. \venue{Invited masterclass for the Laboratory for Applied Language Science (LALS)}. University of Newcastle, Australia.%
 \item \textbf{Macklin-Cordes, Jayden L.}\ 2024.\ Phylogenetic comparative methods in everyday typology: With a case study of Pama-Nyungan laminals. \venue{Changelings forum for historical sociolinguistics (invited talk)}. The Ohio State University, Columbus, USA.%
@@ -523,7 +525,7 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 \item \textbf{Macklin-Cordes, Jayden L.}\ 2022.\ Phylogenetic comparative methods for common typological challenges: With a case study of Pama-Nyungan laminals. \venue{DiLiS Seminar Series}. Laboratoire Dynamique Du Langage, CNRS, Université Lyon 2, Lyon, France.%
 \item Browne, Mitch, Jacqueline Cook, Amanda Hamilton-Holloway \& \textbf{Jayden L. Macklin-Cordes}.\ 2022.\ Constituent order in subordinate clauses: A comparison of Mudburra, Warlmanpa and Warriyangga/Thiinma. \venue{UWA Linguistics Seminar Series}. University of Western Australia, Perth, Australia.%
 \item \textbf{Macklin-Cordes, Jayden L.} \& Erich R. Round.\ 2021.\ Phylogenetic comparative methods: What all the fuss is about, and how to use them in everyday research. \venue{Language and Data Analysis Laboratory (LADAL) webinar}. The University of Queensland, St Lucia, Australia.%
-\ \href{https://youtu.be/yJeQ6AGDLK0}{\textsc{[link]}}\end{cvbib}
+\ \href{https://youtu.be/yJeQ6AGDLK0}{\linktag{link}}\end{cvbib}
 
 % =============================================================================
 % FUNDING
@@ -532,30 +534,30 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 
 \subsection*{Research}
 \cventry{2023}{%
-  \textbf{New Start Grant}, College of Human and Social Futures, University of Newcastle, Australia\ \textcolor{burntred}{\$5,000 AUD}%
+  \textbf{New Start Grant}, College of Human and Social Futures, University of Newcastle, Australia\ \textcolor{federationred}{\$5,000 AUD}%
 %
-\\\textcolor{inkmuted}{Project:} Language and Landscape: Building foundations between macro- and micro-scale linguistic evolution, culture, and environment%
+\\\textcolor{siltstone}{Project:} Language and Landscape: Building foundations between macro- and micro-scale linguistic evolution, culture, and environment%
 }
 \cventry{2016–2018}{%
-  \textbf{Transdisciplinary and Innovation Grant}, ARC Centre of Excellence for the Dynamics of Language\ \textcolor{burntred}{\$19,909 AUD}%
-\\\textcolor{inkmuted}{Role:} Lead investigator%
-\\\textcolor{inkmuted}{Project:} TIG0116JMC: A 'data well' prototype for Sahul phonologies%
+  \textbf{Transdisciplinary and Innovation Grant}, ARC Centre of Excellence for the Dynamics of Language\ \textcolor{federationred}{\$19,909 AUD}%
+\\\textcolor{siltstone}{Role:} Lead investigator%
+\\\textcolor{siltstone}{Project:} TIG0116JMC: A 'data well' prototype for Sahul phonologies%
 }
 \cventry{2016–2020}{%
-  \textbf{RTP Scholarship}, Australian Federal Government Research Training Program\ \textcolor{burntred}{\$28,092 AUD/annum (3.5 years)}%
+  \textbf{RTP Scholarship}, Australian Federal Government Research Training Program\ \textcolor{federationred}{\$28,092 AUD/annum (3.5 years)}%
 %
-\\\textcolor{inkmuted}{Project:} Cost-of-living stipend for PhD program%
+\\\textcolor{siltstone}{Project:} Cost-of-living stipend for PhD program%
 }
 
 \subsection*{Travel}
 \cventry{2024}{%
-  \textbf{Conference Travel Grant}, College of Human and Social Futures, University of Newcastle, Australia\ \textcolor{burntred}{\$3,500 AUD}%
+  \textbf{Conference Travel Grant}, College of Human and Social Futures, University of Newcastle, Australia\ \textcolor{federationred}{\$3,500 AUD}%
 }
 \cventry{2022}{%
-  \textbf{Conference Travel Grant}, College of Human and Social Futures, University of Newcastle, Australia\ \textcolor{burntred}{\$2,434 AUD}%
+  \textbf{Conference Travel Grant}, College of Human and Social Futures, University of Newcastle, Australia\ \textcolor{federationred}{\$2,434 AUD}%
 }
 \cventry{2017}{%
-  \textbf{LSA Summer Institute Fellowship}, Linguistic Society of America\ \textcolor{burntred}{\$1,990 USD}%
+  \textbf{LSA Summer Institute Fellowship}, Linguistic Society of America\ \textcolor{federationred}{\$1,990 USD}%
 }
 
 % =============================================================================
@@ -567,44 +569,44 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 \noindent\textit{University of Newcastle, Australia}\par\vspace{0.2em}
 \cventry{2025, Sem 1}{%
 %
-    \textbf{LING3350 Structure of English}\ \textcolor{inkmuted}{({}3rd year undergraduate, 112 students)}%
+    \textbf{LING3350 Structure of English}\ \textcolor{siltstone}{({}3rd year undergraduate, 112 students)}%
 %
-\\\textcolor{inkmuted}{Student evaluation:} \textcolor{burntred}{4.2/5}%
+\\\textcolor{siltstone}{Student evaluation:} \textcolor{federationred}{4.2/5}%
 }
 \cventry{2024, Sem 2}{%
 %
-    \textbf{LING3350 Structure of English}\ \textcolor{inkmuted}{({}3rd year undergraduate, 50 students)}%
+    \textbf{LING3350 Structure of English}\ \textcolor{siltstone}{({}3rd year undergraduate, 50 students)}%
 %
-\\\textcolor{inkmuted}{Student evaluation:} \textcolor{burntred}{4.6/5}%
+\\\textcolor{siltstone}{Student evaluation:} \textcolor{federationred}{4.6/5}%
 }
 \cventry{2024, Sem 1}{%
 %
-    \textbf{LING3350 Structure of English}\ \textcolor{inkmuted}{({}3rd year undergraduate, 86 students)}\\%
+    \textbf{LING3350 Structure of English}\ \textcolor{siltstone}{({}3rd year undergraduate, 86 students)}\\%
 %
-    \textbf{LING6910 Foundation of Linguistics}\ \textcolor{inkmuted}{({}1st year masters, 5 students)}%
+    \textbf{LING6910 Foundation of Linguistics}\ \textcolor{siltstone}{({}1st year masters, 5 students)}%
 %
-\\\textcolor{inkmuted}{Student evaluation:} \textcolor{burntred}{4.8/5}%
+\\\textcolor{siltstone}{Student evaluation:} \textcolor{federationred}{4.8/5}%
 }
 \cventry{2023, Sem 2}{%
 %
-    \textbf{LING3350 Structure of English}\ \textcolor{inkmuted}{({}3rd year undergraduate, 74 students)}%
+    \textbf{LING3350 Structure of English}\ \textcolor{siltstone}{({}3rd year undergraduate, 74 students)}%
 %
-\\\textcolor{inkmuted}{Student evaluation:} \textcolor{burntred}{4.6/5}%
+\\\textcolor{siltstone}{Student evaluation:} \textcolor{federationred}{4.6/5}%
 }
 \cventry{2023, Sem 1}{%
 %
-    \textbf{LING3350 Structure of English}\ \textcolor{inkmuted}{({}3rd year undergraduate, 78 students)}\\%
+    \textbf{LING3350 Structure of English}\ \textcolor{siltstone}{({}3rd year undergraduate, 78 students)}\\%
 %
-    \textbf{LING3002 Syntax}\ \textcolor{inkmuted}{({}3rd year undergraduate, 8 students)}%
+    \textbf{LING3002 Syntax}\ \textcolor{siltstone}{({}3rd year undergraduate, 8 students)}%
 %
-\\\textcolor{inkmuted}{Student evaluation:} \textcolor{burntred}{4.4/5}%
+\\\textcolor{siltstone}{Student evaluation:} \textcolor{federationred}{4.4/5}%
 }
 \noindent\textit{University of Queensland, Australia}\par\vspace{0.2em}
 \cventry{2015, Sem 2}{%
 %
-    \textbf{LING1005 Introduction to linguistics: the sound pattern of language}\ \textcolor{inkmuted}{({}1st year undergraduate, \textasciitilde{}220 students)}\\%
+    \textbf{LING1005 Introduction to linguistics: the sound pattern of language}\ \textcolor{siltstone}{({}1st year undergraduate, \textasciitilde{}220 students)}\\%
 %
-    \textbf{LING6105 Introduction to linguistics: phonetics and phonology}\ \textcolor{inkmuted}{({}1st year masters, \textasciitilde{}30 students)}%
+    \textbf{LING6105 Introduction to linguistics: phonetics and phonology}\ \textcolor{siltstone}{({}1st year masters, \textasciitilde{}30 students)}%
 %
 %
 }
@@ -613,13 +615,13 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 \noindent\textit{University of Newcastle, Australia}\par\vspace{0.2em}
 \cventry{2024, Sem 2}{%
 %
-    \textbf{LING2501 Cross-cultural communication}\ \textcolor{inkmuted}{({}coordination; 2nd year undergraduate, 7 students)}\\%
+    \textbf{LING2501 Cross-cultural communication}\ \textcolor{siltstone}{({}coordination; 2nd year undergraduate, 7 students)}\\%
 %
-    \textbf{LING6070 Cross-cultural communication}\ \textcolor{inkmuted}{({}coordination; 1st year masters, 4 students)}\\%
+    \textbf{LING6070 Cross-cultural communication}\ \textcolor{siltstone}{({}coordination; 1st year masters, 4 students)}\\%
 %
-    \textbf{LING1112 Languages in the World}\ \textcolor{inkmuted}{({}2× guest lectures; 1st year undergraduate, 18 students)}\\%
+    \textbf{LING1112 Languages in the World}\ \textcolor{siltstone}{({}2× guest lectures; 1st year undergraduate, 18 students)}\\%
 %
-    \textbf{LING3008 Introduction to phonology and morphology}\ \textcolor{inkmuted}{({}marking; 3rd year undergraduate, 100 students)}%
+    \textbf{LING3008 Introduction to phonology and morphology}\ \textcolor{siltstone}{({}marking; 3rd year undergraduate, 100 students)}%
 %
 }
 
@@ -627,7 +629,7 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 \cventry{Dec 2025}{%
   \textbf{Dr. Condra Antoni} — \textit{University of Newcastle, Australia}\\
   Managing interaction with students in online EMI lectures at Indonesian Polytechnic Institutes.%
-\\\textcolor{inkmuted}{Co-supervisor:} Dr Jaime Hunt%
+\\\textcolor{siltstone}{Co-supervisor:} Dr Jaime Hunt%
 }
 
 \subsection*{Honours supervision}
@@ -639,7 +641,7 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 \subsection*{Courses tutored}
 \noindent\textit{University of Queensland, Australia}\par\vspace{0.2em}
 \cventry{2021, Sem 1}{%
-  \textbf{LING2010 Phonology}\ \textcolor{inkmuted}{guest tutor}%
+  \textbf{LING2010 Phonology}\ \textcolor{siltstone}{guest tutor}%
 }
 \cventry{2017, Sem 2}{%
   \textbf{LING6105 Introduction to linguistics: phonetics and phonology}%
@@ -653,7 +655,7 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
   \textbf{University of Queensland, Summer Research Program}\\
   \textit{The sound patterns of Sahul—the continent of Australia–New Guinea}\\
   Digitisation of scanned PDF language resources into machine-readable text, creating ontologies of linguistic concepts and automating extraction of interlinear glossed text.\\
-  \textcolor{inkmuted}{Duties:} Train team of undergraduate research scholars on research principles, data management, specialist software. Daily management, progress reports and research output.%
+  \textcolor{siltstone}{Duties:} Train team of undergraduate research scholars on research principles, data management, specialist software. Daily management, progress reports and research output.%
 }
 
 % =============================================================================
@@ -663,22 +665,22 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 \cventry{2025}{%
   \textbf{Institute for Regional Futures}, \textit{University of Newcastle, Australia}%
 \\
-  \textcolor{inkmuted}{Role:} Affiliate%
+  \textcolor{siltstone}{Role:} Affiliate%
 }
 \cventry{2023–2025}{%
   \textbf{Laboratory for Applied Language Sciences (LALS)}%
-\\\textcolor{inkmuted}{Lead:} Asst Prof Kiwako Ito, University of Newcastle\\
-  \textcolor{inkmuted}{Role:} Senior lab member%
+\\\textcolor{siltstone}{Lead:} Asst Prof Kiwako Ito, University of Newcastle\\
+  \textcolor{siltstone}{Role:} Senior lab member%
 }
 \cventry{2023–2025}{%
   \textbf{OzSpace: Landscape, language and culture in Indigenous Australia}%
-\\\textcolor{inkmuted}{Lead:} ARC Discovery Project to Prof Bill Palmer, University of Newcastle\\
-  \textcolor{inkmuted}{Role:} Senior research associate%
+\\\textcolor{siltstone}{Lead:} ARC Discovery Project to Prof Bill Palmer, University of Newcastle\\
+  \textcolor{siltstone}{Role:} Senior research associate%
 }
 \cventry{2015–2022}{%
   \textbf{ARC Centre of Excellence for the Dynamics of Language}%
 \\
-  \textcolor{inkmuted}{Role:} Affiliate%
+  \textcolor{siltstone}{Role:} Affiliate%
 }
 
 % =============================================================================
@@ -773,12 +775,12 @@ agentic LLM pipelines for large-scale extraction of linguistic data from publish
 % =============================================================================
 \section*{Language proficiencies}
 \begin{itemize}
-\item \textbf{English}\ \textcolor{inkmuted}{({}native)}
-\item \textbf{Italian}\ \textcolor{inkmuted}{({}conversational)}
-\item \textbf{French}\ \textcolor{inkmuted}{({}basic)}
-\item \textbf{Romanian}\ \textcolor{inkmuted}{({}basic)}
-\item \textbf{Spanish}\ \textcolor{inkmuted}{({}beginner)}
-\item \textbf{German}\ \textcolor{inkmuted}{({}beginner)}
+\item \textbf{English}\ \textcolor{siltstone}{({}native)}
+\item \textbf{Italian}\ \textcolor{siltstone}{({}conversational)}
+\item \textbf{French}\ \textcolor{siltstone}{({}basic)}
+\item \textbf{Romanian}\ \textcolor{siltstone}{({}basic)}
+\item \textbf{Spanish}\ \textcolor{siltstone}{({}beginner)}
+\item \textbf{German}\ \textcolor{siltstone}{({}beginner)}
 \end{itemize}
 
 % =============================================================================

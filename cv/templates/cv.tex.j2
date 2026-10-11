@@ -6,15 +6,15 @@
 % GENERATED FILE. Do not edit directly; edit cv/cv.yaml and rerun
 %   python cv/build_cv.py
 %
-% Typography and colour follow the project Visual Identity Guide:
-%   Literata (display, 21pt name), Inter (body 10.5pt, line-height 1.55,
-%   emphasis at weight 500 — never 700), Fira Code (mono).
-%   Burnt red #9E2A1E name band (front of house), cream page #FAF7F2 body
-%   (back of house), ink #2B2A26 type, deep maroon #681F34 links,
-%   Inter 500 small-caps burnt-red section heads tracked +0.14em.
+% Typography and colour follow the Newy Sunsets visual identity:
+%   Jost (display: 21pt name, section heads), Newsreader (body 10.5pt,
+%   static cut at opsz 10.5, line-height 1.5), IBM Plex Mono (dates, running
+%   chrome, package names). Deep Pacific #284958 name band, Paper #FFFEF9
+%   page, Newcastle Coal #181414 ink, Siltstone #706468 secondary text,
+%   Federation Red #841C1B links and emphasis, Newy Sandstone #AE4E1B
+%   tracked-caps section heads (+0.14em).
 %
-% Compile with LuaLaTeX. Fonts must be installed on the system (or uploaded
-% to the Overleaf project). See cv/README.md.
+% Compile with LuaLaTeX. Fonts load by file from cv/fonts/ (see README).
 % =============================================================================
 
 \documentclass[fontsize=10.5pt,a4paper,parskip=half-]{scrartcl}
@@ -28,7 +28,7 @@
 % every used size, and stock CM only ships 10/11/12pt. lmodern provides a
 % scalable Latin Modern substitute, silencing the "size substituted" warnings
 % at our 10.5pt body size. Latin Modern is only used as a fallback; our main
-% fonts remain Inter / Literata / Fira Code.
+% fonts remain Newsreader / Jost / IBM Plex Mono.
 \usepackage{lmodern}
 \usepackage{microtype}
 
@@ -37,7 +37,7 @@
 
 % ---------- Geometry / page chrome ----------
 \usepackage[a4paper,
-            top=3.8cm,     % leaves room for the red name band on page 1
+            top=3.8cm,     % leaves room for the name band on page 1
             bottom=2.2cm,
             left=2cm,
             right=2cm,
@@ -60,87 +60,81 @@
 \usepackage[hidelinks]{hyperref}
 
 % =============================================================================
-% COLOURS (Visual Identity Guide)
+% COLOURS (Newy Sunsets)
 % =============================================================================
-\definecolor{burntred}{HTML}{9E2A1E}
-\definecolor{bottlegreen}{HTML}{1E3A34}
-\definecolor{deepmaroon}{HTML}{681F34}
-\definecolor{parchment}{HTML}{DCCEB1}
-\definecolor{pagecream}{HTML}{FAF7F2}
-\definecolor{surfacewhite}{HTML}{FFFFFF}
-\definecolor{ink}{HTML}{2B2A26}
-\definecolor{inkmuted}{HTML}{6C6A64}
-\definecolor{inkfaint}{HTML}{9A978E}
-\definecolor{rulegrey}{HTML}{E5E0D5}
-\definecolor{codebg}{HTML}{F3EFE7}
-\definecolor{creamonred}{HTML}{FBEDE8}
-\definecolor{creamongreen}{HTML}{F3ECDD}
+\definecolor{deeppacific}{HTML}{284958}    % name band
+\definecolor{whitewater}{HTML}{91ADBE}     % muted text on Deep Pacific
+\definecolor{sandstone}{HTML}{AE4E1B}      % section heads, bullets
+\definecolor{federationred}{HTML}{841C1B}  % links, emphasis type
+\definecolor{paper}{HTML}{FFFEF9}          % page
+\definecolor{coal}{HTML}{181414}           % ink
+\definecolor{siltstone}{HTML}{706468}      % secondary text, dates, chrome
+\definecolor{tuff}{HTML}{D9D8D6}           % hairline rules
 
-\pagecolor{pagecream}
-\color{ink}
+\pagecolor{paper}
+\color{coal}
 
 % =============================================================================
 % FONTS
-% Literata: display / headings / name.  Inter: body.  Fira Code: mono.
-% Emphasis uses Inter Medium (500); \textbf remapped accordingly — never 700.
+% Newsreader: body (static cut at opsz 10.5, made from the variable font so
+% the optical size matches the print size). Jost: display and section heads.
+% IBM Plex Mono: dates, running chrome, package names and URLs.
+% All loaded from cv/fonts/ by filename, so nothing needs installing
+% system-wide. The Path key is resolved relative to cv/ (locally and on
+% Overleaf). See cv/README.md.
 % =============================================================================
-% Fonts are loaded from cv/fonts/ by filename (not by family name), so the
-% user doesn't need them installed system-wide. See cv/README.md for which
-% TTFs to drop into that directory. The Path key is resolved relative to the
-% directory containing the main .tex file (cv/), both locally and on Overleaf.
-\setmainfont{Inter_18pt-}[
-  Path       = fonts/,
-  Extension  = .ttf,
-  UprightFont    = *Regular,
-  BoldFont       = *Medium,          % emphasis at 500, per identity guide
-  ItalicFont     = *Italic,
-  BoldItalicFont = *MediumItalic,
-  SmallCapsFeatures = {Letters=UppercaseSmallCaps},
-  Ligatures      = TeX,
-]
-\newfontfamily\literata{Literata-}[
-  Path       = fonts/,
-  Extension  = .ttf,
+\setmainfont{Newsreader-Text-}[
+  Path           = fonts/,
+  Extension      = .ttf,
   UprightFont    = *Regular,
   BoldFont       = *SemiBold,
   ItalicFont     = *Italic,
   BoldItalicFont = *SemiBoldItalic,
   Ligatures      = TeX,
-  Numbers        = OldStyle,
+  Numbers        = {Proportional, Lining},
 ]
-\newfontfamily\literatadisplay{Literata-}[
-  Path       = fonts/,
-  Extension  = .ttf,
-  UprightFont    = *SemiBold,
-  Ligatures      = TeX,
-  Numbers        = OldStyle,
-  LetterSpace    = -1,                % optical tightening at display size
-]
-\newfontfamily\sectionhead{Inter_18pt-}[
-  Path       = fonts/,
-  Extension  = .ttf,
+\newfontfamily\jost{Jost-}[
+  Path           = fonts/,
+  Extension      = .ttf,
   UprightFont    = *Medium,
-  Letters        = UppercaseSmallCaps,
+  BoldFont       = *SemiBold,
+  Ligatures      = TeX,
+]
+% Name on the Deep Pacific band: 500, one step lighter than on a light field
+\newfontfamily\jostdisplay{Jost-}[
+  Path           = fonts/,
+  Extension      = .ttf,
+  UprightFont    = *Medium,
+  Ligatures      = TeX,
+]
+% Section heads: Jost has no true small caps, so tracked capitals at a
+% reduced size stand in (\MakeUppercase is applied in \titleformat).
+\newfontfamily\sectionhead{Jost-}[
+  Path           = fonts/,
+  Extension      = .ttf,
+  UprightFont    = *Medium,
   LetterSpace    = 14,                % +0.14 em per identity guide
   Numbers        = Lining,
 ]
-\newfontfamily\firacode{FiraCode-}[
-  Path       = fonts/,
-  Extension  = .ttf,
+\setmonofont{IBMPlexMono-}[
+  Path           = fonts/,
+  Extension      = .ttf,
   UprightFont    = *Regular,
-  Ligatures      = TeX,
+  Scale          = 0.9,
 ]
+\newcommand{\meta}{\ttfamily\color{siltstone}}   % technical metadata style
+\newcommand{\linktag}[1]{{\ttfamily\footnotesize[#1]}}
 
-\linespread{1.35}                  % body line-height ≈ 1.55 after scrartcl base
+\linespread{1.25}                  % 10.5pt body at ~1.5 line-height
 
 % =============================================================================
 % HYPERLINKS
 % =============================================================================
 \hypersetup{
   colorlinks = true,
-  urlcolor   = deepmaroon,
-  linkcolor  = deepmaroon,
-  citecolor  = deepmaroon,
+  urlcolor   = federationred,
+  linkcolor  = federationred,
+  citecolor  = federationred,
   pdfauthor  = {((( basics.name|tex )))},
   pdftitle   = {((( basics.name|tex ))) — ((( meta.document_title|tex )))},
   pdfsubject = {Curriculum Vitae},
@@ -151,19 +145,19 @@
 % SECTION HEADINGS
 % =============================================================================
 \titleformat{\section}[hang]
-  {\sectionhead\color{burntred}\fontsize{11}{13}\selectfont}
+  {\sectionhead\color{sandstone}\fontsize{9.5}{12}\selectfont}
   {}{0pt}
-  {}
-  [\vspace{-0.2em}{\color{rulegrey}\rule{\linewidth}{0.4pt}}]
-\titlespacing*{\section}{0pt}{1.6em}{0.6em}
+  {\MakeUppercase}
+  [\vspace{-0.75em}{\color{tuff}\rule{\linewidth}{0.4pt}}]
+\titlespacing*{\section}{0pt}{1.7em}{0.45em}
 
 \titleformat{\subsection}
-  {\literata\bfseries\color{ink}\fontsize{12}{14}\selectfont}
+  {\jost\color{coal}\fontsize{11.5}{14}\selectfont}
   {}{0pt}{}
 \titlespacing*{\subsection}{0pt}{1.0em}{0.3em}
 
 \titleformat{\subsubsection}
-  {\literata\itshape\color{ink}\fontsize{10.5}{13}\selectfont}
+  {\itshape\color{coal}\fontsize{10.5}{13}\selectfont}
   {}{0pt}{}
 \titlespacing*{\subsubsection}{0pt}{0.6em}{0.15em}
 
@@ -175,7 +169,7 @@
   itemsep    = 0.15em,
   parsep     = 0pt,
   topsep     = 0.2em,
-  label      = {\color{burntred}\textbullet},
+  label      = {\color{sandstone}\textbullet},
 }
 \setlist[description]{
   leftmargin = 0pt,
@@ -193,27 +187,28 @@
 \fancypagestyle{firstpage}{%
   \fancyhf{}%
   \renewcommand{\headrulewidth}{0pt}%
-  \fancyfoot[C]{\color{inkmuted}\footnotesize\thepage\ of \pageref{LastPage}}%
+  \fancyfoot[C]{\meta\scriptsize\thepage\ of \pageref*{LastPage}}%
 }
 \fancypagestyle{cvbody}{%
   \fancyhf{}%
   \renewcommand{\headrulewidth}{0pt}%
-  \fancyhead[L]{\color{inkmuted}\footnotesize ((( basics.short_name|tex )))\,— CV}%
-  \fancyhead[R]{\color{inkmuted}\footnotesize Last updated ((( meta.last_updated|tex )))}%
-  \fancyfoot[C]{\color{inkmuted}\footnotesize\thepage\ of \pageref{LastPage}}%
+  \fancyhead[L]{\meta\scriptsize ((( basics.short_name|tex ))) — CV}%
+  \fancyhead[R]{\meta\scriptsize Last updated ((( meta.last_updated|tex )))}%
+  \fancyfoot[C]{\meta\scriptsize\thepage\ of \pageref*{LastPage}}%
 }
 \pagestyle{cvbody}
 
 % =============================================================================
 % BESPOKE COMMANDS
 % =============================================================================
-% Date column + content column. Spans full width; date is small-muted-numeric.
+% Date column + content column. Spans full width; dates set as technical
+% metadata (IBM Plex Mono, Siltstone).
 % Implemented with side-by-side minipages so the content cell can use \\ as
 % a line break without terminating an enclosing tabular row.
 \newcommand{\cventry}[2]{%
   \noindent
   \begin{minipage}[t]{0.18\textwidth}%
-    \raggedright\color{inkmuted}\footnotesize #1%
+    \raggedright\meta\footnotesize #1%
   \end{minipage}%
   \hspace{0.01\textwidth}%
   \begin{minipage}[t]{0.80\textwidth}%
@@ -237,7 +232,7 @@
 \newcommand{\venue}[1]{\textit{#1}}
 
 % Year prefix for publication line.
-\newcommand{\pubyear}[1]{{\sectionhead\color{burntred}\footnotesize #1}}
+\newcommand{\pubyear}[1]{{\sectionhead\color{sandstone}\footnotesize #1}}
 
 % =============================================================================
 % DOCUMENT
@@ -245,24 +240,24 @@
 \begin{document}
 \thispagestyle{firstpage}
 
-% ---- Page-1 red name band (full-bleed tikz overlay) -------------------------
+% ---- Page-1 Deep Pacific name band (full-bleed tikz overlay) ----------------
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[burntred]
+  \fill[deeppacific]
     (current page.north west) rectangle
     ([yshift=-3.0cm]current page.north east);
   \node[anchor=north west, inner sep=0pt,
         xshift=2cm, yshift=-1.25cm,
-        text=creamonred]
+        text=paper]
     at (current page.north west)
-    {\literatadisplay\fontsize{21}{24}\selectfont ((( basics.name|tex )))};
+    {\jostdisplay\fontsize{21}{24}\selectfont ((( basics.name|tex )))};
   \node[anchor=north west, inner sep=0pt,
         xshift=2cm, yshift=-2.15cm,
-        text=creamonred]
+        text=whitewater]
     at (current page.north west)
-    {\sectionhead\fontsize{10}{12}\selectfont ((( basics.label|tex )))};
+    {\sectionhead\fontsize{9}{12}\selectfont \MakeUppercase{((( basics.label|tex )))}};
 \end{tikzpicture}
 
-% ---- Contact block (cream, left-aligned) ------------------------------------
+% ---- Contact block (on Paper, left-aligned) ---------------------------------
 \vspace*{-0.3em}
 \noindent\begin{minipage}[t]{0.62\textwidth}
 \raggedright
@@ -273,9 +268,9 @@
 \hfill
 \noindent\begin{minipage}[t]{0.36\textwidth}
 \raggedleft\footnotesize
-\color{inkmuted}Email\ \color{ink}\href{mailto:((( basics.email )))}{((( basics.email|tex )))}\\
-\color{inkmuted}ORCID\ \color{ink}\href{((( basics.orcid_url )))}{((( basics.orcid|tex )))}\\
-\color{inkmuted}Web\ \color{ink}\href{((( basics.website )))}{((( basics.website|strip_scheme|tex )))}
+\color{siltstone}Email\ \color{coal}\href{mailto:((( basics.email )))}{((( basics.email|tex )))}\\
+\color{siltstone}ORCID\ \color{coal}\href{((( basics.orcid_url )))}{((( basics.orcid|tex )))}\\
+\color{siltstone}Web\ \color{coal}\href{((( basics.website )))}{((( basics.website|strip_scheme|tex )))}
 \end{minipage}
 
 \vspace{0.6em}
@@ -320,11 +315,11 @@
 \section*{Professional experience}
 ((* for j in professional_experience *))
 \cventry{((( j.dates|tex )))}{%
-  \textbf{((( j.role|tex )))}((* if j.role_note *))\ \textcolor{inkmuted}{((( j.role_note|tex )))}((* endif *))\\
+  \textbf{((( j.role|tex )))}((* if j.role_note *))\ \textcolor{siltstone}{((( j.role_note|tex )))}((* endif *))\\
   ((( j.department|tex )))\\
   \textit{((( j.institution|tex )))}%
   ((* if j.project *))\\
-  \textcolor{inkmuted}{Project:} ((( j.project|markdown_to_tex ))) ((* endif *))%
+  \textcolor{siltstone}{Project:} ((( j.project|markdown_to_tex ))) ((* endif *))%
 }
 ((* endfor *))
 
@@ -337,17 +332,17 @@
   \textbf{((( e.degree|tex )))}\\
   \textit{((( e.institution|tex )))}%
   ((* if e.thesis *))\\
-  \textcolor{inkmuted}{Thesis:} ((( e.thesis|markdown_to_tex )))%
-  ((* if e.thesis_url *))\ \href{((( e.thesis_url )))}{\textsc{[link]}}((* endif *))%
+  \textcolor{siltstone}{Thesis:} ((( e.thesis|markdown_to_tex )))%
+  ((* if e.thesis_url *))\ \href{((( e.thesis_url )))}{\linktag{link}}((* endif *))%
   ((* endif *))%
   ((* if e.supervisors *))\\
-  \textcolor{inkmuted}{Supervisors:} ((( e.supervisors|tex )))%
+  \textcolor{siltstone}{Supervisors:} ((( e.supervisors|tex )))%
   ((* endif *))%
   ((* if e.details *))((* for d in e.details *))\\
   ((( d|tex )))%
   ((* endfor *))((* endif *))%
   ((* if e.award *))\\
-  \textcolor{burntred}{\textbf{Award:}} ((( e.award|tex )))%
+  \textcolor{federationred}{\textbf{Award:}} ((( e.award|tex )))%
   ((* endif *))%
 }
 ((* endfor *))
@@ -387,7 +382,7 @@
 \begin{cvbib}
 ((* for p in publications *))
 \item ((( p.authors|emph_author|markdown_to_tex )))\ ((( p.year_text|tex )))\ ((( p.title|markdown_to_tex )))((* if p.in_proc *)) In((* endif *)) \venue{((( p.venue_italic|tex )))}((( p.venue_rest|tex )))%
-  ((* if p.doi *))\ \href{((( p.doi )))}{\textsc{[doi]}}((* endif *))
+  ((* if p.doi *))\ \href{((( p.doi )))}{\linktag{doi}}((* endif *))
 ((* endfor *))
 \end{cvbib}
 
@@ -408,8 +403,8 @@
 \begin{cvbib}
 ((* for p in conference_presentations *))
 \item ((( p.authors|emph_author|markdown_to_tex )))\ ((( p.year_text|tex )))\ ((( p.title|markdown_to_tex ))) \venue{((( p.venue_italic|tex )))}((( p.venue_rest|tex )))%
-  ((* if p.doi *))\ \href{((( p.doi )))}{\textsc{[doi]}}((* endif *))%
-  ((* if p.url *))\ \href{((( p.url )))}{\textsc{[link]}}((* endif *))
+  ((* if p.doi *))\ \href{((( p.doi )))}{\linktag{doi}}((* endif *))%
+  ((* if p.url *))\ \href{((( p.url )))}{\linktag{link}}((* endif *))
 ((* endfor *))
 \end{cvbib}
 
@@ -420,7 +415,7 @@
 \begin{cvbib}
 ((* for p in invited_talks *))
 \item ((( p.authors|emph_author|markdown_to_tex )))\ ((( p.year_text|tex )))\ ((( p.title|markdown_to_tex ))) \venue{((( p.venue_italic|tex )))}((( p.venue_rest|tex )))%
-  ((* if p.url *))\ \href{((( p.url )))}{\textsc{[link]}}((* endif *))
+  ((* if p.url *))\ \href{((( p.url )))}{\linktag{link}}((* endif *))
 ((* endfor *))
 \end{cvbib}
 
@@ -432,16 +427,16 @@
 \subsection*{Research}
 ((* for f in funding.research *))
 \cventry{((( f.year|tex )))}{%
-  \textbf{((( f.award|tex )))}, ((( f.funder|tex )))\ \textcolor{burntred}{((( f.amount|tex )))}%
-  ((* if f.role *))\\\textcolor{inkmuted}{Role:} ((( f.role|tex )))((* endif *))%
-  ((* if f.project *))\\\textcolor{inkmuted}{Project:} ((( f.project|markdown_to_tex )))((* endif *))%
+  \textbf{((( f.award|tex )))}, ((( f.funder|tex )))\ \textcolor{federationred}{((( f.amount|tex )))}%
+  ((* if f.role *))\\\textcolor{siltstone}{Role:} ((( f.role|tex )))((* endif *))%
+  ((* if f.project *))\\\textcolor{siltstone}{Project:} ((( f.project|markdown_to_tex )))((* endif *))%
 }
 ((* endfor *))
 
 \subsection*{Travel}
 ((* for f in funding.travel *))
 \cventry{((( f.year|tex )))}{%
-  \textbf{((( f.award|tex )))}, ((( f.funder|tex )))\ \textcolor{burntred}{((( f.amount|tex )))}%
+  \textbf{((( f.award|tex )))}, ((( f.funder|tex )))\ \textcolor{federationred}{((( f.amount|tex )))}%
 }
 ((* endfor *))
 
@@ -456,9 +451,9 @@
 ((* for e in block.entries *))
 \cventry{((( e.term|tex )))}{%
   ((* for c in e.courses *))%
-    \textbf{((( c.code|tex ))) ((( c.title|tex )))}\ \textcolor{inkmuted}{({}((( c.level|tex ))), ((( c.students|tex ))) students)}((* if not loop.last *))\\((* endif *))%
+    \textbf{((( c.code|tex ))) ((( c.title|tex )))}\ \textcolor{siltstone}{({}((( c.level|tex ))), ((( c.students|tex ))) students)}((* if not loop.last *))\\((* endif *))%
   ((* endfor *))%
-  ((* if e.evaluation *))\\\textcolor{inkmuted}{Student evaluation:} \textcolor{burntred}{((( e.evaluation|tex )))}((* endif *))%
+  ((* if e.evaluation *))\\\textcolor{siltstone}{Student evaluation:} \textcolor{federationred}{((( e.evaluation|tex )))}((* endif *))%
 }
 ((* endfor *))
 ((* endfor *))
@@ -469,7 +464,7 @@
 ((* for e in block.entries *))
 \cventry{((( e.term|tex )))}{%
   ((* for c in e.courses *))%
-    \textbf{((( c.code|tex ))) ((( c.title|tex )))}\ \textcolor{inkmuted}{({}((( c.role|tex ))); ((( c.level|tex ))), ((( c.students|tex ))) students)}((* if not loop.last *))\\((* endif *))%
+    \textbf{((( c.code|tex ))) ((( c.title|tex )))}\ \textcolor{siltstone}{({}((( c.role|tex ))); ((( c.level|tex ))), ((( c.students|tex ))) students)}((* if not loop.last *))\\((* endif *))%
   ((* endfor *))%
 }
 ((* endfor *))
@@ -480,7 +475,7 @@
 \cventry{((( s.date|tex )))}{%
   \textbf{((( s.student|tex )))} — \textit{((( s.institution|tex )))}\\
   ((( s.thesis|markdown_to_tex )))%
-  ((* if s.co_supervisor *))\\\textcolor{inkmuted}{Co-supervisor:} ((( s.co_supervisor|tex )))((* endif *))%
+  ((* if s.co_supervisor *))\\\textcolor{siltstone}{Co-supervisor:} ((( s.co_supervisor|tex )))((* endif *))%
 }
 ((* endfor *))
 
@@ -497,7 +492,7 @@
 \noindent\textit{((( block.institution|tex )))}\par\vspace{0.2em}
 ((* for e in block.entries *))
 \cventry{((( e.term|tex )))}{%
-  \textbf{((( e.code|tex ))) ((( e.title|tex )))}((* if e.role *))\ \textcolor{inkmuted}{((( e.role|tex )))}((* endif *))%
+  \textbf{((( e.code|tex ))) ((( e.title|tex )))}((* if e.role *))\ \textcolor{siltstone}{((( e.role|tex )))}((* endif *))%
 }
 ((* endfor *))
 ((* endfor *))
@@ -508,7 +503,7 @@
   \textbf{((( s.programme|tex )))}\\
   \textit{((( s.title|tex )))}\\
   ((( s.description|markdown_to_tex )))\\
-  \textcolor{inkmuted}{Duties:} ((( s.duties|markdown_to_tex )))%
+  \textcolor{siltstone}{Duties:} ((( s.duties|markdown_to_tex )))%
 }
 ((* endfor *))
 
@@ -519,8 +514,8 @@
 ((* for a in affiliations *))
 \cventry{((( a.dates|tex )))}{%
   \textbf{((( a.name|tex )))}((* if a.institution *)), \textit{((( a.institution|tex )))}((* endif *))%
-  ((* if a.lead *))\\\textcolor{inkmuted}{Lead:} ((( a.lead|tex )))((* endif *))\\
-  \textcolor{inkmuted}{Role:} ((( a.role|tex )))%
+  ((* if a.lead *))\\\textcolor{siltstone}{Lead:} ((( a.lead|tex )))((* endif *))\\
+  \textcolor{siltstone}{Role:} ((( a.role|tex )))%
 }
 ((* endfor *))
 
@@ -602,7 +597,7 @@
 \section*{Language proficiencies}
 \begin{itemize}
 ((* for l in languages *))
-\item \textbf{((( l.name|tex )))}\ \textcolor{inkmuted}{({}((( l.proficiency|tex ))))}
+\item \textbf{((( l.name|tex )))}\ \textcolor{siltstone}{({}((( l.proficiency|tex ))))}
 ((* endfor *))
 \end{itemize}
 

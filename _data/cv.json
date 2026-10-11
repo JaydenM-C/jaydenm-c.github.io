@@ -1,10 +1,10 @@
 {
   "basics": {
     "name": "Dr. Jayden L. Macklin-Cordes",
-    "label": "Quantitative historical linguist",
+    "label": "Evolutionary Language Scientist",
     "email": "jayden@macklin-cordes.com",
     "website": "https://www.macklin-cordes.com/",
-    "summary": "I am a quantitative historical linguist investigating how language structures change over\ndeep time, and what their evolution reveals about cultural evolution and human cognition.\nI employ a primarily Bayesian toolkit: phylogenetic tree inference, phylogenetic\ncomparative methods, ancestral state reconstruction, and phylogeographic regression.\nMy PhD and subsequent published works develop phylogenetic methods for phonology,\nparticularly phonotactics, with a regional focus on languages of Australia. In parallel,\nI work on the evolution of conceptual categories (nominal classification, case semantics,\nnumber), with work extending to broader Sahul (Australia and New Guinea), Tibeto-Burman,\nand worldwide language samples. Most recently, I have turned attention to the design of\nagentic LLM pipelines for large-scale extraction of linguistic data from published grammars.",
+    "summary": "I am an evolutionary language scientist investigating how language structures change over\ndeep time, and what their evolution reveals about cultural evolution and human cognition.\nI employ a primarily Bayesian toolkit: phylogenetic tree inference, phylogenetic\ncomparative methods, ancestral state reconstruction, and phylogeographic regression.\nMy PhD and subsequent published works develop phylogenetic methods for phonology,\nparticularly phonotactics, with a regional focus on languages of Australia. In parallel,\nI work on the evolution of conceptual categories (nominal classification, case semantics,\nnumber), with work extending to broader Sahul (Australia and New Guinea), Tibeto-Burman,\nand worldwide language samples. Most recently, I have turned attention to the design of\nagentic LLM pipelines for large-scale extraction of linguistic data from published grammars.",
     "location": {
       "city": "Guildford",
       "region": "Surrey",
@@ -25,10 +25,20 @@
   },
   "work": [
     {
+      "company": "University of Zurich",
+      "position": "Postdoctoral Researcher",
+      "startDate": "2026–10",
+      "endDate": "",
+      "summary": "Institute for the Interdisciplinary Study of Language Evolution (ISLE Institute)",
+      "highlights": [
+        "Conceptual Diversity and the Evolution of Abstract Thought (CONCEVO) (Prof J. Mansfield"
+      ]
+    },
+    {
       "company": "University of Surrey, UK",
       "position": "Postdoctoral Research Fellow",
       "startDate": "2026-06",
-      "endDate": "present",
+      "endDate": "2026-09",
       "summary": "Surrey Morphology Group",
       "highlights": [
         "Revoluphon: Rational Evolutionary Phonology (Prof E. Round)"
@@ -49,7 +59,7 @@
       "endDate": "2022-11",
       "summary": "UMR 5596: Laboratoire Dynamique du Langage (DDL)",
       "highlights": [
-        "EVOGRAM: The role of linguistic and non-linguistic factors in the evolution of nominal classification system"
+        "EVOGRAM: The role of linguistic and non-linguistic factors in the evolution of nominal classification system (Dr M. Allassonnière-Tang)"
       ]
     }
   ],
@@ -491,6 +501,17 @@
       "description": "Round, Erich R. & Jayden L. Macklin-Cordes.",
       "doi": "",
       "url": ""
+    },
+    {
+      "name": "Bayesian branches: Where do language trees come from? Surrey Morphology Group Experise Session",
+      "venueItalic": "Surrey Morphology Group Experise Session",
+      "venueRest": ". University of Surrey, Guildford, UK.",
+      "date": "2026",
+      "yearText": "2026.",
+      "location": "",
+      "description": "Macklin-Cordes, Jayden L.",
+      "doi": "",
+      "url": "https://www.doi.org/10.5281/zenodo.23284532"
     },
     {
       "name": "Locative polyfunctionality in Australia: Function distribution is not predicted by phylogeny or contact",
