@@ -19,7 +19,8 @@ node_modules
 package-lock.json
 
 # Ignore the vendor file and bundle for alternative installation
-vendor/
+# (top level only: _sass/vendor/ holds the site's own Sass and icon fonts)
+/vendor/
 .bundle/
 
 # Ignore LaTeX aux file when creating CV
