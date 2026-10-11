@@ -60,7 +60,7 @@ $cover-tuck: 6px;                // hidden under the fixed masthead, so no
     width: 56px;
     height: 2px;
     margin: 18px 0 14px;
-    background: $wet-sandstone;
+    background: var(--accent-rule);
   }
 }
 

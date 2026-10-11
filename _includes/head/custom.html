@@ -2,6 +2,20 @@
 
 <!-- start custom head snippets -->
 
+<!-- Dark theme: decide before first paint, so dark-mode readers don't get a
+     flash of the light page. Same rule as assets/js/_main.js: a saved choice
+     from the toggle wins, otherwise follow the OS setting. -->
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  })();
+</script>
+
 <!-- favicon from https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_academic-progressive.svg -->
 <link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png"/>
 <link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg"/>
