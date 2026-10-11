@@ -1,0 +1,205 @@
+/* ==========================================================================
+   HOME PAGE — Newy Sunsets (_layouts/home.html)
+
+   Cover photo strip, name as page heading, portrait-only sidebar, and the
+   "Recently" column. Dimensions come from the page grid (_themes.scss): the
+   cover is 8 grid units tall, the same as the sidebar column is wide, and
+   the portrait fills that column.
+
+     ≥ $bp-three   sidebar | name / bio | recently
+     ≥ $bp-two     sidebar | name / bio / recently
+     below         name, portrait row, bio, recently
+   ========================================================================== */
+
+$cover-height: 8 * $grid-unit;   // 244.8px
+$cover-tuck: 6px;                // hidden under the fixed masthead, so no
+                                 // sub-pixel seam can show between them
+
+/* --- Cover photo --------------------------------------------------------- */
+
+.home-cover {
+  margin-top: -$cover-tuck;
+  height: calc(clamp(120px, 17vw, #{$cover-height}) + #{$cover-tuck});
+  overflow: hidden;
+  background-color: $deep-pacific;   // while the image loads
+
+  picture,
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center 50%;     // horizon is centred in the source crop
+  }
+}
+
+/* --- Name and tagline ---------------------------------------------------- */
+
+.home-head {
+  margin: 0 0 2em;
+
+  .nowrap { white-space: nowrap; }
+}
+
+.home-head__name {
+  margin: 0;
+  font-family: $display;
+  font-weight: 500;
+  font-size: clamp(34px, 3.6vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+
+  /* short Wet Sandstone rule under the name */
+  &::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 2px;
+    margin: 18px 0 14px;
+    background: var(--accent-rule);
+  }
+}
+
+.home-head__tagline {
+  margin: 0;
+  font-family: $serif;
+  font-style: italic;
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.4;
+  color: var(--ink-muted);
+}
+
+/* --- Sidebar: portrait alone -------------------------------------------- */
+
+.main--home .sidebar {
+  /* the heading above already names the page */
+  .author__content { display: none; }
+
+  @include breakpoint($large) {
+    .author__avatar {
+      width: 100%;
+
+      img {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: none;
+      }
+    }
+
+    .author__urls-wrapper { margin-top: 1.4em; }
+  }
+
+  /* phones: small portrait beside the Follow button */
+  @media (max-width: $bp-two - 0.02px) {
+    .author__avatar,
+    .author__urls-wrapper { vertical-align: middle; }
+
+    .author__avatar img { width: 56px; }
+
+    .author__urls-wrapper {
+      padding-left: 14px;
+
+      .btn { margin: 0; }
+    }
+  }
+}
+
+/* --- Grid placement ------------------------------------------------------ */
+
+#main.main--home {
+  margin-top: 2.6em;
+}
+
+@media (min-width: $bp-two) {
+  #main.main--home {
+    > .home-head { grid-column: text; grid-row: 1; }
+    > .sidebar   { grid-row: 1 / span 3; }
+    > .page      { grid-column: text; grid-row: 2; }
+    > .recently  { grid-column: text; grid-row: 3; margin-top: 1.5em; }
+  }
+}
+
+@media (min-width: $bp-three) {
+  #main.main--home {
+    > .page     { grid-column: text; }
+    > .recently { grid-column: notes; grid-row: 1 / span 2; align-self: start; margin-top: 0; padding-top: 0.9em; }
+  }
+}
+
+@media (max-width: $bp-two - 0.02px) {
+  .recently { margin-top: 2em; }
+}
+
+/* --- Recently ------------------------------------------------------------ */
+
+.recently__title {
+  @extend %kicker;
+  margin: 0 0 0.6em;
+}
+
+.recently__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.recently__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+  margin: 0;
+  padding: 0.9em 0;
+  border-top: 1px solid var(--rule);
+}
+
+.recently__kind {
+  font-family: $serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--accent);
+}
+
+.recently__name {
+  font-family: $display;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+a.recently__name {
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--link);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.recently__detail {
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--ink-muted);
+}
+
+.recently__date {
+  font-family: $meta-font-family;
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+/* upcoming: a double-ruled frame, after the Ocean Baths sign panels */
+.recently__item--upcoming {
+  margin-top: 0.9em;
+  padding: 1em 1.1em;
+  border: 1px solid var(--accent);
+  box-shadow:
+    inset 0 0 0 3px var(--global-bg-color),
+    inset 0 0 0 4px var(--accent);
+}

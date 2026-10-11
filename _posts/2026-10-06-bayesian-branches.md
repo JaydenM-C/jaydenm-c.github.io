@@ -5,9 +5,9 @@ date: 2026-10-06
 permalink: /posts/2026/10/bayesian-branches/
 excerpt: "If you've ever wondered where baby trees come from..."
 tags:
-  - phylogenetics
-  - linguistics
-  - computational methods
+  - Phylogenetics
+  - Linguistics
+  - Conference talks / presentations
 ---
 
 Have you ever wondered where baby trees come from? Computationally-inferred phylogenies have been popping up in linguistic papers for a couple of decades now. But there's still an air of mystery around how they get made, and a few lingering misconceptions.

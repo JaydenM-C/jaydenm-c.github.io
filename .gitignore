@@ -21,3 +21,6 @@ package-lock.json
 # Ignore the vendor file and bundle for alternative installation
 vendor/
 .bundle/
+
+# Ignore LaTeX aux file when creating CV
+cv/cv.aux

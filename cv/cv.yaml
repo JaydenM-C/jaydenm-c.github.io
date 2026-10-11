@@ -4,25 +4,24 @@
 # ---------------------------------------------------------------------------
 
 meta:
-  last_updated: "2026-08-02"   # shown in the running header; bump on each revision
+  last_updated: "2026-10-11"   # shown in the running header; bump on each revision
   document_title: "Curriculum Vitae"
 
 basics:
   name: "Dr. Jayden L. Macklin-Cordes"
   short_name: "Macklin-Cordes"
-  label: "Quantitative historical linguist"
+  label: "Evolutionary Language Scientist"
   affiliation_lines:
-    - "Surrey Morphology Group, School of Literature and Languages"
-    - "University of Surrey"
-    - "Guildford GU2 7XH"
-    - "United Kingdom"
+    - "Institute for the Interdisciplinary Study of Language Evolution (ISLE Institute)"
+    - "University of Zurich"
+    - "Switzerland"
   email: "jayden@macklin-cordes.com"
   orcid: "0000-0003-1910-3969"
   orcid_url: "https://orcid.org/0000-0003-1910-3969"
   website: "https://www.macklin-cordes.com/"
 
 research_profile: |
-  I am a quantitative historical linguist investigating how language structures change over
+  I am an evolutionary language scientist investigating how language structures change over
   deep time, and what their evolution reveals about cultural evolution and human cognition.
   I employ a primarily Bayesian toolkit: phylogenetic tree inference, phylogenetic
   comparative methods, ancestral state reconstruction, and phylogeographic regression.
@@ -79,9 +78,15 @@ public_repos:
     description: "Codebase for the AusErdle app, a Wordle spinoff using Australian English phonemic transcriptions."
 
 professional_experience:
-  - dates: "Jun 2026–present"
+  - dates: "Oct 2026–present"
+    start_date: "2026–10"
+    role: "Postdoctoral Researcher"
+    department: "Institute for the Interdisciplinary Study of Language Evolution (ISLE Institute)"
+    institution: "University of Zurich"
+    project: "Conceptual Diversity and the Evolution of Abstract Thought (CONCEVO) (Prof J. Mansfield"
+  - dates: "Jun–Sept 2026"
     start_date: "2026-06"
-    end_date: "present"
+    end_date: "2026-09"
     role: "Postdoctoral Research Fellow"
     department: "Surrey Morphology Group"
     institution: "University of Surrey, UK"
@@ -99,7 +104,7 @@ professional_experience:
     role: "Postdoctoral Researcher"
     department: "UMR 5596: Laboratoire Dynamique du Langage (DDL)"
     institution: "CNRS, Université Lumière Lyon 2, Lyon, France"
-    project: "EVOGRAM: The role of linguistic and non-linguistic factors in the evolution of nominal classification system"
+    project: "EVOGRAM: The role of linguistic and non-linguistic factors in the evolution of nominal classification system (Dr M. Allassonnière-Tang)"
 
 education:
   - date: "Jun 2021"
@@ -281,6 +286,7 @@ conference_presentations:
     title: "Unstable trees: The challenge of frequency and phonology in phylogenetics."
     venue_italic: Edinburgh Symposium on Historical Phonology
     venue_rest: University of Edinburgh, Scotland.
+    post: /posts/2021/12/unstable-trees
   - authors: "Macklin-Cordes, Jayden L. & Erich R. Round."
     year_text: "2020."
     title: "Zipf's Law? Re-evaluating phoneme frequencies."
@@ -327,6 +333,7 @@ conference_presentations:
     venue_italic: 'SST2016 Satellite Symposium: The role of predictability in shaping human language sound patterns'
     venue_rest: Western Sydney University, Australia.
     doi: "https://dx.doi.org/10.6084/m9.figshare.4465976"
+    post: /2016/12/evaluating-information-loss
   - authors: "Macklin-Cordes, Jayden L. & Erich R. Round."
     year_text: "2016a."
     title: "High-definition phonotactic data contain phylogenetic signal [poster]."
@@ -354,7 +361,14 @@ conference_presentations:
     title: "Next-generation typological variables: From theory to practice, and back again."
     venue_italic: Australian Linguistic Society Annual Conference (ALS 2014)
     venue_rest: University of Newcastle, Australia.
+
 invited_talks:
+  - authors: "Macklin-Cordes, Jayden L."
+    year_text: "2026."
+    title: "Bayesian branches: Where do language trees come from?"
+    venue_italic: Surrey Morphology Group Expertise Session
+    venue_rest: University of Surrey, Guildford, UK.
+    url: "https://www.doi.org/10.5281/zenodo.23284532"
   - authors: "Macklin-Cordes, Jayden L."
     year_text: "2025."
     title: "Locative polyfunctionality in Australia: Function distribution is not predicted by phylogeny or contact."
@@ -400,12 +414,15 @@ invited_talks:
     title: "Constituent order in subordinate clauses: A comparison of Mudburra, Warlmanpa and Warriyangga/Thiinma."
     venue_italic: UWA Linguistics Seminar Series
     venue_rest: University of Western Australia, Perth, Australia.
+    post: /posts/2022/08/constituent-order
   - authors: "Macklin-Cordes, Jayden L. & Erich R. Round."
     year_text: "2021."
     title: "Phylogenetic comparative methods: What all the fuss is about, and how to use them in everyday research."
     venue_italic: Language and Data Analysis Laboratory (LADAL) webinar
     venue_rest: The University of Queensland, St Lucia, Australia.
     url: "https://youtu.be/yJeQ6AGDLK0"
+    post: /posts/2021/11/pcms-in-everyday-research
+    post_label: Details
 
 funding:
   research:

@@ -1,0 +1,19 @@
+{% comment %}
+  One reference in the unified style for linguistics, matching the PDF CV:
+    Authors. Year. Title. In *Venue*rest. https://doi… Abstract
+  Used by the Publications, Talks and CV pages; data comes from
+  _data/cv.json (built from cv/cv.yaml by cv/build_cv.py).
+
+  Parameters: authors, year, title, in_proc, venue, venue_rest, target,
+              doi, url, post, post_label
+  Liquid treats "" as true, so every optional field is tested for content.
+{% endcomment %}
+{%- assign authors = include.authors | replace: "Macklin-Cordes, Jayden L.", "<strong>Macklin-Cordes, Jayden L.</strong>" | replace: "Jayden L. Macklin-Cordes", "<strong>Jayden L. Macklin-Cordes</strong>" -%}
+<li>
+  {{ authors }}{% if include.year and include.year != "" %} {{ include.year }}{% endif %} {{ include.title }}
+  {%- if include.venue and include.venue != "" %}{% if include.in_proc %} In{% endif %} <em>{{ include.venue }}</em>{% if include.venue_rest and include.venue_rest != "" %}{{ include.venue_rest }}{% else %}.{% endif %}{% endif %}
+  {%- if include.target and include.target != "" %} <em>Targeted:</em> {{ include.target }}.{% endif %}
+  {%- if include.doi and include.doi != "" %} <a href="{{ include.doi }}">{{ include.doi }}</a>.{% endif %}
+  {%- if include.url and include.url != "" %} <a href="{{ include.url }}">{{ include.url }}</a>.{% endif %}
+  {%- if include.post and include.post != "" %} <a class="pub-list__more" href="{{ include.post | relative_url }}">{{ include.post_label | default: "Abstract" }}</a>{% endif %}
+</li>

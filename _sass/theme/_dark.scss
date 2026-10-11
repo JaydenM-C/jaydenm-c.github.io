@@ -1,54 +1,96 @@
 /* ==========================================================================
-   DARK THEME
+   DARK THEME — Newy Sunsets, "Deep Water"
+
+   The page is Deep Pacific taken down towards night; the masthead and footer
+   stay Deep Pacific, so they read as a lit band against it. Applied when
+   <html data-theme="dark"> (set from the OS preference or the toggle; see
+   _includes/head/custom.html and assets/js/_main.js).
+
+   Swaps, from the light theme:
+     ink         Coal → Nobbys Tuff Light
+     muted text  Siltstone → Churning Whitewater (the guide's muted-on-blue)
+     accent      Newy Sandstone → Sunlit Rock Shelf (Sandstone is too dark
+                 to read on the dark ground)
+     links       Federation Red → Linen, underlined in Sunlit Rock Shelf
+                 (Federation Red falls to ~1.5:1 here)
+     code        one step darker than the page; the guide's dark syntax tuning
    ========================================================================== */
 
-/* Color codes used for the theme */
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : mix(#fff, $gray, 50%);
+$deep-water                 : #142731;  // page: Deep Pacific towards night
+$deep-water-dark            : #0E1D25;  // code blocks, one step darker
 
-$background                 : #474747;
-$background-light           : mix(#fff, $background, 80%);
-$background-lighter         : mix(#fff, $background, 90%);
-$text                       : #ffffff;
-$link                       : #0ea1c5;
-$link-dark                  : mix(#000, $link, 25%);
-$link-light                 : mix(#fff, $link, 25%);
-
-/* Color codes used for the site */
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
-$notice-color               : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
-
-/* Other basic settings for the template */
-$border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
-$global-transition          : all 0.2s ease-in-out;
-$masthead-height            : 70px;
-$navicon-width              : 28px;
-$navicon-height             : 4px;
-$sidebar-link-max-width     : 250px;
-$sidebar-screen-min-width   : 1024px;
-
-/* Dark theme for the site */
 html[data-theme="dark"] {
-    --global-base-color                 : #{$background};
-    --global-bg-color                   : #{$background};
-    --global-footer-bg-color            : #{$background};
-    --global-border-color               : #{$light-gray};
-    --global-dark-border-color          : #{$background-light};
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : #{$light-gray};
-    --global-link-color                 : #{$link};
-    --global-link-color-hover           : #{$link-dark};
-    --global-link-color-visited         : #{$link-light};
-    --global-masthead-link-color        : #{$text};
-    --global-masthead-link-color-hover  : #{$background-light};
-    --global-text-color                 : #{$text};
-    --global-text-color-light           : #{$light-gray};
-    --global-thead-color                : #{$background-lighter};
+    color-scheme: dark;                                     // native scrollbars and form controls
+
+    --global-base-color                 : #{$churning-whitewater};
+    --global-bg-color                   : #{$deep-water};
+    --global-footer-bg-color            : #{$deep-pacific};
+    --global-border-color               : #{rgba($nobbys-tuff-light, 0.16)};
+    --global-dark-border-color          : #{rgba($nobbys-tuff-light, 0.32)};
+    --global-code-background-color      : #{$deep-water-dark};
+    --global-code-text-color            : #{$nobbys-tuff-light};
+    --global-fig-caption-color          : #{$churning-whitewater};
+    --global-link-color                 : #{$linen};
+    --global-link-color-hover           : #{$sunlit-rock-shelf};
+    --global-link-color-visited         : #{$linen};
+    --global-masthead-link-color        : #{$paper};
+    --global-masthead-link-color-hover  : #{$paper};
+    --global-text-color                 : #{$nobbys-tuff-light};
+    --global-text-color-light           : #{$churning-whitewater};
+    --global-thead-color                : #{rgba($nobbys-tuff-light, 0.06)};
+
+    --ink                               : #{$nobbys-tuff-light};     // 12:1 on the page
+    --ink-muted                         : #{$churning-whitewater};   // 6.5:1
+    --ink-faint                         : #{$churning-whitewater};
+    --rule                              : #{rgba($nobbys-tuff-light, 0.16)};
+    --rule-strong                       : #{rgba($nobbys-tuff-light, 0.32)};
+    --rule-faint                        : #{rgba($nobbys-tuff-light, 0.09)};
+    --page                              : #{$deep-water};
+    --page-cream                        : #{$deep-water};
+    --surface                           : #{$deep-water};
+    --code-bg                           : #{$deep-water-dark};
+    --chrome                            : #{$deep-pacific};
+    --accent                            : #{$sunlit-rock-shelf};     // 4.8:1
+    --accent-rule                       : #{$sunlit-rock-shelf};
+    --link                              : #{$linen};
+    --link-underline                    : #{$sunlit-rock-shelf};
+    --ink-brand                         : #{$nobbys-tuff-light};
+    --pill-on-bg                        : #{$sunlit-rock-shelf};  // Deep Pacific would vanish here
+    --pill-on-ink                       : #{$deep-water};
+    --selection-bg                      : #{$bar-beach-swell};
+    --selection-text                    : #{$paper};
+
+    /* Syntax (the guide's dark tuning) */
+    --syn-text                          : #{$nobbys-tuff-light};
+    --syn-comment                       : #{$shallows};
+    --syn-string                        : #{$sunlit-rock-shelf};
+    --syn-keyword                       : #{$churning-whitewater};
+    --syn-number                        : #{$sunlit-rock-shelf};
+    --syn-punct                         : #{mix($nobbys-tuff-light, $newcastle-siltstone, 35%)};
+
+    /* Light type on a dark ground optically gains weight: step down
+       (the guide's Jost 600 → 500 rule, and the same idea for Newsreader). */
+    body                  { font-weight: 370; }
+    .page__content strong,
+    .page__content b      { font-weight: 560; }
+    h1, .page__title      { font-weight: 500; }
+    h2, .home-head__name  { font-weight: 450; }
+
+    /* Links: Linen, told apart from the text by a Sunlit Rock underline */
+    #main a {
+        text-decoration-color: var(--link-underline);
+        text-underline-offset: 3px;
+    }
+
+    /* Photographs: take the glare off */
+    .home-cover img       { filter: brightness(0.82) saturate(0.95); }
+    .page__content img    { filter: brightness(0.9); }
+    .author__avatar img   { filter: brightness(0.92); }
+
+    /* Brand icons that are black in the light theme */
+    .fa-github,
+    .fa-x-twitter         { color: var(--ink); }
+
+    /* Follow button (phones) */
+    .btn--inverse { color: var(--ink) !important; }   // light theme sets Deep Pacific with !important
 }

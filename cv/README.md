@@ -32,43 +32,49 @@ Flags: `--tex-only`, `--json-only`, `--compile`.
 
 ## Typography setup
 
-The LaTeX template uses three typefaces, per the project Visual Identity
-Guide, loaded **by file** from `cv/fonts/`. No system-wide install
-required — the fonts are committed into the repo and travel with it, so
-Overleaf and any clone of the repo compile identically without fiddling.
+The LaTeX template uses the Newy Sunsets typefaces, loaded **by file**
+from `cv/fonts/`. No system-wide install required — the fonts are
+committed into the repo and travel with it, so Overleaf and any clone of
+the repo compile identically.
 
-| Face       | Role                                   | Where to get it                                  |
-|------------|----------------------------------------|--------------------------------------------------|
-| Literata   | display, name, publication heads       | <https://fonts.google.com/specimen/Literata>     |
-| Inter      | body, section heads, captions          | <https://fonts.google.com/specimen/Inter>        |
-| Fira Code  | monospace (code, package names, URLs)  | <https://fonts.google.com/specimen/Fira+Code>    |
-
-Download each zip from Google Fonts, take the static (not variable) cuts,
-and drop exactly these files into `cv/fonts/`:
+| Face          | Role                                              |
+|---------------|---------------------------------------------------|
+| Newsreader    | body, emphasis (italic), bold for names/roles     |
+| Jost          | name (21 pt), section heads, subsection heads     |
+| IBM Plex Mono | dates, running header/footer, package names, URLs |
 
 ```
 cv/fonts/
-├── Inter_18pt-Regular.ttf
-├── Inter_18pt-Medium.ttf           ← bound to \textbf (emphasis = 500, not 700)
-├── Inter_18pt-Italic.ttf
-├── Inter_18pt-MediumItalic.ttf
-├── Literata-Regular.ttf
-├── Literata-SemiBold.ttf
-├── Literata-Italic.ttf
-├── Literata-SemiBoldItalic.ttf
-└── FiraCode-Regular.ttf
+├── Newsreader-Text-Regular.ttf
+├── Newsreader-Text-Italic.ttf
+├── Newsreader-Text-SemiBold.ttf        ← \textbf
+├── Newsreader-Text-SemiBoldItalic.ttf
+├── Jost-Regular.ttf
+├── Jost-Medium.ttf                     ← name, section heads
+├── Jost-SemiBold.ttf
+└── IBMPlexMono-Regular.ttf
 ```
 
-Why the `_18pt` suffix on Inter but not on Literata: Google Fonts ships
-Inter's static set pre-split by optical size (18/24/28 pt ranges). All CV
-text (body 10.5 pt, section heads 11 pt, captions) sits inside the 18 pt
-range, so only that set is needed. Literata's static bundle is split by
-weight only, with no opsz variants — the file names reflect that.
+The Newsreader and Jost files are **static instances generated from the
+variable fonts** in the Newy Sunsets `fonts/` folder (fontTools
+`varLib.instancer`): Newsreader at optical size 10.5 (matching the 10.5 pt
+body, per the identity guide's "opsz ≈ point size" rule) at weights 400
+and 600; Jost at 400, 500 and 600. LuaLaTeX can't reliably drive
+Newsreader's opsz axis, so pinning it in a static cut is the robust way to
+get the right optical size. To regenerate, e.g. for a different body size:
 
-If any filename in a fresh Google Fonts download differs from the list
-above (e.g. `Fira_Code-Regular.ttf` with an underscore), either rename
-the file or change the corresponding naming stem in the fontspec blocks
-of `templates/cv.tex.j2` and rebuild.
+```python
+from fontTools.ttLib import TTFont
+from fontTools.varLib import instancer
+f = TTFont("Newsreader-VariableFont_opsz-wght.ttf")
+instancer.instantiateVariableFont(f, {"wght": 400, "opsz": 10.5}).save("Newsreader-Text-Regular.ttf")
+```
+
+(Give each instance a distinct family/PostScript name in its `name`
+table so font caches don't confuse them.) All fonts are SIL OFL 1.1.
+
+The old Jaydencore files (Inter, Literata, Fira Code) are no longer used
+and can be deleted.
 
 ## Engine
 
@@ -168,30 +174,38 @@ All defined in `build_cv.py`:
 
 ## Colours and sizing (for reference)
 
-Set in the template preamble; keep in sync with the Visual Identity Guide.
+Set in the template preamble; keep in sync with the Newy Sunsets guide.
 
-| Token         | Hex      | Role                                      |
-|---------------|----------|-------------------------------------------|
-| `burntred`    | `#9E2A1E`| Name band, section-head accent            |
-| `bottlegreen` | `#1E3A34`| Defined but unused on the CV              |
-| `deepmaroon`  | `#681F34`| Links, link-hover                         |
-| `pagecream`   | `#FAF7F2`| Page background                           |
-| `ink`         | `#2B2A26`| Body text                                 |
-| `inkmuted`    | `#6C6A64`| Dates, meta labels, running header/footer |
-| `rulegrey`    | `#E5E0D5`| Hairline under section titles             |
-| `creamonred`  | `#FBEDE8`| Name and tagline on red band              |
+| Token           | Hex       | Role                                           |
+|-----------------|-----------|------------------------------------------------|
+| `deeppacific`   | `#284958` | Name band                                      |
+| `whitewater`    | `#91ADBE` | Tagline on the band                            |
+| `paper`         | `#FFFEF9` | Page background; name on the band              |
+| `coal`          | `#181414` | Body text                                      |
+| `siltstone`     | `#706468` | Dates, meta labels, running header/footer      |
+| `sandstone`     | `#AE4E1B` | Section heads, bullets                         |
+| `federationred` | `#841C1B` | Links, awards, amounts, evaluations            |
+| `tuff`          | `#D9D8D6` | Hairline under section titles                  |
 
-Body: Inter Regular 10.5 pt, leading 1.55. Section heads: Inter Medium
-small-caps 11 pt, tracked +0.14 em, burnt red. Name: Literata SemiBold
-21 pt, cream-on-red. Links: deep maroon, no underline.
+Body: Newsreader 10.5 pt (opsz 10.5), leading ≈ 1.5. Section heads: Jost
+Medium tracked capitals (+0.14 em), 9.5 pt, Sandstone — Jost has no true
+small caps, so reduced-size capitals stand in. Name: Jost Medium 21 pt,
+Paper on Deep Pacific (one weight lighter than on a light field, per the
+guide). Dates and running chrome: IBM Plex Mono, Siltstone. Links:
+Federation Red, no underline.
 
 ## Troubleshooting
 
-**`fontspec` error — font not found.** Install the font system-wide, or
-on Overleaf upload the TTF into the project. If the variant name (e.g.
-`Inter Medium`) isn't picked up, drop the `BoldFont = * Medium` line and
-rely on fontspec's own bold substitution, which will look less sharp but
-will compile.
+**`fontspec` error — font not found.** Check the eight files listed under
+Typography setup are in `cv/fonts/` with exactly those names (on
+Overleaf, that they were pulled or uploaded into the project).
+
+**`File scrartcl.cls not found` (or another `.sty`/`.cls`).** A minimal
+TeX install (TinyTeX, BasicTeX) is missing a package. Install it with
+`tlmgr install <package>`; `tlmgr search --global --file <name>` finds
+which package provides a file. The set this template needs:
+`koma-script babel-english fontspec lm microtype xcolor geometry fancyhdr
+pgf lastpage enumitem titlesec etoolbox xurl tools hyperref`.
 
 **`luaotfload-main not found` under LuaLaTeX.** The TeX Live install is
 incomplete; add `texlive-latex-extra` (Debian/Ubuntu) or `scheme-full`.

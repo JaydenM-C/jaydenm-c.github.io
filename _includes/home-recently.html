@@ -1,0 +1,57 @@
+{% comment %}
+  "Recently" column on the home page. The latest blog post is filled in
+  automatically; everything else comes from _data/home.yml.
+{% endcomment %}
+{% include base_path %}
+{% assign home = site.data.home %}
+{% assign latest_post = site.posts.first %}
+{% assign today = site.time | date: "%Y%m%d" | plus: 0 %}
+
+<aside class="recently" aria-labelledby="recently-title">
+  <h2 class="recently__title" id="recently-title">Recently</h2>
+  <ul class="recently__list">
+    {% if latest_post %}
+      <li class="recently__item">
+        <span class="recently__kind">Latest post</span>
+        <a class="recently__name" href="{{ base_path }}{{ latest_post.url }}">{{ latest_post.title }}</a>
+        {% if latest_post.subtitle %}<span class="recently__detail">{{ latest_post.subtitle }}</span>{% endif %}
+        <time class="recently__date" datetime="{{ latest_post.date | date: "%Y-%m-%d" }}">{{ latest_post.date | date: "%B %Y" }}</time>
+      </li>
+    {% endif %}
+
+    {% for item in home.recently %}
+      {% if item.title %}
+        <li class="recently__item">
+          <span class="recently__kind">{{ item.kind }}</span>
+          {% if item.url and item.url != "" %}
+            <a class="recently__name" href="{% if item.url contains '://' %}{{ item.url }}{% else %}{{ base_path }}{{ item.url }}{% endif %}">{{ item.title }}</a>
+          {% else %}
+            <span class="recently__name">{{ item.title }}</span>
+          {% endif %}
+          {% if item.detail %}<span class="recently__detail">{{ item.detail }}</span>{% endif %}
+          {% if item.date %}<span class="recently__date">{{ item.date }}</span>{% endif %}
+        </li>
+      {% endif %}
+    {% endfor %}
+
+    {% for item in home.upcoming %}
+      {% assign show = true %}
+      {% if item.until %}
+        {% assign until = item.until | date: "%Y%m%d" | plus: 0 %}
+        {% if until < today %}{% assign show = false %}{% endif %}
+      {% endif %}
+      {% if show and item.title %}
+        <li class="recently__item recently__item--upcoming">
+          <span class="recently__kind">Upcoming</span>
+          {% if item.url and item.url != "" %}
+            <a class="recently__name" href="{% if item.url contains '://' %}{{ item.url }}{% else %}{{ base_path }}{{ item.url }}{% endif %}">{{ item.title }}</a>
+          {% else %}
+            <span class="recently__name">{{ item.title }}</span>
+          {% endif %}
+          {% if item.detail %}<span class="recently__detail">{{ item.detail }}</span>{% endif %}
+          {% if item.date %}<span class="recently__date">{{ item.date }}</span>{% endif %}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</aside>

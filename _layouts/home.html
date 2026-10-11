@@ -1,0 +1,52 @@
+---
+layout: default
+author_profile: true
+---
+
+{% comment %}
+  Home page (Newy Sunsets). A thin cover photo under the masthead, the name
+  as the page heading, the portrait alone in the sidebar, and a "Recently"
+  column (see _data/home.yml) in the notes column.
+
+  Front matter:
+    tagline:   line under the name
+    cover:     base path of the cover image set, without size or extension,
+               e.g. /images/cover/bar-beach-storm (expects -960/-1600/-2400
+               .webp and a -1600.jpg fallback)
+    cover_alt: alt text for the cover image
+{% endcomment %}
+
+{% include base_path %}
+
+{% if page.cover %}
+  <div class="home-cover">
+    <picture>
+      <source type="image/webp"
+              srcset="{{ base_path }}{{ page.cover }}-960.webp 960w, {{ base_path }}{{ page.cover }}-1600.webp 1600w, {{ base_path }}{{ page.cover }}-2400.webp 2400w"
+              sizes="100vw">
+      <img src="{{ base_path }}{{ page.cover }}-1600.jpg" alt="{{ page.cover_alt | escape }}"
+           width="1600" height="444" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+{% endif %}
+
+<div id="main" class="main--home" role="main">
+  <header class="home-head">
+    {% assign name_parts = site.author.name | split: " " %}
+    <h1 class="home-head__name">{% for part in name_parts %}{% if forloop.last %}<span class="nowrap">{{ part }}</span>{% else %}{{ part }} {% endif %}{% endfor %}</h1>
+    {% if page.tagline %}<p class="home-head__tagline">{{ page.tagline }}</p>{% endif %}
+  </header>
+
+  {% include sidebar.html %}
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    <div class="page__inner-wrap">
+      <section class="page__content" itemprop="text">
+        {{ content }}
+      </section>
+    </div>
+  </article>
+
+  {% include home-recently.html %}
+</div>
