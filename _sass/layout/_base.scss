@@ -432,7 +432,10 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
    vernacular line italic, category labels in true small caps (.sc),
    free translation in single quotes, source in Siltstone.
    ---------------------------------------------------------------------- */
-.ipa {
+/* .translit: romanised forms that need letters Newsreader lacks
+   (e.g. Sanskrit ṛ); Gentium has them */
+.ipa,
+.translit {
   font-family: $ipa;
   font-size: 1.02em;                          // Gentium sets slightly small beside Newsreader
 }
