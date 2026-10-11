@@ -146,52 +146,51 @@
   </div>
   {% endif %}
   
+  {% comment %}
+    Publications and talks use the same reference style as the PDF CV and the
+    Publications and Talks pages (_includes/bib-entry.html).
+  {% endcomment %}
   {% if cv.publications.size > 0 %}
   <!-- Publications -->
   <div class="cv-section">
     <h2>Publications</h2>
-    <ul class="cv-list">
-      {% for publication in cv.publications %}
-      <li class="cv-item">
-        <div class="cv-item-content">
-          <div class="cv-item-title">{{ publication.name }}</div>
-          <div class="cv-item-detail cv-bib-line">
-            {{ publication.summary | replace: "Macklin-Cordes, Jayden L.", "<strong>Macklin-Cordes, Jayden L.</strong>" | replace: "Jayden L. Macklin-Cordes", "<strong>Jayden L. Macklin-Cordes</strong>" }}
-            {% if publication.yearText %} {{ publication.yearText }}{% endif %}
-            {% if publication.venueItalic %}{% if publication.inProc %} In{% endif %} <em>{{ publication.venueItalic }}</em>{{ publication.venueRest }}{% endif %}
-            {% if publication.website and publication.website != "" %} <a href="{{ publication.website }}" target="_blank">{{ publication.website }}</a>.{% endif %}
-          </div>
-        </div>
-      </li>
+    <ul class="pub-list">
+      {% for p in cv.publications %}
+        {% include bib-entry.html authors=p.summary year=p.yearText title=p.title in_proc=p.inProc venue=p.venueItalic venue_rest=p.venueRest doi=p.website %}
       {% endfor %}
     </ul>
   </div>
   {% endif %}
 
-  {% if cv.presentations.size > 0 %}
-  <!-- Presentations/Talks -->
+  {% if cv.inPreparation.size > 0 %}
+  <!-- In preparation -->
   <div class="cv-section">
-    <h2>Presentations</h2>
-    <ul class="cv-list">
-      {% for talk in cv.presentations %}
-      <li class="cv-item">
-        <div class="cv-item-content">
-          <div class="cv-item-title">{{ talk.name }}</div>
-          <div class="cv-item-detail cv-bib-line">
-            {{ talk.description | replace: "Macklin-Cordes, Jayden L.", "<strong>Macklin-Cordes, Jayden L.</strong>" | replace: "Jayden L. Macklin-Cordes", "<strong>Jayden L. Macklin-Cordes</strong>" }}
-            {% if talk.yearText %} {{ talk.yearText }}{% endif %}
-            {% if talk.venueItalic %} <em>{{ talk.venueItalic }}</em>{{ talk.venueRest }}{% endif %}
-            {% comment %}An empty string is truthy in Liquid, so test for content, not existence.{% endcomment %}
-            {% if talk.doi and talk.doi != "" %} <a href="{{ talk.doi }}" target="_blank">{{ talk.doi }}</a>.{% endif %}
-            {% if talk.url and talk.url != "" %} <a href="{{ talk.url }}" target="_blank">{{ talk.url }}</a>.{% endif %}
-          </div>
-        </div>
-      </li>
+    <h2>In preparation</h2>
+    <ul class="pub-list">
+      {% for p in cv.inPreparation %}
+        {% include bib-entry.html authors=p.summary title=p.title target=p.target %}
       {% endfor %}
     </ul>
   </div>
   {% endif %}
-  
+
+  {% assign talk_sections = "conference|Conference presentations,invited|Invited talks" | split: "," %}
+  {% for section in talk_sections %}
+    {% assign parts = section | split: "|" %}
+    {% assign items = cv.presentations | where: "kind", parts[0] %}
+    {% if items.size > 0 %}
+  <!-- {{ parts[1] }} -->
+  <div class="cv-section">
+    <h2>{{ parts[1] }}</h2>
+    <ul class="pub-list">
+      {% for talk in items %}
+        {% include bib-entry.html authors=talk.description year=talk.yearText title=talk.title venue=talk.venueItalic venue_rest=talk.venueRest doi=talk.doi url=talk.url %}
+      {% endfor %}
+    </ul>
+  </div>
+    {% endif %}
+  {% endfor %}
+
   {% if cv.teaching.size > 0 %}
   <!-- Teaching -->
   <div class="cv-section">

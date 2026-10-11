@@ -1,15 +1,21 @@
 ---
 title: "Unstable trees: The challenge of frequency and phonology in phylogenetics"
-collection: talks
-type: "Talk"
-permalink: /talks/unstable-trees
-venue: "The 5th Edinburgh Symposium on Historical Phonology"
+permalink: /posts/2021/12/unstable-trees
+redirect_from:
+  - /talks/unstable-trees.html   # its address before it moved from Talks to the blog
 date: 2021-12-06
-paperurl: 'https://ed-ac-uk.zoom.us/rec/play/vEiSdzG9rvyFdMvCfEMZ7AlR6Gpcd7m_h5oosZ8qBvFp6U2ARDdFqasdUG4hEo5zFuNc8EGRIodcC2sy.9PXB5JuWLcvaaMot?startTime=1638810203000&_x_zm_rtaid=9gcrN7FFSzG6jJhJnwe0kg.1642525542292.fe712ad7428611b932b24a465a94f1ce&_x_zm_rhtaid=742'
-location: "University of Edinburgh, Scotland"
+excerpt: "Abstract for my talk at the Edinburgh Symposium on Historical Phonology."
+tags:
+  - Conference talks / presentations
+  - Phylogenetics
+  - Linguistics
+  - PhD life
 ---
 
-[Zoom recording](https://ed-ac-uk.zoom.us/rec/play/vEiSdzG9rvyFdMvCfEMZ7AlR6Gpcd7m_h5oosZ8qBvFp6U2ARDdFqasdUG4hEo5zFuNc8EGRIodcC2sy.9PXB5JuWLcvaaMot?startTime=1638810203000&_x_zm_rtaid=9gcrN7FFSzG6jJhJnwe0kg.1642525542292.fe712ad7428611b932b24a465a94f1ce&_x_zm_rhtaid=742)
+Abstract for the following talk, which was based on my PhD research:
+
+Macklin-Cordes, Jayden L. 2021. Unstable trees: The challenge of frequency and phonology in
+phylogenetics. _Edinburgh Symposium on Historical Phonology_. University of Edinburgh, Scotland.
 
 In this paper, I present a cautionary tale of phylogenetic tree inference gone awry. The study is an attempt to infer a phylogeny of the western branch of the Pama-Nyungan family with a combination of lexical data (binary cognates) and phonotactic data (biphone frequencies). Although the study largely fails to produce stable results, it is illustrative of the challenges ofincorporating data beyond lexical cognates in linguistic phylogenetics. Here, I elucidate why thischallenge is important and outline a path forward for the field.
 
@@ -25,8 +31,7 @@ To test whether phonotactic data strengthens tree inference, I compare the relat
 
 ### Results
 
-The results of the study are indeterminate, due to a lack of stable MCMC convergence. Essentially, when the MCMC process is repeated multiple times on each model, it produces inconsistent results. MLEs ostensibly favour the linked model, which would give support to the study’s hypothesis, but these values are revealed to be unreliable upon further interrogation. It is also illustrative to compare the phylogeny produced by the linked model to a baseline tree inferred from cognate data only. The addition of phonotactic data has the undesirable effect of flattening the internal structure of the tree into more of a ‘star’ (a.k.a. ‘rake’) phylogeny, and certain specific
-phonological changes in proto-Arandic have an outsized effect on subgroup placement.
+The results of the study are indeterminate, due to a lack of stable MCMC convergence. Essentially, when the MCMC process is repeated multiple times on each model, it produces inconsistent results. MLEs ostensibly favour the linked model, which would give support to the study’s hypothesis, but these values are revealed to be unreliable upon further interrogation. It is also illustrative to compare the phylogeny produced by the linked model to a baseline tree inferred from cognate data only. The addition of phonotactic data has the undesirable effect of flattening the internal structure of the tree into more of a ‘star’ (a.k.a. ‘rake’) phylogeny, and certain specific phonological changes in proto-Arandic have an outsized effect on subgroup placement.
 
 ### Discussion
 

@@ -69,6 +69,13 @@
   font-family: $global-font-family;
   font-size: $type-size-7;
   line-height: 1.6;
+
+  /* links inside a sentence need more than colour to stand out */
+  a {
+    text-decoration: underline;
+    text-decoration-color: var(--on-chrome-faint);
+    text-underline-offset: 3px;
+  }
 }
 
 .page__footer-follow {

@@ -25,6 +25,10 @@
   font-weight: 400;
 }
 
+// Newy Sunsets: only the icons the site uses (scripts/subset_icons.py)
+@import 'used-icons';
 @each $name, $icon in $fa-brand-icons {
-  .#{$fa-css-prefix}-#{$name}:before { content: unquote("\"#{ $icon }\""); }
+  @if index($fa-used-icons, $name) {
+    .#{$fa-css-prefix}-#{$name}:before { content: unquote("\"#{ $icon }\""); }
+  }
 }

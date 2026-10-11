@@ -286,6 +286,7 @@ conference_presentations:
     title: "Unstable trees: The challenge of frequency and phonology in phylogenetics."
     venue_italic: Edinburgh Symposium on Historical Phonology
     venue_rest: University of Edinburgh, Scotland.
+    post: /posts/2021/12/unstable-trees
   - authors: "Macklin-Cordes, Jayden L. & Erich R. Round."
     year_text: "2020."
     title: "Zipf's Law? Re-evaluating phoneme frequencies."
@@ -332,6 +333,7 @@ conference_presentations:
     venue_italic: 'SST2016 Satellite Symposium: The role of predictability in shaping human language sound patterns'
     venue_rest: Western Sydney University, Australia.
     doi: "https://dx.doi.org/10.6084/m9.figshare.4465976"
+    post: /2016/12/evaluating-information-loss
   - authors: "Macklin-Cordes, Jayden L. & Erich R. Round."
     year_text: "2016a."
     title: "High-definition phonotactic data contain phylogenetic signal [poster]."
@@ -363,8 +365,8 @@ conference_presentations:
 invited_talks:
   - authors: "Macklin-Cordes, Jayden L."
     year_text: "2026."
-    title: "Bayesian branches: Where do language trees come from? Surrey Morphology Group Expertise Session."
-    venue_italic: Surrey Morphology Group Experise Session
+    title: "Bayesian branches: Where do language trees come from?"
+    venue_italic: Surrey Morphology Group Expertise Session
     venue_rest: University of Surrey, Guildford, UK.
     url: "https://www.doi.org/10.5281/zenodo.23284532"
   - authors: "Macklin-Cordes, Jayden L."
@@ -412,12 +414,15 @@ invited_talks:
     title: "Constituent order in subordinate clauses: A comparison of Mudburra, Warlmanpa and Warriyangga/Thiinma."
     venue_italic: UWA Linguistics Seminar Series
     venue_rest: University of Western Australia, Perth, Australia.
+    post: /posts/2022/08/constituent-order
   - authors: "Macklin-Cordes, Jayden L. & Erich R. Round."
     year_text: "2021."
     title: "Phylogenetic comparative methods: What all the fuss is about, and how to use them in everyday research."
     venue_italic: Language and Data Analysis Laboratory (LADAL) webinar
     venue_rest: The University of Queensland, St Lucia, Australia.
     url: "https://youtu.be/yJeQ6AGDLK0"
+    post: /posts/2021/11/pcms-in-everyday-research
+    post_label: Details
 
 funding:
   research:

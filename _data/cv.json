@@ -130,7 +130,9 @@
       "releaseDate": "",
       "yearText": "Revisions pending.",
       "summary": "Macklin-Cordes, Jayden L.",
-      "website": ""
+      "website": "",
+      "title": "Trees beyond words: phonotactics in linguistic phylogenetics.",
+      "status": "review"
     },
     {
       "name": "Signal separation: Quantifying inheritance and contact in language evolution",
@@ -140,7 +142,9 @@
       "releaseDate": "",
       "yearText": "Revisions pending.",
       "summary": "Macklin-Cordes, Jayden L., Maria Copot, Mitch Browne & Tom Ennever.",
-      "website": ""
+      "website": "",
+      "title": "Signal separation: Quantifying inheritance and contact in language evolution.",
+      "status": "review"
     },
     {
       "name": "Challenges of sampling and how phylogenetic comparative methods help: With a case study of the Pama-Nyungan laminal contrast",
@@ -150,7 +154,9 @@
       "releaseDate": "2022",
       "yearText": "2022.",
       "summary": "Macklin-Cordes, Jayden L. & Erich R. Round.",
-      "website": "https://doi.org/10.1515/lingty-2021-0025"
+      "website": "https://doi.org/10.1515/lingty-2021-0025",
+      "title": "Challenges of sampling and how phylogenetic comparative methods help: With a case study of the Pama-Nyungan laminal contrast.",
+      "status": "published"
     },
     {
       "name": "Phylogenetic signal in phonotactics",
@@ -160,7 +166,9 @@
       "releaseDate": "2021",
       "yearText": "2021.",
       "summary": "Macklin-Cordes, Jayden L., Claire Bowern & Erich R. Round.",
-      "website": "https://doi.org/10.1075/dia.20004.mac"
+      "website": "https://doi.org/10.1075/dia.20004.mac",
+      "title": "Phylogenetic signal in phonotactics.",
+      "status": "published"
     },
     {
       "name": "Re-evaluating Phoneme Frequencies",
@@ -170,7 +178,9 @@
       "releaseDate": "2020",
       "yearText": "2020.",
       "summary": "Macklin-Cordes, Jayden L. & Erich R. Round.",
-      "website": "https://doi.org/10.3389/fpsyg.2020.570895"
+      "website": "https://doi.org/10.3389/fpsyg.2020.570895",
+      "title": "Re-evaluating Phoneme Frequencies.",
+      "status": "published"
     },
     {
       "name": "Automated Parsing of Interlinear Glossed Text from Page Images of Grammatical Descriptions",
@@ -180,7 +190,9 @@
       "releaseDate": "2020",
       "yearText": "2020.",
       "summary": "Round, Erich R., T. Mark Ellison, Jayden L. Macklin-Cordes & Sacha Beniamine.",
-      "website": "https://www.aclweb.org/anthology/2020.lrec-1.351"
+      "website": "https://www.aclweb.org/anthology/2020.lrec-1.351",
+      "title": "Automated Parsing of Interlinear Glossed Text from Page Images of Grammatical Descriptions.",
+      "status": "published"
     },
     {
       "name": "High-definition phonotactics reflect linguistic pasts",
@@ -190,7 +202,21 @@
       "releaseDate": "2015",
       "yearText": "2015.",
       "summary": "Macklin-Cordes, Jayden L. & Erich R. Round.",
-      "website": "https://doi.org/10.15496/publikation-8609"
+      "website": "https://doi.org/10.15496/publikation-8609",
+      "title": "High-definition phonotactics reflect linguistic pasts.",
+      "status": "published"
+    }
+  ],
+  "inPreparation": [
+    {
+      "summary": "Macklin-Cordes, Jayden L., Marc Allassonnière-Tang & One-Soon Her.",
+      "title": "Ancestral state reconstruction of numeral base and classifier word orders in proto-Tibeto-Burman.",
+      "target": ""
+    },
+    {
+      "summary": "Copot, Maria & Jayden L. Macklin-Cordes.",
+      "title": "Neither rules nor exemplars: morphological representation as adaptive clustering.",
+      "target": ""
     }
   ],
   "presentations": [
@@ -203,7 +229,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L. & Maria Copot.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Noun classes persist for predictive processing: Evidence from constituent order in 2,500 languages [poster].",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Optimal Representation Granularity in Morphological Learning",
@@ -214,7 +244,11 @@
       "location": "",
       "description": "Copot, Maria & Jayden L. Macklin-Cordes.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Optimal Representation Granularity in Morphological Learning.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Noun classes persist for predictive processing: Evidence from constituent order in 2,500 languages",
@@ -225,7 +259,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L. & Maria Copot.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Noun classes persist for predictive processing: Evidence from constituent order in 2,500 languages.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Locative polyfunctionality in Pama-Nyungan: Disentangling space, phylogeny and ahistorical factors [poster]",
@@ -236,7 +274,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L., Maria Copot, Tom Ennever & Mitch Browne.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Locative polyfunctionality in Pama-Nyungan: Disentangling space, phylogeny and ahistorical factors [poster].",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Locative functions beyond space and time: Pama-Nyungan case semantics reflect ahistorical processes [poster]",
@@ -247,7 +289,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L., Mitch Browne, Tom Ennever & Maria Copot.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Locative functions beyond space and time: Pama-Nyungan case semantics reflect ahistorical processes [poster].",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Locative polyfunctionality in Australia: Function distribution is not predicted by phylogeny or contact",
@@ -258,7 +304,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L., Mitch Browne, Tom Ennever & Maria Copot.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Locative polyfunctionality in Australia: Function distribution is not predicted by phylogeny or contact.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Towards a phylogenetic typology of Australian nominal classification",
@@ -269,7 +319,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Towards a phylogenetic typology of Australian nominal classification.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Phylogenetic comparative methods in everyday typology",
@@ -280,7 +334,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Phylogenetic comparative methods in everyday typology.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "The evolutionary dynamics of noun classes in Torricelli languages",
@@ -291,7 +349,11 @@
       "location": "",
       "description": "Jódar-Sánchez, Jose Antonio, Jayden L. Macklin-Cordes & Marc Allassonnière-Tang.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "The evolutionary dynamics of noun classes in Torricelli languages.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Correlated evolution of numeral base and classifier word orders in Tibeto-Burman languages [poster]",
@@ -302,7 +364,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L., Her, One-Soon & Marc Allassonnière-Tang.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Correlated evolution of numeral base and classifier word orders in Tibeto-Burman languages [poster].",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Incorporating typological features in tree inference: Lessons from phonotactics",
@@ -313,7 +379,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Incorporating typological features in tree inference: Lessons from phonotactics.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "A statistical analysis of word-initial apical neutralisation in Warlmanpa",
@@ -324,7 +394,11 @@
       "location": "",
       "description": "Browne, Mitch & Jayden L. Macklin-Cordes.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "A statistical analysis of word-initial apical neutralisation in Warlmanpa.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Constituent order in subordinate clauses: A comparison of Mudburra, Warlmanpa and Warriyangga/Thiinma",
@@ -335,7 +409,11 @@
       "location": "",
       "description": "Browne, Mitch, Jacqueline Cook, Amanda Hamilton-Holloway & Jayden L. Macklin-Cordes.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Constituent order in subordinate clauses: A comparison of Mudburra, Warlmanpa and Warriyangga/Thiinma.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Trials and tribulations of tree inference: The challenge of phonotactics in phylogenetics and why it matters",
@@ -346,7 +424,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Trials and tribulations of tree inference: The challenge of phonotactics in phylogenetics and why it matters.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Unstable trees: The challenge of frequency and phonology in phylogenetics",
@@ -357,7 +439,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Unstable trees: The challenge of frequency and phonology in phylogenetics.",
+      "kind": "conference",
+      "post": "/posts/2021/12/unstable-trees",
+      "postLabel": "Abstract"
     },
     {
       "name": "Zipf's Law? Re-evaluating phoneme frequencies",
@@ -368,7 +454,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L. & Erich R. Round.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Zipf's Law? Re-evaluating phoneme frequencies.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Clouded vision: Why insights improve when uncertainty about data is made explicit",
@@ -379,7 +469,11 @@
       "location": "",
       "description": "Round, Erich R. & Jayden L. Macklin-Cordes.",
       "doi": "",
-      "url": "https://cloudstor.aarnet.edu.au/plus/s/WOmUM73NVJQFqf6"
+      "url": "https://cloudstor.aarnet.edu.au/plus/s/WOmUM73NVJQFqf6",
+      "title": "Clouded vision: Why insights improve when uncertainty about data is made explicit.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Historical signal beyond the cognate: Phonotactics in linguistic phylogenetics",
@@ -390,7 +484,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L. & Erich R. Round.",
       "doi": "",
-      "url": "https://cloudstor.aarnet.edu.au/plus/s/zN5AbJ4fXoVR0ax"
+      "url": "https://cloudstor.aarnet.edu.au/plus/s/zN5AbJ4fXoVR0ax",
+      "title": "Historical signal beyond the cognate: Phonotactics in linguistic phylogenetics.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Phylogeny in phonotactics: A multivariate approach for stronger historical signal",
@@ -401,7 +499,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L. & Erich R. Round.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Phylogeny in phonotactics: A multivariate approach for stronger historical signal.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "High-definition phonotactic typology in Sahul: Choosing the data-rich approach",
@@ -412,7 +514,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L.",
       "doi": "https://doi.org/10.6084/m9.figshare.5861067",
-      "url": ""
+      "url": "",
+      "title": "High-definition phonotactic typology in Sahul: Choosing the data-rich approach.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Robots who read grammars [poster]",
@@ -423,7 +529,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L., Nathaniel L. Blackbourne, Thomas J. Bott, Jacqueline Cook, T. Mark Ellison, Jordan Hollis, Edith E. Kirlew, Genevieve C. Richards, Sanle Zhao & Erich R. Round.",
       "doi": "https://doi.org/10.6084/m9.figshare.4625248",
-      "url": ""
+      "url": "",
+      "title": "Robots who read grammars [poster].",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "The Cape York lexical records of Bruce Sommer",
@@ -434,7 +544,11 @@
       "location": "",
       "description": "Hollis, Jordan, Genevieve C. Richards, Jayden L. Macklin-Cordes & Erich R. Round.",
       "doi": "https://dx.doi.org/10.6084/m9.figshare.4299377",
-      "url": ""
+      "url": "",
+      "title": "The Cape York lexical records of Bruce Sommer.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Evaluating information loss from phonological dimensionality reduction",
@@ -445,7 +559,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L., Steven P. Moran & Erich R. Round.",
       "doi": "https://dx.doi.org/10.6084/m9.figshare.4465976",
-      "url": ""
+      "url": "",
+      "title": "Evaluating information loss from phonological dimensionality reduction.",
+      "kind": "conference",
+      "post": "/2016/12/evaluating-information-loss",
+      "postLabel": "Abstract"
     },
     {
       "name": "High-definition phonotactic data contain phylogenetic signal [poster]",
@@ -456,7 +574,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L. & Erich R. Round.",
       "doi": "https://dx.doi.org/10.6084/m9.figshare.4534238",
-      "url": ""
+      "url": "",
+      "title": "High-definition phonotactic data contain phylogenetic signal [poster].",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Reflections of linguistic history in quantitative phonotactics",
@@ -467,7 +589,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L. & Erich R. Round.",
       "doi": "https://dx.doi.org/10.6084/m9.figshare.4299365",
-      "url": ""
+      "url": "",
+      "title": "Reflections of linguistic history in quantitative phonotactics.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "The grammar harvester",
@@ -478,7 +604,11 @@
       "location": "",
       "description": "Round, Erich R., Jacqueline Cook, T. Mark Ellison, Jordan Hollis, Jayden L. Macklin-Cordes & Genevieve C. Richards.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "The grammar harvester.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "On the design, in practice, of typological microvariables",
@@ -489,7 +619,11 @@
       "location": "",
       "description": "Round, Erich R. & Jayden L. Macklin-Cordes.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "On the design, in practice, of typological microvariables.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Next-generation typological variables: From theory to practice, and back again",
@@ -500,18 +634,26 @@
       "location": "",
       "description": "Round, Erich R. & Jayden L. Macklin-Cordes.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Next-generation typological variables: From theory to practice, and back again.",
+      "kind": "conference",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
-      "name": "Bayesian branches: Where do language trees come from? Surrey Morphology Group Expertise Session",
-      "venueItalic": "Surrey Morphology Group Experise Session",
+      "name": "Bayesian branches: Where do language trees come from?",
+      "venueItalic": "Surrey Morphology Group Expertise Session",
       "venueRest": ". University of Surrey, Guildford, UK.",
       "date": "2026",
       "yearText": "2026.",
       "location": "",
       "description": "Macklin-Cordes, Jayden L.",
       "doi": "",
-      "url": "https://www.doi.org/10.5281/zenodo.23284532"
+      "url": "https://www.doi.org/10.5281/zenodo.23284532",
+      "title": "Bayesian branches: Where do language trees come from?",
+      "kind": "invited",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Locative polyfunctionality in Australia: Function distribution is not predicted by phylogeny or contact",
@@ -522,7 +664,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Locative polyfunctionality in Australia: Function distribution is not predicted by phylogeny or contact.",
+      "kind": "invited",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Towards a phylogenetic typology of Australian nominal classification",
@@ -533,7 +679,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Towards a phylogenetic typology of Australian nominal classification.",
+      "kind": "invited",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Thinking like a quantitative modeller",
@@ -544,7 +694,11 @@
       "location": "",
       "description": "Copot, Maria & Jayden L. Macklin-Cordes.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Thinking like a quantitative modeller.",
+      "kind": "invited",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Phylogenetic comparative methods in everyday typology: With a case study of Pama-Nyungan laminals",
@@ -555,7 +709,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Phylogenetic comparative methods in everyday typology: With a case study of Pama-Nyungan laminals.",
+      "kind": "invited",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Reconstructing numeral base and classifier word orders in Tibeto-Burman",
@@ -566,7 +724,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Reconstructing numeral base and classifier word orders in Tibeto-Burman.",
+      "kind": "invited",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Typological traits in linguistic phylogenetics: (Mis)adventures with phonotactics",
@@ -577,7 +739,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Typological traits in linguistic phylogenetics: (Mis)adventures with phonotactics.",
+      "kind": "invited",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Trees, mountains, numerals and classifiers: Preliminary ancestral state reconstruction in Tibeto-Burman",
@@ -588,7 +754,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Trees, mountains, numerals and classifiers: Preliminary ancestral state reconstruction in Tibeto-Burman.",
+      "kind": "invited",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Phylogenetic comparative methods for common typological challenges: With a case study of Pama-Nyungan laminals",
@@ -599,7 +769,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Phylogenetic comparative methods for common typological challenges: With a case study of Pama-Nyungan laminals.",
+      "kind": "invited",
+      "post": "",
+      "postLabel": "Abstract"
     },
     {
       "name": "Constituent order in subordinate clauses: A comparison of Mudburra, Warlmanpa and Warriyangga/Thiinma",
@@ -610,7 +784,11 @@
       "location": "",
       "description": "Browne, Mitch, Jacqueline Cook, Amanda Hamilton-Holloway & Jayden L. Macklin-Cordes.",
       "doi": "",
-      "url": ""
+      "url": "",
+      "title": "Constituent order in subordinate clauses: A comparison of Mudburra, Warlmanpa and Warriyangga/Thiinma.",
+      "kind": "invited",
+      "post": "/posts/2022/08/constituent-order",
+      "postLabel": "Abstract"
     },
     {
       "name": "Phylogenetic comparative methods: What all the fuss is about, and how to use them in everyday research",
@@ -621,7 +799,11 @@
       "location": "",
       "description": "Macklin-Cordes, Jayden L. & Erich R. Round.",
       "doi": "",
-      "url": "https://youtu.be/yJeQ6AGDLK0"
+      "url": "https://youtu.be/yJeQ6AGDLK0",
+      "title": "Phylogenetic comparative methods: What all the fuss is about, and how to use them in everyday research.",
+      "kind": "invited",
+      "post": "/posts/2021/11/pcms-in-everyday-research",
+      "postLabel": "Details"
     }
   ],
   "teaching": [

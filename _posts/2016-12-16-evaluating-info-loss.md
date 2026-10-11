@@ -1,13 +1,20 @@
 ---
 title: "Evaluating information loss from phonological dimensionality reduction"
-collection: talks
-type: "Talk"
-permalink: /talks/evaluating-information-loss
-venue: "Speech Science and Technology (SST) satellite symposium: The role of predictability in shaping human language sound patterns"
+permalink: /posts/2016/12/evaluating-information-loss
+redirect_from:
+  - /talks/evaluating-information-loss.html   # its address before it moved from Talks to the blog
 date: 2016-12-16
-paperurl: 'https://doi.org/10.6084/m9.figshare.4465976'
-location: "Western Sydney University, Australia"
+excerpt: "Abstract for my talk at SST2016."
+tags:
+  - Conference talks / presentations
+  - Linguistics
 ---
+
+Abstract for the following talk:
+
+Macklin-Cordes, Jayden L., Steven P. Moran & Erich R. Round. 2016. Evaluating information
+loss from phonological dimensionality reduction. _SST2016 Satellite Symposium: The role of
+predictability in shaping human language sound patterns._ Western Sydney University, Australia. <https://doi.org/10.6084/m9.figshare.4465976>.
 
 As in many sciences, cross-linguistic data is often complex and multi-dimensional. The PHOIBLE database of phonological inventories (Moran et al. 2014) is one example, containing 2160 distinct segments across 2155 phoneme inventories. Each segment type is defined by a unique vector of (mostly binary) distinctive phonetic and phonological features. This multivariate dataset can be modeled as a set of coordinates, where each variable (e.g. segment, its distinctive features, its presence in a language, the language's genealogy and location) is an axis in high-dimensional space.
 

@@ -5,10 +5,9 @@ date: 2026-03-12
 permalink: /posts/2026/03/SC-alchemist/
 excerpt: "I actually love the footy."
 tags:
-  - AFL Supercoach
-  - AI
-  - machine learning
-  - sport
+  - Apps / software
+  - AI / machine learning
+  - Sport
 header:
   og_image: "https://macklin-cordes.com/images/SC-alchemist-output2.png"
 ---

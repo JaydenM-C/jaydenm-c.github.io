@@ -15,6 +15,8 @@
 /* --- One column (phones, small tablets) -------------------------------- */
 
 #main {
+  /* long URLs and identifiers wrap instead of pushing the page sideways */
+  overflow-wrap: break-word;
   max-width: calc(#{$measure} + 2 * #{$page-pad});
   margin-left: auto;
   margin-right: auto;
@@ -33,6 +35,14 @@
   margin-right: auto;
   padding-left: $page-pad;
   padding-right: $page-pad;
+}
+
+/* tables wider than a phone scroll sideways inside their own box */
+@media (max-width: $bp-two - 0.02px) {
+  .page__content table {
+    display: block;
+    overflow-x: auto;
+  }
 }
 
 /* --- Two columns: sidebar | text ---------------------------------------- */
@@ -101,6 +111,12 @@
     width: $side-col + $col-gap;
     min-width: $side-col + $col-gap;
     padding-right: 0;
+  }
+
+  /* ...but the link inside stays the width of the name, so its hover
+     underline matches the other menu items */
+  .greedy-nav .visible-links .masthead__menu-item--lg a {
+    display: inline-block;
   }
 
   .greedy-nav .visible-links li:nth-child(2) a {

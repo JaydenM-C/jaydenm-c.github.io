@@ -328,8 +328,19 @@ def build_json(data: dict) -> dict:
                 "yearText":    _strip_markdown(p.get("year_text", "")),
                 "summary":     _strip_markdown(p.get("authors", "")),
                 "website":     p.get("doi", ""),
+                # for the website's Publications page and CV page
+                "title":       _strip_markdown(p["title"]),
+                "status":      "published" if str(p.get("year", "") or "").strip() else "review",
             }
             for p in data.get("publications", [])
+        ],
+        "inPreparation": [
+            {
+                "summary":     _strip_markdown(p.get("authors", "")),
+                "title":       _strip_markdown(p["title"]),
+                "target":      str(p.get("target", "") or ""),
+            }
+            for p in data.get("in_preparation", [])
         ],
         "presentations": [
             {
@@ -345,9 +356,14 @@ def build_json(data: dict) -> dict:
                 "description": _strip_markdown(p.get("authors", "")),
                 "doi":         p.get("doi", ""),
                 "url":         p.get("url", ""),
+                # for the website's Talks page (_pages/talks.html)
+                "title":       _strip_markdown(p["title"]),
+                "kind":        kind,
+                "post":        p.get("post", ""),
+                "postLabel":   p.get("post_label", "") or "Abstract",
             }
-            for p in (data.get("conference_presentations", []) +
-                      data.get("invited_talks", []))
+            for kind, p in ([("conference", p) for p in data.get("conference_presentations", [])] +
+                            [("invited", p) for p in data.get("invited_talks", [])])
         ],
         "teaching": [
             {

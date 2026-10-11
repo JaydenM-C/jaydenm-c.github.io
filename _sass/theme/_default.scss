@@ -94,7 +94,9 @@ $sidebar-screen-min-width   : 1024px;
     --accent                            : #{$newy-sandstone};
     --link                              : #{$federation-red};
     --link-underline                    : currentColor;
-    --ink-brand                         : #{$deep-pacific};    // headings set in the brand blue (CV name)
+    --ink-brand                         : #{$deep-pacific};
+    --pill-on-bg                        : #{$deep-pacific};    // selected pill buttons (Blog page)
+    --pill-on-ink                       : #{$paper};    // headings set in the brand blue (CV name)
     --accent-rule                       : #{$wet-sandstone};   // short rules (e.g. under the home-page name)
     --spark                             : #{$flare};
     --selection-bg                      : #{$deep-pacific};

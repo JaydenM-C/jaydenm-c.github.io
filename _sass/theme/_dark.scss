@@ -55,6 +55,8 @@ html[data-theme="dark"] {
     --link                              : #{$linen};
     --link-underline                    : #{$sunlit-rock-shelf};
     --ink-brand                         : #{$nobbys-tuff-light};
+    --pill-on-bg                        : #{$sunlit-rock-shelf};  // Deep Pacific would vanish here
+    --pill-on-ink                       : #{$deep-water};
     --selection-bg                      : #{$bar-beach-swell};
     --selection-text                    : #{$paper};
 

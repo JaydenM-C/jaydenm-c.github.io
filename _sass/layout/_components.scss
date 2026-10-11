@@ -153,6 +153,7 @@
 .list__item .archive__item > * {
   order: 9;
   flex: 0 0 100%;
+  min-width: 0;   // lets long URLs wrap instead of widening the item
 }
 
 .list__item .archive__item-title {
@@ -222,4 +223,104 @@
   margin-top: 2em;
   padding-bottom: 0.5em;
   font-size: 13px;
+}
+
+/* --------------------------------------------------------------------------
+   Reference lists (Publications, Talks): hanging indent, one entry per item
+   -------------------------------------------------------------------------- */
+
+.pub-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5em 0;
+
+  li {
+    padding-left: 2em;
+    text-indent: -2em;
+    margin-bottom: 0.75em;
+    line-height: 1.5;
+  }
+}
+
+/* "Abstract" / "Details" link to a blog post about the talk */
+.pub-list__more {
+  margin-left: 0.25em;
+  font-family: $display;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Blog page: "Sort by Date | Topic" switch (_pages/blog.html)
+   -------------------------------------------------------------------------- */
+
+.view-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0 0 1.5em;
+
+  &[hidden] { display: none; }
+}
+
+.view-switch__label {
+  @extend %kicker;
+  margin-right: 0.35em;
+}
+
+.view-switch__btn {
+  padding: 0.3em 0.9em;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-family: $display;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
+
+  &:hover { border-color: var(--ink-muted); }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  &[aria-pressed="true"] {
+    background: var(--pill-on-bg);
+    border-color: var(--pill-on-bg);
+    color: var(--pill-on-ink);
+  }
+}
+
+/* tag headings are link targets (/blog/#tag): clear the fixed masthead */
+.blog-view .archive__subtitle {
+  scroll-margin-top: calc(#{$masthead-height} + 1em);
+}
+
+.archive__count {
+  margin-left: 0.3em;
+  font-family: $meta-font-family;
+  font-size: 12px;
+  letter-spacing: 0;
+  color: var(--ink-muted);
+}
+
+/* Topic filter: one button per tag, shown in the topic view */
+.topic-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin: -0.5em 0 2em;
+
+  &[hidden] { display: none; }
+}
+
+.topic-group[hidden] { display: none; }
+
+.topic-chip {
+  font-size: 13px;
+  padding: 0.25em 0.8em;
 }

@@ -1,0 +1,63 @@
+---
+layout: archive
+permalink: /blog/
+title: "Blog"
+author_profile: true
+redirect_from:
+  - /year-archive/
+  - /tags/
+  - /wordpress/blog-posts/
+---
+
+{% comment %}
+  One page, two orders. By date (the default) lists posts under year
+  headings; by topic lists them under each tag (so a post with three tags
+  appears three times); in the topic view a row of topic buttons filters
+  the list to one topic. The switch is assets/js/blog-view.js; without
+  JavaScript the page shows the date view only. Tag links on posts point
+  here as /blog/#tag-name, which opens the topic view filtered to that tag.
+{% endcomment %}
+
+{% include base_path %}
+
+<div class="view-switch" role="group" aria-label="Sort posts by" hidden>
+  <span class="view-switch__label">Sort by</span>
+  <button type="button" class="view-switch__btn" data-view="date" aria-pressed="true">Date</button>
+  <button type="button" class="view-switch__btn" data-view="topic" aria-pressed="false">Topic</button>
+</div>
+
+{% capture tag_names %}{% for tag in site.tags %}{{ tag[0] }}{% unless forloop.last %}|{% endunless %}{% endfor %}{% endcapture %}
+{% assign tag_names = tag_names | split: "|" | sort_natural %}
+
+<div class="topic-chips" role="group" aria-label="Show one topic" hidden>
+  <button type="button" class="view-switch__btn topic-chip" data-topic="" aria-pressed="true">All topics</button>
+  {% for name in tag_names %}
+  <button type="button" class="view-switch__btn topic-chip" data-topic="{{ name | slugify }}" aria-pressed="false">{{ name }}</button>
+  {% endfor %}
+</div>
+
+<div class="blog-view" data-view="date">
+{% capture written_year %}'None'{% endcapture %}
+{% for post in site.posts %}
+  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+  {% if year != written_year %}
+    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
+    {% capture written_year %}{{ year }}{% endcapture %}
+  {% endif %}
+  {% include archive-single.html %}
+{% endfor %}
+</div>
+
+<div class="blog-view" data-view="topic" hidden>
+{% for name in tag_names %}
+  {% assign posts = site.tags[name] %}
+  <section class="topic-group" id="{{ name | slugify }}">
+    <h2 class="archive__subtitle">{{ name }} <span class="archive__count">{{ posts.size }}</span></h2>
+    {% for post in posts %}
+      {% include archive-single.html %}
+    {% endfor %}
+  </section>
+{% endfor %}
+</div>
+
+<script src="{{ base_path }}/assets/js/blog-view.js"></script>

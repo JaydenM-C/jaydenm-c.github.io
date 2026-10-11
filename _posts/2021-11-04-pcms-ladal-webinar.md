@@ -1,19 +1,28 @@
 ---
 title: "Phylogenetic comparative methods: What all the fuss is about, and how to use them in everyday research"
-collection: talks
 type: "Seminar"
-permalink: /talks/pcms-in-everyday-research
-venue: "Language Technology and Data Analysis Laboratory (LADAL) Opening Webinar Series"
+permalink: /posts/2021/11/pcms-in-everyday-research
+redirect_from:
+  - /talks/pcms-in-everyday-research.html   # its address before it moved from Talks to the blog
 date: 2021-11-04
-paperurl: 'https://youtu.be/yJeQ6AGDLK0'
-location: "The University of Queensland, Australia"
+excerpt: "Full recording of my UQ LADAL webinar, with bonus tutorial link."
+tags:
+  - Conference talks / presentations
+  - Phylogenetics
+  - Linguistics
 ---
 
-Details on [the LADAL webpage](https://slcladal.github.io/opening.html#linguistic-phylogenetics-j.-macklin-cordes-e.-round)
+## Citation
+
+Macklin-Cordes, Jayden L. & Erich R. Round. 2021. Phylogenetic comparative methods: What all the fuss is about, and how to use them in everyday research. _Language and Data Analysis Laboratory (LADAL) webinar_. The University of Queensland, St Lucia, Australia.
+
+## Links
 
 [Recording on YouTube](https://youtu.be/yJeQ6AGDLK0)
 
-[Accompanying LADAL tutorial](https://slcladal.github.io/phylo.html) on Phylogentics for language data
+[Accompanying LADAL tutorial](https://ladal.edu.au/tutorials/phylogenetic_methods/phylogenetic_methods.html) on phylogentics for language data
+
+## Abstract
 
 In this talk, we attempt two tasks. Firstly, we dispel some of the mystery around phylogenetic comparative methods and highlight their fundamental relationship to matters of enduring concern in linguistic typology. Secondly, we aim to show how linguists can carry out essential tasks using phylogenetic methods, easily.
 

@@ -5,10 +5,8 @@ date: 2026-08-04
 permalink: /posts/2026/08/rawshuck-addendum/
 excerpt: 'All I wanted was to delete some RAW files. iCloud continues to have other ideas.'
 tags:
-  - photography
-  - coding
-  - tools
-  - icloud
+  - Photography
+  - Apps / software
 ---
 
 _Rawshuck lives at [rawshuck.pages.dev](https://rawshuck.pages.dev/). This post is an addendum to the original backstory [here](https://macklin-cordes.com/posts/2026/08/rawshuck/)._

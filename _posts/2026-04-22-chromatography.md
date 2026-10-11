@@ -5,10 +5,9 @@ date: 2026-04-22
 permalink: /posts/2026/04/chromatography/
 excerpt: "I have a colourful habit."
 tags:
-  - data visualisation
-  - design
-  - tools
-  - photography
+  - Photography
+  - Apps / software
+  - AI / machine learning
 ---
 
 Just want to know how to actually use the thing? [Jump here](#actually-using-it)
@@ -33,7 +32,7 @@ I created this app initially for personal use. I just wanted something to help m
 
 To reiterate, I started this project for myself. I just wanted to do my thing — extract a palette from my photo of choice, potentially tweak it, and save it for future use — without the friction of my usual manual method. It wasn't intended to be a public-facing product. Pretty quickly though, it started to feel like something with the potential to be a unique, useful app. The ability to straightforwardly extract a palette from an image in this way, with the combination of perceptually-correct colour handling, sub-pixel manual sampling, modern contrast scoring, gamut feedback, and multi-format export, to the best of my knowledge, isn't really matched by comparable free tools nor potentially even paid ones. And the whole application fits in a single React component under 100 kB.
 
-![Chromatography home page](/images/chromatography-home.png)
+![Chromatography home page](/images/chromatography-home.jpg)
 
 ## How it works
 
@@ -59,13 +58,13 @@ The intended pipeline is pretty straightforward. Start by dropping a photo into 
 
 Keep in mind that k-means++ is stochastic (there's an element of randomness every time). I deliberately kept it unseeded, so each time you click Extract, it'll run fresh and give a different result. Usually it's pretty stable, so the differences are slight (particularly when extracting a larger number of colours). But it means that if you're unhappy with the starting point, you can simply click and try again. Often it's worth rolling the dice a few times until you get a good serviceable starting point.
 
-![Chromatography loupe](/images/chromatography-loupe.png)
+![Chromatography loupe](/images/chromatography-loupe.jpg)
 
 If you want to refine, there are two main levers. The eyedropper lets you click anywhere on the image to add a manually-chosen colour to your palette. The per-swatch panel exposes sliders for lightness, chroma, and hue, plus a revert button that resets the swatch to its original sampled value if you OKLCH too close to the sun. You can drag swatches around to reorder; you can sort them by perceptual criteria (lightness, chroma, hue, pixel weight); you can save the whole project to a JSON file that contains both the swatches and the source image, and reload it later to pick up where you left off.
 
 When you're done, there are several Export options: CSS custom properties for web work, JSON for anything programmatic, an R code snippet for use with ggplot, a GIMP Palette (.gpl) for desktop graphics. There is also a Markdown option for documenting the palette, and standalone HTML for sharing a rendered guide.
 
-![The colour adjustment panel](/images/chromatography-adjust-panel.png)
+![The colour adjustment panel](/images/chromatography-adjust-panel.jpg)
 
 ## A note for data visualisation
 
@@ -98,7 +97,7 @@ I also recommend asking for an HTML rendering and/or mock-up, especially if you 
 
 I'm still in the very early days of experimenting with this app myself. But uh, here's a little something I prepared earlier...
 
-![Fishermen on sandstone cliffs over ocean](/images/chromatography-maritime-source.jpeg)
+![Fishermen on sandstone cliffs over ocean](/images/chromatography-maritime-source.jpg)
 
 The first example is a sandstone+sea palette. I took it from the ANZAC Memorial Bridge in Newcastle. The golden afternoon sun on sandstone provides a really nice contrast to the blue ocean, and I enjoyed the bright red jacket highlight. Here's the palette applied as a design mock-up:
 
@@ -138,6 +137,6 @@ If you find it useful and feel like chipping in a few quid toward ongoing develo
 
 If you extract a palette you're fond of, I'd love to see it. Send a screenshot or a link through any of the usual places. Maybe I can create a central repository of palettes, if anyone feels inclined to share their work!
 
-!["Fired clay" palette source](/images/chromatography-fired-clay.png)
+!["Fired clay" palette source](/images/chromatography-fired-clay.jpg)
 _"Fired clay"_ indeed.
 

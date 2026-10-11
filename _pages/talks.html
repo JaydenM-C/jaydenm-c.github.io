@@ -3,14 +3,34 @@ layout: archive
 title: "Talks and presentations"
 permalink: /talks/
 author_profile: true
+redirect_from:
+  - /talks/pcms-in-everyday-typology.html
+  - /talks/typological-features-in-tree-inference.html
+  - /talkmap.html
 ---
 
-{% if site.talkmap_link == true %}
+{% comment %}
+  Built from the CV: edit cv/cv.yaml (invited_talks, conference_presentations)
+  and run `python3 cv/build_cv.py`, which writes _data/cv.json.
+  An entry can link to a blog post with `post: /posts/...` (link text
+  "Abstract", or set `post_label:`).
+{% endcomment %}
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
+{% assign talks = site.data.cv.presentations %}
+{% assign sections = "invited|Invited talks,conference|Conference presentations" | split: "," %}
 
-{% endif %}
+{% for section in sections %}
+  {% assign parts = section | split: "|" %}
+  {% assign kind = parts[0] %}
+  {% assign heading = parts[1] %}
+  {% assign items = talks | where: "kind", kind %}
+  {% if items.size > 0 %}
+<h2>{{ heading }}</h2>
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
+<ul class="pub-list">
+    {% for talk in items %}
+      {% include bib-entry.html authors=talk.description year=talk.yearText title=talk.title venue=talk.venueItalic venue_rest=talk.venueRest doi=talk.doi url=talk.url post=talk.post post_label=talk.postLabel %}
+    {% endfor %}
+</ul>
+  {% endif %}
 {% endfor %}

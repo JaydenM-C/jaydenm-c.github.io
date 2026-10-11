@@ -27,7 +27,9 @@ author:
   pronouns         : # example: "she/her"  
   bio              : "Evolutionary Language Scientist"
   location         : "ISLE Institute"
+  location_url     : "https://www.isle.uzh.ch/en/staff/macklin-cordes.html"   # optional: makes the line above a link
   employer         : "University of Zurich"
+  employer_url     : "https://www.uzh.ch/en.html" # optional, e.g. "https://www.uzh.ch/"
   uri              : # URL
   email            : "jayden@macklin-cordes.com" 
 
@@ -60,7 +62,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "jayden-macklin-cordes"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -91,7 +93,6 @@ breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link             : false      #change to true to add link to talkmap on talks page
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
@@ -186,6 +187,13 @@ exclude:
   - README
   - tmp
   - vendor
+  # repo housekeeping, not part of the site
+  - scripts
+  - markdown_generator
+  - search-console-indexing-report
+  - CONTRIBUTING.md
+  - docker-compose.yaml
+  - README.md
   # CV build pipeline: only the compiled PDF (cv/cv.pdf) should be published;
   # the YAML source, LaTeX template, build script, and font files are
   # internal. Everything else in cv/ is excluded explicitly below.
@@ -227,13 +235,7 @@ kramdown:
 
 # These settings control the types of collections used by the template
 collections:
-  teaching:
-    output: true
-    permalink: /:collection/:path/
   publications:
-    output: true
-    permalink: /:collection/:path/
-  talks:
     output: true
     permalink: /:collection/:path/
 
@@ -258,15 +260,6 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _teaching
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: single
-      author_profile: true
-      share: false
-      comments: true
   # _publications
   - scope:
       path: ""
@@ -276,14 +269,6 @@ defaults:
       author_profile: true
       share: false
       comments: true
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: false
 
 
 # Sass/SCSS
@@ -328,12 +313,9 @@ whitelist:
 #  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
 #  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path/my-awesome-category/index.html ~> path: /
-category_archive:
+tag_archive:            # tag links on posts open the Blog page in its by-topic view
   type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
+  path: /blog/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
