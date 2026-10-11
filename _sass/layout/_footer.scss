@@ -27,6 +27,10 @@
           animation-delay: 0.45s;
   border-top: 0;
 
+  /* Pinstripes along the top edge: Wet Sandstone, then a Linen line between
+     it and the Deep Pacific (the site's one art deco flourish). */
+  box-shadow: inset 0 4px 0 var(--stripe-outer), inset 0 6px 0 var(--stripe-inner);
+
   footer {
     @include clearfix;
     margin-left: auto;

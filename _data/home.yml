@@ -1,0 +1,30 @@
+# Home page "Recently" column.
+#
+# The latest blog post is added automatically (title, subtitle, month).
+# Everything below is edited by hand. Any field except `title` can be left
+# out; `url` can be a full link or a site path such as /talks/.
+
+# Shown after the latest post, in this order. Add a "Latest publication"
+# entry here when there is one, e.g.
+#   - kind: Latest publication
+#     title: Paper title
+#     detail: Journal name
+#     date: 2027
+#     url: https://doi.org/...
+recently:
+  - kind: Latest talk
+    title: Noun classes persist for predictive processing
+    detail: Poster, Association for Linguistic Typology (ALT XVI), Lyon
+    date: 2026
+    url: /talks/
+
+# Optional: upcoming talks, shown in a framed box. Each one disappears on
+# its own once `until` has passed (the site rebuilds whenever you push, so
+# it goes at the first push after that date). Leave the list empty to hide
+# the box, e.g.
+#   - title: Title of the talk
+#     detail: Conference or seminar, City
+#     date: March 2027
+#     until: 2027-03-31
+#     url: https://...
+upcoming: []

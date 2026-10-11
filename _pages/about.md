@@ -1,7 +1,11 @@
 ---
 permalink: /
 title: "About me"
+layout: home
 author_profile: true
+tagline: "Evolutionary language scientist"
+cover: /images/cover/bar-beach-storm
+cover_alt: "A storm rolling in over Bar Beach, Newcastle"
 redirect_from: 
   - /about/
   - /about.html

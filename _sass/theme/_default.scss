@@ -103,6 +103,8 @@ $sidebar-screen-min-width   : 1024px;
     --chrome-hover                      : #{$bar-beach-swell};
     --chrome-accent                     : #{$sunlit-rock-shelf}; // rules and bars only, never text (3.0:1)
     --chrome-rule                       : #{rgba($paper, 0.14)};
+    --stripe-outer                      : #{$wet-sandstone};    // pinstripes on the footer's top edge
+    --stripe-inner                      : #{$linen};
     --selection-text                    : #{$paper};
 
     /* Syntax (light tuning) */
