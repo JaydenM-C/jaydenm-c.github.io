@@ -27,4 +27,9 @@ recently:
 #     date: March 2027
 #     until: 2027-03-31
 #     url: https://...
-upcoming: []
+upcoming:
+  - title: Why do noun classes persist? Predictive processing and constituent order in a global sample
+    detail: Ólafsþing, University of Iceland, Reykjavik
+    date: 23 October 2026
+    until: 2026-12-23
+    url: https://malogsaga.hi.is/olafsthing/utan-gatta-a-olafsthingi-2026/
