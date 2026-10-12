@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.10.11)  11 OCT 2026 19:49
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.10.11)  12 OCT 2026 10:57
  restricted system commands enabled.
 **cv.tex
 (./cv.tex
@@ -961,7 +961,7 @@ Here is how much of LuaTeX's memory you used:
  52 fonts using 4449343 bytes
  110i,13n,101p,11204b,592s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <./fonts/Newsreader-Text-Italic.ttf><./fonts/IBMPlexMono-Regular.ttf><./fonts/Newsreader-Text-SemiBold.ttf><./fonts/Newsreader-Text-Regular.ttf><./fonts/Jost-Medium.ttf>
-Output written on cv.pdf (13 pages, 90082 bytes).
+Output written on cv.pdf (13 pages, 90035 bytes).
 
 PDF statistics: 145 PDF objects out of 1000 (max. 8388607)
  113 compressed objects within 2 object streams
